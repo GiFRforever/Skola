@@ -3,7 +3,6 @@ from math import *
 mode = 0
 
 
-
 def vstup(txt: str) -> float:
     bagr = None
     while bagr is None:

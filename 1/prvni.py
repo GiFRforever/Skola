@@ -13,6 +13,8 @@ while a is None:
         print("Vložte číslo!!")
 print(a+s)
 """
+
+
 def zadanicisla(a):
     while a is None:
         try:

@@ -10,7 +10,7 @@ while b is None:
         b = int(input("Délky strany b: "))
     except:
         print("Vložte číslo!!")
-o = 2*(a+b)
-s = a*b
-print("Obvod: ",o)
-print("Obsah: ",s)
+o = 2 * (a + b)
+s = a * b
+print("Obvod: ", o)
+print("Obsah: ", s)

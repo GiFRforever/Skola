@@ -1,7 +1,7 @@
-def vstup(txt):
-    a = input(txt)
+def vstup(txt) -> str:
+    a: str = input(txt)
     return a
 
 
-vystup = vstup("bu:")
+vystup: str = vstup("bu:")
 print(vystup)

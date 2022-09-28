@@ -2,6 +2,7 @@ def vstup(txt):
     cislo = int(input(txt))
     return cislo
 
+
 """
 with open("primes.txt", "r") as f:
     primes = [int(p) for p in f]
@@ -35,7 +36,9 @@ def f_to_r2(flt):
                 comdev = comdev * i
             return int(num), int(den)
 """
-def f_r2(flt:float, prc=0, rep=100000):
+
+
+def f_r2(flt: float, prc=0, rep=100000):
     # print(flt,prc,rep)
     num: int = 1
     den: int = 1
@@ -63,7 +66,7 @@ def f_r2(flt:float, prc=0, rep=100000):
                     rat = num / den
                 # print(rat)
         return str(num) + "/" + str(den)
-	
+
     if flt > 0:
         while rat != flt:
             while rat > flt:
@@ -82,14 +85,16 @@ def f_r2(flt:float, prc=0, rep=100000):
                 num -= 1
                 rat = num / den
             # print(rat)
-    return str(num)+"/"+str(den)
+    return str(num) + "/" + str(den)
 
 
 def calc_parabola_vertex(x1, y1, x2, y2, x3, y3) -> tuple[float, float, float]:
     denom: float = (x1 - x2) * (x1 - x3) * (x2 - x3)
     A: float = (x3 * (y2 - y1) + x2 * (y1 - y3) + x1 * (y3 - y2)) / denom
     B: float = (x3 * x3 * (y1 - y2) + x2 * x2 * (y3 - y1) + x1 * x1 * (y2 - y3)) / denom
-    C: float = (x2 * x3 * (x2 - x3) * y1 + x3 * x1 * (x3 - x1) * y2 + x1 * x2 * (x1 - x2) * y3) / denom
+    C: float = (
+        x2 * x3 * (x2 - x3) * y1 + x3 * x1 * (x3 - x1) * y2 + x1 * x2 * (x1 - x2) * y3
+    ) / denom
     return A, B, C
 
 
@@ -104,14 +109,17 @@ ar: str = f_r2(a)
 br: str = f_r2(b)
 cr: str = f_r2(c)
 print("a={0} b={1} c={2}".format(ar, br, cr))
-print("https://www.wolframalpha.com/input?i=plot+{}x^2%2B{}x%2B{}%3Dy".format(ar, br, cr))
+print(
+    "https://www.wolframalpha.com/input?i=plot+{}x^2%2B{}x%2B{}%3Dy".format(ar, br, cr)
+)
 if input("Plot? [Yes/No]: ") == "Yes":
-	import matplotlib.pyplot as plt
-	import numpy as np
-	x = np.linspace(x1, x2, 1000)
-	y = a * x ** 2 + b * x + c
-	plt.title("Hystereze topení") 
-	plt.xlabel("venkovní teplota [°C]")
-	plt.ylabel("teplota okruhu [°C]")
-	plt.plot(x, y)
-	plt.show(block=True)
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    x = np.linspace(x1, x2, 1000)
+    y = a * x**2 + b * x + c
+    plt.title("Hystereze topení")
+    plt.xlabel("venkovní teplota [°C]")
+    plt.ylabel("teplota okruhu [°C]")
+    plt.plot(x, y)
+    plt.show(block=True)

@@ -36,10 +36,10 @@ def f_r(flt) -> int | tuple[int, int, float, float]:
 
 
 def f_r3(flt, rep=100001) -> tuple[int, int, float, float]:
-    h:tuple[int, int] = flt.as_integer_ratio()
+    h: tuple[int, int] = flt.as_integer_ratio()
     numerator: int = h[0]
     denominator: int = h[1]
-    dev:float = 1
+    dev: float = 1
     for i in range(2, rep, 1):
         zbn: int = numerator % i
         if zbn > 1 or zbn < -1:
@@ -58,15 +58,15 @@ def f_r3(flt, rep=100001) -> tuple[int, int, float, float]:
     )
 
 
-def f_r2(flt:float, prc=0, rep=100000) -> tuple[int, int, float]:
+def f_r2(flt: float, prc=0, rep=100000) -> tuple[int, int, float]:
     # print(flt,prc,rep)
-    num:int = 1
-    den:int = 1
+    num: int = 1
+    den: int = 1
     rat: float = num / den
     if prc != 0 and prc != -1:
         flt = round(flt, prc)
     elif prc == 0:
-		# repetitive calculation
+        # repetitive calculation
         if flt > 0:
             for i in range(0, rep):
                 while rat > flt:
@@ -86,7 +86,7 @@ def f_r2(flt:float, prc=0, rep=100000) -> tuple[int, int, float]:
                     rat = num / den
                 # print(rat)
         return num, den, rat
-	# precision calculation
+    # precision calculation
     if flt > 0:
         while rat != flt:
             while rat > flt:
@@ -107,6 +107,7 @@ def f_r2(flt:float, prc=0, rep=100000) -> tuple[int, int, float]:
             # print(rat)
     return num, den, rat
 
+
 with open("moje/primes.txt", "r") as f:
     primes: list[int] = [int(p) for p in f]
 
@@ -119,7 +120,7 @@ def comd(num, den) -> int:
     return 0
 
 
-def f_to_r(flt) -> tuple[int,int]|tuple[int, int, list[int], int]:
+def f_to_r(flt) -> tuple[int, int] | tuple[int, int, list[int], int]:
     if int(flt) == flt:
         return int(flt), 1
     flt_str: str = str(flt)
@@ -139,23 +140,24 @@ def f_to_r(flt) -> tuple[int,int]|tuple[int, int, list[int], int]:
                 comdev = comdev * i
             return int(num), int(den), devs, comdev
 
-def f_to_r2(flt) -> tuple[int, int]|tuple[int, int, list[int], int]:
+
+def f_to_r2(flt) -> tuple[int, int] | tuple[int, int, list[int], int]:
     if int(flt) == flt:
         return int(flt), 1
     flt_str: str = str(flt)
     flt_split: list[str] = flt_str.split(".")
-    num: int|float = int("".join(flt_split))
-    den: int|float = 10 ** len(flt_split[1])
+    num: int | float = int("".join(flt_split))
+    den: int | float = 10 ** len(flt_split[1])
     devs: list[int] = []
     while True:
-        #cdt: int = comd(num, den)
+        # cdt: int = comd(num, den)
         cdt: int = 1
         while cdt != 0:
             cdt: int = 0
             for i in primes:
                 if num % i == 0:
                     if den % i == 0:
-                        cdt: int =  i
+                        cdt: int = i
             if cdt != 0:
                 num = num / cdt
                 den = den / cdt
@@ -164,6 +166,8 @@ def f_to_r2(flt) -> tuple[int, int]|tuple[int, int, list[int], int]:
         for i in devs:
             comdev = comdev * i
         return int(num), int(den), devs, comdev
+
+
 """
 from fractions import fraction
 def fraction_to_r(flt):
@@ -181,9 +185,9 @@ def vstup(txt):
         return int(vs)
 
 
-c: list[float|int] = []
+c: list[float | int] = []
 c.append(float(input("flt:")))
-#c.append(random())
+# c.append(random())
 p: int = vstup("prc [def: 0 -> rep, -1 -> precise]: ")
 r: int = vstup("rep [def: 100000]: ")
 if p == 0:
@@ -200,18 +204,18 @@ sleep(1)
 t1: float = time()
 b: tuple[int, int] = a.as_integer_ratio()
 t2: float = time()
-print("a.i.r",b, b[0] / b[1])
+print("a.i.r", b, b[0] / b[1])
 t3: float = time()
-print("f.t.r",float_to_ratio(a))
+print("f.t.r", float_to_ratio(a))
 t4: float = time()
-print("f.r",f_r(a)) # nice
+print("f.r", f_r(a))  # nice
 t5: float = time()
-print("f.r2",f_r2(flt=c[0], prc=int(c[1]), rep=int(c[2])))
+print("f.r2", f_r2(flt=c[0], prc=int(c[1]), rep=int(c[2])))
 t6: float = time()
-print("f.r3",f_r3(c[0], int(c[2])))
+print("f.r3", f_r3(c[0], int(c[2])))
 t7: float = time()
-print("f.t.r2",f_to_r(a))
+print("f.t.r2", f_to_r(a))
 t8: float = time()
-print("f.t.r3",f_to_r2(a)) # long but nice
+print("f.t.r3", f_to_r2(a))  # long but nice
 t9: float = time()
 print(t2 - t1, t4 - t3, t5 - t4, t6 - t5, t7 - t6, t8 - t7, t9 - t8)

@@ -1,41 +1,6 @@
-def vstup(txt):
-    cislo = int(input(txt))
+def vstup(txt) -> float:
+    cislo: float = float(input(txt))
     return cislo
-
-
-"""
-with open("primes.txt", "r") as f:
-    primes = [int(p) for p in f]
-
-
-def comd(num, den):
-    for i in primes:
-        if num % i == 0:
-            if den % i == 0:
-                return i
-    return 0
-
-
-def f_to_r2(flt):
-    if int(flt) == flt:
-        return int(flt), 1
-    flt_str = str(flt)
-    flt_split = flt_str.split(".")
-    num = int("".join(flt_split))
-    den = 10 ** len(flt_split[1])
-    devs = []
-    while True:
-        cdt = comd(num, den)
-        if cdt != 0:
-            num = num / cdt
-            den = den / cdt
-            devs.append(cdt)
-        else:
-            comdev = 1
-            for i in devs:
-                comdev = comdev * i
-            return int(num), int(den)
-"""
 
 
 def f_r2(flt: float, prc=0, rep=100000):
@@ -103,6 +68,8 @@ y1: float = vstup("Vrchol: ")
 y3 = x2 = y2 = vstup("Křivka: ")
 x3 = -40 - x2
 a, b, c = calc_parabola_vertex(x1, y1, x2, y2, x3, y3)
+denní:float = vstup("Denní offset: ")
+noční:float = vstup("Noční offset: ")
 print(x1, y1, x2, y2, x3, y3)
 print("a={0}, b={1}, c={2}".format(a, b, c))
 ar: str = f_r2(a)
@@ -121,5 +88,7 @@ if input("Plot? [Yes/No]: ") == "Yes":
     plt.title("Hystereze topení")
     plt.xlabel("venkovní teplota [°C]")
     plt.ylabel("teplota okruhu [°C]")
-    plt.plot(x, y)
+    plt.plot(x, y, label="křivka", color="grey")
+    plt.plot(x, y+noční, label="noční", color="blue")
+    plt.plot(x, y+denní, label="denní", color="red")
     plt.show(block=True)

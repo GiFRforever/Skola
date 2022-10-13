@@ -1,0 +1,16 @@
+Pro 1 desetinných míst je průměrná odchylka -0.1 a časem 0.000599813461303711.
+Pro 2 desetinných míst je průměrná odchylka 0.0 a časem 0.0011003732681274414.
+Pro 3 desetinných míst je průměrná odchylka 0.0 a časem 0.0009999036788940429.
+Pro 4 desetinných míst je průměrná odchylka 0.0 a časem 0.0020000457763671873.
+Pro 5 desetinných míst je průměrná odchylka 0.0 a časem 0.01149888038635254.
+Pro 6 desetinných míst je průměrná odchylka 0.0 a časem 0.059642457962036134.
+Pro 7 desetinných míst je průměrná odchylka 0.0 a časem 0.5455635070800782.
+Pro 8 desetinných míst je průměrná odchylka 0.0 a časem 2.729863238334656.
+Pro 9 desetinných míst je průměrná odchylka 0.0 a časem 24.127600383758544.
+Pro 10 desetinných míst je průměrná odchylka 0.0 a časem 73.3097799539566.
+Pro 11 desetinných míst je průměrná odchylka 0.0 a časem 98.92346844673156.
+Pro 12 desetinných míst je průměrná odchylka 0.0 a časem 109.93418476581573.
+Pro 13 desetinných míst je průměrná odchylka 0.0 a časem 109.97680146694184.
+Pro 14 desetinných míst je průměrná odchylka 0.0 a časem 113.246204829216.
+Pro 15 desetinných míst je průměrná odchylka 0.0 a časem 109.48839802742005.
+Pro 16 desetinných míst je průměrná odchylka 0.0 a časem 109.33266267776489.

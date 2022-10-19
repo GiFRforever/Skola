@@ -1,11 +1,28 @@
 with open("moje/p/primes.txt", "r") as f:
-    data: str = f.read()
-    for x in range(1,10):
-        globals()["primes_list_" + str(x)] = [int(i) for i in data.split("\n") if len(i) == x]
-    print("Primes loaded.")
+    primes = [int(f.readline()) for i in range(10)]
+flt = 0.0225
+flt_split: list[str] = str(flt).split(".")
+num: int = int("".join(flt_split))
+den: int = 10 ** len(flt_split[1])
+out: list[int] = []
+m=0
+breakpoint()
+n=0
+while n == 0:
+    while m == 0:
+        for i in primes: # type: ignore
+            if num % i == 0:
+                if den % i == 0:
+                    out.append(i)
+                    num //= i
+                    den //= i
+                    m:int = 1
+                    break
+        if m == 1:
+            m = 0
+            continue
+        n = 1
+        break
 
-for x in range(1,10):
-    with open(f"moje/p/primes{x}.txt", "w") as f:
-        for p in globals()["primes_list_" + str(x)]:
-            f.write(f"{p}\n")
-        print(f"primes{x}.txt saved")
+print(out)
+print(f"{flt} = {num}/{den}")

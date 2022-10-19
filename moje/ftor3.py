@@ -3,6 +3,7 @@ from time import time
 
 primes_list: list[int] = []
 primes_file: str = "moje/p/primes.txt"
+primes_dir: str = "moje/p/"
 
 def vstup_float(txt) -> float:
     while True:
@@ -78,7 +79,7 @@ def load_primes_lists(lenght: int = 9) -> None:
             #breakpoint()
 
 def load_primes_lists2() -> None:
-    """Load primes lists."""
+    """Load primes lists.
     for x in range(8, 10):
         try:
             if globals()["primes_list_" + str(x)][0]:
@@ -91,6 +92,15 @@ def load_primes_lists2() -> None:
         globals()["primes_list_l"] = [int(i) for i in f.read().split("\n") if len(i) == 9]
         print("primes_list_l loaded")
         #breakpoint()
+    """
+    print("Loading primes...")
+    with open(primes_dir+"primess.txt", "r") as f:
+        globals()["primes_list_s"] = [int(i) for i in f.read().split("\n")]
+    print("Just a sec...")
+    with open(primes_dir+"primesl.txt", "r") as f:
+        globals()["primes_list_l"] = [int(i) for i in f.read().split("\n")]
+    print("Primes loaded.")
+
 def load_primes_lists3() -> None:
     """Load primes lists."""
     with open(primes_file, "r") as f:
@@ -142,7 +152,7 @@ def ftor_primes(flt: float,) -> tuple[int, int, float]:
         #global primes_list_s
         n: int = 0
         m: int = 0
-        load_primes()
+        #load_primes()
         while n == 0:
             for i in primes_list:
                 #print(i)
@@ -182,11 +192,13 @@ def ftor_primes(flt: float,) -> tuple[int, int, float]:
         #breakpoint()
         for x in ["s", "l"]:
             #load_primes_lists2()
+            #breakpoint()
             n: int = 0
             m: int = 0
             while n == 0:
                 for i in globals()["primes_list_" + x]:
                     if num % i == 0 and den % i == 0:
+                        #breakpoint()
                         num //= i
                         den //= i
                         m = 1
@@ -245,6 +257,7 @@ def ftor_primes(flt: float,) -> tuple[int, int, float]:
                 #print("Just a sec...")
                 n += 1
     """
+    #breakpoint()
     return sign * num, den, sign * num / den
 
 #load_primes_lists(8)
@@ -253,9 +266,9 @@ load_primes()
 
 while True:
     print(main())
-"""
 
-test_samples:int = 10
+"""
+test_samples:int = 100
 for i in range(1, 17, 1):
     odchylka: list[float] = []
     t1: float = time()

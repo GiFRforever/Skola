@@ -1,5 +1,5 @@
+import multiprocessing as mp
 def ftor(flt: float, proc: int) -> list[int]:
-    import multiprocessing as mp
     jádra: int = mp.cpu_count()
     délka: int = 50000000
     try:
@@ -57,7 +57,6 @@ def vstup_float(txt: str) -> float:
             print("Zadejte číslo!")
 
 if __name__ == "__main__":
-    import multiprocessing as mp
     jádra: int = mp.cpu_count()
     print(f"Počet jáder: {jádra}")
     pool = mp.Pool(processes=jádra)

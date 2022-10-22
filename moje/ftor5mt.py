@@ -82,7 +82,7 @@ if __name__ == "__main__":
     while True:
         flt: float = vstup_float("Zadejte číslo: ")
         for i in range(jádra):
-            globals()[f"pipe_p_{i}"].send(flt)
+            globals()[f"pipe_p_{i}"].send(float(flt))
         deviders: list[int] = []
         for i in range(jádra):
             ingested: list = globals()[f"pipe_p_{i}"].recv()

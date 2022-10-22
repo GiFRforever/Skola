@@ -20,10 +20,13 @@ def ftor(proc: int, jádra: int, conn) -> None:
         print(f"List {proc} inicializován")
         conn.send("OK")
     
-    while flt := conn.recv() is not None:
-        #flt: float = conn.recv()
-        if flt == int(flt):
-            conn.send([1, 1])
+    while fltv := conn.recv() is not None:
+        flt: float = float(fltv)
+        if type(flt) == float:
+            print(flt)
+        elif type(flt) == int:
+            print(flt," je int")
+            conn.send([1,1])
         flt_split: list[str] = str(flt).split(".")
         num: int = int("".join(flt_split))
         den: int = 10 ** len(flt_split[1])

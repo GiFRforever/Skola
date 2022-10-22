@@ -1,4 +1,4 @@
-with open("moje/p/primes.txt", "r") as f:
+"""with open("moje/p/primes.txt", "r") as f:
     primes = [int(f.readline()) for i in range(10)]
 flt = 0.0225
 flt_split: list[str] = str(flt).split(".")
@@ -6,7 +6,6 @@ num: int = int("".join(flt_split))
 den: int = 10 ** len(flt_split[1])
 out: list[int] = []
 m=0
-breakpoint()
 n=0
 while n == 0:
     while m == 0:
@@ -25,4 +24,5 @@ while n == 0:
         break
 
 print(out)
-print(f"{flt} = {num}/{den}")
+print(f"{flt} = {num}/{den}")"""
+

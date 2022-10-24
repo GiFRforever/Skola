@@ -2,6 +2,8 @@ import multiprocessing as mp
 from multiprocessing.connection import wait
 def f(conn):
     while bu := conn.recv() is not None:
+        bu = conn.recv()
+        print(bu)
         print("received")
         conn.send("OK")
 
@@ -14,6 +16,7 @@ if __name__ == '__main__':
         globals()[f"p{i}"].start()
     
     for i in range(jádra):
+        globals()[f"pipe_p_{i}"].send(1) # spustí while loop
         globals()[f"pipe_p_{i}"].send("OK?")
 
     for i in range(jádra):

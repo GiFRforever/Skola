@@ -1,0 +1,21 @@
+1666634161356	geckodriver	INFO	Listening on 127.0.0.1:56591
+1666634164556	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56592" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Bu\\AppData\\Local\\Temp\\rust_mozprofile0CYkKm"
+1666634165508	Marionette	INFO	Marionette enabled
+1666634165518	Marionette	INFO	Listening on port 56602
+Read port: 56602
+WebDriver BiDi listening on ws://127.0.0.1:56592
+1666634165905	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Bu\\AppData\\Local\\Temp\\rust_mozprofile0CYkKm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56592/devtools/browser/16370c9c-b1f7-4197-a82f-7d99c335784d
+1666634170783	Marionette	INFO	Stopped listening on port 56602
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 719: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+1666634581262	geckodriver	INFO	Listening on 127.0.0.1:56772
+1666634584326	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56773" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Bu\\AppData\\Local\\Temp\\rust_mozprofileISdhtQ"
+1666634584931	Marionette	INFO	Marionette enabled
+1666634584939	Marionette	INFO	Listening on port 56784
+Read port: 56784
+WebDriver BiDi listening on ws://127.0.0.1:56773
+1666634585280	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Bu\\AppData\\Local\\Temp\\rust_mozprofileISdhtQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56773/devtools/browser/2182a153-5ea2-4594-84c7-97b4174f1146
+1666635017567	Marionette	INFO	Stopped listening on port 56784

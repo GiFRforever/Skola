@@ -1,27 +1,29 @@
 import multiprocessing as mp
 from time import sleep
+import re
 
 def ftor(proc: int, jádra: int, conn) -> list[int]:
     délka: int = 50000000
-    try:
-        primes == []
+    """try:
+        if primes == []:
+            pass
         print("Primes already loaded.")
-    except:
-        primes: list[int] = []
-        with open("moje/p/primes.txt", "r") as f:
-            print(f"Inicializace listu {proc}")
-            f.seek((délka//jádra)*proc)
-            if proc == jádra-1:
-                kolik = 50000000 - (délka//jádra)*(jádra-1)
-            else:
-                kolik = délka//jádra
-            for i in range(kolik):
-                primes.append(int(f.readline()))
-            print(f"List {proc} inicializován")
+    except:"""
+    primes: list[int] = []
+    with open("moje/p/primes.txt", "r") as f:
+        print(f"Inicializace listu {proc}")
+        f.seek((délka//jádra)*proc)
+        if proc == jádra-1:
+            kolik = 50000000 - (délka//jádra)*(jádra-1)
+        else:
+            kolik = délka//jádra
+        for i in range(kolik):
+            primes.append(int(f.readline()))
+        print(f"List {proc} inicializován")
     
     while True:
 
-        flt: list[int] = conn.recv()
+        cislo: int = conn.recv()
         """if flt == int(flt):
             return [1]"""
         """flt_split: list[str] = str(flt).split(".")
@@ -33,13 +35,11 @@ def ftor(proc: int, jádra: int, conn) -> list[int]:
         while m == 0:
             while n == 0:
                 for i in primes:
-                    if num % i == 0:
-                        if den % i == 0:
-                            out.append(i)
-                            num //= i
-                            den //= i
-                            n = 1
-                            break
+                    if cislo % i == 0:
+                        out.append(i)
+                        cislo //= i
+                        n = 1
+                        break
                 if n == 1:
                     n = 0
                     continue
@@ -52,12 +52,12 @@ def vstup_list(txt: str) -> list[int]:
     while True:
         try:
             bu: str = input(txt)
-            return list(map(int, bu.split(","|"."|" ")))
+            return list(map(int, re.split(",|.| ", bu)))
         except ValueError:
             if bu != "":
                 if bu[0] == "q":
                     exit()
-                return list(map(int, bu.split(","|"."|" ")))
+                return list(map(int, re.split(",|.| ", bu)))
             print("Zadejte čísla!")
 
 if __name__ == "__main__":
@@ -79,6 +79,10 @@ if __name__ == "__main__":
             for i in range(jádra):
                 globals()[f"deviders_{key}"].append([item for sublist in globals()[f"pipe_p_{i}"].recv() for item in sublist])
         # vvv tady poděl itemi z flt devideri a pak zobraz výslednou změnu
+        deviders = []
+        for i in range(1,len(vst_list)):
+            deviders.append([set(globals()[f"deviders_{i}"])&set(globals()[f"deviders_{i-1}"])])
+        print(deviders)
         """flt_split: list[str] = str(flt).split(".")
         num: int = int("".join(flt_split))
         den: int = 10 ** len(flt_split[1])

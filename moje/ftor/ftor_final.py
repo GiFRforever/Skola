@@ -1,4 +1,3 @@
-from re import search
 from time import time
 from random import random
 import shutil

@@ -46,7 +46,7 @@ def ftor(proc: int, jádra: int, conn) -> None:
                 break
         conn.send(out)
 
-def vstup_float(txt: str) -> float:
+def vstup_float(txt: str) -> float: # tady předělat na vstup listu intů
     bu: str = " "
     while True:
         try:
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     print("Loaded.              ", end="\r")
 
     while True:
-        flt: float = vstup_float("Zadejte číslo: ")
+        flt: float = vstup_float("Zadejte číslo: ")# tady input listu
         for i in range(jádra):
             globals()[f"pipe_p_{i}"].send(1) # starts while loop
             globals()[f"pipe_p_{i}"].send(float(flt))

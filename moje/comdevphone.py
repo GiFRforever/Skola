@@ -27,7 +27,7 @@ while True:
 		primes = []
 		#primes = ([int(x) for x in f.readlines() if int(x) <= (min(cisilka)//2) else break])
 		for line in f:
-			if int(line) <= (min(cisilka)//2):
+			if int(line) <= (min(cisilka)):
 				primes.append(int(line))
 			else:
 				break
@@ -51,11 +51,22 @@ while True:
 		#print(globals()[f"c_{i}"])
 	comdevs: list[int] = c_0
 	#print(comdevs)
+	"""if len(cisilka) != 1:
+		for i in range(1,len(cisilka)):
+			comdevs = list(set(comdevs)&set(globals()[f"c_{i}"]))"""
 	if len(cisilka) != 1:
 		for i in range(1,len(cisilka)):
-			comdevs = list(set(comdevs)&set(globals()[f"c_{i}"]))
+			temp: list[int] = []
+			temp2: list[int] = (globals()[f"c_{i}"]).copy()
+			for j,k in zip(comdevs, range(len(comdevs))):
+				for l,m in zip(temp2, range(len(temp2))):
+					if j == l:
+						temp.append(j)
+						temp2[m] = 0
+			comdevs = temp
+
 	#print(comdevs)
-	cisilkaout = []
+	cisilkaout: list = []
 	for c,i in zip(cisilka,range(len(cisilka))):
 		globals()[f"c_{i}"].sort()
 		globals()[f"ct_{i}"] = " ".join(str(x) for x in globals()[f"c_{i}"])

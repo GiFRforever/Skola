@@ -1,111 +1,84 @@
-import multiprocessing as mp
-from random import randint, random
-from time import sleep
+import re
+import math as mt
+import os
 
-def ftor(proc: int, jádra: int, conn) -> None:
-    délka: int = 50000000
-    primes: list[int] = []
-    with open("moje/p/primes.txt", "r") as f:
-        print(f"Inicializace listu {proc}", end="\r")
-        f.seek((délka//jádra)*proc)
-        if proc == jádra-1:
-            kolik: int = 50000000 - (délka//jádra)*(jádra-1)
+prime_txt: str = "primes.txt" # txt file with primes
+prime_pickle: str = "primes.pickle" # pickled primes
+
+try: # Check if primes.txt and primes.pickle exists and are not empty
+    if os.stat(prime_pickle).st_size == 0:
+        if os.stat(prime_txt).st_size == 0:
+            raise FileNotFoundError
         else:
-            kolik = délka//jádra
-        for i in range(kolik):
-            primes.append(int(f.readline()))
-        #print(f"List {proc} inicializován", end="\r")
-        conn.send("OK")
-    
-    while flt := conn.recv() is not None:
-        flt: float = conn.recv()
-        #print(f"Process {proc} received {flt}")
-        if flt == int(flt):
-            conn.send([1,1])
-        flt_split: list[str] = str(flt).split(".")
-        num: int = int("".join(flt_split))
-        den: int = 10 ** len(flt_split[1])
-        out: list[int] = []
-        n: int = 0
-        m: int = 0
-        while m == 0:
-            while n == 0:
-                for i in primes:
-                    if num % i == 0:
-                        if den % i == 0:
-                            #print(f"Process {proc} found {i}")
-                            out.append(i)
-                            num //= i
-                            den //= i
-                            n = 1
-                            break
-                if n == 1:
-                    n = 0
-                    continue
-                m = 1
-                break
-        conn.send(out)
+            loading_type: str = "txt"
+    else:
+        loading_type: str = "pickle"
+except:
+	print("primes.txt/pickle neexistuje, vytvářím...")
+	try: # Check if wget is installed
+		import wget
+	except ModuleNotFoundError:
+		import pip
+		import subprocess
+		import sys
+		def install(package) -> None:
+			subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+		install("wget")
+		import wget
+    # Download temp.txt of primes
+	wget.download("https://primes.utm.edu/lists/small/1000.txt", "temp.txt")
+    # Make list of primes
+	primes: list[int] = []
+	with open("temp.txt", "r") as f:
+		for line in f.readlines():
+			try:
+				primes.extend([int(i) for i in line.split()])
+			except:
+				pass
+	os.remove("temp.txt")
+	# Make primes.txt
+	with open(prime_txt, "w") as f:
+		for p in primes:
+			f.write(str(p) + "\n")
+print("\nVložte celá čísla oddělená čárkami a získáte jejich dělitele.")
 
-def vstup_float(txt: str) -> float: # tady předělat na vstup listu intů
-    bu: str = " "
+try: # Check if tabulate is installed
+    from tabulate import tabulate
+except ModuleNotFoundError:
+    #print("module 'tabulate' is not installed")
+    import pip
+    import subprocess
+    import sys
+    def install(package) -> None:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    #install("tabulate")
+    from tabulate import tabulate
+
+try: # Check if numpy is installed
+	import numpy as np
+except ModuleNotFoundError:
+	#print("module 'numpy' is not installed")
+	import pip
+	import subprocess
+	import sys
+	def install(package) -> None:
+		subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+	#install("numpy")
+	import numpy as np
+
+def input_cisla() -> list[int]: # Input numbers
     while True:
+        cisilka: list[int] = []
         try:
-            bu = input(txt)
-            da: float = float(bu.replace(",",".").strip())
-            #print(da)
-            if da == int(da):
-                print("\033[91mZadejte desetinné číslo!\033[0m", end="\r")
-                sleep(1)
-                print("                            ", end="\r")
-                continue
-            else:
-                return da
+            vstup: str = input("Vstup: ")
+            return [int(i) for i in re.findall(r'\b\d+\b', vstup)]
+        except ValueError:
+            if input == "q":
+                exit()
+            print("Neplatný vstup, zkuste zadat čísla oddělená čárkami.")
         except:
-            if bu != "":
-                if bu[0] == "q":
-                    for i in range(jádra):
-                        globals()[f"prcs{i}"].terminate()
-                    exit()
-                print("Zadejte číslo nebo q pro ukončení.")
-                continue
-            print("\033[91mZadejte číslo!\033[0m", end="\r")
-            sleep(0.5)
+            print("Neznámá chyba, zadejte čísla oddělená čárkami.")
 
-if __name__ == "__main__":
-    jádra: int = mp.cpu_count()
-    print(f"Počet jáder: {jádra}", end="\r")
-    for i in range(jádra):
-        globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe() 
-        globals()[f"prcs{i}"] = mp.Process(target=ftor, args=(i, jádra, globals()[f"pipe_c_{i}"]))
-        globals()[f"prcs{i}"].start()
-    
-    sleep(1)
-    print(f"Počet jáder: {jádra}      ", end="\r")
-    sleep(1)
-    print("Loading...           ", end="\r")
-    for i in range(jádra):
-        print(globals()[f"pipe_p_{i}"].recv(), end="\r")
-    print("Loaded.              ", end="\r")
-
-    while True:
-        flt: float = vstup_float("Zadejte číslo: ")# tady input listu
-        for i in range(jádra):
-            globals()[f"pipe_p_{i}"].send(1) # starts while loop
-            globals()[f"pipe_p_{i}"].send(float(flt))
-        deviders: list[int] = []
-        for i in range(jádra):
-            ingested: list = globals()[f"pipe_p_{i}"].recv()
-            #print(ingested)
-            for itm in ingested:
-                deviders.append(int(itm))
-        #print(deviders)
-        flt_split: list[str] = str(flt).split(".")
-        num: int = int("".join(flt_split))
-        den: int = 10 ** len(flt_split[1])
-        for i in deviders:
-            num //= i
-            den //= i
-        print(f"{num/den} = {num}/{den}")
-        #print(f"Vydáno: {num/den}, {flt-num/den}")
-
-#tenhle je ten konečnej
+def delitele(cislo: int) -> list[int]: # Get divisors of number
+    pass
+    return []

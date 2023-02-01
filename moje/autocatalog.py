@@ -81,9 +81,6 @@ výstupní_místa_filmy: list[str] = ["I:\\Filmy\\", "J:\\"]
 
 type_of_media: str = input("Enter type of media (serial or movie): ")
 
-
-# if type_of_media[0:2] == "man":
-#     path_new: str = input("Enter type new path: ")
 if type_of_media[0] == "s":
     path_new: str = výstupní_místa_seriály[
         decide_where_to_move(path_org, výstupní_místa_seriály)
@@ -102,15 +99,7 @@ print("Moving from", path_org, "to", path_new)
 # decide
 if type_of_media == "s":
     parent_dir, new_name = rename_folder(path_org)
-    # move the folder
-    # shutil.move(path_edit, path_new)
-
-    # copy the folder
-    # shutil.copytree(
-    #     path_edit, path_new + path_org.split("\\")[-2], dirs_exist_ok=True
-    # )  #   <--- debug
-
     # windows robocopy
     os.system(
-        f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new[:-1], new_name)}" /S /MOVE'
+        f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
     )

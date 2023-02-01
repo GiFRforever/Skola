@@ -48,7 +48,7 @@ def vstup_float(txt) -> float:
             clean(1)
             print("\033[93mChybný vstup\033[0m", end="\r")
             time.sleep(1)
-            print("            ", end="\r")
+            # print("            ", end="\r")
 
 
 def vstup_stran(txt) -> int:
@@ -61,7 +61,7 @@ def vstup_stran(txt) -> int:
             clean(1)
             print("\033[93mChybný vstup\033[0m", end="\r")
             time.sleep(1)
-            print("            ", end="\r")
+            # print("            ", end="\r")
 
 
 def zadejte_strany(
@@ -100,6 +100,8 @@ class ED:
             f"\033[95mOběm\033[0m   {self.těleso} je: \033[96m{round(self.oběm, 4)}\033[0m"
         )
         input("\nStiskni enter pro pokračování...")
+        clean(1)
+        print("\033[33m"+"─"*30 + "\033[0m")
 
     def krychle(self) -> None:
         zadejte_strany(počet_stran=1)

@@ -3,18 +3,28 @@ import os, shutil, re
 
 def decide_where_to_move(path_org: str, výstupní_místa: list[str]) -> int:
     # check how big is the folder
-    size: int = 0
+    size: float = 0
     for root, dirs, files in os.walk(path_org):
         for file in files:
             size += os.path.getsize(os.path.join(root, file))
-    print("Size of the folder is", size, "bytes")
+    # print("Size of the folder is", size, "bytes")
+    isize: int = 0
+    while size > 1023:
+        size /= 1024
+        isize += 1
+    print("Size of the folder is", round(size, 2), "BKMGTPEZY"[isize])
     # decide where to move
     # check if there is enough space on the drive
     for i in range(len(výstupní_místa)):
         *_, freespace = shutil.disk_usage(výstupní_místa[i])
         if freespace > size:
             return i
-        print("Not enough space on", výstupní_místa[i], "(", freespace, "bytes)")
+        print("Not enough space on", výstupní_místa[i], end=" ")
+        isize = 0
+        while freespace > 1023:
+            freespace /= 1024
+            isize += 1
+        print(f"({freespace} {'BKMGTPEZY'[isize]} free)")
     # if there is not enough space on any drive, raise an exception
     raise Exception("Not enough space on any drive")
 
@@ -74,7 +84,32 @@ def rename_folder(path: str) -> tuple[str, str]:
         return path, ""
 
 
-path_org: str = input("Enter path to original folder: ")
+presets = ["U:\\Filmy\\", "U:\\Seriály\\"]
+print(
+    "Presets:\n",
+    *[f"{i}: {n}\n" for i, n in enumerate(presets, start=1)],
+)
+preset = input("Enter preset: ")
+try:
+    preset = presets[int(preset) - 1]
+except:
+    preset: str = input("Enter path to original folder: ")
+
+dirs: list[str] = []
+for _, d, _ in os.walk(preset):
+    dirs = d
+    break
+
+print(
+    "\nAvailable dirs:\n",
+    *[f"{i}: {n}\n" for i, n in enumerate(dirs, start=1)],
+)
+dir = input("Enter dir: ")
+try:
+    path_org: str = os.path.join(preset, dirs[int(dir) - 1])
+except:
+    path_org: str = input("Wrong input. Please enter path to original folder: ")
+
 # check if path exists
 if not os.path.exists(path_org):
     raise Exception("Path does not exist")
@@ -120,3 +155,7 @@ elif type_of_media == "m":
     os.system(
         f'start /wait cmd /c robocopy  "{parent_dir[:-1]}" "{path_new[:-1]}" /MOVE'  # type: ignore
     )
+    try:
+        shutil.rmtree(path_org[:-1])
+    except:
+        pass

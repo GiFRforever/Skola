@@ -35,7 +35,7 @@ koule: list[str] = [
     "    .!J555555YYJ??77!!~^:     ",
     "   ~YPPGBBBGGP5YJJ?77!~~~^.   ",
     "  !55PGB#&&#BGP5YJ?77!!~~^^.  ",
-    " .JY5PGGBBBBGP5\033[93m|–––––––––––|  r\033[0m",
+    " .JY5PGGBBBBGP5\033[95m|–––––––––––|  r\033[0m",
     " .?JYY55PPP55YYJJ?77!!~~^^^:  ",
     "  ^???JJJJJJJJ??77!!~~^^^^^.  ",
     "   ^!7777777777!!!~~^^^^^:.   ",
@@ -59,7 +59,7 @@ kvádr: list[str] = [
     " ^:...............................:.    ",
     "                 \033[93ma\033[0m                       ",
 ]
-hranol: list[str] = kvádr
+# hranol: list[str] = kvádr
 
 jehlan: list[str] = [
     "                   \033[93m–\033[0m                   ",
@@ -117,6 +117,34 @@ krychle: list[str] = [
     "            \033[93ma\033[0m               ",
 ]
 
+kužel: list[str] = [
+    "",
+    "                          \033[96m::\033[0m                      ",
+    "                         :\033[96m~~\033[0m:                     ",
+    "                       .^.\033[96m::\033[0m.^                    ",
+    "                      :^  \033[96m..\033[0m :^                   ",
+    "                     ^:   \033[96m..\033[0m  .^                  ",
+    "                   .^.    \033[96m..\033[0m   .^.                ",
+    "                  :^      \033[96m..\033[0m     ~.               ",
+    "                 ^:       \033[96m..\033[0m      ^:              ",
+    "               .^.        \033[96m..\033[0m       ^:             ",
+    "              :^          \033[96m..   h\033[0m    :^            ",
+    "             ^:           \033[96m..\033[0m         :^           ",
+    "           .^.            \033[96m..\033[0m          .^.         ",
+    "          :^              \033[96m..\033[0m           .^.        ",
+    "         ^:               \033[96m..\033[0m             ^:       ",
+    "       .^.                \033[96m..\033[0m              ^:      ",
+    "      :^                  \033[96m:.\033[0m               :^     ",
+    "     ^:           ....... \033[96m::\033[0m .....          :^    ",
+    "   .^.  ......''''        \033[96m..\033[0m      ''''.....  .~   ",
+    "  :^..''                  \033[96m..\033[0m               ''..~: ",
+    " ~:                       \033[96m.\033[95m.....................!^\033[0m",
+    " ^:                                \033[95mr\033[0m            .^:",
+    "  .^::..                                   ..:^:. ",
+    "     ''::::::........         .......:::::::''    ",
+    "            '''''::::::::::::::::'''''           ",
+]
+
 clear = lambda: os.system("cls")
 
 
@@ -126,24 +154,31 @@ def clean(n) -> None:
         sys.stdout.write("\033[K")
 
 
+def clean2(n) -> None:
+    sys.stdout.write("\033[F")
+    print(" " * n, end="\r")
+
+
 def vstup_float(txt) -> float:
     while True:
+        a: str = ""
         try:
-            return float(input(txt))
+            return float(a := input(txt))
         except:
-            clean(1)
+            clean2(len(txt) + len(a))
             print("\033[93mChybný vstup\033[0m", end="\r")
             time.sleep(1)
 
 
 def vstup_float_min(txt, min) -> int:
     while True:
+        a: str = ""
         try:
-            if (a := int(input(txt))) > min:
-                return a
+            if int((a := input(txt))) > min:
+                return int(a)
             raise ValueError
         except:
-            clean(1)
+            clean2(len(txt) + len(a))
             print("\033[93mChybný vstup\033[0m", end="\r")
             time.sleep(1)
 
@@ -152,7 +187,8 @@ def zadejte_strany(
     *args, počet_stran=0, výška=0, poloměr=0, kolikastranný=0, **kwargs
 ) -> None:
     for a in args:
-        rozměry[a] = vstup_float(f"Zadejte {a}: ")
+        rozměry[a] = vstup_float(f"Zadejte \033[93m{a}: ")
+        print("\033[0m", end="")
     if kolikastranný:
         rozměry["kolikastranný"] = vstup_float_min("Zadejte kolikati je stranný: ", 2)
         # počet_stran = rozměry["kolikastranný"]
@@ -161,12 +197,15 @@ def zadejte_strany(
         rozměry["strany"] = [
             x
             for n in range(počet_stran)
-            for x in [vstup_float_min(f"Zadejte stranu {chr(n+97)}: ", 0)]
+            for x in [vstup_float_min(f"Zadejte stranu \033[93m{chr(n+97)}: ", 0)]
+            if not print("\033[0m", end="")
         ]
     if výška:
-        rozměry["výška"] = vstup_float("Zadejte výšku: ")
+        rozměry["výška"] = vstup_float("Zadejte \033[96mvýšku: ")
+        print("\033[0m", end="")
     if poloměr:
-        rozměry["poloměr"] = vstup_float("Zadejte poloměr: ")
+        rozměry["poloměr"] = vstup_float("Zadejte \033[95mpoloměr: ")
+        print("\033[0m", end="")
 
 
 class ED:

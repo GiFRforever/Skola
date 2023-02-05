@@ -28,6 +28,23 @@ mnohostěny: list[str] = [
     "dvacetistěn",
 ]
 
+druhý_pád: dict[str, str] = {
+    "krychle": "krychle",
+    "kvádr": "kvádru",
+    "hranol": "hranolu",
+    "jehlan": "jehlanu",
+    "kužel": "kužele",
+    "válec": "válce",
+    "koule": "koule",
+    "torus": "torusu",
+    "komolý jehlan": "komolého jehlanu",
+    "komolý kužel": "komolého kužele",
+    "čtyřstěn": "čtyřstěnu",
+    "osmistěn": "osmistěnu",
+    "dvanáctistěn": "dvanáctistěnu",
+    "dvacetistěn": "dvacetistěnu",
+}
+
 koule: list[str] = [
     "                              ",
     "             ....             ",
@@ -48,38 +65,62 @@ kvádr: list[str] = [
     "",
     "    .:...............................:^ ",
     "  .:.:                              :.^ ",
-    " ^:..^............................::  : ",
-    ".:  .:                            :   : ",
-    " :   :                            :   :  \033[93mc\033[0m",
-    " :   :                            :   : ",
-    " :   :                            :   : ",
-    " :   :                            :.  :.",
-    " :  ::............................^..:^ ",
-    " ^.:                              :.:.  \033[93mb\033[0m",
-    " ^:...............................:.    ",
+    " ^:..^............................\033[93m:\033[0m:  : ",
+    ".:  .:                            \033[93m:\033[0m   : ",
+    " :   :                            \033[93m:\033[0m   : ",
+    " :   :                            \033[93m: c\033[0m : ",
+    " :   :                            \033[93m:\033[0m   : ",
+    " :   :                            \033[93m:\033[0m   :.",
+    " :  ::............................\033[93m^\033[0m..\033[93m:^\033[0m ",
+    " ^.:                              \033[93m:.:.  b\033[0m",
+    " \033[93m^:...............................:.\033[0m    ",
     "                 \033[93ma\033[0m                       ",
 ]
-# hranol: list[str] = kvádr
+hranol: list[str] = [
+    "          ........................  ..  ",
+    "        ..Y.                       .^!  ",
+    "      .:  ^                      ..  ^  ",
+    "    ..    ^                    ..    ^  ",
+    "  :^.     ^                  ..      ^  ",
+    "  ~..........................\033[96m~\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^ h\033[0m     ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       ^                  \033[96m^\033[0m       ^  ",
+    "  :       !:................:\033[96m7\033[0m......:!  ",
+    "  :     .:                   \033[96m~\033[0m    .:^.  ",
+    "  :   ::                     \033[96m^\033[0m   .:     ",
+    "  : :.                       \033[96m^\033[0m .:       ",
+    "  \033[93m7^. .......................\033[96m!\033[0m.         ",
+    "              \033[93ma\033[0m                         ",
+]
 
 jehlan: list[str] = [
-    "                   \033[93m–\033[0m                   ",
-    "                  :\033[93m|\033[0m:                  ",
-    "                 .?\033[93m|\033[0mJ.                 ",
-    "                .!^\033[93m|\033[0m~~^                ",
-    "               .~^ \033[93m|\033[0m:^:^               ",
-    "               ~:: \033[93m|\033[0m ! .~.             ",
-    "              ~.^  \033[93m|\033[0m ^: .~:            ",
-    "             ~.:.  \033[93m|\033[0m .~   ^^           ",
-    "            ~. ^   \033[93m|\033[0m  ~.   :^          ",
-    "           ~. :.   \033[93m|\033[0m  :~    .~.        ",
-    "          ~. .^    \033[93m|\033[0m   !.    .~:       ",
-    "         ~.  :.    \033[93m| h\033[0m ^^      ^^      ",
-    "        ~:  .:     \033[93m|\033[0m    !       :^     ",
-    "       ~:   ^      \033[93m|\033[0m    ^:       .~.   ",
-    "      ~:   .:      \033[93m|\033[0m    .~         ~.  ",
-    "     ~:   .~:... : \033[93m|\033[0m:... !.: .... . 7~ ",
-    "    ~:  .:         \033[93m|\033[0m     :~      .^^^. ",
-    "   ^: .:           \033[93m–\033[0m      ~    .:^.    ",
+    "                   \033[96mT\033[0m                   ",
+    "                  :\033[96m|\033[0m:                  ",
+    "                 .?\033[96m|\033[0mJ.                 ",
+    "                .!^\033[96m|\033[0m~~^                ",
+    "               .~^ \033[96m|\033[0m:^:^               ",
+    "               ~:: \033[96m|\033[0m ! .~.             ",
+    "              ~.^  \033[96m|\033[0m ^: .~:            ",
+    "             ~.:.  \033[96m|\033[0m .~   ^^           ",
+    "            ~. ^   \033[96m|\033[0m  ~.   :^          ",
+    "           ~. :.   \033[96m|\033[0m  :~    .~.        ",
+    "          ~. .^    \033[96m|\033[0m   !.    .~:       ",
+    "         ~.  :.    \033[96m| h\033[0m ^^      ^^      ",
+    "        ~:  .:     \033[96m|\033[0m    !       :^     ",
+    "       ~:   ^      \033[96m|\033[0m    ^:       .~.   ",
+    "      ~:   .:      \033[96m|\033[0m    .~         ~.  ",
+    "     ~:   .~:... : \033[96m|\033[0m:... !.: .... . 7~ ",
+    "    ~:  .:         \033[96m|\033[0m     :~      .^^^. ",
+    "   ^: .:           \033[96m⊥\033[0m      ~    .:^.    ",
     "  ^^.:                   ^^ :^:.      ",
     " \033[93m!7:::::::::::::::::::::::7^:\033[0m         ",
     "              \033[93ma\033[0m                       ",
@@ -87,16 +128,16 @@ jehlan: list[str] = [
 
 komolý_jehlan: list[str] = [
     "",
-    "             ,,,,:::\033[93m=\033[0m^^^^^^^^::         ",
-    "         ::::,,,,^,,\033[93m|\033[0m,~...::'''.^.       ",
-    "        :^      :.  \033[93m|\033[0m :^         ^:      ",
-    "       :^      ..   \033[93m|\033[0m  ~.         :^     ",
-    "      ^^      .:    \033[93m|\033[0m  .~          .^.   ",
-    "     ^:       :     \033[93m|\033[0m   ^:           ^:  ",
-    "    ^:       :      \033[93m| h\033[0m  ~            :^ ",
-    "   ^:       :.......\033[93m|\033[0m.. .:~ . . . . . .^!",
-    "  ^.    ...         \033[93m|\033[0m     ^:      ..:::'",
-    " ^.  . .            \033[93m–\033[0m     ~   ..:::'    ",
+    "             ,,,,:::\033[96mT\033[0m^^^^^^^^::         ",
+    "         ::::,,,,^,,\033[96m|\033[0m,~...::'''.^.       ",
+    "        :^      :.  \033[96m|\033[0m :^         ^:      ",
+    "       :^      ..   \033[96m|\033[0m  ~.         :^     ",
+    "      ^^      .:    \033[96m|\033[0m  .~          .^.   ",
+    "     ^:       :     \033[96m|\033[0m   ^:           ^:  ",
+    "    ^:       :      \033[96m| h\033[0m  ~            :^ ",
+    "   ^:       :.......\033[96m|\033[0m.. .:~ . . . . . .^!",
+    "  ^.    ...         \033[96m|\033[0m     ^:      ..:::'",
+    " ^.  . .            \033[96m⊥\033[0m     ~   ..:::'    ",
     "\033[93m7^:::.....................^~:\033[0m::'        ",
     "              \033[93ma\033[0m                         ",
 ]
@@ -105,15 +146,15 @@ krychle: list[str] = [
     "",
     "    .:..................:^ ",
     "  .:.:                 :.^ ",
-    " ^:..^...............::  : ",
-    ".:  .:               :   : ",
-    " :   :               :   :  \033[93ma\033[0m",
-    " :   :               :   : ",
-    " :   :               :   : ",
-    " :   :               :   :",
-    " :  ::...............:...: ",
-    " ^.:                 : .'  \033[93ma\033[0m",
-    " ^:..................:'    ",
+    " ^:..^...............\033[93m:\033[0m:  : ",
+    ".:  .:               \033[93m:\033[0m   : ",
+    " :   :               \033[93m:\033[0m   : ",
+    " :   :               \033[93m: a\033[0m : ",
+    " :   :               \033[93m:\033[0m   : ",
+    " :   :               \033[93m:\033[0m   :",
+    " :  ::...............\033[93m:\033[0m...\033[93m:\033[0m ",
+    " ^.:                 \033[93m: .'  \033[93ma\033[0m",
+    " \033[93m^:..................:'\033[0m    ",
     "            \033[93ma\033[0m               ",
 ]
 
@@ -145,6 +186,49 @@ kužel: list[str] = [
     "            '''''::::::::::::::::'''''           ",
 ]
 
+komolý_kužel: list[str] = [
+    "",
+    "            .:^~~~~\033[96m–\033[0m~~~~^^.             ",
+    "          !~:.     \033[96m|\033[0m\033[31m–––––––|\033[0m?:          ",
+    "         JY~.      \033[96m|\033[0m   \033[31mr2\033[0m ..?P^         ",
+    "        J:  ::^^^^^^^^^^^^:.  J:        ",
+    "       J^          \033[96m|\033[0m           J:       ",
+    "      ?~           \033[96m|\033[0m            Y.      ",
+    "     7!            \033[96m| h\033[0m           Y.     ",
+    "    !!             \033[96m|\033[0m              Y.    ",
+    "   ~?              \033[96m|\033[0m               Y.   ",
+    "  ^?  .:^^^^^^^^:::\033[96m|\033[0m:::^^^^^^^^::. .J   ",
+    " :B~^^:.           \033[96m|\033[0m            .:^^7G  ",
+    ":5:                \033[96m|\033[0m                 ~Y.",
+    "J~                 \033[95m+–––––––––––––––––––|\033[0m",
+    " ^~:.                       \033[95mr1\033[0m     .^!: ",
+    "   .:^~^::...              ..::^^^^:.   ",
+    "         ..::^^^^^^^^^^^^^::...         ",
+]
+
+torus: list[str] = [
+    """               @@@@@@@@@@               """,
+    """          $$$$$#$######$#$$$$$          """,
+    """       $$$##**************##$$$         """,
+    """     #####***!!!!!!!!!!!!!!***#####     """,
+    """    ###***!!!!=;;;:::;;;;=!!!!***###*   """,
+    """  !*#***!!!==;::~------~::;==!!****#**  """,
+    """  ******!!=;:~-,........,-~:;=!!******  """,
+    """ !*****!!==:~-............-~:==!!*****! """,
+    """ !*****!!=;:~,..        ..,~:;=!!*****! """,
+    """;!!*****!!==~-.    \033[95mT\033[0m   \033[31mr  |––––––|\033[0m****!!;""",
+    """:=!*******!!=;~  \033[95mR |\033[0m     ~;=!!*******!=:""",
+    """:=!!*********!!=   \033[95m|\033[0m    =!!*********!!=:""",
+    """ ;=!****#########**\033[95m|\033[0m!**#########****!=; """,
+    """ ~;!!!***###$$$$$$@\033[95m|\033[0m@@$$$$$$###***!!!;~ """,
+    """  ~;=!!***###$$$$@@\033[95m|\033[0m@@@@$$$###****!=;~  """,
+    """   ~:;=!*****##$$$$\033[95m⊥\033[0m$$$$$##*****!=;:~   """,
+    """    ,:;=!!******########*****!==;:.    """,
+    """      ,~:;=!!*************!!=;:~,      """,
+    """        ,~:;;===========;;:~,.         """,
+    """           .,,-~~:::~~-,,.             """,
+]
+# čištění konzole
 clear = lambda: os.system("cls")
 
 
@@ -159,6 +243,7 @@ def clean2(n) -> None:
     print(" " * n, end="\r")
 
 
+# vstupy
 def vstup_float(txt) -> float:
     while True:
         a: str = ""
@@ -183,15 +268,19 @@ def vstup_float_min(txt, min) -> int:
             time.sleep(1)
 
 
+# zadávání rozměrů těles
 def zadejte_strany(
     *args, počet_stran=0, výška=0, poloměr=0, kolikastranný=0, **kwargs
 ) -> None:
     for a in args:
-        rozměry[a] = vstup_float(f"Zadejte \033[93m{a}: ")
-        print("\033[0m", end="")
+        if type(a) == tuple:
+            rozměry[a[0]] = vstup_float(f"Zadejte \033[{str(a[1])}m{a[0]}: ")
+            print("\033[0m", end="")
+        else:
+            rozměry[a] = vstup_float(f"Zadejte \033[93m{a}: ")
+            print("\033[0m", end="")
     if kolikastranný:
         rozměry["kolikastranný"] = vstup_float_min("Zadejte kolikati je stranný: ", 2)
-        # počet_stran = rozměry["kolikastranný"]
 
     if počet_stran:
         rozměry["strany"] = [
@@ -208,6 +297,7 @@ def zadejte_strany(
         print("\033[0m", end="")
 
 
+# výpočet oběmu a povrchu
 class ED:
     def __init__(self, těleso="") -> None:
         self.těleso: str = těleso
@@ -224,10 +314,10 @@ class ED:
 
     def output(self) -> None:
         print(
-            f"\n\033[95mOběm\033[0m   {self.těleso} je: \033[96m{round(self.oběm, 4)}\033[0m"
+            f"\n\033[95mOběm\033[0m   {druhý_pád[self.těleso]} je: \033[96m{round(self.oběm, 4)}\033[0m"
         )
         print(
-            f"\033[95mPovrch\033[0m {self.těleso} je: \033[96m{round(self.povrch, 4)}\033[0m"
+            f"\033[95mPovrch\033[0m {druhý_pád[self.těleso]} je: \033[96m{round(self.povrch, 4)}\033[0m"
         )
         input("\nStiskni enter pro pokračování...")
         # sys.stdout.write("\033[F")
@@ -307,7 +397,7 @@ class ED:
         self.output()
 
     def torus(self) -> None:
-        zadejte_strany("vnitřní poloměr", poloměr=1)
+        zadejte_strany(("vnitřní poloměr", "31"), poloměr=1)
         self.oběm = (
             2 * mt.pi**2 * rozměry["poloměr"] * rozměry["vnitřní poloměr"] ** 2
         )
@@ -320,20 +410,20 @@ class ED:
         zadejte_strany(
             "délku spodní podstavy", "délku horní podstavy", výška=1, kolikastranný=1
         )
-        s1 = (rozměry["kolikastranný"] * rozměry["délku spodní podstavy"] ** 2) / (
-            4 * mt.tan(mt.pi / rozměry["kolikastranný"])
-        )
-        s2 = (rozměry["kolikastranný"] * rozměry["délku horní podstavy"] ** 2) / (
-            4 * mt.tan(mt.pi / rozměry["kolikastranný"])
-        )
-        r1 = rozměry["délku spodní podstavy"] / (
+        s1: float = (
+            rozměry["kolikastranný"] * rozměry["délku spodní podstavy"] ** 2
+        ) / (4 * mt.tan(mt.pi / rozměry["kolikastranný"]))
+        s2: float = (
+            rozměry["kolikastranný"] * rozměry["délku horní podstavy"] ** 2
+        ) / (4 * mt.tan(mt.pi / rozměry["kolikastranný"]))
+        r1: float = rozměry["délku spodní podstavy"] / (
             2 * mt.tan(mt.pi / rozměry["kolikastranný"])
         )
-        r2 = rozměry["délku horní podstavy"] / (
+        r2: float = rozměry["délku horní podstavy"] / (
             2 * mt.tan(mt.pi / rozměry["kolikastranný"])
         )
-        c = mt.sqrt((r1 - r2) ** 2 + rozměry["výška"] ** 2)
-        spl = (
+        c: float = mt.sqrt((r1 - r2) ** 2 + rozměry["výška"] ** 2)
+        spl: float = (
             (rozměry["délku spodní podstavy"] + rozměry["délku horní podstavy"])
             * c
             * rozměry["kolikastranný"]
@@ -344,7 +434,11 @@ class ED:
         self.output()
 
     def komolý_kužel(self) -> None:
-        zadejte_strany("poloměr spodní podstavy", "poloměr vrchní podstavy", výška=1)
+        zadejte_strany(
+            ("poloměr spodní podstavy", "95"),
+            ("poloměr vrchní podstavy", "31"),
+            výška=1,
+        )
         self.oběm = (
             mt.pi
             * rozměry["výška"]
@@ -398,6 +492,7 @@ class ED:
         self.output()
 
 
+# menu pro platónská tělesa
 def pravidelné_mnohostěny() -> None:
     clean(len(tělesa) + 4)
     print(
@@ -416,9 +511,11 @@ def pravidelné_mnohostěny() -> None:
         clean(len(mnohostěny) + 4)
         getattr(globals()["ED"](těleso=těleso), těleso)()
     else:
+        clear()
         exit()
 
 
+# menu pro komolá tělesa
 def komolá() -> None:
     clean(len(tělesa) + 4)
     print(
@@ -437,9 +534,11 @@ def komolá() -> None:
         clean(len(komolá_tělesa) + 4)
         getattr(globals()["ED"](těleso=těleso), těleso.replace(" ", "_"))()
     else:
+        clear()
         exit()
 
 
+# hlavní menu
 def main() -> None:
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
@@ -457,6 +556,7 @@ def main() -> None:
         pravidelné_mnohostěny()
         return
     elif těleso == "_exit_":
+        clear()
         exit()
     elif těleso in tělesa:
         clean(len(tělesa) + 4)
@@ -466,11 +566,13 @@ def main() -> None:
         exit()
 
 
-while True:
-    rozměry = {
-        "strany": [],
-        "výška": 0,
-        "poloměr": 0,
-        "kolikastranný": 0,
-    }
-    main()
+# spuštění
+if __name__ == "__main__":
+    while True:
+        rozměry: dict = {
+            "strany": [],
+            "výška": 0,
+            "poloměr": 0,
+            "kolikastranný": 0,
+        }
+        main()

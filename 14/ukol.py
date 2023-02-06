@@ -295,6 +295,7 @@ válec: list[str] = [
     "              7B5\033[93m@!\033[0m~JJ7^.                                ",
     "               :\033[93mPP\033[0m?^.                                    ",
 ]
+
 osmistěn: list[str] = [
     "                                                                           ",
     "                          .J\033[93m&B\033[0m~                             ",
@@ -323,6 +324,7 @@ osmistěn: list[str] = [
     "                                                            ",
     "                                                            ",
 ]
+
 šestistěn: list[str] = [
     "                                                        ",
     "                ...................................     ",
@@ -351,6 +353,7 @@ osmistěn: list[str] = [
     "                                                        ",
     "                                                        ",
 ]
+
 dvanáctistěn: list[str] = [
     "                                                            ",
     "                                                            ",
@@ -380,6 +383,7 @@ dvanáctistěn: list[str] = [
     "                           ....                             ",
     "                                                            ",
 ]
+
 dvacetistěn: list[str] = [
     "                                                             ",
     "                       .^~5##&#?^.                           ",
@@ -408,7 +412,7 @@ dvacetistěn: list[str] = [
 ]
 
 # vrací velikost konzole
-velikost = lambda: os.get_terminal_size()[0]
+velikost = lambda: os.get_terminal_size()
 
 # čištění konzole
 clear = lambda: os.system("cls")
@@ -486,7 +490,10 @@ class ED:
         self.oběm: float = 0
         self.povrch: float = 0
         try:
-            if len(globals()[self.těleso.replace(" ", "_")][0]) + 40 > velikost():
+            if (
+                len(globals()[self.těleso.replace(" ", "_")][0]) + 40 > velikost()[0]
+                or len(globals()[self.těleso.replace(" ", "_")]) > velikost()[1]
+            ):
                 raise Exception
             for line in globals()[self.těleso.replace(" ", "_")]:
                 print(40 * " " + line)
@@ -684,7 +691,7 @@ def pravidelné_mnohostěny() -> None:
     clean(len(tělesa) + 4)
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
-        *[f"{i}: {n}\n" for i, n in enumerate(mnohostěny)],
+        *[f"{i:>2}: {n}\n" for i, n in enumerate(mnohostěny)],
     )
     těleso: str = input("Zadej těleso: ")
     try:
@@ -707,7 +714,7 @@ def komolá() -> None:
     clean(len(tělesa) + 4)
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
-        *[f"{i}: {n}\n" for i, n in enumerate(komolá_tělesa)],
+        *[f"{i:>2}: {n}\n" for i, n in enumerate(komolá_tělesa)],
     )
     těleso: str = input("Zadej těleso: ")
     try:
@@ -729,7 +736,7 @@ def komolá() -> None:
 def main() -> None:
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
-        *[f"{i}: {n}\n" for i, n in enumerate(tělesa)],
+        *[f"{i:>2}: {n}\n" for i, n in enumerate(tělesa)],
     )
     těleso: str = input("Zadej těleso: ")
     try:

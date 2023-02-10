@@ -6,9 +6,9 @@ def vstup_int(txt) -> int:
             print("Neplatná hodnota, zadejte přirozené číslo.")
 
 
-n = vstup_int("Max druhá mocnina: ")
+n: int = vstup_int("Max druhá mocnina: ")
 
-x = 2
+x: int = 2
 while (p := x**2) < n:
     print(f"{x}^2 = {p}")
     x += 2

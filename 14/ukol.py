@@ -1,4 +1,5 @@
-import sys, time, os, math as mt
+import sys, time, os, platform, math as mt
+from difflib import SequenceMatcher
 
 tělesa: list[str] = [
     "_exit_",
@@ -415,19 +416,32 @@ dvacetistěn: list[str] = [
 velikost = lambda: os.get_terminal_size()
 
 # čištění konzole
-clear = lambda: os.system("cls")
+if (p := platform.uname()[0]) == "Windows":
+    clear = lambda: os.system("cls")
 
+    def clean(n) -> None:
+        for _ in range(n):
+            sys.stdout.write("\033[F")
+            sys.stdout.write("\033[K")
 
-def clean(n) -> None:
-    for _ in range(n):
+    def clean2(n) -> None:
         sys.stdout.write("\033[F")
-        sys.stdout.write("\033[K")
+        print(" " * n, end="\r")
 
+elif p == "Linux":
+    clear = lambda: os.system("clear")
 
-def clean2(n) -> None:
-    sys.stdout.write("\033[F")
-    print(" " * n, end="\r")
+    def clean(n) -> None:
+        for _ in range(n):
+            sys.stdout.write("\x1b[1A")
+            sys.stdout.write("\x1b[2K")
 
+    def clean2(n) -> None:
+        sys.stdout.write("\x1b[1A")
+        print(" " * n, end="\r")
+
+else:
+    exit("Unsupported os")
 
 # vstupy
 def vstup_float(txt) -> float:
@@ -454,6 +468,11 @@ def vstup_float_min(txt, min) -> int:
             time.sleep(1)
 
 
+# porovnání str
+def similar(a, b) -> float:
+    return SequenceMatcher(None, a, b).ratio()
+
+
 # zadávání rozměrů těles
 def zadejte_strany(
     *args, počet_stran=0, výška=0, poloměr=0, kolikastranný=0, **kwargs
@@ -475,11 +494,11 @@ def zadejte_strany(
             for x in [vstup_float_min(f"Zadejte stranu \033[93m{chr(n+97)}: ", 0)]
             if not print("\033[0m", end="")
         ]
-    if výška:
-        rozměry["výška"] = vstup_float("Zadejte \033[96mvýšku: ")
-        print("\033[0m", end="")
     if poloměr:
         rozměry["poloměr"] = vstup_float("Zadejte \033[95mpoloměr: ")
+        print("\033[0m", end="")
+    if výška:
+        rozměry["výška"] = vstup_float("Zadejte \033[96mvýšku: ")
         print("\033[0m", end="")
 
 
@@ -511,8 +530,6 @@ class ED:
             f"\033[95mPovrch\033[0m {druhý_pád[self.těleso]} je: \033[96m{round(self.povrch, 4)}\033[0m"
         )
         input("\nStiskni enter pro pokračování...")
-        # sys.stdout.write("\033[F")
-        # print("\033[33m" + "─" * 32 + "\033[0m")
         clear()
 
     # obecná tělesa
@@ -688,7 +705,6 @@ class ED:
 
 # menu pro platónská tělesa
 def pravidelné_mnohostěny() -> None:
-    clean(len(tělesa) + 4)
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
         *[f"{i:>2}: {n}\n" for i, n in enumerate(mnohostěny)],
@@ -697,21 +713,25 @@ def pravidelné_mnohostěny() -> None:
     try:
         těleso = mnohostěny[int(těleso)]
     except:
-        pass
-    if těleso == "_zpět_" or těleso not in mnohostěny:
-        clean(len(mnohostěny) + 4)
+        podobnost: list[float] = []
+        for t in mnohostěny:
+            podobnost.append(similar(těleso, t))
+        iofmax: int = podobnost.index((maxpod := max(podobnost)))
+        if maxpod > 0.6:
+            těleso = mnohostěny[iofmax]
+    if těleso == "_zpět_":
+        clear()
         return
     elif těleso in mnohostěny:
-        clean(len(mnohostěny) + 4)
+        clear()
         getattr(globals()["ED"](těleso=těleso), těleso)()
     else:
         clear()
-        exit()
+        return
 
 
 # menu pro komolá tělesa
 def komolá() -> None:
-    clean(len(tělesa) + 4)
     print(
         "\nVšechna podporovaná pravidelná tělesa:\n",
         *[f"{i:>2}: {n}\n" for i, n in enumerate(komolá_tělesa)],
@@ -720,16 +740,21 @@ def komolá() -> None:
     try:
         těleso = komolá_tělesa[int(těleso)]
     except:
-        pass
-    if těleso == "_zpět_" or těleso not in komolá_tělesa:
-        clean(len(komolá_tělesa) + 4)
+        podobnost: list[float] = []
+        for t in komolá_tělesa:
+            podobnost.append(similar(těleso, t))
+        iofmax: int = podobnost.index((maxpod := max(podobnost)))
+        if maxpod > 0.6:
+            těleso = komolá_tělesa[iofmax]
+    if těleso == "_zpět_":
+        clear()
         return
     elif těleso in komolá_tělesa:
-        clean(len(komolá_tělesa) + 4)
+        clear()
         getattr(globals()["ED"](těleso=těleso), těleso.replace(" ", "_"))()
     else:
         clear()
-        exit()
+        return
 
 
 # hlavní menu
@@ -742,18 +767,25 @@ def main() -> None:
     try:
         těleso = tělesa[int(těleso)]
     except:
-        pass
+        podobnost: list[float] = []
+        for t in tělesa:
+            podobnost.append(similar(těleso, t))
+        iofmax: int = podobnost.index((maxpod := max(podobnost)))
+        if maxpod > 0.6:
+            těleso = tělesa[iofmax]
     if těleso == "*komolá tělesa":
+        clear()
         komolá()
         return
     elif těleso == "*pravidelné mnohostěny":
+        clear()
         pravidelné_mnohostěny()
         return
     elif těleso == "_exit_":
         clear()
         exit()
     elif těleso in tělesa:
-        clean(len(tělesa) + 4)
+        clear()
         getattr(globals()["ED"](těleso=těleso), těleso)()
     else:
         clear()

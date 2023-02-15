@@ -52,10 +52,19 @@ def rename_folder(path: str) -> tuple[str, str]:
                         file_name[i] = s.upper()
                     else:
                         file_name[i] = s.capitalize()
-                os.rename(
-                    os.path.join(root, file),
-                    os.path.join(root, " ".join(file_name) + "." + file_parts[-1]),
-                )
+                try:
+                    os.rename(
+                        os.path.join(root, file),
+                        os.path.join(root, " ".join(file_name) + "." + file_parts[-1]),
+                    )
+                except PermissionError:
+                    input(
+                        "Stop the torrent (permission error). Press enter to continue."
+                    )
+                    os.rename(
+                        os.path.join(root, file),
+                        os.path.join(root, " ".join(file_name) + "." + file_parts[-1]),
+                    )
             else:
                 os.remove(os.path.join(root, file))
 
@@ -79,7 +88,26 @@ def rename_folder(path: str) -> tuple[str, str]:
             os.path.join(parentdir, " ".join(root_name_new)),
         )
         return parentdir, " ".join(root_name_new)
-
+    elif type_of_media == "ss":
+        parentdir: str = "\\".join(path.split("\\")[:-1])
+        root_name: list[str] = path.split("\\")[-1].split(".")
+        root_name_new: list[str] = []
+        season: str = ""
+        for part in root_name:
+            if part[0] == "S" and part[1:3].isnumeric():
+                season: str = part[:3]
+                break
+            root_name_new.append(part)
+        os.makedirs(
+            os.path.join(parentdir, " ".join(root_name_new)),
+            exist_ok=True,
+        )
+        os.rename(path, parentdir + "\\" + season)
+        shutil.move(
+            parentdir + "\\" + season,
+            os.path.join(parentdir, " ".join(root_name_new)),
+        )
+        return parentdir, " ".join(root_name_new)
     else:
         return path, ""
 
@@ -122,7 +150,10 @@ výstupní_místa_seriály: list[str] = ["T:\\Seriály\\"]
 výstupní_místa_filmy: list[str] = ["I:\\Filmy\\", "J:\\"]
 
 if path_org.split("\\")[1] == "Seriály":
-    type_of_media: str = "s"
+    if len(path_org.split("\\")[2].split(".")) == 1:
+        type_of_media: str = "ss"
+    else:
+        type_of_media: str = "s"
 elif path_org.split("\\")[1] == "Filmy":
     type_of_media: str = "m"
 else:
@@ -132,7 +163,10 @@ if type_of_media[0] == "s":
     path_new: str = výstupní_místa_seriály[
         decide_where_to_move(path_org, výstupní_místa_seriály)
     ]
-    type_of_media = "s"
+    if len(path_org.split("\\")[2].split(".")) == 1:
+        type_of_media = "ss"
+    else:
+        type_of_media = "s"
 elif type_of_media[0] == "m":
     path_new = výstupní_místa_filmy[
         decide_where_to_move(path_org, výstupní_místa_filmy)
@@ -150,6 +184,15 @@ if type_of_media == "s":
     os.system(
         f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
     )
+elif type_of_media == "ss":
+    for masterdir, episodes, _ in os.walk(path_org):
+        break
+    for episode in episodes:
+        parent_dir, new_name = rename_folder(os.path.join(masterdir, episode))
+        # windows robocopy
+        os.system(
+            f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
+        )
 elif type_of_media == "m":
     parent_dir, _ = rename_folder(path_org)
     os.system(

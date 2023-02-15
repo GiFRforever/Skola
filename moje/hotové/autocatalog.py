@@ -1,4 +1,4 @@
-import os, shutil, re
+import os, sys, shutil, re
 
 
 def decide_where_to_move(path_org: str, výstupní_místa: list[str]) -> int:
@@ -112,32 +112,36 @@ def rename_folder(path: str) -> tuple[str, str]:
         return path, ""
 
 
-presets = ["U:\\Filmy\\", "U:\\Seriály\\"]
-print(
-    "Presets:\n",
-    *[f"{i}: {n}\n" for i, n in enumerate(presets, start=1)],
-)
-preset = input("Enter preset: ")
-try:
-    preset = presets[int(preset) - 1]
-except:
-    preset: str = input("Enter path to original folder: ")
+if len(sys.argv) == 2:
+    path_org = sys.argv[1]
+elif __name__ == "__main__" and len(sys.argv) == 1:
+    presets = ["U:\\Filmy\\", "U:\\Seriály\\"]
+    print(
+        "Presets:\n",
+        *[f"{i}: {n}\n" for i, n in enumerate(presets, start=1)],
+    )
+    preset = input("Enter preset: ")
+    try:
+        preset = presets[int(preset) - 1]
+    except:
+        preset: str = input("Enter path to original folder: ")
 
-dirs: list[str] = []
-for _, d, _ in os.walk(preset):
-    dirs = d
-    break
+    dirs: list[str] = []
+    for _, d, _ in os.walk(preset):
+        dirs = d
+        break
 
-print(
-    "\nAvailable dirs:\n",
-    *[f"{i}: {n}\n" for i, n in enumerate(dirs, start=1)],
-)
-dir = input("Enter dir: ")
-try:
-    path_org: str = os.path.join(preset, dirs[int(dir) - 1])
-except:
-    path_org: str = input("Wrong input. Please enter path to original folder: ")
-
+    print(
+        "\nAvailable dirs:\n",
+        *[f"{i}: {n}\n" for i, n in enumerate(dirs, start=1)],
+    )
+    dir = input("Enter dir: ")
+    try:
+        path_org: str = os.path.join(preset, dirs[int(dir) - 1])
+    except:
+        path_org: str = input("Wrong input. Please enter path to original folder: ")
+else:
+    exit("Unsupported inicialization. Only one optional argument (the path)")
 # check if path exists
 if not os.path.exists(path_org):
     raise Exception("Path does not exist")

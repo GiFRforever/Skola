@@ -120,7 +120,7 @@ def rename_folder(path: str) -> tuple[str, str]:
 
 
 if len(sys.argv) == 2:
-    path_org = sys.argv[1]
+    složky: list[str] = [sys.argv[1]]
 elif __name__ == "__main__" and len(sys.argv) == 1:
     presets: list[str] = ["U:\\Filmy\\", "U:\\Seriály\\"]
     print(
@@ -145,72 +145,78 @@ elif __name__ == "__main__" and len(sys.argv) == 1:
     )
     dir: str = input("Enter dir: ")
     try:
-        path_org: str = os.path.join(preset, dirs[int(dir) - 1])
+        složky: list[str] = [
+            os.path.join(preset, dirs[int(s) - 1]) for s in dir.split()
+        ]
     except:
-        path_org: str = input("Wrong input. Please enter path to original folder: ")
+        složky: list[str] = [
+            input("Wrong input. Please enter path to original folder: ")
+        ]
 else:
     exit("Unsupported inicialization. Only one optional argument (the path)")
-# check if path exists
-if not os.path.exists(path_org):
-    raise Exception("Path does not exist")
 
-# check if path ends with backslash
-if path_org[-1] != "\\":
-    path_org += "\\"
+for path_org in složky:
+    # check if path exists
+    if not os.path.exists(path_org):
+        raise Exception("Path does not exist")
 
-výstupní_místa_seriály: list[str] = ["T:\\Seriály\\"]
-výstupní_místa_filmy: list[str] = ["I:\\Filmy\\", "J:\\"]
+    # check if path ends with backslash
+    if path_org[-1] != "\\":
+        path_org += "\\"
 
-if path_org.split("\\")[1] == "Seriály":
-    if len(path_org.split("\\")[2].split(".")) == 1:
-        type_of_media: str = "ss"
+    výstupní_místa_seriály: list[str] = ["T:\\Seriály\\"]
+    výstupní_místa_filmy: list[str] = ["I:\\Filmy\\", "J:\\"]
+
+    if path_org.split("\\")[1] == "Seriály":
+        if len(path_org.split("\\")[2].split(".")) == 1:
+            type_of_media: str = "ss"
+        else:
+            type_of_media: str = "s"
+    elif path_org.split("\\")[1] == "Filmy":
+        type_of_media: str = "m"
     else:
-        type_of_media: str = "s"
-elif path_org.split("\\")[1] == "Filmy":
-    type_of_media: str = "m"
-else:
-    type_of_media: str = input("Enter type of media (serial or movie): ")
+        type_of_media: str = input("Enter type of media (serial or movie): ")
 
-if type_of_media[0] == "s":
-    path_new: str = výstupní_místa_seriály[
-        decide_where_to_move(path_org, výstupní_místa_seriály)
-    ]
-    if len(path_org.split("\\")[2].split(".")) == 1:
-        type_of_media = "ss"
+    if type_of_media[0] == "s":
+        path_new: str = výstupní_místa_seriály[
+            decide_where_to_move(path_org, výstupní_místa_seriály)
+        ]
+        if len(path_org.split("\\")[2].split(".")) == 1:
+            type_of_media = "ss"
+        else:
+            type_of_media = "s"
+    elif type_of_media[0] == "m":
+        path_new = výstupní_místa_filmy[
+            decide_where_to_move(path_org, výstupní_místa_filmy)
+        ]
+        type_of_media = "m"
     else:
-        type_of_media = "s"
-elif type_of_media[0] == "m":
-    path_new = výstupní_místa_filmy[
-        decide_where_to_move(path_org, výstupní_místa_filmy)
-    ]
-    type_of_media = "m"
-else:
-    raise Exception("Wrong type of media")
+        raise Exception("Wrong type of media")
 
-print("Moving from", path_org, "to", path_new)
+    print("Moving from", path_org, "to", path_new)
 
-# decide
-if type_of_media == "s":
-    parent_dir, new_name = rename_folder(path_org)
-    # windows robocopy
-    os.system(
-        f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
-    )
-elif type_of_media == "ss":
-    for masterdir, episodes, _ in os.walk(path_org):
-        for episode in episodes:
-            parent_dir, new_name = rename_folder(os.path.join(masterdir, episode))
-            # windows robocopy
-            os.system(
-                f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
-            )
-        break
-elif type_of_media == "m":
-    parent_dir, _ = rename_folder(path_org)
-    os.system(
-        f'start /wait cmd /c robocopy  "{parent_dir[:-1]}" "{path_new[:-1]}" /MOVE'  # type: ignore
-    )
-    try:
-        shutil.rmtree(path_org[:-1])
-    except:
-        pass
+    # decide
+    if type_of_media == "s":
+        parent_dir, new_name = rename_folder(path_org)
+        # windows robocopy
+        os.system(
+            f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
+        )
+    elif type_of_media == "ss":
+        for masterdir, episodes, _ in os.walk(path_org):
+            for episode in episodes:
+                parent_dir, new_name = rename_folder(os.path.join(masterdir, episode))
+                # windows robocopy
+                os.system(
+                    f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
+                )
+            break
+    elif type_of_media == "m":
+        parent_dir, _ = rename_folder(path_org)
+        os.system(
+            f'start /wait cmd /c robocopy  "{parent_dir[:-1]}" "{path_new[:-1]}" /MOVE'  # type: ignore
+        )
+        try:
+            shutil.rmtree(path_org[:-1])
+        except:
+            pass

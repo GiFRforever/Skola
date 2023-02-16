@@ -1,6 +1,6 @@
 import sys, os
 
-arguments_set: set[str] = {
+arguments_list: list[str] = [
     r"%N",  # Název torrentu
     r"%L",  # Kategorie
     r"%G",  # Štítky (oddělené čárkou)
@@ -13,11 +13,10 @@ arguments_set: set[str] = {
     r"%I",  # Info hash v1
     r"%J",  # Info hash v2
     r"%K",  # Torrent ID
-}
-
+]
 
 arguments: dict[str, str] = {
-    argument: sys.argv[i][:-1] for i, argument in enumerate(arguments_set, start=1)
+    argument: sys.argv[i][:-1] for i, argument in enumerate(arguments_list, start=1)
 }
 
 commands: list[str] = [

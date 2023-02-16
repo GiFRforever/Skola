@@ -138,7 +138,7 @@ elif __name__ == "__main__" and len(sys.argv) == 1:
         dirs = d
         break
 
-    odstavení: int = len(str(len(dirs) + 1))
+    odstavení: int = len(str(len(dirs)))
     print(
         "\nAvailable dirs:\n",
         *[f"{i:>{odstavení}}: {n}\n" for i, n in enumerate(dirs, start=1)],

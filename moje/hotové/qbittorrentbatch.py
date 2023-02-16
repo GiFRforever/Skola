@@ -21,7 +21,7 @@ arguments: dict[str, str] = {
 
 commands: list[str] = [
     """curl --form-string "message=%N download complete" "https://qbpushlite.fengmlo.com/api/v1/push/9Dtv9oC6o2O32ayy22847JbDqoPjViNiHgFO841_hdgmkE1Zg36Jgw-NNygvGnFc.6johBQ3FJruRSeHrWBGxb5lOnavMTFI-""",
-    r"python3 c:\\qlog\\autocatalog.py %F %G",
+    r'python3 c:\\qlog\\autocatalog.py "%F" %G',
 ]
 
 for c in commands:

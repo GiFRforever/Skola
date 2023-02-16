@@ -1,4 +1,7 @@
 import sys, os
+from time import sleep
+
+sleep(10)
 
 arguments_list: list[str] = [
     r"%N",  # Název torrentu
@@ -31,3 +34,5 @@ for c in commands:
 
 with open("C:\\qlog\\qbittorrent.log", "w") as f:
     f.write(" | ".join([f"{aold}: {anew}" for aold, anew in arguments.items()]))
+
+sleep(5)

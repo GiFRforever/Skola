@@ -115,7 +115,7 @@ def rename_folder(path: str) -> tuple[str, str]:
 if len(sys.argv) == 2:
     path_org = sys.argv[1]
 elif __name__ == "__main__" and len(sys.argv) == 1:
-    presets = ["U:\\Filmy\\", "U:\\Seriály\\"]
+    presets: list[str] = ["U:\\Filmy\\", "U:\\Seriály\\"]
     print(
         "Presets:\n",
         *[f"{i}: {n}\n" for i, n in enumerate(presets, start=1)],
@@ -135,7 +135,7 @@ elif __name__ == "__main__" and len(sys.argv) == 1:
         "\nAvailable dirs:\n",
         *[f"{i}: {n}\n" for i, n in enumerate(dirs, start=1)],
     )
-    dir = input("Enter dir: ")
+    dir: str = input("Enter dir: ")
     try:
         path_org: str = os.path.join(preset, dirs[int(dir) - 1])
     except:
@@ -190,13 +190,13 @@ if type_of_media == "s":
     )
 elif type_of_media == "ss":
     for masterdir, episodes, _ in os.walk(path_org):
+        for episode in episodes:
+            parent_dir, new_name = rename_folder(os.path.join(masterdir, episode))
+            # windows robocopy
+            os.system(
+                f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
+            )
         break
-    for episode in episodes:
-        parent_dir, new_name = rename_folder(os.path.join(masterdir, episode))
-        # windows robocopy
-        os.system(
-            f'start /wait cmd /c robocopy  "{os.path.join(parent_dir, new_name)}" "{os.path.join(path_new, new_name)}" /S /MOVE'
-        )
 elif type_of_media == "m":
     parent_dir, _ = rename_folder(path_org)
     os.system(

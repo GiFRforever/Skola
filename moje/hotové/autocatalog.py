@@ -1,4 +1,5 @@
 import os, sys, shutil, re
+from time import sleep
 
 
 def decide_where_to_move(path_org: str, výstupní_místa: list[str]) -> int:
@@ -46,25 +47,31 @@ def rename_folder(path: str) -> tuple[str, str]:
                     except:
                         file_name.append(part)
                 for i, s in enumerate(file_name):
-                    if s in ["of", "and", "a", "an"] and i != 0:
+                    if s.lower() in ["of", "and", "a", "an"] and i != 0:
                         continue
-                    elif s[0].lower() == "s" and s[1].isnumeric():
-                        file_name[i] = s.upper()
-                    else:
-                        file_name[i] = s.capitalize()
+                    elif len(s) > 1:
+                        if s[0].lower() == "s" and s[1].isnumeric():
+                            file_name[i] = s.upper()
+                        else:
+                            file_name[i] = s.capitalize()
                 try:
                     os.rename(
                         os.path.join(root, file),
                         os.path.join(root, " ".join(file_name) + "." + file_parts[-1]),
                     )
                 except PermissionError:
-                    input(
-                        "Stop the torrent (permission error). Press enter to continue."
-                    )
-                    os.rename(
-                        os.path.join(root, file),
-                        os.path.join(root, " ".join(file_name) + "." + file_parts[-1]),
-                    )
+                    print("Stop the torrent (permission error)...")
+                    for _ in range(360):
+                        try:
+                            os.rename(
+                                os.path.join(root, file),
+                                os.path.join(
+                                    root, " ".join(file_name) + "." + file_parts[-1]
+                                ),
+                            )
+                            break
+                        except PermissionError:
+                            sleep(10)
             else:
                 os.remove(os.path.join(root, file))
 

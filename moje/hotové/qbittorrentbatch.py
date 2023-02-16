@@ -15,7 +15,6 @@ arguments_set: set[str] = {
     r"%K",  # Torrent ID
 }
 
-print(sys.argv)
 
 arguments: dict[str, str] = {
     argument: sys.argv[i][:-1] for i, argument in enumerate(arguments_set, start=1)

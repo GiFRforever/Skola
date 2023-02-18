@@ -148,7 +148,9 @@ for path_org in složky:
                 if not file.endswith(("mkv", "mp4", "avi", "srt", "idx", "sub")):
                     continue
                 new_filename: str = new_name(file)
-                os.system(f'start /wait cmd /c robocopy "{root}" "{new_dir}" "{file}"')
+                os.system(
+                    f'start /wait cmd /c robocopy "{root[:-1]}" "{new_dir}" "{file}"'
+                )
                 try:
                     os.rename(
                         os.path.join(new_dir, file), os.path.join(new_dir, new_filename)
@@ -172,7 +174,9 @@ for path_org in složky:
                 )
                 os.makedirs(new_dir, exist_ok=True)
                 new_filename: str = new_name(file)
-                os.system(f'start /wait cmd /c robocopy "{root}" "{new_dir}" "{file}"')
+                os.system(
+                    f'start /wait cmd /c robocopy "{root[:-1]}" "{new_dir}" "{file}"'
+                )
                 try:
                     os.rename(
                         os.path.join(new_dir, file), os.path.join(new_dir, new_filename)

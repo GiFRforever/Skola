@@ -25,7 +25,8 @@ with open("C:\\qlog\\qbittorrent.log", "w") as f:
 
 commands: list[str] = [
     """curl --form-string "message=%N download complete" "https://qbpushlite.fengmlo.com/api/v1/push/9Dtv9oC6o2O32ayy22847JbDqoPjViNiHgFO841_hdgmkE1Zg36Jgw-NNygvGnFc.6johBQ3FJruRSeHrWBGxb5lOnavMTFI-""",
-    r'python3 c:\\qlog\\autocatalog.py "%F" %G',
+    # r'python3 c:\\qlog\\autocatalog.py "%F" %G', # this is for moving files (now deprecated)
+    r'python3 c:\\qlog\\autocatalog2.py "%F" %G',
 ]
 
 sleep(int(arguments["%Z"]) / (1048576 * 50))

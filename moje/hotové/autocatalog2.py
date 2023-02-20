@@ -168,7 +168,7 @@ for path_org in složky:
             for file in files:
                 if not file.endswith(("mkv", "mp4", "avi", "srt", "idx", "sub")):
                     continue
-                new_dir_parts: str = new_name(root.split("\\")[-2] + ".dir").split()  # type: ignore
+                new_dir_parts: str = new_name(root.split("\\")[3] + ".dir").split()  # type: ignore
                 new_dir: str = os.path.join(
                     path_new, " ".join(new_dir_parts[:-1]), new_dir_parts[-1][:3]
                 )

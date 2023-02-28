@@ -62,6 +62,11 @@ def new_name(file: str) -> str:
         return " ".join(new_filename) + "." + filename_parts[-1]
 
 
+# for testing purposes
+# sys.argv.insert(
+#     1,
+#     r"U:\Seriály\TLoU\The.Last.of.Us.S01E07.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-SMURF[rartv]",
+# )
 složky: list[str] = []
 if len(sys.argv) == 2:
     složky: list[str] = [sys.argv[1]]
@@ -156,10 +161,19 @@ for path_org in složky:
                         os.path.join(new_dir, file), os.path.join(new_dir, new_filename)
                     )
                 except:
-                    os.rename(
-                        os.path.join(new_dir, file),
-                        os.path.join(new_dir, new_filename + " (1)"),
-                    )
+                    ext: str = new_filename.split(".")[-1]
+                    for i in range(1, 100):
+                        temp_new_filename: str = new_filename.replace(
+                            f".{ext}", f" ({i}).{ext}"
+                        )
+                        try:
+                            os.rename(
+                                os.path.join(new_dir, file),
+                                os.path.join(new_dir, temp_new_filename),
+                            )
+                            break
+                        except:
+                            pass
     elif type_of_media == "ss":
         hloubka: int = len(path_org.split("\\"))
         for root, _, files in os.walk(path_org):
@@ -182,10 +196,19 @@ for path_org in složky:
                         os.path.join(new_dir, file), os.path.join(new_dir, new_filename)
                     )
                 except:
-                    os.rename(
-                        os.path.join(new_dir, file),
-                        os.path.join(new_dir, new_filename + " (1)"),
-                    )
+                    ext: str = new_filename.split(".")[-1]
+                    for i in range(1, 100):
+                        temp_new_filename: str = new_filename.replace(
+                            f".{ext}", f" ({i}).{ext}"
+                        )
+                        try:
+                            os.rename(
+                                os.path.join(new_dir, file),
+                                os.path.join(new_dir, temp_new_filename),
+                            )
+                            break
+                        except:
+                            pass
 
     elif type_of_media == "m":
         for *_, files in os.walk(path_org):
@@ -202,7 +225,16 @@ for path_org in složky:
                         os.path.join(path_new, new_filename),
                     )
                 except:
-                    os.rename(
-                        os.path.join(path_new, file),
-                        os.path.join(path_new, new_filename + " (1)"),
-                    )
+                    ext: str = new_filename.split(".")[-1]
+                    for i in range(1, 100):
+                        temp_new_filename: str = new_filename.replace(
+                            f".{ext}", f" ({i}).{ext}"
+                        )
+                        try:
+                            os.rename(
+                                os.path.join(path_new, file),
+                                os.path.join(path_new, temp_new_filename),
+                            )
+                            break
+                        except:
+                            pass

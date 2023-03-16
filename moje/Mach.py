@@ -35,7 +35,7 @@ V případě pochybností může hráče A požádat o odkrytí vržených koste
 V případě, že hráč B výsledku věří, převezme kostky s tím, že nyní musí na kostkách hodit vyšší hodnotu, než oznámil předchozí hráč. Může se však stát, že se mu to nepodaří. V takovém případě se pouze snaží předstírat, že předchozího hráče přehodil.
 """
 postup = """
-Na začátek zadejte počet hráčů. Minimální počet hráčů je 2. Maximum není, ale od 6 hráčů je to už dost zdlouhavé.
+Na začátek zadejte počet hráčů. Minimální počet hráčů je 2 přičemž 1 je vždy počítač. Maximum není, ale od 6 hráčů je to už dost zdlouhavé.
 Pro ztvrzení: pokud hráč dostane bod, vypije čtvrtku.
 Při libovolné interakci s programem ve hře mužeš napsat "konec" a hra se ukončí.
 

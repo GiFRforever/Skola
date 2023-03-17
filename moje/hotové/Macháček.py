@@ -1,4 +1,4 @@
-import platform, os, random as rd, sys
+import platform, os, random as rd
 
 mach = False
 body = []
@@ -30,25 +30,28 @@ platná = [
 pravidla = """
 Hráč A hodí dvěma kostkami, ale výsledek ukryje před hráčem B, který je na řadě. Svůj výsledek mu pouze oznámí. Hráč B má nyní dvě možnosti:
 
-V případě pochybností může hráče A požádat o odkrytí vržených kostek. Pokud hráč A blafoval, hráč B získává bod a začíná nové kolo. Odpovídá-li oznámený výsledek hodnotě na kostkách, pak prohrává hráč požadující jejich odhalení.
+V případě pochybností může hráče A požádat o odkrytí vržených kostek. Pokud hráč A blafoval, hráč B získává bod a začíná nové kolo.
+Odpovídá-li oznámený výsledek hodnotě na kostkách, pak prohrává hráč požadující jejich odhalení.
 
-V případě, že hráč B výsledku věří, převezme kostky s tím, že nyní musí na kostkách hodit vyšší hodnotu, než oznámil předchozí hráč. Může se však stát, že se mu to nepodaří. V takovém případě se pouze snaží předstírat, že předchozího hráče přehodil.
+V případě, že hráč B výsledku věří, převezme kostky s tím, že nyní musí na kostkách hodit vyšší hodnotu, než oznámil předchozí hráč.
+Může se však stát, že se mu to nepodaří. V takovém případě se pouze snaží předstírat, že předchozího hráče přehodil.
 """
 postup = """
 Na začátek zadejte počet hráčů. Minimální počet hráčů je 2 přičemž 1 je vždy počítač. Maximum není, ale od 6 hráčů je to už dost zdlouhavé.
 Pro ztvrzení: pokud hráč dostane bod, vypije čtvrtku.
-Při libovolné interakci s programem ve hře mužeš napsat "konec" a hra se ukončí.
+Při libovolné interakci s programem ve hře můžeš napsat "konec" a hra se ukončí.
 
 1. Za hráče A hodí kostkami (klávesa Enter) a zobrazí mu jejich výsledek.
 2. Hráč A se rozhodne jaké číslo oznámí hráči B a zadá ho.
     Jediná čísla co může zadat jsou 100, 200, 300, 400, 500, 600, 31, 32, 41, 42, 43,
       51, 52, 53, 54, 61, 62, 63, 64, 65, 1200.
 3. Hráč B se rozhodne jestli věří hráči A nebo ne.
-    Pokud ano, zadá "1", "y", "a" nebo "ano" a pokračuje dál svím hodem.
+    Pokud ano, zadá "1", "y", "a" nebo "ano" a pokračuje dál svým hodem.
     Pokud ne, zadá "0", "n" nebo "ne". V tomto případě se odhalí jeho hod a pokud lhal,
       hráč A dostane bod, a pokud říkal pravdu, hráč B dostane bod. Pokračuje se dál hodem kostek.
 """
 
+# zmizík z internetu
 if (p := platform.uname()[0]) == "Windows":
     clear = lambda: os.system("cls")
 elif p == "Linux":
@@ -57,6 +60,7 @@ else:
     exit("Nepodporovaný operační systém")
 
 
+# na zadávání počtu hráčů, minimálně 2
 def počet_hráčů(txt):
     while True:
         vstup = input(txt)
@@ -70,6 +74,7 @@ def počet_hráčů(txt):
             pass
 
 
+# vrací hodnotu hodu kostkami
 def hod_kostkami():
     global mach
     kostka1 = rd.randint(1, 6)
@@ -88,6 +93,7 @@ def hod_kostkami():
         return hod
 
 
+# vrací True nebo False podle různých stylů odpovědí
 def víra(txt):
     while True:
         vstup = input(txt)
@@ -99,11 +105,13 @@ def víra(txt):
             konec()
 
 
+# zaručuje že se zadá platné číslo vyšší než předchozí hod
 def přehození(hod_minulý):
     vstup = ""
     while True:
         try:
-            cislo = int(vstup := input("Co řeknete spoluhráči?: "))
+            vstup = input("Co řeknete spoluhráči?: ")
+            cislo = int(vstup)
             if cislo not in platná:
                 print("Zadejte platné číslo")
                 continue
@@ -117,11 +125,12 @@ def přehození(hod_minulý):
             print("Zadejte platné číslo")
 
 
+# vypíše výsledek hry
 def konec():
     global body
     clear()
     for i, b in enumerate(body, start=1):
-        print(f"Hrač {i} má {b} bodů")
+        print(f"Hráč {i} má {b} bodů")
     main()
 
 
@@ -135,13 +144,15 @@ def hra(hráčů):
         if hráč == hráčů - 1:  # PC
             hod = hod_kostkami()
             if hod == 1200:
-                lež = 1200
+                lež = 1200  # zadá se macháček
             elif hod <= hod_minulý:
-                lež = rd.choice([p for p in platná if p > hod_minulý])
+                lež = rd.choice(
+                    [p for p in platná if p > hod_minulý]
+                )  # zadá se libovolné číslo vyšší než předchozí
             else:
-                lež = hod
-            hráč = 0
-        else:
+                lež = hod  # zadá se hod
+            hráč = 0  # přepne se na hráče 1
+        else:  # Hráč
             if input("Házej kostkami...") == "konec":
                 konec()
             hod = hod_kostkami()
@@ -155,7 +166,7 @@ def hra(hráčů):
 
         if hráč == hráčů - 1:  # PC
             clear()
-            if lež > 54:  # nevěřím
+            if lež > 54 and rd.random() > 0.1:  # nevěří + 10% šance že to zkusí
                 if lež == hod:
                     print(f"Hráč {hráč} nelhal, máš 1 bod")
                     body[hráč % hráčů] += 1
@@ -166,7 +177,7 @@ def hra(hráčů):
 
             print("\n Průběžné skóre:")
             for i, b in enumerate(body, start=1):
-                print(f"Hrač {i} má {b} bodů")
+                print(f"Hráč {i} má {b} bodů")
             input("\nPro pokračování stiskněte Enter...")
         else:
             clear()
@@ -206,5 +217,6 @@ def main():
             continue
 
 
+# spouští program
 if __name__ == "__main__":
     main()

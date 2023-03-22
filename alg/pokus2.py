@@ -140,7 +140,6 @@ def a_star(
     exit("No path found")
 
 
-# sleep(2)
 def check_battery() -> None:
     global battery
     global battery_mode
@@ -171,11 +170,9 @@ while True:
     print("\nCurrent:", current_node)
     node = a_star(game_map, current_node, goal_node)
     print("Kam:", node)
-    # node = (node[1], node[0])
-    # print(node)
     check_battery()
     směr, current_node = pohni_se(current_node, node)
-    while směr != orientation:
+    while směr != orientation:  # otáčení
         if směr == (orientation + 1) % 4:
             while (
                 response := requests.post(
@@ -183,7 +180,6 @@ while True:
                 )
             ) == 200:
                 sleep(0.2)
-            # print(response.json())
             orientation = (orientation + 1) % 4
         else:
             while (
@@ -192,15 +188,13 @@ while True:
                 )
             ) == 200:
                 sleep(0.2)
-            # print(response.json())
             orientation = (orientation - 1) % 4
-        # sleep(2)
     while (
-        requests.post(f"{url}/action", data={"bot_id": bot_id, "action": "step"}) == 200
+        requests.post(f"{url}/action", data={"bot_id": bot_id, "action": "step"})
+        == 200  # pohyb
     ):
         check_battery()
         sleep(0.2)
     if current_node == goal_node:
         exit("Konec hry")
-    # print(response.json())
     sleep(0.2)

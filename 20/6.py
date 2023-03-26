@@ -59,9 +59,9 @@ balíček: list[str] = karty.copy()
 shuffle(balíček)
 print(
     "Balíček:",
-    *[f"{k:3}\n        " if i % 5 == 4 else f"{k:3}" for i, k in enumerate(balíček)],
+    *[f"{k}\n        " if i % 5 == 4 else f"{k:12}" for i, k in enumerate(balíček)],
     end="\n\n",
 )
 for h in range(1, 6):
-    print(f""" Hráč {h}: {" ".join([f"{i:<3}" for i in balíček[:3]])}""")
+    print(f""" Hráč {h}: {" ".join([f"{i:12}" for i in balíček[:3]])}""")
     del balíček[:3]

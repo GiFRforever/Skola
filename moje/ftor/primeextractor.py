@@ -14,7 +14,7 @@ with open("moje/p/primes.txt", "w") as f:
     for p in primes:
         f.write(f"{p}\n")
     print("primes.txt saved")
-    
+
 with open("moje/p/primes_desc.txt", "w") as f:
     for p in reversed(primes):
         f.write(f"{p}\n")

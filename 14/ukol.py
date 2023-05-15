@@ -607,9 +607,9 @@ class ED:
     def torus(self) -> None:
         zadejte_strany(("vnitřní poloměr", "31"), poloměr=1)
         self.oběm = (
-            2 * mt.pi**2 * rozměry["poloměr"] * rozměry["vnitřní poloměr"] ** 2
+            2 * mt.pi ** 2 * rozměry["poloměr"] * rozměry["vnitřní poloměr"] ** 2
         )
-        self.povrch = 4 * mt.pi**2 * rozměry["poloměr"] * rozměry["vnitřní poloměr"]
+        self.povrch = 4 * mt.pi ** 2 * rozměry["poloměr"] * rozměry["vnitřní poloměr"]
         self.output()
 
     # komolá tělesa

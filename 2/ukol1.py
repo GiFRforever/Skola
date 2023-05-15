@@ -16,7 +16,7 @@ print(
     "Pro kouly s r = ",
     r,
     " je objem ",
-    round(4 * pi * (r**2), 2),
+    round(4 * pi * (r ** 2), 2),
     " a povrch ",
-    round(4 / 3 * pi * (r**3), 2),
+    round(4 / 3 * pi * (r ** 3), 2),
 )

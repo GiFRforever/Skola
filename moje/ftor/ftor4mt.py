@@ -1,6 +1,7 @@
 import multiprocessing as mp
 from time import sleep
 
+
 def ftor(proc: int, jádra: int, conn) -> None:
     délka: int = 50000000
     """try:
@@ -10,18 +11,18 @@ def ftor(proc: int, jádra: int, conn) -> None:
     except:"""
     primes: list[int] = []
     with open("moje/p/primes.txt", "r") as f:
-        #print(f"Inicializace listu {proc}")
-        f.seek((délka//jádra)*proc)
-        if proc == jádra-1:
-            kolik: int = 50000000 - (délka//jádra)*(jádra-1)
+        # print(f"Inicializace listu {proc}")
+        f.seek((délka // jádra) * proc)
+        if proc == jádra - 1:
+            kolik: int = 50000000 - (délka // jádra) * (jádra - 1)
         else:
-            kolik = délka//jádra
+            kolik = délka // jádra
         for i in range(kolik):
             primes.append(int(f.readline()))
-        #print(f"List {proc} inicializován")
+        # print(f"List {proc} inicializován")
         conn.send("OK")
-    
-    while len(primes) < délka//jádra:
+
+    while len(primes) < délka // jádra:
         sleep(0.1)
     while (flt := conn.recv()) is not None:
         print(f"Process {proc} received {flt}")
@@ -51,6 +52,7 @@ def ftor(proc: int, jádra: int, conn) -> None:
                 break
         conn.send(out)
 
+
 def vstup_float(txt: str) -> float:
     bu: str = " "
     while True:
@@ -64,6 +66,7 @@ def vstup_float(txt: str) -> float:
                 return float(bu)
             print("Zadejte číslo!")
 
+
 if __name__ == "__main__":
     jádra: int = mp.cpu_count()
     print(f"Počet jáder: {jádra}")
@@ -73,15 +76,17 @@ if __name__ == "__main__":
         return [item for sublist in pool.starmap(ftor, zip(flt, range(jádra))) for item in sublist]
     """
     for i in range(jádra):
-        globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe() 
-        globals()[f"prcs{i}"] = mp.Process(target=ftor, args=(i, jádra, globals()[f"pipe_c_{i}"]))
+        globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe()
+        globals()[f"prcs{i}"] = mp.Process(
+            target=ftor, args=(i, jádra, globals()[f"pipe_c_{i}"])
+        )
         globals()[f"prcs{i}"].start()
-        #globals()[f"pipe_c_{i}"].send(0)
-        globals()[f"pipe_p_{i}"].recv() # tady udělat čekání
+        # globals()[f"pipe_c_{i}"].send(0)
+        globals()[f"pipe_p_{i}"].recv()  # tady udělat čekání
     for i in range(jádra):
-        if bu := globals()[f"pipe_p_{i}"].recv() == "OK": # tady se čeká
+        if bu := globals()[f"pipe_p_{i}"].recv() == "OK":  # tady se čeká
             print(f"Process {i} OK")
-    
+
     while True:
         flt: float = vstup_float("Zadejte číslo: ")
         """deviders: list[int] = f(flt)

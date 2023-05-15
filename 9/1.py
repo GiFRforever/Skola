@@ -6,6 +6,8 @@ def vstup_int(txt):
         except ValueError:
             print("Tohle není číslo!")
     return cislo
+
+
 n = vstup_int("Zadej celé číslo: ")
-for i in range(1,11):
+for i in range(1, 11):
     print(f"{i}*{n}= {i*n}")

@@ -1,5 +1,7 @@
 import math
 import time
+
+
 def main():
     try:
         a, b, c = eval(input("Please enter the coefficients (a, b, c): "))
@@ -33,7 +35,9 @@ def main():
         return
     root2 = (-b - discRoot) / (2 * a)
     print("\033[92mRovnice má dvě řešení:", root1, root2, "\033[0m")
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     print("Řešení kvadratické rovnice v R")
     while True:
         main()

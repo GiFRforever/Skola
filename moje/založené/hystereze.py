@@ -68,8 +68,8 @@ y1: float = vstup("Vrchol: ")
 y3 = x2 = y2 = vstup("Křivka: ")
 x3 = -40 - x2
 a, b, c = calc_parabola_vertex(x1, y1, x2, y2, x3, y3)
-denní:float = vstup("Denní offset: ")
-noční:float = vstup("Noční offset: ")
+denní: float = vstup("Denní offset: ")
+noční: float = vstup("Noční offset: ")
 print(x1, y1, x2, y2, x3, y3)
 print("a={0}, b={1}, c={2}".format(a, b, c))
 ar: str = f_r2(a)
@@ -84,11 +84,11 @@ if input("Plot? [Yes/No]: ") == "Yes":
     import numpy as np
 
     x = np.linspace(x1, x2, 1000)
-    y = a * x**2 + b * x + c
+    y = a * x ** 2 + b * x + c
     plt.title("Hystereze topení")
     plt.xlabel("venkovní teplota [°C]")
     plt.ylabel("teplota okruhu [°C]")
     plt.plot(x, y, label="křivka", color="grey")
-    plt.plot(x, y+noční, label="noční", color="blue")
-    plt.plot(x, y+denní, label="denní", color="red")
+    plt.plot(x, y + noční, label="noční", color="blue")
+    plt.plot(x, y + denní, label="denní", color="red")
     plt.show(block=True)

@@ -6,6 +6,7 @@ def vstup_f(txt):
         except ValueError:
             print("Neplatný vstup")
 
+
 c1 = vstup_f("Zadejte číslo: ")
 c2 = vstup_f("Zadejte číslo: ")
 if c1 > c2:

@@ -20,8 +20,8 @@ prvocisla: list[int] = [2, 3, 5, 7, 11, 13, 17, 19, 23]
 def exp(base, power) -> float:
     for prv in prvocisla:
         if power % prv == 0:
-            return exp(base**prv, power / prv)
-    return base**power
+            return exp(base ** prv, power / prv)
+    return base ** power
 
 
 základ: float = vstup_float("Zadejte základ: ")

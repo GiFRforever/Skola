@@ -43,7 +43,7 @@ def time_check(seq: str) -> bool:
             sequence_p = sequence_p.replace(part, "")
     else:
         if (len(sequence_p) % 4) != 0:
-            print("Postup je špatný P-return!")
+            print("P-return!")
             return False
 
     # return check

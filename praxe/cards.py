@@ -157,6 +157,39 @@ class Player:
         else:
             return False
 
+    def suggestion(self) -> Card:
+        if self.game == None:
+            raise AttributeError("Player has no game to suggest in.")
+        master_points: list[int] = []
+        for card in self.hand:
+            if self.game.card_is_playable(card):
+                other_cards: list[Card] = self.hand.copy()
+                other_cards.remove(card)
+                other_cards_points: list[int] = []
+
+                points: int = self.suggestion_recurse(
+                    card, other_cards, other_cards_points
+                )
+                master_points.append(points)
+            else:
+                master_points.append(0)
+        return self.hand[master_points.index(max(master_points))]
+
+    def suggestion_recurse(
+        self, card: Card, other_cards: list[Card], points: list[int]
+    ) -> int:
+        if len(other_cards) == 0:
+            return sum(points)
+        else:
+            other_card: Card = other_cards.pop()
+            if other_card.color == card.color:
+                points.append(2)
+            elif other_card.value == card.value:
+                points.append(1)
+            else:
+                points.append(0)
+            return self.suggestion_recurse(card, other_cards, points)
+
     def __add__(self, other) -> "Player":
         if isinstance(other, Card):
             self.hand.insert(0, other)

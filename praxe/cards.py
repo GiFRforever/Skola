@@ -123,8 +123,8 @@ class Deck:
 
 
 class Player:
-    def __init__(self, name) -> None:
-        self.name = name
+    def __init__(self, name: str) -> None:
+        self.name: str = name
         self.hand: list[Card] = []
         self.game: Game
 
@@ -134,6 +134,7 @@ class Player:
         if len(self.game.dealing_deck.cards) == 0:
             self.game.dealing_deck = self.game.throwing_deck
             self.game.throwing_deck = Deck(empty=True)
+            self.game.throwing_deck += self.game.dealing_deck.draw()
             # self.game.dealing_deck.shuffle()
         self.hand.append(self.game.dealing_deck.draw())
 
@@ -142,7 +143,6 @@ class Player:
 
     def show_hand(self) -> None:
         print(
-            self.__str__(),
             *[f"{i:>2}: {n}" for i, n in enumerate(self.hand, start=1)],
             sep="\n",
         )
@@ -202,7 +202,7 @@ class Game:
     def __init__(self, name, cards_per_player: int, *players) -> None:
         self.dealing_deck: Deck = Deck()
         self.throwing_deck: Deck = Deck(empty=True)
-        self.throwing_deck += self.dealing_deck.draw()
+        # self.throwing_deck += self.dealing_deck.draw()
         self.name: str = name
         self.cards_per_player: int = cards_per_player
         self.players: list[Player] = list(players)
@@ -217,12 +217,13 @@ class Game:
         for _ in range(self.cards_per_player):
             for player in self.players:
                 player.draw()
+        self.throwing_deck += self.dealing_deck.draw()
 
     def card_is_playable(self, card: Card) -> bool:
         if len(self.throwing_deck.cards) == 0:
             return True
         elif self.throwing_deck.cards[-1].value == 7:
-            self.draw_over += 2
+            # self.draw_over += 2
             return card.value == 7
         # elif self.throwing_deck.cards[-1].value == 1:
         #     return card.value == 1
@@ -235,11 +236,106 @@ class Game:
                     or card.value == self.throwing_deck.cards[-1].value
                 )
             else:
-                return card.color == self.new_color
+                return (
+                    card.color == self.new_color
+                    or card.value == self.throwing_deck.cards[-1].value
+                )
 
     def __str__(self) -> str:
         return f"{self.name} with {len(self.players)} players"
 
+    def play(self) -> None:
+        clear()
+        self.deal()
+        active_players: list[Player] = self.players.copy()
+        finished_players: list[Player] = []
+        active_skip: bool = False
+
+        while len(active_players) > 1:
+            for player in active_players:
+                # last card check
+                if self.draw_over:  # 7
+                    if not any(map(lambda x: (x.value == 7), player.hand)):
+                        print(f"You are drawing {self.draw_over} cards.")
+                        for _ in range(self.draw_over):
+                            player.draw()
+                        self.draw_over = 0
+                        continue
+                elif len(player.hand) == 0:
+                    active_players.remove(player)
+                    finished_players.append(player)
+                    print(f"{player.name} has finished.")
+                    continue
+                elif active_skip:  # ace
+                    if not any(map(lambda x: (x.value == 1), player.hand)):
+                        print("You are skipping your turn.")
+                        active_skip = False
+                        continue
+
+                input(f"{player.name}'s turn. Press enter to continue.")
+                clear()
+
+                # show throwing deck
+                print(f"Last card: {self.throwing_deck.cards[-1]}")
+                if self.new_color != "":
+                    print(f"New color: {self.new_color}")
+
+                made_mistake: bool = True
+                print("Your hand:")
+                player.show_hand()
+                print(" 0: Draw a card (skip your turn)")
+
+                while made_mistake:
+                    try:
+                        card_index: int = input_int_min_max(
+                            "Which card do you want to play?", 0, len(player.hand)
+                        )
+                        if card_index == 0:
+                            if active_skip:
+                                active_skip = False
+                                break
+                            for _ in range(self.draw_over + 1):
+                                player.draw()
+                            made_mistake = False
+                        elif card_index > 0:
+                            card: Card = player.hand[card_index - 1]
+                            if self.card_is_playable(card):
+                                if card.value == 7:
+                                    self.draw_over += 2
+                                elif card.value == 1:
+                                    active_skip = True
+                                elif card.value == 12:
+                                    print("You are changing the color.")
+                                    print(
+                                        *[
+                                            f"{i}: {color}"
+                                            for i, color in enumerate(
+                                                self.dealing_deck.COLORS, start=1
+                                            )
+                                        ],
+                                        sep="\n",
+                                    )
+                                    players_choice: int = input_int_min_max(
+                                        "Which color do you want to change to? ",
+                                        1,
+                                        4,
+                                    )
+                                    self.new_color = self.dealing_deck.COLORS[
+                                        players_choice - 1
+                                    ]
+                                self.throwing_deck += card
+                                player.hand.remove(card)
+                                made_mistake = False
+                            else:
+                                print("You can't play that card.")
+                        else:
+                            print("Invalid input.")
+                    except ValueError:
+                        print("Invalid input.")
+                clear()
+
+
+"""
     def play(self) -> None:
         clear()
         self.deal()
@@ -272,7 +368,7 @@ class Game:
                         finished_players.append(player)
                         continue
 
-                print(f"""Last card: {self.throwing_deck.cards[-1]}""") if len(
+                print(f"Last card: {self.throwing_deck.cards[-1]}") if len(
                     self.throwing_deck.cards
                 ) > 0 else print("You can play any card.")
                 if self.new_color != "":
@@ -281,7 +377,7 @@ class Game:
 
                 made_mistake: bool = True
                 player.show_hand()
-                print(" 0: Draw a card")
+                print(" 0: Draw a card ")
                 while made_mistake:
                     players_choice: int = input_int_min_max(
                         "Which card do you want to play? ", 0, len(player.hand)
@@ -334,6 +430,7 @@ class Game:
             )
             print(f"{playing_players[0].name} lost!")
             self.finale_order = finished_players + playing_players
+"""
 
 
 def create_game() -> Game:

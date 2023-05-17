@@ -1,11 +1,14 @@
 from time import sleep
+from random import randint
 
 
 class Table:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.table: list[list[int]] = [[0 for i in range(x)] for j in range(y)]
+        self.table: list[list[int]] = [
+            [randint(0, 1) for _ in range(x)] for _ in range(y)
+        ]
 
     def rules(self, x, y):
         if self.table[x][y] == 1:
@@ -43,16 +46,23 @@ class Table:
         self.table = new_table.copy()
 
     def render(self):
+        print(self.table)
         for y in self.table:
             for x in y:
-                print("\33[106mU+025A0")
+                if x:
+                    print("\33[103m   ", end="")
+                else:
+                    print("\33[105m   ", end="")
+            print("\33[0m")
 
     def commence(self):
         while True:
             self.cycle()
-            sleep(0.1)
+            self.render()
+            sleep(1)
 
 
-size_x: int = 100
-size_y: int = 100
+size_x: int = 10
+size_y: int = 10
 game_of_death: Table = Table(size_x, size_y)
+game_of_death.commence()

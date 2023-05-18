@@ -1,6 +1,9 @@
 from time import perf_counter
-from random import uniform
+from random import uniform, randint
 import multiprocessing as mp
+import sys
+
+sys.setrecursionlimit(1_000_000)
 
 
 def bubble(array: list[float|int]):
@@ -57,6 +60,23 @@ def insertion(arr, pipe=None) -> list[float | int]:
     
     return arr
 
+def quick(array, pipe=None):
+    if len(array) <= 1:
+        return array
+    pivot = array.pop()
+    greater: list[float|int] = []
+    lesser: list[float|int] = []
+    for i in array:
+        if i > pivot:
+            greater.append(i)
+        else:
+            lesser.append(i)
+    out = quick(lesser) + [pivot] + quick(greater)
+    if not isinstance(pipe, type(None)):
+        pipe.send(out)
+    return out
+
+
 """count = 0
 dump = 0
 while True:
@@ -71,18 +91,21 @@ while True:
 
 if __name__ == "__main__":
     jádra = mp.cpu_count()
-    rozsah = jádra * 1000
+    print(f"jádra: {jádra}")
+    rozsah = 1_000_000
     while True:
-        array: list[float] = [uniform(-1000.0, 1000.0) for _ in range(rozsah)]
+        # array: list[float] = [uniform(-1000000, 1000000) for _ in range(rozsah)] # float
+        array: list[int] = [randint(-1000000, 1000000) for _ in range(rozsah)] # int
         ts = perf_counter()
-        for i in range(jádra):
-            globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe()
-            globals()[f"p{i}"] = mp.Process(target=insertion, args=( array[i::jádra], globals()[f"pipe_c_{i}"]))
-            globals()[f"p{i}"].start()
-        back1: list[list[float|int]] = []
-        for i in range(jádra):
-            back1.append(globals()[f"pipe_p_{i}"].recv())
-        back: list[float | int] = insertion([back1[i][j] for j in range(rozsah//jádra) for i in range(jádra)])
+        back = quick(array.copy())
+        # for i in range(jádra):
+        #     globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe()
+        #     globals()[f"p{i}"] = mp.Process(target=quick, args=( array[i::jádra], globals()[f"pipe_c_{i}"]))
+        #     globals()[f"p{i}"].start()
+        # back1: list[list[float|int]] = []
+        # for i in range(jádra):
+        #     back1.append(globals()[f"pipe_p_{i}"].recv())
+        # back: list[float | int] = quick([back1[i][j] for j in range(rozsah//jádra) for i in range(jádra)])
         tn: float = perf_counter()
         assert back == sorted(array)
         print(f"\rsort: {tn-ts} seconds", end="")

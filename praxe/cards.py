@@ -1,10 +1,13 @@
 from random import randint
 from time import sleep
 import sys, platform, os
-
+from copy import deepcopy
+import logging
+logging.basicConfig(level=logging.DEBUG)
 # čištění konzole
 if (p := platform.uname()[0]) == "Windows":
-    clear = lambda: os.system("cls")
+    # clear = lambda: os.system("cls")
+    clear = lambda: None
 
     def clean(n) -> None:
         for _ in range(n):
@@ -192,6 +195,8 @@ class Player:
         return points.index(max(points)) if any(points) else -1
 
     def suggest_recursion(self, cards: list[Card], previous_card=None) -> int:  # type: ignore
+        if not len(cards):
+            return 1
         previous_card: Card = previous_card or cards.pop(0)
         temp_sum: int = 0 if previous_card == 12 else 1
         for card in cards:
@@ -201,20 +206,19 @@ class Player:
             temp_cards.remove(card)
             if card == 12:  # Queen
                 temp_sum += self.suggest_recursion(temp_cards) + 1
-            else:
+            elif len(temp_cards):
                 next_card: Card = temp_cards.pop(0)
                 if card > next_card:
                     temp_sum += self.suggest_recursion(temp_cards) + 2
                 elif card < next_card:
                     temp_sum += self.suggest_recursion(temp_cards)
-        else:
-            return temp_sum
+        return temp_sum
 
     def suggest_color(self, cards: list[Card]) -> int:
         i: int = self.suggest_card()
         if i == -1:
             return 0
-        return cards[i].color
+        return self.game.dealing_deck.COLORS.index(cards[i].color)
 
     def __add__(self, other) -> "Player":
         if isinstance(other, Card):
@@ -325,6 +329,7 @@ class Game:
                         if player.human
                         else player.suggest_card() + 1
                     )
+                    logging.debug(f"card_index: {card_index}")
                     if card_index == 0:
                         if active_skip:
                             active_skip = False
@@ -336,6 +341,8 @@ class Game:
                         made_mistake = False
                     elif card_index > 0:
                         card: Card = player.hand[card_index - 1]
+                        logging.debug(f"card: {card}")
+                        logging.debug(f"player.hand: ", *[str(card) for card in player.hand])
                         if self.card_is_playable(card):
                             if card.value == 7:
                                 self.draw_over += 2
@@ -359,13 +366,17 @@ class Game:
                                         4,
                                     )
                                     if player.human
-                                    else player.suggest_color(player - card)
+                                    else player.suggest_color(deepcopy(player) - card) # copy player queen card erasing
                                 )
                                 self.new_color = (
                                     self.dealing_deck.COLORS[players_choice - 1]
                                     if players_choice
                                     else ""
                                 )
+                                logging.debug(f"new_color: {self.new_color}")
+                            # logging.debug(f"throwing_deck: {self.throwing_deck}")
+                            logging.debug(f"player.hand: ", *[str(card) for card in player.hand])
+                            logging.debug(f"card: {card}")
                             self.throwing_deck += card
                             player.hand.remove(card)
                             made_mistake = False

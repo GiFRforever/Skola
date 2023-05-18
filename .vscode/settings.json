@@ -11,7 +11,7 @@
     "python.testing.unittestEnabled": true,
     "cSpell.language": "en,cs",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.python"
     },
     "python.formatting.provider": "none"
 }

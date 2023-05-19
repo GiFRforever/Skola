@@ -1,13 +1,13 @@
 from random import randint
 from time import sleep
 import sys, platform, os
-from copy import deepcopy
 import logging
-logging.basicConfig(level=logging.DEBUG)
+
+# logging.basicConfig(level=logging.DEBUG)
 # čištění konzole
 if (p := platform.uname()[0]) == "Windows":
-    # clear = lambda: os.system("cls")
-    clear = lambda: None
+    clear = lambda: os.system("cls")
+    # clear = lambda: None
 
     def clean(n) -> None:
         for _ in range(n):
@@ -181,9 +181,10 @@ class Player:
         else:
             return False
 
-    def suggest_card(self) -> int:
+    def suggest_card(self, cards=None) -> int:  # type: ignore
         points: list[int] = []
-        for card in self.hand:
+        cards: list[Card] = cards or self.hand
+        for card in cards:
             if not self.game.card_is_playable(card):
                 points.append(0)
                 continue
@@ -215,8 +216,8 @@ class Player:
         return temp_sum
 
     def suggest_color(self, cards: list[Card]) -> int:
-        i: int = self.suggest_card()
-        if i == -1:
+        i: int = self.suggest_card(cards)
+        if i == -1 or not cards:
             return 0
         return self.game.dealing_deck.COLORS.index(cards[i].color)
 
@@ -280,6 +281,20 @@ class Game:
     def __str__(self) -> str:
         return f"{self.name} with {len(self.players)} players"
 
+    def the_end(self, order_of_players: list[Player]) -> None:
+        clear()
+        self.finale_order = order_of_players
+        self.winner = order_of_players.pop(0)
+        print("The game has ended.")
+        print(f"The winner is {self.winner.name}!")
+        print(
+            *[
+                f"{i}. place: {player.name}"
+                for i, player in enumerate(order_of_players, start=2)
+            ],
+            sep="\n",
+        )
+
     def play(self) -> None:
         clear()
         self.deal()
@@ -289,7 +304,7 @@ class Game:
 
         while len(active_players) > 1:
             for player in active_players:
-                input(f"{player.name}'s turn. Press enter to continue.")
+                # input(f"{player.name}'s turn. Press enter to continue.")
                 clear()
 
                 # last card check
@@ -342,7 +357,9 @@ class Game:
                     elif card_index > 0:
                         card: Card = player.hand[card_index - 1]
                         logging.debug(f"card: {card}")
-                        logging.debug(f"player.hand: ", *[str(card) for card in player.hand])
+                        logging.debug(
+                            f"player.hand: ", *[str(card) for card in player.hand]
+                        )
                         if self.card_is_playable(card):
                             if card.value == 7:
                                 self.draw_over += 2
@@ -366,7 +383,13 @@ class Game:
                                         4,
                                     )
                                     if player.human
-                                    else player.suggest_color(deepcopy(player) - card) # copy player queen card erasing
+                                    else player.suggest_color(
+                                        [
+                                            card_x
+                                            for card_x in player.hand
+                                            if card_x != card
+                                        ]
+                                    )  # copy player queen card erasing
                                 )
                                 self.new_color = (
                                     self.dealing_deck.COLORS[players_choice - 1]
@@ -375,7 +398,9 @@ class Game:
                                 )
                                 logging.debug(f"new_color: {self.new_color}")
                             # logging.debug(f"throwing_deck: {self.throwing_deck}")
-                            logging.debug(f"player.hand: ", *[str(card) for card in player.hand])
+                            logging.debug(
+                                f"player.hand: ", *[str(card) for card in player.hand]
+                            )
                             logging.debug(f"card: {card}")
                             self.throwing_deck += card
                             player.hand.remove(card)
@@ -386,6 +411,7 @@ class Game:
                     else:
                         print("Invalid input.")
                 clear()
+        self.the_end(finished_players + active_players)
 
 
 def create_game() -> Game:

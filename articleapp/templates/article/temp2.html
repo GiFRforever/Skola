@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>I Like Trains - ASDF Movie</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #train {
+            position: absolute;
+            top: 50%;
+            left: -100px;
+            /* flip */
+            transform: scaleY(-1);
+            transform: translateY(-50%);
+            animation: trainAnimation 5s linear infinite;
+        }
+
+        @keyframes trainAnimation {
+            0% {
+                left: -100px;
+            }
+
+            100% {
+                left: calc(100% + 100px);
+            }
+        }
+
+        #figure {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 50px);
+            transform: translateY(-50%);
+            animation: figureAnimation 5s linear infinite;
+        }
+
+        @keyframes figureAnimation {
+            0% {
+                transform: translateY(-50%);
+            }
+
+            50% {
+                transform: translateY(-20%);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="figure">
+        <img src="https://static.wikia.nocookie.net/a98a2d3a-5962-449b-92c3-f52090f06afe/scale-to-width/755"
+            alt="ASDF Figure">
+    </div>
+
+    <div id="train">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/723d9237-18cc-4bd1-a5fc-427f0229f77e/dfpgqzz-270c1766-a6af-489b-b1ff-07bcfe2ad013.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcyM2Q5MjM3LTE4Y2MtNGJkMS1hNWZjLTQyN2YwMjI5Zjc3ZVwvZGZwZ3F6ei0yNzBjMTc2Ni1hNmFmLTQ4OWItYjFmZi0wN2JjZmUyYWQwMTMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oKXDOCaGgSlbIRpQEQ1bYBYvg5hK_lVGqghxIfRD_mk"
+            alt="Train">
+    </div>
+
+
+    <script>
+        // Add any additional JavaScript code here if needed.
+    </script>
+</body>
+
+</html>

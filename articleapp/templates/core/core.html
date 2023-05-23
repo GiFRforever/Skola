@@ -1,14 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
     <script>
         setTimeout(function () {
             location.reload();
-        }, 50000); // 5000 milliseconds = 5 seconds
+        }, 5000); // 5000 milliseconds = 5 seconds
     </script>
     <title>Pink Fluffy Unicorns</title>
-    <style>
+    <!-- <style>
         body {
             background-color: #ffc0cb;
             /* Pink background */
@@ -19,6 +21,13 @@
             color: #ffffff;
             /* White text */
             font-family: Arial, sans-serif;
+        }
+
+        .about {
+            color: #ffffff;
+            /* White text */
+            font-family: Arial, sans-serif;
+            text-align: left;
         }
 
         .unicorn-image {
@@ -57,13 +66,15 @@
                 background-position: 200% 50%;
             }
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
+    <a class=about href="about">O nás</a>
     <h1>Pink Fluffy Unicorns Dancing on Rainbows</h1>
     <h2>{% block title %}{% endblock %}</h2>
     <img class="unicorn-image" src="https://media4.giphy.com/media/YkuzftfzdoPOE/giphy.gif" alt="Pink Fluffy Unicorn">
+    <div class="sky"></div>
     <div class="rainbow"></div>
     <p>Look at them fly!</p>
     {% block content %}{% endblock %}

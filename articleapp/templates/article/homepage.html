@@ -3,21 +3,19 @@
 {% block title %}HomeRainbow{% endblock %}
 
 {% block content %}
+<h1>{{ title }}</h1>
+<p>{{ random_number }}</p>
+    {% for article in actual_articles%}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{ title }}</h1>
-                <p>{{ content }}</p>
-                <p>{{ random_number }}</p>
-                <p>{{ article }}</p>
-                Pudl pudl pudl pudl pudl
-                Pudl pudl pudl pudl pudl
-                Pudl pudl pudl pudl pudl
-                Pudl pudl pudl pudl pudl
-                Pudl pudl pudl pudl pudl
-                Pudl pudl pudl pudl pudl
+                <img src={{ article.picture }} style="width: 80vw">
+                <p>{{ article.title }}</p>
+                <p>{{ article.content }}</p>
+                <p>{{ article.author }} at: {{ article.created_at }}</p>
             </div>
         </div>
     </div>
+    {% endfor %}
 {% endblock %}
 

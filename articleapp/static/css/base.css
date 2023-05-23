@@ -1,0 +1,62 @@
+body {
+    background-color: #ffc0cb;
+    /* Pink background */
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    /* White text */
+    font-family: Arial, sans-serif;
+}
+
+.about {
+    color: #ffffff;
+    /* White text */
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.unicorn-image {
+    width: auto;
+    height: 40vh;
+    /* margin: 50px auto; */
+    animation: unicorn-image-animation 2s linear infinite;
+}
+
+@keyframes unicorn-image-animation {
+    0% {
+        margin-left: -1500px;
+    }
+
+    100% {
+        margin-left: 1500px;
+    }
+}
+
+.rainbow {
+    margin-top: -10vh;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(to bottom right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff0000);
+    background-size: 200% 100%;
+    animation: rainbow-animation 5s linear infinite;
+}
+
+.sky {
+    margin-top: -41vh;
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #68c7f3, #bde3f8);
+}
+
+
+@keyframes rainbow-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}

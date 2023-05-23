@@ -9,10 +9,11 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        article = Article.objects.first()
+        # article = Article.objects.first()
+        actual_articles = Article.objects.actual_articles()
         context.update(
             {
-                "article": article,
+                "actual_articles": actual_articles,
                 "title": "Homepage",
                 "random_number": random.randint(1, 100),
             }

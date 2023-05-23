@@ -12,17 +12,15 @@
 
         #train {
             position: absolute;
-            top: 50%;
+            top: 0%;
             left: -100px;
-            /* flip */
-            transform: scaleY(-1);
-            transform: translateY(-50%);
+            transform: scaleX(-1);
             animation: trainAnimation 5s linear infinite;
         }
 
         @keyframes trainAnimation {
             0% {
-                left: -100px;
+                left: -1000px;
             }
 
             100% {
@@ -39,12 +37,18 @@
         }
 
         @keyframes figureAnimation {
-            0% {
+            30% {
                 transform: translateY(-50%);
             }
 
-            50% {
+            40% {
                 transform: translateY(-20%);
+                transform: rotate(80deg);
+            }
+
+            95% {
+                transform: translateY(-20%);
+                transform: rotate(80deg);
             }
 
             100% {

@@ -1,17 +1,20 @@
 from django.db import models
+from django.db.models.fields import CharField, TextField, DateTimeField, BooleanField
+from django.db.models.fields.files import ImageField
+from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 # Create your models here.
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=50)
+    name: CharField = models.CharField(max_length=50)
 
     def __str__(self) -> str:
         return self.name
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name: CharField = models.CharField(max_length=50)
 
     def __str__(self) -> str:
         return self.name
@@ -19,22 +22,23 @@ class Category(models.Model):
 
 class ArticleManager(models.Manager):
     def actual_articles(self):
-        return self.filter(published_at__isnull=True).order_by("-created_at")
+        return self.filter().order_by("-created_at")
 
 
 class Article(models.Model):
-    objects = ArticleManager()
+    objects: ArticleManager = ArticleManager()
 
-    title = models.CharField(max_length=250)
-    content = models.TextField()
-    author = models.ForeignKey("auth.User", on_delete=models.CASCADE)
-    tag = models.ManyToManyField(Tag)
-    category = models.ForeignKey("Category", on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    published_at = models.DateTimeField(null=True, blank=True)
-    highlight = models.BooleanField(default=False)
-    picture = models.ImageField(
+    title: CharField = models.CharField(max_length=250)
+    perex: TextField = models.TextField(blank=False)
+    content: TextField = models.TextField()
+    author: ForeignKey = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    tag: ManyToManyField = models.ManyToManyField(Tag)
+    category: ForeignKey = models.ForeignKey("Category", on_delete=models.CASCADE)
+    created_at: DateTimeField = models.DateTimeField(auto_now_add=True)
+    updated_at: DateTimeField = models.DateTimeField(auto_now=True)
+    published_at: DateTimeField = models.DateTimeField(null=True, blank=True)
+    highlight: BooleanField = models.BooleanField(default=False)
+    picture: ImageField = models.ImageField(
         upload_to="media/article_pictures", default="media/article_pictures/unicorn.jpg"
     )
 

@@ -1,0 +1,14 @@
+{% extends "core/core.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+
+{% block content %}
+    {% if article%}
+    {{ article.perex }}
+    <p>{{ article.content }}</p>
+    {% else %}
+    <p>Article does not exist</p>
+    {% endif %}
+{% endblock %}
+

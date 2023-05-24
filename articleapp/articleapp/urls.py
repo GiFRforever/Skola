@@ -21,8 +21,10 @@ from django.urls import path, include
 
 from article.views import *
 
-urlpatterns = [
+urlpatterns: list[Any] = [
     path("admin/", admin.site.urls),
     path("", HomePageView.as_view(), name="Homepage"),
     path("about", AboutPageView.as_view(), name="Aboutpage"),
+    path("tea", TeaPageView.as_view(), name="Teapage"),
+    path("detail/<pk>", DetailArticleView.as_view(), name="Detailpage"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -29,7 +29,7 @@ class Article(models.Model):
     objects: ArticleManager = ArticleManager()
 
     title: CharField = models.CharField(max_length=250)
-    perex: TextField = models.TextField(blank=False)
+    perex: TextField = models.TextField()
     content: TextField = models.TextField()
     author: ForeignKey = models.ForeignKey("auth.User", on_delete=models.CASCADE)
     tag: ManyToManyField = models.ManyToManyField(Tag)

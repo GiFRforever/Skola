@@ -62,7 +62,8 @@
         </div>
         <div class="row">
             <!-- Side column with navigation links -->
-            <div class="col-md-2" style="border-radius: 2em; box-shadow:  0 0 1em rgba(39, 41, 26, 0.5); padding: 1em;">
+            <div class="col-md-2"
+                style="min-width: 11em; border-radius: 2em; box-shadow:  0 0 1em rgba(39, 41, 26, 0.5); padding: 1em;">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="/">Home</a>
@@ -81,24 +82,27 @@
             <div class="col-md-8">
                 {% for article in actual_articles%}
                 {% comment %}
-                <div style="cursor: pointer; background-image: url('{{ article.picture}}'); background-size: 20vw; background-position: right; background-repeat: no-repeat; border-radius: 2em; height: auto;" onclick="window.location='detail/{{ article.id }}';">
+                <div style="cursor: pointer; background-image: url('{{ article.picture}}'); background-size: 20vw; background-position: right; background-repeat: no-repeat; border-radius: 2em; height: auto;"
+                    onclick="window.location='detail/{{ article.id }}';">
                     <h2>{{ article.title }}</h2>
                     <p>{{ article.content }}</p>
                     <p>Published on {{ article.published_at }} by {{article.author}}</p>
                 </div>
                 {% endcomment %}
-                <div style="cursor: pointer; border-radius: 2em; height: auto; display: flex; align-items: center; padding: 1em" onclick="window.location='detail/{{ article.id }}';">
+                <div style="cursor: pointer; border-radius: 2em; height: auto; display: flex; align-items: center; padding: 1em"
+                    onclick="window.location='detail/{{ article.id }}';">
                     <div style="flex: 1">
                         <h2>{{ article.title }}</h2>
                         <p>{{ article.perex }}</p>
                         <p>Published on {{ article.published_at }} by {{article.author}}</p>
                     </div>
-                    <img style="border-radius: 2em; box-shadow: 0 0 1em rgba(39, 41, 26, 0.5); width: 25vw; height: auto;" src="{{ article.picture }}" alt="tea">
+                    <img style="border-radius: 2em; box-shadow: 0 0 1em rgba(39, 41, 26, 0.5); width: 25vw; height: auto;"
+                        src="{{ article.picture }}" alt="tea">
                 </div>
                 {% endfor %}
             </div>
             {% comment %} AD column for Tea Premium {% endcomment %}
-            <div class="col-md-2" style="padding-right: 1em;">
+            <div class="col-md-2" style="padding-right: 1em; min-width: 11em;">
                 <div class="row">
                     <div class="col-md-12">
                         <h3>Tea Premium<br></h3>

@@ -186,7 +186,7 @@ def main() -> None:
                     if j != stary:
                         kolik = globals()[f"c_{i}"].count(j)
                         for k in range(0, kolik + 1):
-                            temporrary.append(j**k)
+                            temporrary.append(j ** k)
                         stary = j
                 temporrary.sort()
                 print(*temporrary, sep=", ")

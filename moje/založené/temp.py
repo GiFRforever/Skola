@@ -1,5 +1,5 @@
 cislo = 125
-primes: list[int] = [2,3,5,7,11,13,17,19]
+primes: list[int] = [2, 3, 5, 7, 11, 13, 17, 19]
 temp: list[int] = []
 n: int = 0
 while n == 0:

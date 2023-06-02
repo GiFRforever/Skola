@@ -9,6 +9,6 @@ def vstup_int(txt) -> int:
 n: int = vstup_int("Max druhá mocnina: ")
 
 x: int = 2
-while (p := x**2) < n:
+while (p := x ** 2) < n:
     print(f"{x}^2 = {p}")
     x += 2

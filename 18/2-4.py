@@ -3,7 +3,7 @@ from random import randint
 
 seznam: list[int] = [randint(1, 100) for _ in range(10)]
 seznam.sort()
-seznam2: list[int] = [x**2 for x in seznam]
+seznam2: list[int] = [x ** 2 for x in seznam]
 l: int = len(str(seznam2[-1]))
 
 print(" ".join([f"{x:>{l}}" for x in seznam]))

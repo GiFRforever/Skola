@@ -1,9 +1,10 @@
 import multiprocessing as mp
 from multiprocessing.connection import PipeConnection
 
+
 def ftor(proc: int, jádra: int, conn: PipeConnection) -> list[int]:
-    #import multiprocessing as mp
-    #jádra: int = mp.cpu_count()
+    # import multiprocessing as mp
+    # jádra: int = mp.cpu_count()
     délka: int = 50000000
     try:
         primes == []
@@ -12,15 +13,15 @@ def ftor(proc: int, jádra: int, conn: PipeConnection) -> list[int]:
         primes: list[int] = []
         with open("moje/p/primes.txt", "r") as f:
             print(f"Inicializace listu {proc}")
-            f.seek((délka//jádra)*proc)
-            if proc == jádra-1:
-                kolik = 50000000 - (délka//jádra)*(jádra-1)
+            f.seek((délka // jádra) * proc)
+            if proc == jádra - 1:
+                kolik = 50000000 - (délka // jádra) * (jádra - 1)
             else:
-                kolik = délka//jádra
+                kolik = délka // jádra
             for i in range(kolik):
                 primes.append(int(f.readline()))
             print(f"List {proc} inicializován")
-    
+
     while True:
 
         flt: float = conn.recv()
@@ -49,6 +50,7 @@ def ftor(proc: int, jádra: int, conn: PipeConnection) -> list[int]:
                 break
         conn.send(out)
 
+
 def vstup_float(txt: str) -> float:
     bu: str = " "
     while True:
@@ -62,6 +64,7 @@ def vstup_float(txt: str) -> float:
                 return float(bu)
             print("Zadejte číslo!")
 
+
 if __name__ == "__main__":
     jádra: int = mp.cpu_count()
     print(f"Počet jáder: {jádra}")
@@ -72,8 +75,10 @@ if __name__ == "__main__":
     """
     parrent_conn = mp.Pipe()
     for i in range(jádra):
-        globals()[f"conn{i}"] = mp.Pipe() 
-        globals()[f"prcs{i}"] = mp.Process(target=ftor, args=(i, jádra, globals()[f"conn{i}"]))
+        globals()[f"conn{i}"] = mp.Pipe()
+        globals()[f"prcs{i}"] = mp.Process(
+            target=ftor, args=(i, jádra, globals()[f"conn{i}"])
+        )
         globals()[f"prcs{i}"].start()
         globals()[f"conn{i}"][0].send(0)
         print(parrent_conn[i].recv())

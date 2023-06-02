@@ -14,7 +14,7 @@ def vstup(txt):
 a2 = 2 * vstup("Vložte a pro x^2: ")
 b = vstup("Vložte b pro x: ")
 c = vstup("Vložte c: ")
-sD = cmath.sqrt(b**2 - 2 * a2 * c)
+sD = cmath.sqrt(b ** 2 - 2 * a2 * c)
 x1 = (-b + sD) / a2
 x2 = (-b - sD) / a2
 if round(x1.imag, 4) != 0:

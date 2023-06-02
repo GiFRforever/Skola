@@ -6,8 +6,10 @@ def vstup_f(txt):
         except ValueError:
             print("Neplatný vstup")
 
+
 mi1 = 0
 mi2 = 0
+
 
 def vstup_l(txt):
     global mi1
@@ -33,6 +35,7 @@ def vstup_l(txt):
             return vstup
         except ValueError:
             print("Neplatný vstup")
+
 
 cislo = vstup_f("Zadejte číslo: ")
 interval = vstup_l("Zadejte interval <x,y) : ")

@@ -11,5 +11,5 @@ def vstup_float(txt) -> float:
 
 a: float = vstup_float("Zadejte stranu a: ")
 b: float = vstup_float("Zadejte stranu b: ")
-c: float = sqrt(a**2 + b**2)
+c: float = sqrt(a ** 2 + b ** 2)
 print(f"Strana c má délku {c:.2f}")

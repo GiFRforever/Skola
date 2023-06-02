@@ -9,10 +9,15 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
+<<<<<<< HEAD
     "cSpell.language": "en,cs,lorem,en-GB,en-US",
     "cSpell.words": [
         "arange",
         "linspace",
         "pylab"
     ]
+=======
+    "cSpell.language": "en,cs",
+    "python.formatting.provider": "black"
+>>>>>>> 02d1962549e2f75e6d5c971d237953eedc601d62
 }

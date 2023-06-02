@@ -1,19 +1,17 @@
 from random import randint
 import unicodedata
-def strip_accents(s):
-   return ''.join(c for c in unicodedata.normalize('NFD', s)
-                  if unicodedata.category(c) != 'Mn')
 
-veci = {
-    "kamen": 1,
-    "nuzky": 2,
-    "papir": 3
-}
-diakritika = {
-    "kámen": 1,
-    "nůžky": 2,
-    "papír": 3
-}
+
+def strip_accents(s):
+    return "".join(
+        c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn"
+    )
+
+
+veci = {"kamen": 1, "nuzky": 2, "papir": 3}
+diakritika = {"kámen": 1, "nůžky": 2, "papír": 3}
+
+
 def vstup(txt):
     while True:
         vstup = strip_accents(input(txt))
@@ -28,6 +26,7 @@ def vstup(txt):
             pass
         print("Neplatný vstup")
 
+
 def vyhraje(a, b):
     if a == b:
         return "\033[93mRemíza\033[0m"
@@ -35,6 +34,7 @@ def vyhraje(a, b):
         return "\033[92mVyhráli jste!\033[0m"
     else:
         return "\033[91mProhráli jste\033[0m"
+
 
 print("Hraje se kámen[1], nůžky[2], papír[3], q pro konec")
 while True:

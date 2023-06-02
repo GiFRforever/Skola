@@ -6,6 +6,7 @@ def vstup_f(txt):
         except ValueError:
             print("Neplatný vstup")
 
+
 cislo = vstup_f("Zadejte číslo: ")
 if cislo % 2 == 0:
     print("Číslo je sudé")

@@ -2,6 +2,7 @@ import multiprocessing as mp
 from time import sleep
 import re
 
+
 def ftor(proc: int, jádra: int, conn) -> list[int]:
     délka: int = 50000000
     """try:
@@ -12,15 +13,15 @@ def ftor(proc: int, jádra: int, conn) -> list[int]:
     primes: list[int] = []
     with open("moje/p/primes.txt", "r") as f:
         print(f"Inicializace listu {proc}")
-        f.seek((délka//jádra)*proc)
-        if proc == jádra-1:
-            kolik = 50000000 - (délka//jádra)*(jádra-1)
+        f.seek((délka // jádra) * proc)
+        if proc == jádra - 1:
+            kolik = 50000000 - (délka // jádra) * (jádra - 1)
         else:
-            kolik = délka//jádra
+            kolik = délka // jádra
         for i in range(kolik):
             primes.append(int(f.readline()))
         print(f"List {proc} inicializován")
-    
+
     while True:
 
         cislo: int = conn.recv()
@@ -47,6 +48,7 @@ def ftor(proc: int, jádra: int, conn) -> list[int]:
                 break
         conn.send(out)
 
+
 def vstup_list(txt: str) -> list[int]:
     bu: str = " "
     while True:
@@ -60,16 +62,19 @@ def vstup_list(txt: str) -> list[int]:
                 return list(map(int, re.split(",|.| ", bu)))
             print("Zadejte čísla!")
 
+
 if __name__ == "__main__":
     jádra: int = mp.cpu_count()
     print(f"Počet jáder: {jádra}")
-    for i in range(jádra): # init pri kazdem startu
-        globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe() 
-        globals()[f"prcs{i}"] = mp.Process(target=ftor, args=(i, jádra, globals()[f"pipe_c_{i}"]))
+    for i in range(jádra):  # init pri kazdem startu
+        globals()[f"pipe_p_{i}"], globals()[f"pipe_c_{i}"] = mp.Pipe()
+        globals()[f"prcs{i}"] = mp.Process(
+            target=ftor, args=(i, jádra, globals()[f"pipe_c_{i}"])
+        )
         globals()[f"prcs{i}"].start()
         globals()[f"pipe_c_{i}"].send(0)
-        print(globals()[f"pipe_p_{i}"].recv()) # tady udělat čekání
-    
+        print(globals()[f"pipe_p_{i}"].recv())  # tady udělat čekání
+
     while True:
         vst_list: list[int] = vstup_list("Zadejte čísla: ")
         for cis, key in zip(vst_list, range(len(vst_list))):
@@ -77,11 +82,19 @@ if __name__ == "__main__":
                 globals()[f"pipe_c_{i}"].send(cis)
             globals()[f"deviders_{key}"] = []
             for i in range(jádra):
-                globals()[f"deviders_{key}"].append([item for sublist in globals()[f"pipe_p_{i}"].recv() for item in sublist])
+                globals()[f"deviders_{key}"].append(
+                    [
+                        item
+                        for sublist in globals()[f"pipe_p_{i}"].recv()
+                        for item in sublist
+                    ]
+                )
         # vvv tady poděl itemi z flt devideri a pak zobraz výslednou změnu
         deviders = []
-        for i in range(1,len(vst_list)):
-            deviders.append([set(globals()[f"deviders_{i}"])&set(globals()[f"deviders_{i-1}"])])
+        for i in range(1, len(vst_list)):
+            deviders.append(
+                [set(globals()[f"deviders_{i}"]) & set(globals()[f"deviders_{i-1}"])]
+            )
         print(deviders)
         """flt_split: list[str] = str(flt).split(".")
         num: int = int("".join(flt_split))

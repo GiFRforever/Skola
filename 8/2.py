@@ -22,9 +22,9 @@ def main():
     else:
         te = "Trojúhelník lze sestrojit"
         if (
-            a**2 + b**2 == c**2
-            or a**2 + c**2 == b**2
-            or b**2 + c**2 == a**2
+            a ** 2 + b ** 2 == c ** 2
+            or a ** 2 + c ** 2 == b ** 2
+            or b ** 2 + c ** 2 == a ** 2
         ):
             te += " a je pravoúhlý"
         elif a == b == c:
@@ -36,6 +36,7 @@ def main():
         te += "."
         print(te)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     while True:
         main()

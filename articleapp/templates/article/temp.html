@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pink Fluffy Unicorns</title>
+    <style>
+        body {
+            background-color: #ffc0cb;
+            /* Pink background */
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            /* White text */
+            font-family: Arial, sans-serif;
+        }
+
+        .unicorn-image {
+            width: 300px;
+            height: auto;
+            margin: 50px auto;
+            animation: unicorn-image-animation 1s linear infinite;
+        }
+
+        /* move image from left to right*/
+        @keyframes unicorn-image-animation {
+            0% {
+                margin-left: -1000px;
+            }
+
+            100% {
+                margin-left: 1000px;
+            }
+        }
+
+        .rainbow {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ff7f, #00ffff, #0000ff, #4b0082, #8f00ff);
+            background-size: 200% 100%;
+            animation: rainbow-animation 1s linear infinite;
+        }
+
+        @keyframes rainbow-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 200% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pink Fluffy Unicorns Dancing on Rainbows</h1>
+    <img class="unicorn-image" src="https://media4.giphy.com/media/YkuzftfzdoPOE/giphy.gif" alt="Pink Fluffy Unicorn">
+    <div class="rainbow"></div>
+    <p>Look at them fly!</p>
+</body>
+
+</html>

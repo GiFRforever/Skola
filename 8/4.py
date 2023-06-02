@@ -9,6 +9,7 @@ def vstup_f(txt):
         except ValueError:
             print("Neplatný vstup")
 
+
 cislo = vstup_f("Zadejte číslo: ")
 interval = [randint(20, 50), randint(20, 50)]
 interval.sort()

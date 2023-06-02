@@ -6,6 +6,7 @@ def vstup_f(txt):
         except ValueError:
             print("Neplatný vstup")
 
+
 a = vstup_f("Zadejte stranu a: ")
 b = vstup_f("Zadejte stranu b: ")
 c = vstup_f("Zadejte stranu c: ")

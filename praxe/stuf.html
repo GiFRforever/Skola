@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/unstable/pyscript.js"></script>
+</head>
+
+<body>
+    <script>
+        const params = new URLSearchParams(document.location.search);
+        p = params.get("popis");
+        c = params.get("cena");
+        m = params.get("množství");
+        console.info(s);
+        console.info(o);
+        console.info(m);
+    </script>
+
+    <py-script>
+        from js import p, c, m
+        c = int(c)
+        m = int(m)
+        print(f"Popis: {p}")
+        print(f"Cena: {c}")
+        print(f"Množství: {m}")
+        print()
+        print(f"""Vaše obědnávka položky "{p}" v množství {m} kusů byla přijata.""")
+        print(f"Cena je {c} Kč za kus, celkem tedy {c*m} Kč.")
+    </py-script>
+
+    <div id="out"></div>
+
+</body>
+
+</html>

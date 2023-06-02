@@ -1,11 +1,7 @@
 import pylab as pl
 
-v1 = pl.arange(10)
-print(v1)
-v2 = pl.arange(10, 20)
-print(v2)
-v3 = pl.arange(2.7, 6.5, 0.1)
-print(v3)
-
-x = pl.linspace(0, 10, 50)
-print(x)
+x = pl.linspace(0, 10, 20)
+y = x**3 - 2 * x**2 + x - 1
+pl.plot(x, y)
+pl.plot(x, y, "o")
+pl.show()

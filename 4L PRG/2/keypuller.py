@@ -11,7 +11,7 @@ except ImportError as e:
     import termios
 
 
-class KeyPoller():
+class KeyPuller():
     def __enter__(self):
         global isWindows
         if isWindows:
@@ -69,11 +69,3 @@ class KeyPoller():
             if not dr == []:
                 return sys.stdin.read(1)
             return None
-
-with KeyPoller() as keyPoller:
-    while True:
-        c = keyPoller.poll()
-        if not c is None:
-            if c == "c":
-                break
-            print(c, end="\r")

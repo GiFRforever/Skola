@@ -5,9 +5,18 @@ white: dict[str, str] = {"Novák": "+420 603 763 466", "Bittner": "+420 792 333 
 
 lines: list[str] = []
 
+def TelCheck(tel: str) -> str:
+    tel = tel.replace(" ", "")
+    if tel[0] == "+":
+        tel = "+" + ' '.join(tel[i:i+3] for i in range(1, len(tel), 3))
+    else:
+        tel = "+420 "+' '.join(tel[i:i+3] for i in range(0, len(tel), 3))
+    return tel
+
 def DoLines():
     global lines
-    lines = [f"{(name+':'):10} {white[name]}" for name in white]
+    lines = [f"{(name+':'):{max([len(name) for name in white])+1}} {white[name]}" for name in white]
+    lines.sort()
 # print(*lines, sep="\n")
 
 
@@ -51,11 +60,11 @@ def display() -> None:
 
     for i in range(lineon+1, len(lines)):
         print(lines[i])
+    
+    print("\33[8m", end="")
+
 
 lineon: int = 0
-# with KeyPuller() as keyPuller:
-# try:
-#     keyPuller = KeyPuller()
 
 def vstup() -> str|None:
     print("\33[8m", end="")
@@ -72,12 +81,12 @@ def main() -> None:
 
     # meníčko
     print("""
-          8 - nadohu
-          2 - dolů
-          i - vložení
-          d - mazání
-          s - hledání
-        """)
+8 - nadohu
+2 - dolů
+i - vložení
+d - mazání
+s - hledání
+""")
 
     # tady si uživatel vybírá akci
     DoLines()
@@ -89,30 +98,58 @@ def main() -> None:
             case "8":
                 if lineon:
                     lineon -= 1
+                GoToTop(len(lines))
+                
             case "2":
                 if lineon < len(lines)-1:
                     lineon += 1
+                GoToTop(len(lines))
+                
             case "i":
                 # vložení
                 nj: str = input("Zadejte jméno: ")
                 nč: str = input("Zadejte telefonní číslo: ")
+                nč = TelCheck(nč)
                 white[nj] = nč
-                clean(2)
+                clean(2+len(lines))
                 DoLines()
             case "d":
                 # mazání
-                pass
+                name = lines[lineon].split(":")[0]
+                if input(f"Přejete si smazat kontakt '{name}'? [Y/n]") in ["Y","y", ""]:
+                    white.pop(name)
+                    clean(1+len(lines))
+                    DoLines()
+                else:
+                    clean(1)
+                    GoToTop(len(lines))
             case "s":
                 # hledání
-                pass
+                clean(len(lines))
+                with KeyPuller() as keyPuller:
+                    hl = ""
+                    print("""
+7 - reset hledání
+1 - konec hledání
+0 - zkopírovat číslo
+""")
+                    while True:
+                        if (c := keyPuller.poll()):
+                            if c == "7":
+                                hl = ""
+                            elif c == "1":
+                                break
+                            elif c == "0":
+                                [line for line in lines if hl in line.lower()][0]
+                            hl += c.lower()
+                            print(*[line for line in lines if hl in line.lower()], sep="\n")
+                            
+
             case "e":
                 break
             case _:
                 continue
-        GoToTop(len(lines))
         display()
-# except:
-#     keyPuller.__exit__
 
 if __name__ == "__main__":
     main()

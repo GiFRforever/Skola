@@ -40,7 +40,7 @@ class KeyPuller():
         else:
             termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.old_term)
 
-    def poll(self):
+    def poll(self) -> str|None:
         if isWindows:
             if not len(self.capturedChars) == 0:
                 return self.capturedChars.pop(0)

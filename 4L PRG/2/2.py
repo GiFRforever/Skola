@@ -1,6 +1,117 @@
 import sys, platform, os
-import pyperclip as pp
-from keypuller import KeyPuller
+
+reqmetatfrst = True
+
+# requirements vvv
+
+requirements = ["pyperclip", "msvcrt"]
+
+for module in requirements:
+    try:
+        exec(f"import {module}")
+
+    except ModuleNotFoundError:
+        import pip
+        import subprocess
+        import sys
+
+        def install(package):
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+        install(module)
+        exec(f"import {module}")
+        
+        reqmetatfrst = False
+
+
+from ctypes import wintypes
+
+
+
+    
+
+
+
+# keypuller vvv
+
+global isWindows
+
+if (p := platform.uname()[0]) == "Windows":
+    try:
+        from win32api import STD_INPUT_HANDLE
+        from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
+        isWindows = True
+    except ModuleNotFoundError:
+        import pip
+        import subprocess
+        import sys
+
+        def install(package):
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+        install("pywin32")
+        from win32api import STD_INPUT_HANDLE
+        from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
+        isWindows = True
+
+        reqmetatfrst = False
+    
+    # GetStdHandle = ctypes.windll.kernel32.GetStdHandle
+    # STD_INPUT_HANDLE = -10
+    # ENABLE_LINE_INPUT = 2
+    # ENABLE_ECHO_INPUT = 4
+    # ENABLE_PROCESSED_INPUT = 1
+    # ENABLE_MOUSE_INPUT = 16
+    # ENABLE_WINDOW_INPUT = 8
+    # KEY_EVENT = 1
+
+elif p == "Linux":
+    import sys
+    import select
+    import termios
+    isWindows = False
+
+class KeyPuller():
+    def __enter__(self):
+        global isWindows
+        if isWindows:
+            self.capturedChars = []
+        else:
+            # Save the terminal settings
+            self.fd = sys.stdin.fileno()
+            self.new_term = termios.tcgetattr(self.fd)
+            self.old_term = termios.tcgetattr(self.fd)
+
+            # New terminal setting unbuffered
+            self.new_term[3] = (self.new_term[3] & ~termios.ICANON & ~termios.ECHO)
+            termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.new_term)
+
+        return self
+
+    def __exit__(self, type, value, traceback):
+        if not isWindows:
+            termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.old_term)
+
+    def poll(self) -> str|None:
+        if isWindows:
+            if not len(self.capturedChars) == 0:
+                return self.capturedChars.pop(0)
+
+            while msvcrt.kbhit():
+                char = msvcrt.getch()
+                self.capturedChars.append(char.decode("utf-8"))
+
+            if not len(self.capturedChars) == 0:
+                return self.capturedChars.pop(0)
+            else:
+                return None
+        else:
+            dr, dw, de = select.select([sys.stdin], [], [], 0)
+            if not dr == []:
+                return os.read(self.fd, 1).decode("utf-8")
+            return None
+
+# úkol vvv
 
 white: dict[str, str] = {"Novák": "+420 603 763 466", "Bittner": "+420 792 333 630", "Česnek": "+420 776 324 232", "Glac": "+420 735 968 231"}
 
@@ -21,7 +132,7 @@ def DoLines():
 # print(*lines, sep="\n")
 
 
-if (p := platform.uname()[0]) == "Windows":
+if p == "Windows":
     clear = lambda: os.system("cls")
 
     def GoToTop(n) -> None:
@@ -145,13 +256,13 @@ s - hledání
                             elif c == "1":
                                 break
                             elif c == "0":
-                                pp.copy(srch[0].split(":")[0])
+                                pyperclip.copy(srch[0].split(":")[0])
                             srch = [line for line in lines if hl in line.lower()]
                             hl += c.lower()
                             print(*srch, sep="\n")
                             
             case "0":
-                pp.copy(lines[lineon].split(":")[0])
+                pyperclip.copy(lines[lineon].split(":")[0])
             case "e":
                 break
             case _:
@@ -159,4 +270,9 @@ s - hledání
         display()
 
 if __name__ == "__main__":
-    main()
+    if reqmetatfrst:    
+        main()
+    else:
+        for i in range(5,-1,-1):
+            print(f"Tak znovu za {i}", end="\r")
+        os.startfile("2.py")

@@ -3,7 +3,14 @@ global isWindows
 isWindows = False
 try:
     from win32api import STD_INPUT_HANDLE
-    from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
+    from win32console import (
+        GetStdHandle,
+        KEY_EVENT,
+        ENABLE_ECHO_INPUT,
+        ENABLE_LINE_INPUT,
+        ENABLE_PROCESSED_INPUT,
+    )
+
     isWindows = True
 except ImportError as e:
     import sys
@@ -11,12 +18,14 @@ except ImportError as e:
     import termios
 
 
-class KeyPuller():
+class KeyPuller:
     def __enter__(self):
         global isWindows
         if isWindows:
             self.readHandle = GetStdHandle(STD_INPUT_HANDLE)
-            self.readHandle.SetConsoleMode(ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|ENABLE_PROCESSED_INPUT)
+            self.readHandle.SetConsoleMode(
+                ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT | ENABLE_PROCESSED_INPUT
+            )
 
             self.curEventLength = 0
             self.curKeysLength = 0
@@ -29,7 +38,7 @@ class KeyPuller():
             self.old_term = termios.tcgetattr(self.fd)
 
             # New terminal setting unbuffered
-            self.new_term[3] = (self.new_term[3] & ~termios.ICANON & ~termios.ECHO)
+            self.new_term[3] = self.new_term[3] & ~termios.ICANON & ~termios.ECHO
             termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.new_term)
 
         return self
@@ -40,7 +49,7 @@ class KeyPuller():
         else:
             termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.old_term)
 
-    def poll(self) -> str|None:
+    def poll(self) -> str | None:
         if isWindows:
             if not len(self.capturedChars) == 0:
                 return self.capturedChars.pop(0)
@@ -51,7 +60,7 @@ class KeyPuller():
                 return None
 
             if not len(eventsPeek) == self.curEventLength:
-                for curEvent in eventsPeek[self.curEventLength:]:
+                for curEvent in eventsPeek[self.curEventLength :]:
                     if curEvent.EventType == KEY_EVENT:
                         if ord(curEvent.Char) == 0 or not curEvent.KeyDown:
                             pass
@@ -65,7 +74,7 @@ class KeyPuller():
             else:
                 return None
         else:
-            dr,dw,de = select.select([sys.stdin], [], [], 0)
+            dr, dw, de = select.select([sys.stdin], [], [], 0)
             if not dr == []:
                 return sys.stdin.read(1)
             return None

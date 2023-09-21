@@ -2,6 +2,7 @@ import sys, platform, os
 
 reqmetatfrst = True
 p = platform.uname()[0]
+
 # requirements vvv
 
 # requirements = ["pyperclip", "msvcrt"]
@@ -20,7 +21,7 @@ except ModuleNotFoundError:
 
     install("pyperclip")
     import pyperclip
-    
+
     reqmetatfrst = False
 
 
@@ -45,35 +46,20 @@ if p == "Windows":
 
         install("msvcrt")
         import msvcrt
-        
+
         reqmetatfrst = False
-    # try:
-    #     from win32api import STD_INPUT_HANDLE
-    #     from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
-    #     isWindows = True
-    # except ModuleNotFoundError:
-    #     import pip
-    #     import subprocess
-    #     import sys
 
-    #     def install(package):
-    #         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-    #     install("pywin32")
-    #     from win32api import STD_INPUT_HANDLE
-    #     from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
-    #     isWindows = True
-
-    #     reqmetatfrst = False
     pass
-    
+
 elif p == "Linux":
     import sys
     import select
     import termios
+
     isWindows = False
 
-class KeyPuller():
+
+class KeyPuller:
     def __enter__(self):
         global isWindows
         if isWindows:
@@ -85,7 +71,7 @@ class KeyPuller():
             self.old_term = termios.tcgetattr(self.fd)
 
             # New terminal setting unbuffered
-            self.new_term[3] = (self.new_term[3] & ~termios.ICANON & ~termios.ECHO)
+            self.new_term[3] = self.new_term[3] & ~termios.ICANON & ~termios.ECHO
             termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.new_term)
 
         return self
@@ -94,7 +80,7 @@ class KeyPuller():
         if not isWindows:
             termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.old_term)
 
-    def poll(self) -> str|None:
+    def poll(self) -> str | None:
         if isWindows:
             if not len(self.capturedChars) == 0:
                 return self.capturedChars.pop(0)
@@ -113,23 +99,34 @@ class KeyPuller():
                 return os.read(self.fd, 1).decode("utf-8")
             return None
 
+
 # úkol vvv
 
-white: dict[str, str] = {"Novák": "+420 603 763 466", "Bittner": "+420 792 333 630", "Česnek": "+420 776 324 232", "Glac": "+420 735 968 231"}
+white: dict[str, str] = {
+    "Novák": "+420 603 763 466",
+    "Bittner": "+420 792 333 630",
+    "Česnek": "+420 776 324 232",
+    "Glac": "+420 735 968 231",
+}
 
 lines: list[str] = []
+
 
 def TelCheck(tel: str) -> str:
     tel = tel.replace(" ", "")
     if tel[0] == "+":
-        tel = "+" + ' '.join(tel[i:i+3] for i in range(1, len(tel), 3))
+        tel = "+" + " ".join(tel[i : i + 3] for i in range(1, len(tel), 3))
     else:
-        tel = "+420 "+' '.join(tel[i:i+3] for i in range(0, len(tel), 3))
+        tel = "+420 " + " ".join(tel[i : i + 3] for i in range(0, len(tel), 3))
     return tel
+
 
 def DoLines():
     global lines
-    lines = [f"{(name+':'):{max([len(name) for name in white])+1}} {white[name]}" for name in white]
+    lines = [
+        f"{(name+':'):{max([len(name) for name in white])+1}} {white[name]}"
+        for name in white
+    ]
     lines.sort()
 
 
@@ -139,7 +136,7 @@ if p == "Windows":
     def GoToTop(n) -> None:
         for _ in range(n):
             sys.stdout.write("\033[F")
-    
+
     def clean(n) -> None:
         for _ in range(n):
             sys.stdout.write("\033[F")
@@ -160,32 +157,34 @@ elif p == "Linux":
 else:
     exit("Unsupported os")
 
+
 # tady se to ukazuje
 def display() -> None:
     global lines
     global lineon
 
-
     for i in range(lineon):
         print(lines[i])
-    
+
     print(f"\33[100m{lines[lineon]}\33[0m")
 
-    for i in range(lineon+1, len(lines)):
+    for i in range(lineon + 1, len(lines)):
         print(lines[i])
-    
+
     print("\33[8m", end="")
 
 
 lineon: int = 0
 
-def vstup() -> str|None:
+
+def vstup() -> str | None:
     print("\33[8m", end="")
     with KeyPuller() as keyPuller:
         while True:
-            if (c:= keyPuller.poll()):
+            if c := keyPuller.poll():
                 print("\33[0m", end="")
                 return c
+
 
 def main() -> None:
     global lines
@@ -193,14 +192,16 @@ def main() -> None:
     clear()
 
     # meníčko
-    print("""
+    print(
+        """
 8 - nadohu
 2 - dolů
 0 - kopírovat
 i - vložení
 d - mazání
 s - hledání
-""")
+"""
+    )
 
     # tady si uživatel vybírá akci
     DoLines()
@@ -213,26 +214,30 @@ s - hledání
                 if lineon:
                     lineon -= 1
                 GoToTop(len(lines))
-                
+
             case "2":
-                if lineon < len(lines)-1:
+                if lineon < len(lines) - 1:
                     lineon += 1
                 GoToTop(len(lines))
-                
+
             case "i":
                 # vložení
                 nj: str = input("Zadejte jméno: ")
                 nč: str = input("Zadejte telefonní číslo: ")
                 nč = TelCheck(nč)
                 white[nj] = nč
-                clean(2+len(lines))
+                clean(2 + len(lines))
                 DoLines()
             case "d":
                 # mazání
                 name = lines[lineon].split(":")[0]
-                if input(f"Přejete si smazat kontakt '{name}'? [Y/n]") in ["Y","y", ""]:
+                if input(f"Přejete si smazat kontakt '{name}'? [Y/n]") in [
+                    "Y",
+                    "y",
+                    "",
+                ]:
                     white.pop(name)
-                    clean(1+len(lines))
+                    clean(1 + len(lines))
                     DoLines()
                 else:
                     clean(1)
@@ -243,14 +248,16 @@ s - hledání
                 with KeyPuller() as keyPuller:
                     hl = ""
                     srch = [""]
-                    print("""
+                    print(
+                        """
 7 - reset hledání
 1 - konec hledání
 0 - zkopírovat číslo
 
-""")
+"""
+                    )
                     while True:
-                        if (c := keyPuller.poll()):
+                        if c := keyPuller.poll():
                             clean(len(srch))
                             if c == "7":
                                 hl = ""
@@ -261,7 +268,7 @@ s - hledání
                             srch = [line for line in lines if hl in line.lower()]
                             hl += c.lower()
                             print(*srch, sep="\n")
-                            
+
             case "0":
                 pyperclip.copy(lines[lineon].split(":")[0])
             case "e":
@@ -270,10 +277,11 @@ s - hledání
                 continue
         display()
 
+
 if __name__ == "__main__":
-    if reqmetatfrst:    
+    if reqmetatfrst:
         main()
     else:
-        for i in range(5,-1,-1):
+        for i in range(5, -1, -1):
             print(f"Tak znovu za {i}", end="\r")
         os.startfile("2.py")

@@ -1,4 +1,5 @@
-import sys, platform, os, time
+import sys, platform, os
+import pyperclip as pp
 from keypuller import KeyPuller
 
 white: dict[str, str] = {"Novák": "+420 603 763 466", "Bittner": "+420 792 333 630", "Česnek": "+420 776 324 232", "Glac": "+420 735 968 231"}
@@ -83,6 +84,7 @@ def main() -> None:
     print("""
 8 - nadohu
 2 - dolů
+0 - kopírovat
 i - vložení
 d - mazání
 s - hledání
@@ -128,23 +130,28 @@ s - hledání
                 clean(len(lines))
                 with KeyPuller() as keyPuller:
                     hl = ""
+                    srch = [""]
                     print("""
 7 - reset hledání
 1 - konec hledání
 0 - zkopírovat číslo
+
 """)
                     while True:
                         if (c := keyPuller.poll()):
+                            clean(len(srch))
                             if c == "7":
                                 hl = ""
                             elif c == "1":
                                 break
                             elif c == "0":
-                                [line for line in lines if hl in line.lower()][0]
+                                pp.copy(srch[0].split(":")[0])
+                            srch = [line for line in lines if hl in line.lower()]
                             hl += c.lower()
-                            print(*[line for line in lines if hl in line.lower()], sep="\n")
+                            print(*srch, sep="\n")
                             
-
+            case "0":
+                pp.copy(lines[lineon].split(":")[0])
             case "e":
                 break
             case _:

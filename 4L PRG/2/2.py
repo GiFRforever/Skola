@@ -163,15 +163,20 @@ def display() -> None:
     global lines
     global lineon
 
-    for i in range(lineon):
-        print(lines[i])
 
-    print(f"\33[100m{lines[lineon]}\33[0m")
+    if len(lines):
+        if lineon >= len(lines):
+            lineon = len(lines)-1
+        
+        for i in range(lineon):
+            print(lines[i])
 
-    for i in range(lineon + 1, len(lines)):
-        print(lines[i])
+        print(f"\33[100m{lines[lineon]}\33[0m")
 
-    print("\33[8m", end="")
+        for i in range(lineon + 1, len(lines)):
+            print(lines[i])
+
+        print("\33[8m", end="")
 
 
 lineon: int = 0
@@ -200,6 +205,7 @@ def main() -> None:
 i - vložení
 d - mazání
 s - hledání
+e - konec
 """
     )
 
@@ -239,6 +245,8 @@ s - hledání
                     white.pop(name)
                     clean(1 + len(lines))
                     DoLines()
+                    if not len(lines):
+                        clean(2)
                 else:
                     clean(1)
                     GoToTop(len(lines))

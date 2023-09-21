@@ -1,46 +1,40 @@
 import sys, platform, os
 
 reqmetatfrst = True
-
+p = platform.uname()[0]
 # requirements vvv
 
-requirements = ["pyperclip", "msvcrt"]
-
-for module in requirements:
-    try:
-        exec(f"import {module}")
-
-    except ModuleNotFoundError:
-        import pip
-        import subprocess
-        import sys
-
-        def install(package):
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-        install(module)
-        exec(f"import {module}")
-        
-        reqmetatfrst = False
+# requirements = ["pyperclip", "msvcrt"]
 
 
-from ctypes import wintypes
+try:
+    import pyperclip
 
+except ModuleNotFoundError:
+    import pip
+    import subprocess
+    import sys
 
+    def install(package):
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
+    install("pyperclip")
+    import pyperclip
     
+    reqmetatfrst = False
 
+
+# from ctypes import wintypes
 
 
 # keypuller vvv
 
 global isWindows
 
-if (p := platform.uname()[0]) == "Windows":
+if p == "Windows":
     try:
-        from win32api import STD_INPUT_HANDLE
-        from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
-        isWindows = True
+        import msvcrt
+
     except ModuleNotFoundError:
         import pip
         import subprocess
@@ -49,22 +43,30 @@ if (p := platform.uname()[0]) == "Windows":
         def install(package):
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-        install("pywin32")
-        from win32api import STD_INPUT_HANDLE
-        from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
-        isWindows = True
-
+        install("msvcrt")
+        import msvcrt
+        
         reqmetatfrst = False
-    
-    # GetStdHandle = ctypes.windll.kernel32.GetStdHandle
-    # STD_INPUT_HANDLE = -10
-    # ENABLE_LINE_INPUT = 2
-    # ENABLE_ECHO_INPUT = 4
-    # ENABLE_PROCESSED_INPUT = 1
-    # ENABLE_MOUSE_INPUT = 16
-    # ENABLE_WINDOW_INPUT = 8
-    # KEY_EVENT = 1
+    # try:
+    #     from win32api import STD_INPUT_HANDLE
+    #     from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
+    #     isWindows = True
+    # except ModuleNotFoundError:
+    #     import pip
+    #     import subprocess
+    #     import sys
 
+    #     def install(package):
+    #         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+    #     install("pywin32")
+    #     from win32api import STD_INPUT_HANDLE
+    #     from win32console import GetStdHandle, KEY_EVENT, ENABLE_ECHO_INPUT, ENABLE_LINE_INPUT, ENABLE_PROCESSED_INPUT
+    #     isWindows = True
+
+    #     reqmetatfrst = False
+    pass
+    
 elif p == "Linux":
     import sys
     import select
@@ -129,7 +131,6 @@ def DoLines():
     global lines
     lines = [f"{(name+':'):{max([len(name) for name in white])+1}} {white[name]}" for name in white]
     lines.sort()
-# print(*lines, sep="\n")
 
 
 if p == "Windows":

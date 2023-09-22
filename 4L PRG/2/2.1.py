@@ -75,10 +75,9 @@ else:
 
 
 def vstup(keypuller) -> str:
-    while c := keypuller.pull():
-        if c is not None:
+    while True:
+        if c := keypuller.pull():
             return c  # c je klávesa, kterou uživatel zmáčkl
-    return ""  # pojistka
 
 
 # úkol vvv
@@ -237,6 +236,7 @@ e - konec
                 # hledání
                 clean(len(lines))
                 hl = ""
+                c = ""
                 srch = [""]
                 print(
                     """
@@ -255,8 +255,9 @@ e - konec
                         break
                     elif c == "0":
                         pyperclip.copy(white[srch[0].split(":")[0]])
+                    else:
+                        hl += c.lower()
                     srch = [line for line in lines if hl in line.lower()]
-                    hl += c.lower()
                     print(*srch, sep="\n")
             case "e":
                 # konec
@@ -283,8 +284,16 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    lodewhite()
-    main()
-    savewhite()
-    clear()
+    try:
+        lodewhite()
+        main()
+        savewhite()
+        clear()
+    except KeyboardInterrupt:
+        savewhite()
+        clear()
+    except Exception as e:
+        savewhite()
+        clear()
+        print(e)
     exit("Úpravy ztraceny (-:")

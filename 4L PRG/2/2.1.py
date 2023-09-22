@@ -225,9 +225,8 @@ e - konec
                 ]:
                     white.pop(name)
                     clean(1 + len(lines))
+                    print(")-:", end="\r")
                     DoLines()
-                    if not len(lines):
-                        clean(2)
                 else:
                     clean(1)
                     GoToTop(len(lines))
@@ -248,10 +247,11 @@ e - konec
                 )
                 while True:
                     c = vstup(keypuller)
-                    clean(len(srch))
+                    clean(len(srch) if len(srch) else 1)
                     if c == "7":
                         hl = ""
                     elif c == "1":
+                        clean(5)
                         break
                     elif c == "0":
                         pyperclip.copy(white[srch[0].split(":")[0]])
@@ -296,4 +296,4 @@ if __name__ == "__main__":
         savewhite()
         clear()
         print(e)
-    exit("Úpravy ztraceny (-:")
+    exit("Úpravy uloženy (-:")

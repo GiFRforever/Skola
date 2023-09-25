@@ -14,7 +14,7 @@ i_ulice = 1
 i_mesto = 2
 i_telefon = 3
 
-# DB[n] = [(n := input("Zadejte nové jméno: ")), input("Zadejte ulici a číslo popisné: "), input("Zadejte město: "), input("Zadejte telefonní číslo: ")]
+DB[n] = [(n := input("Zadejte nové jméno: ")), input("Zadejte ulici a číslo popisné: "), input("Zadejte město: "), input("Zadejte telefonní číslo: ")]
 
 print(
     "\nLidi z Olomouce:",
@@ -47,7 +47,7 @@ for n in DB:
 print(
     "\nVýpis všech s věkem:",
     *[
-        f"{DB[n][i_jmeno]}, {DB[n][i_ulice]}, {DB[n][i_mesto]}, {DB[n][i_telefon], DB[n][i_vek]}"
+        f"{DB[n][i_jmeno]}, {DB[n][i_ulice]}, {DB[n][i_mesto]}, {DB[n][i_telefon]}, {DB[n][i_vek]}"
         for n in DB
     ],
     sep="\n",

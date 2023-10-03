@@ -1,15 +1,82 @@
-import time
+import time, os
 
 
 class Telesa:
-    def __init__(self) -> None:
+    def __init__(self, těleso="") -> None:
+        self.koule: list[str] = [
+            "                              ",
+            "             ....             ",
+            "       :~!7????77!!~^:.       ",
+            "    .!J555555YYJ??77!!~^:     ",
+            "   ~YPPGBBBGGP5YJJ?77!~~~^.   ",
+            "  !55PGB#&&#BGP5YJ?77!!~~^^.  ",
+            " .JY5PGGBBBBGP5\033[95m|–––––––––––|  r\033[0m",
+            " .?JYY55PPP55YYJJ?77!!~~^^^:  ",
+            "  ^???JJJJJJJJ??77!!~~^^^^^.  ",
+            "   ^!7777777777!!!~~^^^^^:.   ",
+            "    .:~!!!!!!~~~~^^^^^^:.     ",
+            "       .::^^^^^^^::::.        ",
+            "                              ",
+        ]
+
+        self.kvádr: list[str] = [
+            "                                        ",
+            "    .:...............................:^ ",
+            "  .:.:                              :.^ ",
+            " ^:..^............................\033[93m:\033[0m:  : ",
+            ".:  .:                            \033[93m:\033[0m   : ",
+            " :   :                            \033[93m:\033[0m   : ",
+            " :   :                            \033[93m: c\033[0m : ",
+            " :   :                            \033[93m:\033[0m   : ",
+            " :   :                            \033[93m:\033[0m   :.",
+            " :  ::............................\033[93m^\033[0m..\033[93m:^\033[0m ",
+            " ^.:                              \033[93m:.:.  b\033[0m",
+            " \033[93m^:...............................:.\033[0m    ",
+            "                 \033[93ma\033[0m                       ",
+        ]
+
+        self.krychle: list[str] = [
+            "                             ",
+            "    .:..................:^ ",
+            "  .:.:                 :.^ ",
+            " ^:..^...............\033[93m:\033[0m:  : ",
+            ".:  .:               \033[93m:\033[0m   : ",
+            " :   :               \033[93m:\033[0m   : ",
+            " :   :               \033[93m: a\033[0m : ",
+            " :   :               \033[93m:\033[0m   : ",
+            " :   :               \033[93m:\033[0m   :",
+            " :  ::...............\033[93m:\033[0m...\033[93m:\033[0m ",
+            " ^.:                 \033[93m: .'  \033[93ma\033[0m",
+            " \033[93m^:..................:'\033[0m    ",
+            "            \033[93ma\033[0m               ",
+        ]
+
         self.PI: float = 3.14159
+        self.těleso: str = těleso
+        # vrací velikost konzole
+        self.velikost = lambda: os.get_terminal_size()
         self.rozměry: dict = {
             "strany": [],
             "výška": 0,
             "poloměr": 0,
             "kolikastranný": 0,
         }
+
+        try:
+            print(globals()["Telesa"].koule)
+            if (
+                len(locals()[self.těleso.replace(" ", "_")][0]) + 40
+                > self.velikost()[0]
+                or len(locals()[self.těleso.replace(" ", "_")]) > self.velikost()[1]
+            ):
+                raise Exception
+            for line in locals()[self.těleso.replace(" ", "_")]:
+                print(40 * " " + line)
+            for _ in range(len(locals()[self.těleso.replace(" ", "_")])):
+                sys.stdout.write("\033[F")
+        except:
+            pass
+        print(f"\n\033[95m{self.těleso.capitalize()}\033[0m\n")
 
     # vstupy
     def vstup_float(self, txt) -> float:

@@ -43,28 +43,47 @@
         </p>
         <script language="javascript">
             // <!--
-            function vypocitej() {
-                var u = document.forms[0].u.value;
-                var r = document.forms[0].r.value;
-                var i = document.forms[0].i.value;
-                if (u != 0 && r != 0 && i != 0) {
-                    if (u != r * i) {
-                        alert("Chyba v zadání!");
+                function vypocitej() {
+                    var u = parseFloat(document.forms[0].u.value);
+                    var r = parseFloat(document.forms[0].r.value);
+                    var i = parseFloat(document.forms[0].i.value);
+                    
+                    if (!isNaN(r) && isFinite(r)) {
+                        if (r < 0) {
+                            r = Math.abs(r);
+                            document.forms[0].r.value = r;
+                        }
+                    } else {
+                        r = 0;
+                        document.forms[0].r.value = r;
+                    }
+
+                    if (!isNaN(u) && isFinite(u)) {} else {
+                        u = 0;
+                        document.forms[0].u.value = u;
+                    }
+
+                    if (!isNaN(i) && isFinite(i)) {} else {
+                        i = 0;
+                        document.forms[0].i.value = i;
+                    }
+                    
+                    if (u === 0) {
+                        u = r * i;
+                        document.forms[0].u.value = u;
+                    } else if (r === 0) {
+                        r = u / i;
+                        document.forms[0].r.value = Math.abs(r);
+                    } else if (i === 0) {
+                        i = u / r;
+                        document.forms[0].i.value = i;
+                    } else {
+                        if (u != r * i) {
+                            alert("Zadané hodnoty nejsou v rovnici správně.");
+                        }
                     }
                 }
-                else if (u == 0) {
-                    u = r * i;
-                    document.forms[0].u.value = u;
-                }
-                else if (r == 0) {
-                    r = u / i;
-                    document.forms[0].r.value = Math.abs(r);
-                }
-                else if (i == 0) {
-                    i = u / r;
-                    document.forms[0].i.value = i;
-                }
-            }
+
             function vymaz() {
                 document.forms[0].u.value = 0;
                 document.forms[0].r.value = 0;

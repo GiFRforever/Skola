@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <title>Test 2</title>
+    </head>
+    <body>
+        <h1 align="center">Přihláška ke studiu na vyšší odborné škole</h1>
+        <form action="https://www.spseol.cz/">
+            <table border="1" cellspacing="0" align="center">
+                <tr>
+                    <td style="padding: 10px;">Škola</td>
+                    <td>Vyšší odborná škola a Střední průmyslová škola elektrotechnická Olomouc</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Studijní obor</td>
+                    <td>Aplikace VYT</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Zaměření</td>
+                    <td>
+                        <input type="radio" name="zamereni" checked="checked"> Ekonomika <br>
+                        <input type="radio" name="zamereni"> Telekomunikace
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Forma studia</td>
+                    <td>
+                        <input type="radio" name="forma" checked="checked"> denní <br>
+                        <input type="radio" name="forma"> dálková
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Studovaný jazyk na SŠ</td>
+                    <td>
+                        <select name="jazyk">
+                            <option value="ANJ">ANJ</option>
+                            <option value="RUJ">RUJ</option>
+                            <option value="NONE" selected="selected">žádný</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="color: blue;">Osobní údaje</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Příjmení:</td>
+                    <td><input type="text" name="prijmeni" placeholder="max. 20 znaků" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Jméno:</td>
+                    <td><input type="text" name="jmeno" placeholder="max. 20 znaků" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Rodné číslo:</td>
+                    <td><input type="text" name="rodnecislo" value="/"  maxlength="11"></td>
+                </tr>
+                <tr>
+                    <td style="color: blue;">Prospěch</td>
+                    <td>1. roč. 2. roč. 3. roč. 4. roč.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;"><i>1 z CJL:</i></td>
+                    <td>&nbsp;&nbsp;&nbsp;<input type="checkbox" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;"><i>1 z MAT:</i></td>
+                    <td>&nbsp;&nbsp;&nbsp;<input type="checkbox" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Odeslat přihlášku</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

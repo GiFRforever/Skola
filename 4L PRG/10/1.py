@@ -1,30 +1,37 @@
 from email.policy import default
 import tkinter as tk
 import random
-
-# Vytvořte aplikaci s komponentou Label a pěti tlačítky (Součet, Rozdíl, Součin, Podíl, Konec).  Tlačítka pro počítání budou vLabelu generovat náhodné příklady i svýsledky,pro každou operaci volte jinou barvutextu; Konec = ukončení aplikace.
+from turtle import back
 
 
 class App(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
         self.pack()
-        self.create_widgets()
+        self.kalkulacka()
 
-    def create_widgets(self):
+    def kalkulacka(self):
+        self.configure(bg="#d4d0c8")
         self.label = tk.Label(
-            self, text="Výsledek", fg="white", background="black", width=20, height=3
+            self,
+            text="Výsledek",
+            font=("Trebuchet MS", 20),
+            fg="white",
+            background="black",
+            width=20,
+            height=3,
         )
         self.label.pack(pady=10, padx=10)
-        
-        font_button = ("Calibri", 15)
-        
+
+        font_button = ("Trebuchet MS", 15)
+
         self.sum_button = tk.Button(
             self,
             text="Součet",
             font=font_button,
             width=8,
             height=2,
+            background="#d4d0c8",
             relief="raised",
             fg="blue",
             command=self.sum,
@@ -37,6 +44,7 @@ class App(tk.Frame):
             font=font_button,
             width=8,
             height=2,
+            background="#d4d0c8",
             relief="raised",
             fg="red",
             command=self.sub,
@@ -49,6 +57,7 @@ class App(tk.Frame):
             font=font_button,
             width=8,
             height=2,
+            background="#d4d0c8",
             relief="raised",
             fg="green",
             command=self.mul,
@@ -61,6 +70,7 @@ class App(tk.Frame):
             font=font_button,
             width=8,
             height=2,
+            background="#d4d0c8",
             relief="raised",
             fg="yellow",
             command=self.div,
@@ -73,6 +83,7 @@ class App(tk.Frame):
             font=font_button,
             width=8,
             height=2,
+            background="#d4d0c8",
             relief="raised",
             fg="black",
             command=self.master.destroy,
@@ -104,13 +115,13 @@ class App(tk.Frame):
         num1 = random.randint(1, 10)
         num2 = random.randint(1, 10)
         result = num1 / num2
-        self.label["text"] = f"{num1} / {num2} = {result:.2f}"
+        self.label["text"] = f"{num1} / {num2} = {result:.2g}"
         self.label["fg"] = "yellow"
 
 
 okno = tk.Tk()
 okno.title("Kalkulačka")
-# okno.geometry("150x250")
-# okno.resizable(False, False)
+# okno.geometry("326x591")
+okno.resizable(False, False)
 app = App(master=okno)
 app.mainloop()

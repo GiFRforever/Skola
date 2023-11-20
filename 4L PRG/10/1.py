@@ -1,7 +1,5 @@
-from email.policy import default
 import tkinter as tk
 import random
-from turtle import back
 
 
 class App(tk.Frame):

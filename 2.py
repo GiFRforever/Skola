@@ -26,7 +26,7 @@ class Kalkulacka(tk.Frame):
         self.label_1 = tk.Label(
             self, text="Číslo 1:", font=self.default_font, bg="#d4d0c8"
         )
-        self.label_1.grid(row=0, column=0, padx=55)
+        self.label_1.grid(row=0, column=0, padx=50)
         self.entry_1 = tk.Entry(self, font=self.default_font)
         self.entry_1.grid(row=0, column=1, padx=10, pady=5)
         self.label_2 = tk.Label(
@@ -40,21 +40,21 @@ class Kalkulacka(tk.Frame):
         self.ram_b.grid(row=2, column=0, columnspan=2, pady=10)
 
         self.button_sum = tk.Button(
-            self.ram_b, text="Součet", font=self.default_font, width=10, command=self.sum
+            self.ram_b, text="Součet", font=self.default_font, command=self.sum
         )
-        self.button_sum.grid(row=0, column=0, sticky="w", padx=10, pady=10)
+        self.button_sum.grid(row=0, column=0, sticky="we", padx=10, pady=10)
         self.button_mul = tk.Button(
-            self.ram_b, text="Součin", font=self.default_font, width=10, command=self.mul
+            self.ram_b, text="Součin", font=self.default_font, command=self.mul
         )
-        self.button_mul.grid(row=0, column=1, sticky="e", padx=10, pady=10)
+        self.button_mul.grid(row=0, column=1, sticky="we", padx=10, pady=10)
         self.button_sub = tk.Button(
-            self.ram_b, text="Rozdíl", font=self.default_font, width=10, command=self.sub
+            self.ram_b, text="Rozdíl", font=self.default_font, command=self.sub
         )
-        self.button_sub.grid(row=1, column=0, sticky="w", padx=10, pady=10)
+        self.button_sub.grid(row=1, column=0, sticky="we", padx=10, pady=10)
         self.button_div = tk.Button(
-            self.ram_b, text="Podíl", font=self.default_font, width=10, command=self.div
+            self.ram_b, text="Podíl", font=self.default_font, command=self.div
         )
-        self.button_div.grid(row=1, column=1, sticky="e", padx=10, pady=10)
+        self.button_div.grid(row=1, column=1, sticky="we", padx=10, pady=10)
 
         self.output = tk.Label(
             self, text="Výsledek = ", font=self.default_font, bg="#d4d0c8"

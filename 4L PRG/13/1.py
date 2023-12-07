@@ -64,7 +64,7 @@ class Linear(tk.Frame):
         a = float(self.entry_a.get())
         b = float(self.entry_b.get())
         if a == 0:
-            self.output["text"] = f"Výsledek = {-b:.2f}"
+            self.output["text"] = f"Výsledek neexistuje"
         else:
             self.output["text"] = f"Výsledek = {((-b) / a):.2f}"
 

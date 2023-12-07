@@ -23,14 +23,14 @@ class Count(tk.Frame):
         self.label_difficulty = tk.Label(
             self, text="Easy mode", fg="green", font=self.default_font
         )
-        self.label_difficulty.pack(pady=10, anchor="ne")
+        self.label_difficulty.pack(pady=10, anchor="n")
         self.button_difficulty = tk.Button(
-            self, image=self.on, bd=0, command=self.change_difficulty
+            self, image=self.on, bd=0, height=80, command=self.change_difficulty
         )
-        self.button_difficulty.pack(pady=10, anchor="ne")
+        self.button_difficulty.pack(padx=10,pady=10, anchor="n")
 
         self.ram = tk.Frame(self)
-        self.ram.pack(padx=10, pady=10)
+        self.ram.pack(padx=10, pady=100)
 
         self.label_a = tk.Label(self.ram, font=self.default_font)
         self.label_a.grid(row=0, column=0, padx=1, pady=5)
@@ -84,6 +84,7 @@ class Count(tk.Frame):
             self.label_difficulty.config(text="Easy mode")
             self.label_difficulty.config(fg="green")
             self.button_difficulty.config(image=self.on)
+        self.randomize()
 
     def check(self, event=None):
         a = int(self.label_a["text"])

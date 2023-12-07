@@ -25,12 +25,12 @@ class Count(tk.Frame):
         )
         self.label_difficulty.pack(pady=10, anchor="n")
         self.button_difficulty = tk.Button(
-            self, image=self.on, bd=0, height=80, command=self.change_difficulty
+            self, image=self.on, bd=0, height=50, command=self.change_difficulty
         )
-        self.button_difficulty.pack(padx=10,pady=10, anchor="n")
+        self.button_difficulty.pack(padx=10, pady=10, anchor="n")
 
         self.ram = tk.Frame(self)
-        self.ram.pack(padx=10, pady=100)
+        self.ram.pack(padx=10, pady=10)
 
         self.label_a = tk.Label(self.ram, font=self.default_font)
         self.label_a.grid(row=0, column=0, padx=1, pady=5)
@@ -87,6 +87,13 @@ class Count(tk.Frame):
         self.randomize()
 
     def check(self, event=None):
+        if self.output["text"] == "Výsledek je správně":
+            self.randomize()
+            return
+        if self.entry_result.get() == "":
+            self.output["text"] = "Nezadal jsi žádnou hodnotu"
+            self.output["fg"] = "red"
+            return
         a = int(self.label_a["text"])
         b = int(self.label_b["text"])
         result = int(self.entry_result.get())

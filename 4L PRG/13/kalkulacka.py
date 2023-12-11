@@ -1,4 +1,5 @@
 import tkinter as tk
+import re
 
 okno = tk.Tk()
 okno.title("Kalkulačka")
@@ -7,7 +8,7 @@ okno.resizable(False, False)
 font = ("Trebuchet Ms", 30)
 
 
-def validation(action):
+def validation(action: str):
     # print(action)
     if all(x in [",", "-", "+", "*", "/", "Error"] or x.isdigit() for x in action):
         return True
@@ -24,6 +25,36 @@ brno.focus_set()
 
 
 def vstup(znak):
+    # / => */+
+    # * => */+
+    # + => */+-
+    # - => */+-
+    # , => O,
+    if brno.get() == "Error":
+        brno.delete(0, tk.END)
+    
+    if znak == ".":
+        znak = ","
+    
+    for _ in range(2):
+        if (
+            znak in ["*", "/", "+"]
+            and brno.get()[-1] in [",", "*", "/", "+", "-"]
+            or znak == "-"
+            and brno.get()[-1] in ["-", "+"]
+        ):
+            brno.delete(len(brno.get()) - 1)
+    
+    # if znak == ",":  # , => O,
+    #     if "," not in (splitted := re.split(r"[\+\-\*\/]", brno.get())[-1]) and splitted == "0":
+    #         znak = "0,"
+    #     else:
+    #         return
+        
+    # if znak in [0, "0", "0,"] and "," not in (splitted := re.split(r"[\+\-\*\/]", brno.get())[-1]) and splitted == "0":
+    #     return
+
+
     brno.insert(len(brno.get()), str(znak))
 
 

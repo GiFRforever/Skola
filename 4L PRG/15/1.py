@@ -1,14 +1,9 @@
-from calendar import c
 import tkinter as tk
 from random import choice
 
 
-def diff(a: tuple[int, int]) -> tuple[int, int]:
-    return a[1] - a[0]
-
-
 class App(tk.Frame):
-    def __init__(self, master=None):
+    def __init__(self, master: tk.Tk):
         super().__init__(master)
         self.master = master
         self.pack()
@@ -34,11 +29,11 @@ class App(tk.Frame):
 
         self.hra()
 
-    def hra(self):
-        # self.canvas = tk.Canvas(self, width=500, height=500)
-        # self.canvas.pack(fill="both", expand=True)
-        # self.bg = tk.PhotoImage(file="kamen_zde_t.png")
-        # self.canvas.create_image(False, False, image=self.bg, anchor=tk.NW)
+    def hra(self) -> None:
+        self.canvas = tk.Canvas(self, bg="white", width=500, height=500)
+        self.canvas.pack(fill="both", expand=True)
+        self.bg = tk.PhotoImage(file="kamen_zde_t.png")
+        self.canvas.create_image(False, False, image=self.bg, anchor=tk.NW)
         self.master.bind("<Button-1>", self.click)
         self.master.bind("<Escape>", lambda e: self.master.destroy())
 
@@ -55,26 +50,60 @@ class App(tk.Frame):
                 for i in v:
                     if i[0][:3] == protivolba[:3]:
                         print(f"Vyhrál jsi! {volba} {i[1]} {i[0]}!")
+
+                        try:
+                            self.canvas.delete(self.green_rect)
+                            self.canvas.delete(self.red_rect)
+                        except Exception:
+                            pass
+
                         x0, x1 = self.bounds[volba][0]
                         y0, y1 = self.bounds[volba][1]
                         # print(x0, x1, y0, y1)
 
-                        #create greeen rectangle
-                        self.canvas_g = tk.Canvas(
-                            self,
-                            width=x1-x0,
-                            height=y1-y0,
-                        )
-                        self.canvas_g.pack(fill="both", expand=True)
-                        self.canvas_g.create_rectangle(
+                        # create greeen rectangle
+                        self.green_rect = self.canvas.create_rectangle(
                             x0, y0, x1, y1, fill="green"
                         )
+                        self.canvas.tag_lower(self.green_rect)
 
+                        x0, x1 = self.bounds[protivolba][0]
+                        y0, y1 = self.bounds[protivolba][1]
+                        # create red rectangle
+                        self.red_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="red"
+                        )
+                        self.canvas.tag_lower(self.red_rect)
                         return
             if k == protivolba:
                 for i in v:
                     if i[0][:3] == volba[:3]:
                         print(f"Prohrál jsi! {protivolba} {i[1]} {i[0]}!")
+
+                        try:
+                            self.canvas.delete(self.green_rect)
+                            self.canvas.delete(self.red_rect)
+                        except Exception:
+                            pass
+
+                        x0, x1 = self.bounds[protivolba][0]
+                        y0, y1 = self.bounds[protivolba][1]
+                        # print(x0, x1, y0, y1)
+
+                        # create greeen rectangle
+                        self.green_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="green"
+                        )
+                        self.canvas.tag_lower(self.green_rect)
+
+                        x0, x1 = self.bounds[volba][0]
+                        y0, y1 = self.bounds[volba][1]
+                        # create red rectangle
+                        self.red_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="red"
+                        )
+                        self.canvas.tag_lower(self.red_rect)
+
                         return
 
     def click(self, event: tk.Event):

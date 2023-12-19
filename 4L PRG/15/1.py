@@ -112,7 +112,7 @@ class App(tk.Frame):
             if k == volba:
                 for i in v:
                     if i[0][:3] == protivolba[:3]:
-                        print(f"Vyhrál jsi! {volba} {i[1]} {i[0]}!")
+                        print(f"\33[32mVyhrál jsi! {volba} {i[1]} {i[0]}!\33[0m")
 
                         try:
                             self.canvas.delete(self.green_rect)
@@ -153,7 +153,7 @@ class App(tk.Frame):
             if k == protivolba:
                 for i in v:
                     if i[0][:3] == volba[:3]:
-                        print(f"Prohrál jsi! {protivolba} {i[1]} {i[0]}!")
+                        print(f"\33[91mProhrál jsi! {protivolba} {i[1]} {i[0]}!\33[0m")
 
                         try:
                             self.canvas.delete(self.green_rect)

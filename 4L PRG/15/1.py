@@ -72,169 +72,150 @@ class App(tk.Frame):
         protivolba: str = choice(self.names)
         print(f"Oponent: {protivolba}")
 
-        def play_game(self, volba, protivolba):
-            """
-            Play the game and update the canvas based on the chosen options.
+        if volba == protivolba:
+            print("Remíza!")
+            try:
+                self.canvas.delete(self.green_rect)
+                self.canvas.delete(self.red_rect)
+                self.canvas.delete(self.outcome)
+            except Exception:
+                pass
 
-            Args:
-                volba (str): The player's choice.
-                protivolba (str): The opponent's choice.
+            self.outcome = self.canvas.create_text(
+                250,
+                30,
+                text="Remíza",
+                anchor="center",
+                font=("Impact", 20),
+                fill="orange",
+            )
 
-            Returns:
-                None
-            """
-            if volba == protivolba:
-                print("Remíza!")
-                try:
-                    self.canvas.delete(self.green_rect)
-                    self.canvas.delete(self.red_rect)
-                    self.canvas.delete(self.outcome)
-                except Exception:
-                    pass
+            x0, x1 = self.bounds[volba][0]
+            y0, y1 = self.bounds[volba][1]
+            # print(x0, x1, y0, y1)
 
-                self.outcome = self.canvas.create_text(
-                    250,
-                    30,
-                    text="Remíza",
-                    anchor="center",
-                    font=("Impact", 20),
-                    fill="orange",
-                )
+            # create greeen rectangle
+            self.green_rect = self.canvas.create_rectangle(
+                x0, y0, x1, y1, fill="orange"
+            )
+            self.canvas.tag_lower(self.green_rect)
 
-                x0, x1 = self.bounds[volba][0]
-                y0, y1 = self.bounds[volba][1]
+            x0, x1 = self.bounds[protivolba][0]
+            y0, y1 = self.bounds[protivolba][1]
+            # create red rectangle
+            self.red_rect = self.canvas.create_rectangle(x0, y0, x1, y1, fill="orange")
+            self.canvas.tag_lower(self.red_rect)
+            return
 
-                # create green rectangle
-                self.green_rect = self.canvas.create_rectangle(
-                    x0, y0, x1, y1, fill="orange"
-                )
-                self.canvas.tag_lower(self.green_rect)
+        for k, v in self.rules.items():
+            if k == volba:
+                for i in v:
+                    if i[0][:3] == protivolba[:3]:
+                        print(f"\33[32mVyhrál jsi! {volba} {i[1]} {i[0]}!\33[0m")
 
-                x0, x1 = self.bounds[protivolba][0]
-                y0, y1 = self.bounds[protivolba][1]
-                # create red rectangle
-                self.red_rect = self.canvas.create_rectangle(
-                    x0, y0, x1, y1, fill="orange"
-                )
-                self.canvas.tag_lower(self.red_rect)
-                return
+                        try:
+                            self.canvas.delete(self.green_rect)
+                            self.canvas.delete(self.red_rect)
+                            self.canvas.delete(self.outcome)
+                        except Exception:
+                            pass
 
-            for k, v in self.rules.items():
-                if k == volba:
-                    for i in v:
-                        if i[0][:3] == protivolba[:3]:
-                            print(f"\33[32mVyhrál jsi! {volba} {i[1]} {i[0]}!\33[0m")
+                        self.outcome = self.canvas.create_text(
+                            250,
+                            30,
+                            text=f"Vyhrál jsi! {volba} {i[1]} {i[0]}!",
+                            anchor="center",
+                            font=("Impact", 20),
+                            fill="green",
+                        )
 
-                            try:
-                                self.canvas.delete(self.green_rect)
-                                self.canvas.delete(self.red_rect)
-                                self.canvas.delete(self.outcome)
-                            except Exception:
-                                pass
+                        self.update_score("win")
 
-                            self.outcome = self.canvas.create_text(
-                                250,
-                                30,
-                                text=f"Vyhrál jsi! {volba} {i[1]} {i[0]}!",
-                                anchor="center",
-                                font=("Impact", 20),
-                                fill="green",
-                            )
+                        x0, x1 = self.bounds[volba][0]
+                        y0, y1 = self.bounds[volba][1]
+                        # print(x0, x1, y0, y1)
 
-                            self.update_score("win")
+                        # create greeen rectangle
+                        self.green_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="green"
+                        )
+                        self.canvas.tag_lower(self.green_rect)
 
-                            x0, x1 = self.bounds[volba][0]
-                            y0, y1 = self.bounds[volba][1]
+                        x0, x1 = self.bounds[protivolba][0]
+                        y0, y1 = self.bounds[protivolba][1]
+                        # create red rectangle
+                        self.red_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="red"
+                        )
+                        self.canvas.tag_lower(self.red_rect)
+                        return
+            if k == protivolba:
+                for i in v:
+                    if i[0][:3] == volba[:3]:
+                        print(f"\33[91mProhrál jsi! {protivolba} {i[1]} {i[0]}!\33[0m")
 
-                            # create green rectangle
-                            self.green_rect = self.canvas.create_rectangle(
-                                x0, y0, x1, y1, fill="green"
-                            )
-                            self.canvas.tag_lower(self.green_rect)
+                        try:
+                            self.canvas.delete(self.green_rect)
+                            self.canvas.delete(self.red_rect)
+                            self.canvas.delete(self.outcome)
+                        except Exception:
+                            pass
 
-                            x0, x1 = self.bounds[protivolba][0]
-                            y0, y1 = self.bounds[protivolba][1]
-                            # create red rectangle
-                            self.red_rect = self.canvas.create_rectangle(
-                                x0, y0, x1, y1, fill="red"
-                            )
-                            self.canvas.tag_lower(self.red_rect)
-                            return
-                if k == protivolba:
-                    for i in v:
-                        if i[0][:3] == volba[:3]:
-                            print(
-                                f"\33[91mProhrál jsi! {protivolba} {i[1]} {i[0]}!\33[0m"
-                            )
+                        self.outcome = self.canvas.create_text(
+                            250,
+                            30,
+                            text=f"Prohrál jsi! {protivolba} {i[1]} {i[0]}!",
+                            anchor="center",
+                            font=("Impact", 20),
+                            fill="red",
+                        )
 
-                            try:
-                                self.canvas.delete(self.green_rect)
-                                self.canvas.delete(self.red_rect)
-                                self.canvas.delete(self.outcome)
-                            except Exception:
-                                pass
+                        self.update_score("lose")
 
-                            self.outcome = self.canvas.create_text(
-                                250,
-                                30,
-                                text=f"Prohrál jsi! {protivolba} {i[1]} {i[0]}!",
-                                anchor="center",
-                                font=("Impact", 20),
-                                fill="red",
-                            )
+                        x0, x1 = self.bounds[protivolba][0]
+                        y0, y1 = self.bounds[protivolba][1]
+                        # print(x0, x1, y0, y1)
 
-                            self.update_score("lose")
+                        # create greeen rectangle
+                        self.green_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="green"
+                        )
+                        self.canvas.tag_lower(self.green_rect)
 
-                            x0, x1 = self.bounds[protivolba][0]
-                            y0, y1 = self.bounds[protivolba][1]
+                        x0, x1 = self.bounds[volba][0]
+                        y0, y1 = self.bounds[volba][1]
+                        # create red rectangle
+                        self.red_rect = self.canvas.create_rectangle(
+                            x0, y0, x1, y1, fill="red"
+                        )
+                        self.canvas.tag_lower(self.red_rect)
 
-                            # create green rectangle
-                            self.green_rect = self.canvas.create_rectangle(
-                                x0, y0, x1, y1, fill="green"
-                            )
-                            self.canvas.tag_lower(self.green_rect)
+                        return
 
-                            x0, x1 = self.bounds[volba][0]
-                            y0, y1 = self.bounds[volba][1]
-                            # create red rectangle
-                            self.red_rect = self.canvas.create_rectangle(
-                                x0, y0, x1, y1, fill="red"
-                            )
-                            self.canvas.tag_lower(self.red_rect)
+    def click(self, event: tk.Event):
+        # print(f"x: {event.x}, y: {event.y}")
+        for k, v in self.bounds.items():
+            if (
+                event.x >= v[0][0]
+                and event.x <= v[0][1]
+                and event.y >= v[1][0]
+                and event.y <= v[1][1]
+            ):
+                print(f"TY: {k}!")
+                self.oponent(k)
+                return k
+        else:
+            try:
+                self.canvas.delete(self.green_rect)
+                self.canvas.delete(self.red_rect)
+                self.canvas.delete(self.outcome)
+            except Exception:
+                pass
 
-                            return
 
-        def click(self, event: tk.Event):
-            """
-            Handle the click event on the canvas.
-
-            Args:
-                event (tk.Event): The click event.
-
-            Returns:
-                str: The selected option.
-            """
-            for k, v in self.bounds.items():
-                if (
-                    event.x >= v[0][0]
-                    and event.x <= v[0][1]
-                    and event.y >= v[1][0]
-                    and event.y <= v[1][1]
-                ):
-                    print(f"TY: {k}!")
-                    self.oponent(k)
-                    return k
-            else:
-                try:
-                    self.canvas.delete(self.green_rect)
-                    self.canvas.delete(self.red_rect)
-                    self.canvas.delete(self.outcome)
-                except Exception:
-                    pass
-
-        okno = tk.Tk()
-        okno.title("Kámen, nůžky, papír, tapír, spock")
-        okno.geometry("500x500")
-        okno.resizable(False, False)
-        app = App(master=okno)
-        app.mainloop()
+okno = tk.Tk()
+okno.title("Kámen, nůžky, papír, tapír, spock")
+okno.geometry("500x500")
+okno.resizable(False, False)
+app = App(master=okno)
+app.mainloop()

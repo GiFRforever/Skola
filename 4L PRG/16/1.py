@@ -15,7 +15,7 @@ class App(tk.Frame):
         vcmd = (self.master.register(self.validate), "%W", "%P")
         # print(vcmd)
 
-        self.num1 = tk.IntVar(self)
+        self.num1 = tk.IntVar(self, 0)
         self.num1sb = tk.Spinbox(
             self,
             from_=-100,
@@ -26,7 +26,7 @@ class App(tk.Frame):
         )
         self.num1sb.pack(padx=10, pady=1)
 
-        self.num2 = tk.IntVar(self)
+        self.num2 = tk.IntVar(self, 0)
         self.num2sb = tk.Spinbox(
             self,
             from_=-100,
@@ -48,7 +48,7 @@ class App(tk.Frame):
             else self.vypocet(),
         )
 
-        self.volba = tk.StringVar()
+        self.volba = tk.StringVar(self, "+")
         self.vyber = tk.OptionMenu(self, self.volba, "+", "-", "*", "/")
         self.vyber.pack(padx=10, pady=1)
 

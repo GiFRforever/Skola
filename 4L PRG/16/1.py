@@ -42,8 +42,8 @@ class App(tk.Frame):
         self.vystup.bind(
             "<Button-1>",
             lambda event: (
-                self.vypocet() and 
-                self.vystup.config(text=round(float(eval(self.vystup["text"])), 2))
+                self.vypocet()
+                and self.vystup.config(text=round(float(eval(self.vystup["text"])), 2))
             )
             if isinstance(self.vystup["text"], str)
             else self.vypocet(),
@@ -87,7 +87,7 @@ class App(tk.Frame):
             return False
         return False
 
-    def vypocet(self) -> True:
+    def vypocet(self):
         try:
             if self.volba.get() == "+":
                 self.vystup["text"] = int(self.num1.get()) + int(self.num2.get())

@@ -42,6 +42,7 @@ class App(tk.Frame):
         self.vystup.bind(
             "<Button-1>",
             lambda event: (
+                self.vypocet() and 
                 self.vystup.config(text=round(float(eval(self.vystup["text"])), 2))
             )
             if isinstance(self.vystup["text"], str)
@@ -86,7 +87,7 @@ class App(tk.Frame):
             return False
         return False
 
-    def vypocet(self) -> None:
+    def vypocet(self) -> True:
         try:
             if self.volba.get() == "+":
                 self.vystup["text"] = int(self.num1.get()) + int(self.num2.get())
@@ -128,6 +129,7 @@ class App(tk.Frame):
                     self.vystup["text"] = deleni
                 else:
                     messagebox.showerror("Chyba", "Nelze dělit nulou!")
+            return True
         except:
             messagebox.showerror("Chyba", "Něco se pokazilo!")
 

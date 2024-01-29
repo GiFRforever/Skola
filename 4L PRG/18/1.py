@@ -1,5 +1,4 @@
 import random as rd
-from tabnanny import check
 import tkinter as tk
 
 
@@ -29,6 +28,7 @@ class App(tk.Frame):
                         self.pozice[j] = (rd.uniform(0, 0.96), rd.uniform(-0.03, 0.9))
                         check = True
 
+        self.kolečka = []
         for souradnice in self.pozice:
             label = tk.Label(
                 self.master,
@@ -38,7 +38,23 @@ class App(tk.Frame):
                 bg="black",
                 bd=0,
                 highlightthickness=0,
-            ).place(relx=souradnice[0], rely=souradnice[1])
+            )
+            label.place(relx=souradnice[0], rely=souradnice[1])
+            self.kolečka.append(label)
+        
+        self.update()
+        
+    def update(self) -> None:
+        for i in range(len(self.pozice)):
+            self.pozice[i] = (
+                self.pozice[i][0] + rd.uniform(-0.01, 0.01),
+                self.pozice[i][1] + rd.uniform(-0.01, 0.01),
+            )
+            self.kolečka[i].place(
+                relx=self.pozice[i][0], rely=self.pozice[i][1], anchor="center"
+            )
+        self.master.after(100, self.update)
+        
 
 
 root = tk.Tk()

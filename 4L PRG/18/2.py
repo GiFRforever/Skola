@@ -1,5 +1,4 @@
 import tkinter as tk
-import re
 
 okno = tk.Tk()
 okno.title("Kalkulačka")

@@ -5,9 +5,9 @@ from numpy import pad
 
 
 class App(tk.Frame):
-    def __init__(self, master=None):
+    def __init__(self, master):
         tk.Frame.__init__(self, master)
-        self.master = master
+        self.master: tk.Tk = master
         self.init_window()
 
     def init_window(self):

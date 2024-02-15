@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block obsah %}
+
+<h2>Ftípky</h2>
+
+<div style="color: red">{{ zprava }}</div>
+{% if session["uziv"] %}
+
+<form action="{{ url_for("vtip_add") }}" method="POST">
+    <table>
+        <tr>
+            <td>
+                Název:
+            </td>
+            <td>
+                <input type="text" name="nazev">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ftip:
+            </td>
+            <td>
+                <input type="text" name="ftip">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Přidat">
+</form>
+
+{% else %}
+<div style="color: red">Pro zobrazení ftipů se musíte přihlásit!</div>
+
+{% endif %}
+{% endblock %}

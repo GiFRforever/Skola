@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <title>Tvoje Máma</title>
+  </head>
+  <body>
+
+    <!-- zahlavi stranky -->
+    <table border="0" width="100%">
+    <tr>
+    <td align="left"> <img src="{{ url_for("static", filename="jes.jpg") }}" height="120">
+    <td align="left" > <h1> Ftip </h1>
+    </table>
+
+    <hr>
+    <table border="0" width="100%">
+    <tr align="center">
+        <td><a href="{{ url_for("index")  }}">Úvod       </a>
+        <td><a href="{{ url_for("vtipy")  }}">Muhahahaha       </a>
+{% if session["uziv"]=="admin" %}
+    <td><a href="{{ url_for("sprava")  }}">Správa uživatelů </a>
+{% endif %}
+
+      <td><a href="{{ url_for("login")  }}">
+{% if session["uziv"] %}
+    Odhlásit se
+{% else %}
+    Přihlásit se
+{% endif %}
+        </a>
+    </tr>
+    </table>
+    <hr>
+
+    <!-- obsah stranky -->
+    {% block obsah %}
+    Vítáme Vás!!!
+    {% if session["uziv"] %}
+    Přihlášený uživatel: {{ session["uziv"] }}
+    {% endif %}
+    {% endblock %}
+    <!-- zapati stranky -->
+    <hr>
+    <div align="right">&copy; Copyright 2024</div>
+
+  </body>
+</html>

@@ -7,7 +7,7 @@
 <div style="color: red">{{ zprava }}</div>
 {% if session["uziv"] %}
 
-<form action="{{ url_for("vtip_add") }}" method="GET"><input type="submit" value="!Přidat ftip!"></form>
+<form action="{{ url_for('vtip_add') }}" method="GET"><input type="submit" value="!Přidat ftip!"></form>
 
 {% for vtip in vtipy %}
 <div>
@@ -15,8 +15,8 @@
     <p>
         {{vtip[2]}}
     </p>
-    <!-- <p class="author">Author: {{vtip[3]}}</p> -->
-    <p class="creation-date">Creation Date: {{vtip[4]}}</p>
+    <!-- <p class="author">Author: {{vtip[4]}}</p> -->
+    <p class="creation-date">Creation Date: {{vtip[3]}}</p>
 </div>
 {% endfor %}
 

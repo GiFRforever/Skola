@@ -3,7 +3,8 @@
 from flask import Flask, render_template, request, session, send_from_directory
 import os
 import hashlib
-import MySQLdb
+import sqlite3
+
 
 
 app = Flask(__name__)
@@ -27,13 +28,9 @@ def index():
     return render_template("index.html")
 
 
+
 def mydb():
-    return MySQLdb.connect(
-        "clu40164v2.mysql.pythonanywhere-services.com",
-        "clu40164v2",
-        "kočkopes",
-        "clu40164v2$default",
-    )
+    return sqlite3.connect("vtipy.db")
 
 
 
@@ -46,7 +43,7 @@ def login():
         hs = md5(jm + ";;;tajnyobsah;;;" + request.form["heslo"])
         with mydb() as db:
             cur = db.cursor()
-            cur.execute("SELECT login,heslo,id FROM uziv WHERE login=%s AND povolen='A';", (jm,))
+            cur.execute("SELECT login,heslo,id FROM uziv WHERE login=? AND povolen='A';", (jm,))
             udaje = cur.fetchall()
             for udaj in udaje:
                 if udaj[1] == hs:
@@ -75,13 +72,13 @@ def registrace():
             else:
                 with mydb() as db:
                     cur = db.cursor()
-                    cur.execute("SELECT login FROM uziv WHERE login=%s;", (jm,))
+                    cur.execute("SELECT login FROM uziv WHERE login=?;", (jm,))
                     udaje = cur.fetchall()
                     if udaje:
                         chyba = f"Uživatelské jméno {jm} je již zabráno"
                     else:
                         cur.execute(
-                            "INSERT INTO uziv (login, heslo) VALUES (%s, %s);",
+                            "INSERT INTO uziv (login, heslo) VALUES (?, ?);",
                             (jm, md5(jm + ";;;tajnyobsah;;;" + hs)),
                         )
                         db.commit()
@@ -90,8 +87,8 @@ def registrace():
                             zprava=f"Uzivatel {jm} úspěšně registrován",
                             jmenoform=jm,
                         )
-        except:
-            chyba = "Chyba parametrů"
+        except Exception as e:
+            chyba = f"Chyba parametrů: '{e}'"
 
     return render_template("registrace.html", chyba=chyba, jmenoform=jmenoform)
 
@@ -108,14 +105,14 @@ def sprava():
             akce = request.form["akce"]
             idcko = request.form["ID"]
             if akce == "Delete":
-                cur.execute("DELETE FROM uziv WHERE id=%s;", (idcko,))
+                cur.execute("DELETE FROM uziv WHERE id=?;", (idcko,))
             elif akce == "Zakázat":
                 cur.execute(
-                    "UPDATE uziv SET povolen='N' WHERE id=%s;", (idcko,)
+                    "UPDATE uziv SET povolen='N' WHERE id=?;", (idcko,)
                 )
             elif akce == "Povolit":
                 cur.execute(
-                    "UPDATE uziv SET povolen='A' WHERE id=%s;", (idcko,)
+                    "UPDATE uziv SET povolen='A' WHERE id=?;", (idcko,)
                 )
 
             db.commit()
@@ -138,8 +135,8 @@ def vtip_add():
         with mydb() as db:
             cur = db.cursor()
             try:
-                cur.execute("INSERT INTO vtip (nadpis, obsah, id_uziv) VALUES (%s, %s, %s)", (request.form['nazev'], request.form['ftip'], session["id_uziv"]))
+                cur.execute("INSERT INTO vtip (nadpis, obsah, id_uziv) VALUES (?, ?, ?)", (request.form['nazev'], request.form['ftip'], session["id_uziv"]))
                 db.commit()
-            except:
-                zprava = "Nevyšlo to"
+            except Exception as e:
+                zprava = f"Nevyšlo to: '{e}'"
     return render_template("pridat_vtip.html", zprava=zprava)

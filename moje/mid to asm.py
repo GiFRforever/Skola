@@ -145,20 +145,23 @@ for note in notes:
     # count: int = int(us / cas[2])
     count: int = int((note[1] - note[0]) * uspt / cas[2])
     if count > 0:
+        while count > 255:
+            noty.append((cas[0], cas[1], 255))
+            count -= 255
         noty.append((cas[0], cas[1], count))
 
 with open("moje\out.asm", "w") as f:
-    f.write("HL:	")
+    f.write("HL:")
     for i, note in enumerate(noty):
         f.write(
             f"""
-        MOV R2, {note[2]}
-{f"N{i}:":<8}MOV R1, {note[0]}
-        MOV R0, {note[1]}
+        MOV R2,#{note[2]}
+{f"N{i}:":<8}MOV R1,#{note[0]}
+        MOV R0,#{note[1]}
         SETB P0.7
         CALL WAIT
-        MOV R1, {note[0]}
-        MOV R0, {note[1]}
+        MOV R1,#{note[0]}
+        MOV R0,#{note[1]}
         CALL WAIT
         CLR P0.7
         DJNZ R2, {f"N{i}"}

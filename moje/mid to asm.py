@@ -1,5 +1,6 @@
 import mido
-from time import sleep
+
+# from time import sleep
 
 # import matplotlib.pyplot as plt
 uspt: float = 1041.7
@@ -130,43 +131,113 @@ notes = new_notes
 # ]
 
 casy: dict[int, tuple[int, int, int]] = {}
-with open("moje\casy.txt", "r") as f:
+with open("moje\\casy.txt", "r") as f:
     for line in f.readlines():
         try:
             note, r1, r0, t = line.split()
             casy[int(note)] = (int(r1), int(r0), int(t))
         except Exception as e:
             print(e)
-noty = []
+
+# noty = []
+# for note in notes:
+#     cas: tuple[int, int, int] = casy[note[2]]
+#     # beats: int = note[1] - note[0]
+#     # us: float = beats * uspt
+#     # count: int = int(us / cas[2])
+#     count: int = int((note[1] - note[0]) * uspt / cas[2])
+#     if count > 0:
+#         while count > 255:
+#             noty.append((cas[0], cas[1], 255))
+#             count -= 255
+#         noty.append((cas[0], cas[1], count))
+
+# with open("moje\\out.asm", "w") as f:
+#     f.write("HL:")
+#     for i, note in enumerate(noty):
+#         f.write(
+#             f"""
+#         MOV R2,#{note[2]}
+# {f"N{i}:":<8}MOV R1,#{note[0]}
+#         MOV R0,#{note[1]}
+#         SETB P0.7
+#         CALL WAIT
+#         MOV R1,#{note[0]}
+#         MOV R0,#{note[1]}
+#         CALL WAIT
+#         CLR P0.7
+#         DJNZ R2, {f"N{i}"}
+# """
+#         )
+#     f.write(
+#         """
+# WAIT:   DJNZ R0,WAIT
+#         CJNE R1,#0,WAIT1
+#         RET
+# WAIT1:  MOV R0,#255
+# WAIT2:  DJNZ R0,WAIT2
+#         DJNZ R1,WAIT1
+#         RET
+# END
+# """
+#     )
+
+noty: list[tuple[int, int]] = []
 for note in notes:
     cas: tuple[int, int, int] = casy[note[2]]
-    # beats: int = note[1] - note[0]
-    # us: float = beats * uspt
-    # count: int = int(us / cas[2])
     count: int = int((note[1] - note[0]) * uspt / cas[2])
     if count > 0:
         while count > 255:
-            noty.append((cas[0], cas[1], 255))
+            noty.append((note[2], 255))
             count -= 255
-        noty.append((cas[0], cas[1], count))
+        noty.append((note[2], count))
+noty.append((0, 255))  # silence at the end
 
-with open("moje\out.asm", "w") as f:
+with open("moje\\out.asm", "w") as f:
     f.write("HL:")
     for i, note in enumerate(noty):
         f.write(
             f"""
-        MOV R2,#{note[2]}
-{f"N{i}:":<8}MOV R1,#{note[0]}
-        MOV R0,#{note[1]}
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#{note[0]}
-        MOV R0,#{note[1]}
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, {f"N{i}"}
+        MOV R2,#{note[1]}
+{f"T{i}:":<8}CALL N{note[0]}
+        DJNZ R2, T{i}
 """
         )
+
+    f.write(
+        """
+        JMP HL
+"""
+    )
+
+    casy.pop(0)
+    f.write(
+        f"""
+N0:     MOV R1,#1
+	MOV R0,#235
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#235
+	CALL WAIT
+	RET
+"""
+    )
+
+    for n, c in casy.items():
+        f.write(
+            f"""
+{f"N{n}:":<8}MOV R1,#{c[0]}
+	MOV R0,#{c[1]}
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#{c[0]}
+	MOV R0,#{c[1]}
+	CALL WAIT
+	CLR P0.7
+	RET
+"""
+        )
+
     f.write(
         """
 WAIT:   DJNZ R0,WAIT

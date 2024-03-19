@@ -1,12675 +1,5705 @@
-HL:	
+HL:
         MOV R2,#244
-N0:     MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N0
+T0:     CALL N72
+        DJNZ R2, T0
 
         MOV R2,#142
-N1:     MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1
+T1:     CALL N76
+        DJNZ R2, T1
 
         MOV R2,#201
-N2:     MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N2
+T2:     CALL N79
+        DJNZ R2, T2
 
         MOV R2,#118
-N3:     MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N3
+T3:     CALL N71
+        DJNZ R2, T3
 
         MOV R2,#27
-N4:     MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N4
+T4:     CALL N65
+        DJNZ R2, T4
 
         MOV R2,#10
-N5:     MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N5
+T5:     CALL N67
+        DJNZ R2, T5
 
         MOV R2,#25
-N6:     MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N6
+T6:     CALL N72
+        DJNZ R2, T6
 
         MOV R2,#27
-N7:     MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N7
+T7:     CALL N74
+        DJNZ R2, T7
 
         MOV R2,#6
-N8:     MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N8
+T8:     CALL N0
+        DJNZ R2, T8
 
         MOV R2,#110
-N9:     MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N9
+T9:     CALL N72
+        DJNZ R2, T9
 
         MOV R2,#17
-N10:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N10
+T10:    CALL N67
+        DJNZ R2, T10
 
         MOV R2,#28
-N11:    MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N11
+T11:    CALL N64
+        DJNZ R2, T11
 
         MOV R2,#43
-N12:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N12
+T12:    CALL N67
+        DJNZ R2, T12
 
         MOV R2,#255
-N13:    MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N13
+T13:    CALL N81
+        DJNZ R2, T13
 
         MOV R2,#169
-N14:    MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N14
+T14:    CALL N81
+        DJNZ R2, T14
 
         MOV R2,#133
-N15:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N15
+T15:    CALL N79
+        DJNZ R2, T15
 
         MOV R2,#147
-N16:    MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N16
+T16:    CALL N84
+        DJNZ R2, T16
 
         MOV R2,#33
-N17:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N17
+T17:    CALL N67
+        DJNZ R2, T17
 
         MOV R2,#102
-N18:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N18
+T18:    CALL N79
+        DJNZ R2, T18
 
         MOV R2,#24
-N19:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N19
+T19:    CALL N67
+        DJNZ R2, T19
 
         MOV R2,#12
-N20:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N20
+T20:    CALL N0
+        DJNZ R2, T20
 
         MOV R2,#5
-N21:    MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N21
+T21:    CALL N62
+        DJNZ R2, T21
 
         MOV R2,#19
-N22:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N22
+T22:    CALL N77
+        DJNZ R2, T22
 
         MOV R2,#20
-N23:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N23
+T23:    CALL N79
+        DJNZ R2, T23
 
         MOV R2,#4
-N24:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N24
+T24:    CALL N0
+        DJNZ R2, T24
 
         MOV R2,#6
-N25:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N25
+T25:    CALL N67
+        DJNZ R2, T25
 
         MOV R2,#10
-N26:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N26
+T26:    CALL N77
+        DJNZ R2, T26
 
         MOV R2,#21
-N27:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N27
+T27:    CALL N79
+        DJNZ R2, T27
 
         MOV R2,#6
-N28:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N28
+T28:    CALL N0
+        DJNZ R2, T28
 
         MOV R2,#26
-N29:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N29
+T29:    CALL N77
+        DJNZ R2, T29
 
         MOV R2,#1
-N30:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N30
+T30:    CALL N0
+        DJNZ R2, T30
 
         MOV R2,#19
-N31:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N31
+T31:    CALL N76
+        DJNZ R2, T31
 
         MOV R2,#37
-N32:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N32
+T32:    CALL N77
+        DJNZ R2, T32
 
         MOV R2,#120
-N33:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N33
+T33:    CALL N76
+        DJNZ R2, T33
 
         MOV R2,#8
-N34:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N34
+T34:    CALL N67
+        DJNZ R2, T34
 
         MOV R2,#8
-N35:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N35
+T35:    CALL N0
+        DJNZ R2, T35
 
         MOV R2,#26
-N36:    MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N36
+T36:    CALL N64
+        DJNZ R2, T36
 
         MOV R2,#50
-N37:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N37
+T37:    CALL N67
+        DJNZ R2, T37
 
         MOV R2,#49
-N38:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N38
+T38:    CALL N69
+        DJNZ R2, T38
 
         MOV R2,#2
-N39:    MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N39
+T39:    CALL N65
+        DJNZ R2, T39
 
         MOV R2,#23
-N40:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N40
+T40:    CALL N71
+        DJNZ R2, T40
 
         MOV R2,#13
-N41:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N41
+T41:    CALL N72
+        DJNZ R2, T41
 
         MOV R2,#28
-N42:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N42
+T42:    CALL N0
+        DJNZ R2, T42
 
         MOV R2,#26
-N43:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N43
+T43:    CALL N74
+        DJNZ R2, T43
 
         MOV R2,#30
-N44:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N44
+T44:    CALL N76
+        DJNZ R2, T44
 
         MOV R2,#36
-N45:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N45
+T45:    CALL N77
+        DJNZ R2, T45
 
         MOV R2,#38
-N46:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N46
+T46:    CALL N79
+        DJNZ R2, T46
 
         MOV R2,#64
-N47:    MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N47
+T47:    CALL N81
+        DJNZ R2, T47
 
         MOV R2,#33
-N48:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N48
+T48:    CALL N79
+        DJNZ R2, T48
 
         MOV R2,#28
-N49:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N49
+T49:    CALL N77
+        DJNZ R2, T49
 
         MOV R2,#26
-N50:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N50
+T50:    CALL N76
+        DJNZ R2, T50
 
         MOV R2,#27
-N51:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N51
+T51:    CALL N74
+        DJNZ R2, T51
 
         MOV R2,#2
-N52:    MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N52
+T52:    CALL N60
+        DJNZ R2, T52
 
         MOV R2,#8
-N53:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N53
+T53:    CALL N0
+        DJNZ R2, T53
 
         MOV R2,#28
-N54:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N54
+T54:    CALL N72
+        DJNZ R2, T54
 
         MOV R2,#18
-N55:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N55
+T55:    CALL N71
+        DJNZ R2, T55
 
         MOV R2,#23
-N56:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N56
+T56:    CALL N69
+        DJNZ R2, T56
 
         MOV R2,#15
-N57:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N57
+T57:    CALL N0
+        DJNZ R2, T57
 
         MOV R2,#47
-N58:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N58
+T58:    CALL N67
+        DJNZ R2, T58
 
         MOV R2,#1
-N59:    MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N59
+T59:    CALL N60
+        DJNZ R2, T59
 
         MOV R2,#16
-N60:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N60
+T60:    CALL N69
+        DJNZ R2, T60
 
         MOV R2,#16
-N61:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N61
+T61:    CALL N71
+        DJNZ R2, T61
 
         MOV R2,#21
-N62:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N62
+T62:    CALL N0
+        DJNZ R2, T62
 
         MOV R2,#24
-N63:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N63
+T63:    CALL N72
+        DJNZ R2, T63
 
         MOV R2,#27
-N64:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N64
+T64:    CALL N74
+        DJNZ R2, T64
 
         MOV R2,#32
-N65:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N65
+T65:    CALL N76
+        DJNZ R2, T65
 
         MOV R2,#33
-N66:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N66
+T66:    CALL N77
+        DJNZ R2, T66
 
         MOV R2,#68
-N67:    MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N67
+T67:    CALL N79
+        DJNZ R2, T67
 
         MOV R2,#30
-N68:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N68
+T68:    CALL N77
+        DJNZ R2, T68
 
         MOV R2,#29
-N69:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N69
+T69:    CALL N76
+        DJNZ R2, T69
 
         MOV R2,#22
-N70:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N70
+T70:    CALL N74
+        DJNZ R2, T70
 
         MOV R2,#25
-N71:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N71
+T71:    CALL N72
+        DJNZ R2, T71
 
         MOV R2,#5
-N72:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N72
+T72:    CALL N0
+        DJNZ R2, T72
 
         MOV R2,#28
-N73:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N73
+T73:    CALL N71
+        DJNZ R2, T73
 
         MOV R2,#17
-N74:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N74
+T74:    CALL N69
+        DJNZ R2, T74
 
         MOV R2,#3
-N75:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N75
+T75:    CALL N0
+        DJNZ R2, T75
 
         MOV R2,#19
-N76:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N76
+T76:    CALL N67
+        DJNZ R2, T76
 
         MOV R2,#14
-N77:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N77
+T77:    CALL N0
+        DJNZ R2, T77
 
         MOV R2,#41
-N78:    MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N78
+T78:    CALL N65
+        DJNZ R2, T78
 
         MOV R2,#16
-N79:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N79
+T79:    CALL N67
+        DJNZ R2, T79
 
         MOV R2,#19
-N80:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N80
+T80:    CALL N69
+        DJNZ R2, T80
 
         MOV R2,#12
-N81:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N81
+T81:    CALL N0
+        DJNZ R2, T81
 
         MOV R2,#25
-N82:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N82
+T82:    CALL N71
+        DJNZ R2, T82
 
         MOV R2,#21
-N83:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N83
+T83:    CALL N72
+        DJNZ R2, T83
 
         MOV R2,#29
-N84:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N84
+T84:    CALL N74
+        DJNZ R2, T84
 
         MOV R2,#32
-N85:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N85
+T85:    CALL N76
+        DJNZ R2, T85
 
         MOV R2,#60
-N86:    MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N86
+T86:    CALL N77
+        DJNZ R2, T86
 
         MOV R2,#26
-N87:    MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N87
+T87:    CALL N76
+        DJNZ R2, T87
 
         MOV R2,#20
-N88:    MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N88
+T88:    CALL N74
+        DJNZ R2, T88
 
         MOV R2,#20
-N89:    MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N89
+T89:    CALL N72
+        DJNZ R2, T89
 
         MOV R2,#20
-N90:    MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N90
+T90:    CALL N71
+        DJNZ R2, T90
 
         MOV R2,#9
-N91:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N91
+T91:    CALL N0
+        DJNZ R2, T91
 
         MOV R2,#27
-N92:    MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N92
+T92:    CALL N69
+        DJNZ R2, T92
 
         MOV R2,#15
-N93:    MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N93
+T93:    CALL N67
+        DJNZ R2, T93
 
         MOV R2,#17
-N94:    MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N94
+T94:    CALL N65
+        DJNZ R2, T94
 
         MOV R2,#11
-N95:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N95
+T95:    CALL N0
+        DJNZ R2, T95
 
         MOV R2,#1
-N96:    MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N96
+T96:    CALL N60
+        DJNZ R2, T96
 
         MOV R2,#37
-N97:    MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N97
+T97:    CALL N64
+        DJNZ R2, T97
 
         MOV R2,#6
-N98:    MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N98
+T98:    CALL N0
+        DJNZ R2, T98
 
         MOV R2,#13
-N99:    MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N99
+T99:    CALL N65
+        DJNZ R2, T99
 
         MOV R2,#15
-N100:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N100
+T100:   CALL N67
+        DJNZ R2, T100
 
         MOV R2,#21
-N101:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N101
+T101:   CALL N0
+        DJNZ R2, T101
 
         MOV R2,#22
-N102:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N102
+T102:   CALL N69
+        DJNZ R2, T102
 
         MOV R2,#21
-N103:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N103
+T103:   CALL N71
+        DJNZ R2, T103
 
         MOV R2,#25
-N104:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N104
+T104:   CALL N72
+        DJNZ R2, T104
 
         MOV R2,#31
-N105:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N105
+T105:   CALL N74
+        DJNZ R2, T105
 
         MOV R2,#55
-N106:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N106
+T106:   CALL N76
+        DJNZ R2, T106
 
         MOV R2,#25
-N107:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N107
+T107:   CALL N74
+        DJNZ R2, T107
 
         MOV R2,#21
-N108:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N108
+T108:   CALL N72
+        DJNZ R2, T108
 
         MOV R2,#16
-N109:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N109
+T109:   CALL N71
+        DJNZ R2, T109
 
         MOV R2,#19
-N110:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N110
+T110:   CALL N69
+        DJNZ R2, T110
 
         MOV R2,#6
-N111:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N111
+T111:   CALL N0
+        DJNZ R2, T111
 
         MOV R2,#24
-N112:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N112
+T112:   CALL N67
+        DJNZ R2, T112
 
         MOV R2,#12
-N113:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N113
+T113:   CALL N65
+        DJNZ R2, T113
 
         MOV R2,#16
-N114:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N114
+T114:   CALL N64
+        DJNZ R2, T114
 
         MOV R2,#8
-N115:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N115
+T115:   CALL N0
+        DJNZ R2, T115
 
         MOV R2,#36
-N116:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N116
+T116:   CALL N62
+        DJNZ R2, T116
 
         MOV R2,#12
-N117:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N117
+T117:   CALL N64
+        DJNZ R2, T117
 
         MOV R2,#13
-N118:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N118
+T118:   CALL N65
+        DJNZ R2, T118
 
         MOV R2,#11
-N119:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N119
+T119:   CALL N0
+        DJNZ R2, T119
 
         MOV R2,#20
-N120:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N120
+T120:   CALL N67
+        DJNZ R2, T120
 
         MOV R2,#18
-N121:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N121
+T121:   CALL N69
+        DJNZ R2, T121
 
         MOV R2,#24
-N122:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N122
+T122:   CALL N71
+        DJNZ R2, T122
 
         MOV R2,#27
-N123:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N123
+T123:   CALL N73
+        DJNZ R2, T123
 
         MOV R2,#32
-N124:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N124
+T124:   CALL N74
+        DJNZ R2, T124
 
         MOV R2,#2
-N125:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N125
+T125:   CALL N0
+        DJNZ R2, T125
 
         MOV R2,#18
-N126:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N126
+T126:   CALL N69
+        DJNZ R2, T126
 
         MOV R2,#21
-N127:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N127
+T127:   CALL N71
+        DJNZ R2, T127
 
         MOV R2,#23
-N128:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N128
+T128:   CALL N73
+        DJNZ R2, T128
 
         MOV R2,#10
-N129:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N129
+T129:   CALL N0
+        DJNZ R2, T129
 
         MOV R2,#31
-N130:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N130
+T130:   CALL N74
+        DJNZ R2, T130
 
         MOV R2,#28
-N131:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N131
+T131:   CALL N76
+        DJNZ R2, T131
 
         MOV R2,#33
-N132:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N132
+T132:   CALL N77
+        DJNZ R2, T132
 
         MOV R2,#1
-N133:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N133
+T133:   CALL N0
+        DJNZ R2, T133
 
         MOV R2,#49
-N134:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N134
+T134:   CALL N79
+        DJNZ R2, T134
 
         MOV R2,#34
-N135:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N135
+T135:   CALL N81
+        DJNZ R2, T135
 
         MOV R2,#58
-N136:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N136
+T136:   CALL N83
+        DJNZ R2, T136
 
         MOV R2,#82
-N137:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N137
+T137:   CALL N84
+        DJNZ R2, T137
 
         MOV R2,#49
-N138:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N138
+T138:   CALL N83
+        DJNZ R2, T138
 
         MOV R2,#27
-N139:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N139
+T139:   CALL N81
+        DJNZ R2, T139
 
         MOV R2,#35
-N140:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N140
+T140:   CALL N79
+        DJNZ R2, T140
 
         MOV R2,#6
-N141:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N141
+T141:   CALL N0
+        DJNZ R2, T141
 
         MOV R2,#42
-N142:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N142
+T142:   CALL N77
+        DJNZ R2, T142
 
         MOV R2,#32
-N143:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N143
+T143:   CALL N76
+        DJNZ R2, T143
 
         MOV R2,#40
-N144:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N144
+T144:   CALL N77
+        DJNZ R2, T144
 
         MOV R2,#37
-N145:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N145
+T145:   CALL N79
+        DJNZ R2, T145
 
         MOV R2,#80
-N146:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N146
+T146:   CALL N81
+        DJNZ R2, T146
 
         MOV R2,#35
-N147:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N147
+T147:   CALL N79
+        DJNZ R2, T147
 
         MOV R2,#28
-N148:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N148
+T148:   CALL N77
+        DJNZ R2, T148
 
         MOV R2,#23
-N149:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N149
+T149:   CALL N76
+        DJNZ R2, T149
 
         MOV R2,#26
-N150:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N150
+T150:   CALL N74
+        DJNZ R2, T150
 
         MOV R2,#6
-N151:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N151
+T151:   CALL N0
+        DJNZ R2, T151
 
         MOV R2,#25
-N152:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N152
+T152:   CALL N72
+        DJNZ R2, T152
 
         MOV R2,#11
-N153:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N153
+T153:   CALL N0
+        DJNZ R2, T153
 
         MOV R2,#58
-N154:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N154
+T154:   CALL N71
+        DJNZ R2, T154
 
         MOV R2,#99
-N155:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N155
+T155:   CALL N79
+        DJNZ R2, T155
 
         MOV R2,#63
-N156:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N156
+T156:   CALL N76
+        DJNZ R2, T156
 
         MOV R2,#35
-N157:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N157
+T157:   CALL N72
+        DJNZ R2, T157
 
         MOV R2,#3
-N158:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N158
+T158:   CALL N55
+        DJNZ R2, T158
 
         MOV R2,#2
-N159:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N159
+T159:   CALL N0
+        DJNZ R2, T159
 
         MOV R2,#64
-N160:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N160
+T160:   CALL N74
+        DJNZ R2, T160
 
         MOV R2,#74
-N161:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N161
+T161:   CALL N79
+        DJNZ R2, T161
 
         MOV R2,#1
-N162:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N162
+T162:   CALL N55
+        DJNZ R2, T162
 
         MOV R2,#4
-N163:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N163
+T163:   CALL N0
+        DJNZ R2, T163
 
         MOV R2,#57
-N164:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N164
+T164:   CALL N76
+        DJNZ R2, T164
 
         MOV R2,#2
-N165:   MOV R1,#14
-        MOV R0,#236
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#236
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N165
+T165:   CALL N48
+        DJNZ R2, T165
 
         MOV R2,#35
-N166:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N166
+T166:   CALL N72
+        DJNZ R2, T166
 
         MOV R2,#6
-N167:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N167
+T167:   CALL N55
+        DJNZ R2, T167
 
         MOV R2,#23
-N168:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N168
+T168:   CALL N74
+        DJNZ R2, T168
 
         MOV R2,#186
-N169:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N169
+T169:   CALL N0
+        DJNZ R2, T169
 
         MOV R2,#32
-N170:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N170
+T170:   CALL N79
+        DJNZ R2, T170
 
         MOV R2,#203
-N171:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N171
+T171:   CALL N0
+        DJNZ R2, T171
 
         MOV R2,#15
-N172:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N172
+T172:   CALL N67
+        DJNZ R2, T172
 
         MOV R2,#255
-N173:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N173
+T173:   CALL N0
+        DJNZ R2, T173
 
         MOV R2,#186
-N174:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N174
+T174:   CALL N0
+        DJNZ R2, T174
 
         MOV R2,#19
-N175:   MOV R1,#7
-        MOV R0,#2
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#2
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N175
+T175:   CALL N61
+        DJNZ R2, T175
 
         MOV R2,#5
-N176:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N176
+T176:   CALL N0
+        DJNZ R2, T176
 
         MOV R2,#19
-N177:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N177
+T177:   CALL N62
+        DJNZ R2, T177
 
         MOV R2,#10
-N178:   MOV R1,#7
-        MOV R0,#2
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#2
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N178
+T178:   CALL N61
+        DJNZ R2, T178
 
         MOV R2,#5
-N179:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N179
+T179:   CALL N0
+        DJNZ R2, T179
 
         MOV R2,#17
-N180:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N180
+T180:   CALL N62
+        DJNZ R2, T180
 
         MOV R2,#9
-N181:   MOV R1,#7
-        MOV R0,#2
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#2
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N181
+T181:   CALL N61
+        DJNZ R2, T181
 
         MOV R2,#3
-N182:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N182
+T182:   CALL N0
+        DJNZ R2, T182
 
         MOV R2,#18
-N183:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N183
+T183:   CALL N62
+        DJNZ R2, T183
 
         MOV R2,#10
-N184:   MOV R1,#7
-        MOV R0,#2
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#2
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N184
+T184:   CALL N61
+        DJNZ R2, T184
 
         MOV R2,#9
-N185:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N185
+T185:   CALL N0
+        DJNZ R2, T185
 
         MOV R2,#18
-N186:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N186
+T186:   CALL N62
+        DJNZ R2, T186
 
         MOV R2,#10
-N187:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N187
+T187:   CALL N60
+        DJNZ R2, T187
 
         MOV R2,#19
-N188:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N188
+T188:   CALL N62
+        DJNZ R2, T188
 
         MOV R2,#11
-N189:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N189
+T189:   CALL N60
+        DJNZ R2, T189
 
         MOV R2,#20
-N190:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N190
+T190:   CALL N62
+        DJNZ R2, T190
 
         MOV R2,#10
-N191:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N191
+T191:   CALL N60
+        DJNZ R2, T191
 
         MOV R2,#1
-N192:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N192
+T192:   CALL N0
+        DJNZ R2, T192
 
         MOV R2,#18
-N193:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N193
+T193:   CALL N62
+        DJNZ R2, T193
 
         MOV R2,#11
-N194:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N194
+T194:   CALL N60
+        DJNZ R2, T194
 
         MOV R2,#27
-N195:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N195
+T195:   CALL N62
+        DJNZ R2, T195
 
         MOV R2,#187
-N196:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N196
+T196:   CALL N86
+        DJNZ R2, T196
 
         MOV R2,#104
-N197:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N197
+T197:   CALL N83
+        DJNZ R2, T197
 
         MOV R2,#230
-N198:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N198
+T198:   CALL N79
+        DJNZ R2, T198
 
         MOV R2,#11
-N199:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N199
+T199:   CALL N62
+        DJNZ R2, T199
 
         MOV R2,#1
-N200:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N200
+T200:   CALL N59
+        DJNZ R2, T200
 
         MOV R2,#38
-N201:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N201
+T201:   CALL N81
+        DJNZ R2, T201
 
         MOV R2,#76
-N202:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N202
+T202:   CALL N83
+        DJNZ R2, T202
 
         MOV R2,#71
-N203:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N203
+T203:   CALL N81
+        DJNZ R2, T203
 
         MOV R2,#2
-N204:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N204
+T204:   CALL N59
+        DJNZ R2, T204
 
         MOV R2,#35
-N205:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N205
+T205:   CALL N79
+        DJNZ R2, T205
 
         MOV R2,#15
-N206:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N206
+T206:   CALL N62
+        DJNZ R2, T206
 
         MOV R2,#12
-N207:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N207
+T207:   CALL N0
+        DJNZ R2, T207
 
         MOV R2,#15
-N208:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N208
+T208:   CALL N79
+        DJNZ R2, T208
 
         MOV R2,#9
-N209:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N209
+T209:   CALL N81
+        DJNZ R2, T209
 
         MOV R2,#11
-N210:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N210
+T210:   CALL N0
+        DJNZ R2, T210
 
         MOV R2,#25
-N211:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N211
+T211:   CALL N81
+        DJNZ R2, T211
 
         MOV R2,#13
-N212:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N212
+T212:   CALL N79
+        DJNZ R2, T212
 
         MOV R2,#23
-N213:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N213
+T213:   CALL N81
+        DJNZ R2, T213
 
         MOV R2,#34
-N214:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N214
+T214:   CALL N79
+        DJNZ R2, T214
 
         MOV R2,#1
-N215:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N215
+T215:   CALL N62
+        DJNZ R2, T215
 
         MOV R2,#23
-N216:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N216
+T216:   CALL N78
+        DJNZ R2, T216
 
         MOV R2,#23
-N217:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N217
+T217:   CALL N0
+        DJNZ R2, T217
 
         MOV R2,#255
-N218:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N218
+T218:   CALL N78
+        DJNZ R2, T218
 
         MOV R2,#11
-N219:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N219
+T219:   CALL N78
+        DJNZ R2, T219
 
         MOV R2,#6
-N220:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N220
+T220:   CALL N59
+        DJNZ R2, T220
 
         MOV R2,#18
-N221:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N221
+T221:   CALL N62
+        DJNZ R2, T221
 
         MOV R2,#10
-N222:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N222
+T222:   CALL N60
+        DJNZ R2, T222
 
         MOV R2,#4
-N223:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N223
+T223:   CALL N0
+        DJNZ R2, T223
 
         MOV R2,#17
-N224:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N224
+T224:   CALL N62
+        DJNZ R2, T224
 
         MOV R2,#10
-N225:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N225
+T225:   CALL N57
+        DJNZ R2, T225
 
         MOV R2,#22
-N226:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N226
+T226:   CALL N62
+        DJNZ R2, T226
 
         MOV R2,#187
-N227:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N227
+T227:   CALL N86
+        DJNZ R2, T227
 
         MOV R2,#115
-N228:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N228
+T228:   CALL N83
+        DJNZ R2, T228
 
         MOV R2,#218
-N229:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N229
+T229:   CALL N79
+        DJNZ R2, T229
 
         MOV R2,#8
-N230:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N230
+T230:   CALL N62
+        DJNZ R2, T230
 
         MOV R2,#3
-N231:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N231
+T231:   CALL N59
+        DJNZ R2, T231
 
         MOV R2,#34
-N232:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N232
+T232:   CALL N81
+        DJNZ R2, T232
 
         MOV R2,#72
-N233:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N233
+T233:   CALL N83
+        DJNZ R2, T233
 
         MOV R2,#83
-N234:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N234
+T234:   CALL N81
+        DJNZ R2, T234
 
         MOV R2,#35
-N235:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N235
+T235:   CALL N79
+        DJNZ R2, T235
 
         MOV R2,#17
-N236:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N236
+T236:   CALL N62
+        DJNZ R2, T236
 
         MOV R2,#8
-N237:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N237
+T237:   CALL N0
+        DJNZ R2, T237
 
         MOV R2,#18
-N238:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N238
+T238:   CALL N79
+        DJNZ R2, T238
 
         MOV R2,#22
-N239:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N239
+T239:   CALL N81
+        DJNZ R2, T239
 
         MOV R2,#5
-N240:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N240
+T240:   CALL N62
+        DJNZ R2, T240
 
         MOV R2,#11
-N241:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N241
+T241:   CALL N79
+        DJNZ R2, T241
 
         MOV R2,#32
-N242:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N242
+T242:   CALL N81
+        DJNZ R2, T242
 
         MOV R2,#27
-N243:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N243
+T243:   CALL N79
+        DJNZ R2, T243
 
         MOV R2,#3
-N244:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N244
+T244:   CALL N62
+        DJNZ R2, T244
 
         MOV R2,#22
-N245:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N245
+T245:   CALL N78
+        DJNZ R2, T245
 
         MOV R2,#26
-N246:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N246
+T246:   CALL N0
+        DJNZ R2, T246
 
         MOV R2,#255
-N247:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N247
+T247:   CALL N78
+        DJNZ R2, T247
 
         MOV R2,#21
-N248:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N248
+T248:   CALL N78
+        DJNZ R2, T248
 
         MOV R2,#4
-N249:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N249
+T249:   CALL N59
+        DJNZ R2, T249
 
         MOV R2,#18
-N250:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N250
+T250:   CALL N62
+        DJNZ R2, T250
 
         MOV R2,#2
-N251:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N251
+T251:   CALL N0
+        DJNZ R2, T251
 
         MOV R2,#12
-N252:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N252
+T252:   CALL N60
+        DJNZ R2, T252
 
         MOV R2,#2
-N253:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N253
+T253:   CALL N0
+        DJNZ R2, T253
 
         MOV R2,#17
-N254:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N254
+T254:   CALL N62
+        DJNZ R2, T254
 
         MOV R2,#9
-N255:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N255
+T255:   CALL N57
+        DJNZ R2, T255
 
         MOV R2,#6
-N256:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N256
+T256:   CALL N0
+        DJNZ R2, T256
 
         MOV R2,#12
-N257:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N257
+T257:   CALL N62
+        DJNZ R2, T257
 
         MOV R2,#20
-N258:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N258
+T258:   CALL N0
+        DJNZ R2, T258
 
         MOV R2,#255
-N259:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N259
+T259:   CALL N86
+        DJNZ R2, T259
 
         MOV R2,#8
-N260:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N260
+T260:   CALL N86
+        DJNZ R2, T260
 
         MOV R2,#3
-N261:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N261
+T261:   CALL N67
+        DJNZ R2, T261
 
         MOV R2,#27
-N262:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N262
+T262:   CALL N71
+        DJNZ R2, T262
 
         MOV R2,#88
-N263:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N263
+T263:   CALL N86
+        DJNZ R2, T263
 
         MOV R2,#55
-N264:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N264
+T264:   CALL N83
+        DJNZ R2, T264
 
         MOV R2,#60
-N265:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N265
+T265:   CALL N79
+        DJNZ R2, T265
 
         MOV R2,#114
-N266:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N266
+T266:   CALL N76
+        DJNZ R2, T266
 
         MOV R2,#9
-N267:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N267
+T267:   CALL N67
+        DJNZ R2, T267
 
         MOV R2,#29
-N268:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N268
+T268:   CALL N72
+        DJNZ R2, T268
 
         MOV R2,#34
-N269:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N269
+T269:   CALL N76
+        DJNZ R2, T269
 
         MOV R2,#52
-N270:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N270
+T270:   CALL N79
+        DJNZ R2, T270
 
         MOV R2,#27
-N271:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N271
+T271:   CALL N76
+        DJNZ R2, T271
 
         MOV R2,#241
-N272:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N272
+T272:   CALL N84
+        DJNZ R2, T272
 
         MOV R2,#26
-N273:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N273
+T273:   CALL N69
+        DJNZ R2, T273
 
         MOV R2,#65
-N274:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N274
+T274:   CALL N84
+        DJNZ R2, T274
 
         MOV R2,#51
-N275:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N275
+T275:   CALL N81
+        DJNZ R2, T275
 
         MOV R2,#42
-N276:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N276
+T276:   CALL N78
+        DJNZ R2, T276
 
         MOV R2,#105
-N277:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N277
+T277:   CALL N74
+        DJNZ R2, T277
 
         MOV R2,#14
-N278:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N278
+T278:   CALL N66
+        DJNZ R2, T278
 
         MOV R2,#21
-N279:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N279
+T279:   CALL N71
+        DJNZ R2, T279
 
         MOV R2,#34
-N280:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N280
+T280:   CALL N74
+        DJNZ R2, T280
 
         MOV R2,#47
-N281:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N281
+T281:   CALL N78
+        DJNZ R2, T281
 
         MOV R2,#32
-N282:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N282
+T282:   CALL N74
+        DJNZ R2, T282
 
         MOV R2,#220
-N283:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N283
+T283:   CALL N83
+        DJNZ R2, T283
 
         MOV R2,#3
-N284:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N284
+T284:   CALL N64
+        DJNZ R2, T284
 
         MOV R2,#21
-N285:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N285
+T285:   CALL N67
+        DJNZ R2, T285
 
         MOV R2,#58
-N286:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N286
+T286:   CALL N83
+        DJNZ R2, T286
 
         MOV R2,#46
-N287:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N287
+T287:   CALL N79
+        DJNZ R2, T287
 
         MOV R2,#39
-N288:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N288
+T288:   CALL N76
+        DJNZ R2, T288
 
         MOV R2,#87
-N289:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N289
+T289:   CALL N72
+        DJNZ R2, T289
 
         MOV R2,#17
-N290:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N290
+T290:   CALL N64
+        DJNZ R2, T290
 
         MOV R2,#18
-N291:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N291
+T291:   CALL N69
+        DJNZ R2, T291
 
         MOV R2,#35
-N292:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N292
+T292:   CALL N72
+        DJNZ R2, T292
 
         MOV R2,#32
-N293:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N293
+T293:   CALL N76
+        DJNZ R2, T293
 
         MOV R2,#38
-N294:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N294
+T294:   CALL N72
+        DJNZ R2, T294
 
         MOV R2,#168
-N295:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N295
+T295:   CALL N81
+        DJNZ R2, T295
 
         MOV R2,#9
-N296:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N296
+T296:   CALL N62
+        DJNZ R2, T296
 
         MOV R2,#18
-N297:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N297
+T297:   CALL N66
+        DJNZ R2, T297
 
         MOV R2,#6
-N298:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N298
+T298:   CALL N0
+        DJNZ R2, T298
 
         MOV R2,#54
-N299:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N299
+T299:   CALL N81
+        DJNZ R2, T299
 
         MOV R2,#30
-N300:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N300
+T300:   CALL N78
+        DJNZ R2, T300
 
         MOV R2,#5
-N301:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N301
+T301:   CALL N0
+        DJNZ R2, T301
 
         MOV R2,#35
-N302:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N302
+T302:   CALL N72
+        DJNZ R2, T302
 
         MOV R2,#93
-N303:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N303
+T303:   CALL N71
+        DJNZ R2, T303
 
         MOV R2,#11
-N304:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N304
+T304:   CALL N62
+        DJNZ R2, T304
 
         MOV R2,#20
-N305:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N305
+T305:   CALL N67
+        DJNZ R2, T305
 
         MOV R2,#48
-N306:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N306
+T306:   CALL N79
+        DJNZ R2, T306
 
         MOV R2,#29
-N307:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N307
+T307:   CALL N74
+        DJNZ R2, T307
 
         MOV R2,#20
-N308:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N308
+T308:   CALL N71
+        DJNZ R2, T308
 
         MOV R2,#15
-N309:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N309
+T309:   CALL N0
+        DJNZ R2, T309
 
         MOV R2,#188
-N310:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N310
+T310:   CALL N69
+        DJNZ R2, T310
 
         MOV R2,#25
-N311:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N311
+T311:   CALL N0
+        DJNZ R2, T311
 
         MOV R2,#16
-N312:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N312
+T312:   CALL N71
+        DJNZ R2, T312
 
         MOV R2,#21
-N313:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N313
+T313:   CALL N72
+        DJNZ R2, T313
 
         MOV R2,#53
-N314:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N314
+T314:   CALL N0
+        DJNZ R2, T314
 
         MOV R2,#12
-N315:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N315
+T315:   CALL N64
+        DJNZ R2, T315
 
         MOV R2,#55
-N316:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N316
+T316:   CALL N0
+        DJNZ R2, T316
 
         MOV R2,#18
-N317:   MOV R1,#3
-        MOV R0,#22
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#22
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N317
+T317:   CALL N75
+        DJNZ R2, T317
 
         MOV R2,#32
-N318:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N318
+T318:   CALL N76
+        DJNZ R2, T318
 
         MOV R2,#46
-N319:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N319
+T319:   CALL N0
+        DJNZ R2, T319
 
         MOV R2,#12
-N320:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N320
+T320:   CALL N64
+        DJNZ R2, T320
 
         MOV R2,#55
-N321:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N321
+T321:   CALL N0
+        DJNZ R2, T321
 
         MOV R2,#21
-N322:   MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N322
+T322:   CALL N80
+        DJNZ R2, T322
 
         MOV R2,#208
-N323:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N323
+T323:   CALL N81
+        DJNZ R2, T323
 
         MOV R2,#10
-N324:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N324
+T324:   CALL N64
+        DJNZ R2, T324
 
         MOV R2,#53
-N325:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N325
+T325:   CALL N0
+        DJNZ R2, T325
 
         MOV R2,#45
-N326:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N326
+T326:   CALL N83
+        DJNZ R2, T326
 
         MOV R2,#11
-N327:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N327
+T327:   CALL N81
+        DJNZ R2, T327
 
         MOV R2,#25
-N328:   MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N328
+T328:   CALL N80
+        DJNZ R2, T328
 
         MOV R2,#32
-N329:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N329
+T329:   CALL N81
+        DJNZ R2, T329
 
         MOV R2,#146
-N330:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N330
+T330:   CALL N84
+        DJNZ R2, T330
 
         MOV R2,#12
-N331:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N331
+T331:   CALL N81
+        DJNZ R2, T331
 
         MOV R2,#69
-N332:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N332
+T332:   CALL N0
+        DJNZ R2, T332
 
         MOV R2,#146
-N333:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N333
+T333:   CALL N84
+        DJNZ R2, T333
 
         MOV R2,#15
-N334:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N334
+T334:   CALL N81
+        DJNZ R2, T334
 
         MOV R2,#1
-N335:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N335
+T335:   CALL N64
+        DJNZ R2, T335
 
         MOV R2,#66
-N336:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N336
+T336:   CALL N0
+        DJNZ R2, T336
 
         MOV R2,#1
-N337:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N337
+T337:   CALL N62
+        DJNZ R2, T337
 
         MOV R2,#107
-N338:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N338
+T338:   CALL N83
+        DJNZ R2, T338
 
         MOV R2,#89
-N339:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N339
+T339:   CALL N79
+        DJNZ R2, T339
 
         MOV R2,#3
-N340:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N340
+T340:   CALL N71
+        DJNZ R2, T340
 
         MOV R2,#255
-N341:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N341
+T341:   CALL N86
+        DJNZ R2, T341
 
         MOV R2,#102
-N342:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N342
+T342:   CALL N86
+        DJNZ R2, T342
 
         MOV R2,#4
-N343:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N343
+T343:   CALL N62
+        DJNZ R2, T343
 
         MOV R2,#33
-N344:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N344
+T344:   CALL N71
+        DJNZ R2, T344
 
         MOV R2,#12
-N345:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N345
+T345:   CALL N67
+        DJNZ R2, T345
 
         MOV R2,#26
-N346:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N346
+T346:   CALL N71
+        DJNZ R2, T346
 
         MOV R2,#67
-N347:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N347
+T347:   CALL N84
+        DJNZ R2, T347
 
         MOV R2,#34
-N348:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N348
+T348:   CALL N83
+        DJNZ R2, T348
 
         MOV R2,#36
-N349:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N349
+T349:   CALL N81
+        DJNZ R2, T349
 
         MOV R2,#1
-N350:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N350
+T350:   CALL N67
+        DJNZ R2, T350
 
         MOV R2,#43
-N351:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N351
+T351:   CALL N79
+        DJNZ R2, T351
 
         MOV R2,#89
-N352:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N352
+T352:   CALL N81
+        DJNZ R2, T352
 
         MOV R2,#40
-N353:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N353
+T353:   CALL N83
+        DJNZ R2, T353
 
         MOV R2,#7
-N354:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N354
+T354:   CALL N0
+        DJNZ R2, T354
 
         MOV R2,#28
-N355:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N355
+T355:   CALL N81
+        DJNZ R2, T355
 
         MOV R2,#22
-N356:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N356
+T356:   CALL N83
+        DJNZ R2, T356
 
         MOV R2,#5
-N357:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N357
+T357:   CALL N72
+        DJNZ R2, T357
 
         MOV R2,#23
-N358:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N358
+T358:   CALL N81
+        DJNZ R2, T358
 
         MOV R2,#32
-N359:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N359
+T359:   CALL N83
+        DJNZ R2, T359
 
         MOV R2,#1
-N360:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N360
+T360:   CALL N62
+        DJNZ R2, T360
 
         MOV R2,#28
-N361:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N361
+T361:   CALL N81
+        DJNZ R2, T361
 
         MOV R2,#31
-N362:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N362
+T362:   CALL N83
+        DJNZ R2, T362
 
         MOV R2,#2
-N363:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N363
+T363:   CALL N0
+        DJNZ R2, T363
 
         MOV R2,#27
-N364:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N364
+T364:   CALL N81
+        DJNZ R2, T364
 
         MOV R2,#34
-N365:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N365
+T365:   CALL N83
+        DJNZ R2, T365
 
         MOV R2,#3
-N366:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N366
+T366:   CALL N72
+        DJNZ R2, T366
 
         MOV R2,#23
-N367:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N367
+T367:   CALL N81
+        DJNZ R2, T367
 
         MOV R2,#39
-N368:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N368
+T368:   CALL N83
+        DJNZ R2, T368
 
         MOV R2,#32
-N369:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N369
+T369:   CALL N81
+        DJNZ R2, T369
 
         MOV R2,#33
-N370:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N370
+T370:   CALL N83
+        DJNZ R2, T370
 
         MOV R2,#2
-N371:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N371
+T371:   CALL N0
+        DJNZ R2, T371
 
         MOV R2,#28
-N372:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N372
+T372:   CALL N81
+        DJNZ R2, T372
 
         MOV R2,#38
-N373:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N373
+T373:   CALL N83
+        DJNZ R2, T373
 
         MOV R2,#41
-N374:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N374
+T374:   CALL N81
+        DJNZ R2, T374
 
         MOV R2,#65
-N375:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N375
+T375:   CALL N83
+        DJNZ R2, T375
 
         MOV R2,#22
-N376:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N376
+T376:   CALL N81
+        DJNZ R2, T376
 
         MOV R2,#29
-N377:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N377
+T377:   CALL N83
+        DJNZ R2, T377
 
         MOV R2,#34
-N378:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N378
+T378:   CALL N81
+        DJNZ R2, T378
 
         MOV R2,#17
-N379:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N379
+T379:   CALL N79
+        DJNZ R2, T379
 
         MOV R2,#81
-N380:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N380
+T380:   CALL N81
+        DJNZ R2, T380
 
         MOV R2,#20
-N381:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N381
+T381:   CALL N79
+        DJNZ R2, T381
 
         MOV R2,#207
-N382:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N382
+T382:   CALL N0
+        DJNZ R2, T382
 
         MOV R2,#32
-N383:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N383
+T383:   CALL N79
+        DJNZ R2, T383
 
         MOV R2,#1
-N384:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N384
+T384:   CALL N0
+        DJNZ R2, T384
 
         MOV R2,#34
-N385:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N385
+T385:   CALL N74
+        DJNZ R2, T385
 
         MOV R2,#40
-N386:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N386
+T386:   CALL N79
+        DJNZ R2, T386
 
         MOV R2,#56
-N387:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N387
+T387:   CALL N83
+        DJNZ R2, T387
 
         MOV R2,#100
-N388:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N388
+T388:   CALL N86
+        DJNZ R2, T388
 
         MOV R2,#25
-N389:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N389
+T389:   CALL N83
+        DJNZ R2, T389
 
         MOV R2,#1
-N390:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N390
+T390:   CALL N0
+        DJNZ R2, T390
 
         MOV R2,#33
-N391:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N391
+T391:   CALL N79
+        DJNZ R2, T391
 
         MOV R2,#57
-N392:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N392
+T392:   CALL N83
+        DJNZ R2, T392
 
         MOV R2,#76
-N393:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N393
+T393:   CALL N84
+        DJNZ R2, T393
 
         MOV R2,#37
-N394:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N394
+T394:   CALL N81
+        DJNZ R2, T394
 
         MOV R2,#39
-N395:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N395
+T395:   CALL N78
+        DJNZ R2, T395
 
         MOV R2,#72
-N396:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N396
+T396:   CALL N81
+        DJNZ R2, T396
 
         MOV R2,#18
-N397:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N397
+T397:   CALL N79
+        DJNZ R2, T397
 
         MOV R2,#3
-N398:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N398
+T398:   CALL N71
+        DJNZ R2, T398
 
         MOV R2,#208
-N399:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N399
+T399:   CALL N0
+        DJNZ R2, T399
 
         MOV R2,#17
-N400:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N400
+T400:   CALL N67
+        DJNZ R2, T400
 
         MOV R2,#13
-N401:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N401
+T401:   CALL N0
+        DJNZ R2, T401
 
         MOV R2,#12
-N402:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N402
+T402:   CALL N62
+        DJNZ R2, T402
 
         MOV R2,#21
-N403:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N403
+T403:   CALL N67
+        DJNZ R2, T403
 
         MOV R2,#26
-N404:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N404
+T404:   CALL N71
+        DJNZ R2, T404
 
         MOV R2,#50
-N405:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N405
+T405:   CALL N74
+        DJNZ R2, T405
 
         MOV R2,#11
-N406:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N406
+T406:   CALL N71
+        DJNZ R2, T406
 
         MOV R2,#15
-N407:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N407
+T407:   CALL N67
+        DJNZ R2, T407
 
         MOV R2,#29
-N408:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N408
+T408:   CALL N71
+        DJNZ R2, T408
 
         MOV R2,#38
-N409:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N409
+T409:   CALL N72
+        DJNZ R2, T409
 
         MOV R2,#16
-N410:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N410
+T410:   CALL N69
+        DJNZ R2, T410
 
         MOV R2,#20
-N411:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N411
+T411:   CALL N66
+        DJNZ R2, T411
 
         MOV R2,#31
-N412:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N412
+T412:   CALL N69
+        DJNZ R2, T412
 
         MOV R2,#3
-N413:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N413
+T413:   CALL N67
+        DJNZ R2, T413
 
         MOV R2,#191
-N414:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N414
+T414:   CALL N0
+        DJNZ R2, T414
 
         MOV R2,#38
-N415:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N415
+T415:   CALL N83
+        DJNZ R2, T415
 
         MOV R2,#212
-N416:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N416
+T416:   CALL N0
+        DJNZ R2, T416
 
         MOV R2,#51
-N417:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N417
+T417:   CALL N79
+        DJNZ R2, T417
 
         MOV R2,#255
-N418:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N418
+T418:   CALL N0
+        DJNZ R2, T418
 
         MOV R2,#173
-N419:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N419
+T419:   CALL N0
+        DJNZ R2, T419
 
         MOV R2,#12
-N420:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N420
+T420:   CALL N67
+        DJNZ R2, T420
 
         MOV R2,#3
-N421:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N421
+T421:   CALL N55
+        DJNZ R2, T421
 
         MOV R2,#192
-N422:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N422
+T422:   CALL N0
+        DJNZ R2, T422
 
         MOV R2,#39
-N423:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N423
+T423:   CALL N79
+        DJNZ R2, T423
 
         MOV R2,#1
-N424:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N424
+T424:   CALL N0
+        DJNZ R2, T424
 
         MOV R2,#30
-N425:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N425
+T425:   CALL N74
+        DJNZ R2, T425
 
         MOV R2,#1
-N426:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N426
+T426:   CALL N0
+        DJNZ R2, T426
 
         MOV R2,#36
-N427:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N427
+T427:   CALL N79
+        DJNZ R2, T427
 
         MOV R2,#44
-N428:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N428
+T428:   CALL N82
+        DJNZ R2, T428
 
         MOV R2,#100
-N429:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N429
+T429:   CALL N86
+        DJNZ R2, T429
 
         MOV R2,#24
-N430:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N430
+T430:   CALL N82
+        DJNZ R2, T430
 
         MOV R2,#30
-N431:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N431
+T431:   CALL N79
+        DJNZ R2, T431
 
         MOV R2,#62
-N432:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N432
+T432:   CALL N82
+        DJNZ R2, T432
 
         MOV R2,#87
-N433:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N433
+T433:   CALL N84
+        DJNZ R2, T433
 
         MOV R2,#28
-N434:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N434
+T434:   CALL N81
+        DJNZ R2, T434
 
         MOV R2,#33
-N435:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N435
+T435:   CALL N78
+        DJNZ R2, T435
 
         MOV R2,#75
-N436:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N436
+T436:   CALL N81
+        DJNZ R2, T436
 
         MOV R2,#10
-N437:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N437
+T437:   CALL N79
+        DJNZ R2, T437
 
         MOV R2,#204
-N438:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N438
+T438:   CALL N0
+        DJNZ R2, T438
 
         MOV R2,#21
-N439:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N439
+T439:   CALL N67
+        DJNZ R2, T439
 
         MOV R2,#14
-N440:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N440
+T440:   CALL N62
+        DJNZ R2, T440
 
         MOV R2,#18
-N441:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N441
+T441:   CALL N67
+        DJNZ R2, T441
 
         MOV R2,#23
-N442:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N442
+T442:   CALL N70
+        DJNZ R2, T442
 
         MOV R2,#45
-N443:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N443
+T443:   CALL N74
+        DJNZ R2, T443
 
         MOV R2,#13
-N444:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N444
+T444:   CALL N70
+        DJNZ R2, T444
 
         MOV R2,#16
-N445:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N445
+T445:   CALL N67
+        DJNZ R2, T445
 
         MOV R2,#32
-N446:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N446
+T446:   CALL N70
+        DJNZ R2, T446
 
         MOV R2,#35
-N447:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N447
+T447:   CALL N72
+        DJNZ R2, T447
 
         MOV R2,#13
-N448:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N448
+T448:   CALL N69
+        DJNZ R2, T448
 
         MOV R2,#18
-N449:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N449
+T449:   CALL N66
+        DJNZ R2, T449
 
         MOV R2,#43
-N450:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N450
+T450:   CALL N69
+        DJNZ R2, T450
 
         MOV R2,#68
-N451:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N451
+T451:   CALL N67
+        DJNZ R2, T451
 
         MOV R2,#2
-N452:   MOV R1,#16
-        MOV R0,#194
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#16
-        MOV R0,#194
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N452
+T452:   CALL N46
+        DJNZ R2, T452
 
         MOV R2,#6
-N453:   MOV R1,#14
-        MOV R0,#236
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#236
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N453
+T453:   CALL N48
+        DJNZ R2, T453
 
         MOV R2,#8
-N454:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N454
+T454:   CALL N50
+        DJNZ R2, T454
 
         MOV R2,#9
-N455:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N455
+T455:   CALL N52
+        DJNZ R2, T455
 
         MOV R2,#10
-N456:   MOV R1,#10
-        MOV R0,#136
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#10
-        MOV R0,#136
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N456
+T456:   CALL N54
+        DJNZ R2, T456
 
         MOV R2,#10
-N457:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N457
+T457:   CALL N55
+        DJNZ R2, T457
 
         MOV R2,#36
-N458:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N458
+T458:   CALL N79
+        DJNZ R2, T458
 
         MOV R2,#82
-N459:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N459
+T459:   CALL N82
+        DJNZ R2, T459
 
         MOV R2,#25
-N460:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N460
+T460:   CALL N81
+        DJNZ R2, T460
 
         MOV R2,#31
-N461:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N461
+T461:   CALL N79
+        DJNZ R2, T461
 
         MOV R2,#11
-N462:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N462
+T462:   CALL N0
+        DJNZ R2, T462
 
         MOV R2,#43
-N463:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N463
+T463:   CALL N77
+        DJNZ R2, T463
 
         MOV R2,#24
-N464:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N464
+T464:   CALL N76
+        DJNZ R2, T464
 
         MOV R2,#36
-N465:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N465
+T465:   CALL N74
+        DJNZ R2, T465
 
         MOV R2,#85
-N466:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N466
+T466:   CALL N73
+        DJNZ R2, T466
 
         MOV R2,#1
-N467:   MOV R1,#15
-        MOV R0,#208
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#15
-        MOV R0,#208
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N467
+T467:   CALL N47
+        DJNZ R2, T467
 
         MOV R2,#7
-N468:   MOV R1,#14
-        MOV R0,#21
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#21
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N468
+T468:   CALL N49
+        DJNZ R2, T468
 
         MOV R2,#7
-N469:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N469
+T469:   CALL N50
+        DJNZ R2, T469
 
         MOV R2,#8
-N470:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N470
+T470:   CALL N52
+        DJNZ R2, T470
 
         MOV R2,#10
-N471:   MOV R1,#10
-        MOV R0,#136
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#10
-        MOV R0,#136
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N471
+T471:   CALL N54
+        DJNZ R2, T471
 
         MOV R2,#10
-N472:   MOV R1,#9
-        MOV R0,#96
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#96
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N472
+T472:   CALL N56
+        DJNZ R2, T472
 
         MOV R2,#13
-N473:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N473
+T473:   CALL N57
+        DJNZ R2, T473
 
         MOV R2,#58
-N474:   MOV R1,#1
-        MOV R0,#179
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#179
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N474
+T474:   CALL N85
+        DJNZ R2, T474
 
         MOV R2,#118
-N475:   MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N475
+T475:   CALL N88
+        DJNZ R2, T475
 
         MOV R2,#47
-N476:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N476
+T476:   CALL N86
+        DJNZ R2, T476
 
         MOV R2,#60
-N477:   MOV R1,#1
-        MOV R0,#179
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#179
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N477
+T477:   CALL N85
+        DJNZ R2, T477
 
         MOV R2,#33
-N478:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N478
+T478:   CALL N82
+        DJNZ R2, T478
 
         MOV R2,#33
-N479:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N479
+T479:   CALL N81
+        DJNZ R2, T479
 
         MOV R2,#8
-N480:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N480
+T480:   CALL N0
+        DJNZ R2, T480
 
         MOV R2,#59
-N481:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N481
+T481:   CALL N79
+        DJNZ R2, T481
 
         MOV R2,#23
-N482:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N482
+T482:   CALL N77
+        DJNZ R2, T482
 
         MOV R2,#183
-N483:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N483
+T483:   CALL N0
+        DJNZ R2, T483
 
         MOV R2,#28
-N484:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N484
+T484:   CALL N74
+        DJNZ R2, T484
 
         MOV R2,#21
-N485:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N485
+T485:   CALL N69
+        DJNZ R2, T485
 
         MOV R2,#3
-N486:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N486
+T486:   CALL N0
+        DJNZ R2, T486
 
         MOV R2,#28
-N487:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N487
+T487:   CALL N74
+        DJNZ R2, T487
 
         MOV R2,#37
-N488:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N488
+T488:   CALL N77
+        DJNZ R2, T488
 
         MOV R2,#80
-N489:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N489
+T489:   CALL N81
+        DJNZ R2, T489
 
         MOV R2,#17
-N490:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N490
+T490:   CALL N77
+        DJNZ R2, T490
 
         MOV R2,#29
-N491:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N491
+T491:   CALL N74
+        DJNZ R2, T491
 
         MOV R2,#37
-N492:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N492
+T492:   CALL N77
+        DJNZ R2, T492
 
         MOV R2,#55
-N493:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N493
+T493:   CALL N79
+        DJNZ R2, T493
 
         MOV R2,#31
-N494:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N494
+T494:   CALL N76
+        DJNZ R2, T494
 
         MOV R2,#28
-N495:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N495
+T495:   CALL N73
+        DJNZ R2, T495
 
         MOV R2,#56
-N496:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N496
+T496:   CALL N76
+        DJNZ R2, T496
 
         MOV R2,#7
-N497:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N497
+T497:   CALL N74
+        DJNZ R2, T497
 
         MOV R2,#4
-N498:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N498
+T498:   CALL N65
+        DJNZ R2, T498
 
         MOV R2,#193
-N499:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N499
+T499:   CALL N0
+        DJNZ R2, T499
 
         MOV R2,#12
-N500:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N500
+T500:   CALL N62
+        DJNZ R2, T500
 
         MOV R2,#9
-N501:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N501
+T501:   CALL N0
+        DJNZ R2, T501
 
         MOV R2,#9
-N502:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N502
+T502:   CALL N57
+        DJNZ R2, T502
 
         MOV R2,#15
-N503:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N503
+T503:   CALL N62
+        DJNZ R2, T503
 
         MOV R2,#17
-N504:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N504
+T504:   CALL N65
+        DJNZ R2, T504
 
         MOV R2,#37
-N505:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N505
+T505:   CALL N69
+        DJNZ R2, T505
 
         MOV R2,#10
-N506:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N506
+T506:   CALL N65
+        DJNZ R2, T506
 
         MOV R2,#2
-N507:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N507
+T507:   CALL N0
+        DJNZ R2, T507
 
         MOV R2,#12
-N508:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N508
+T508:   CALL N62
+        DJNZ R2, T508
 
         MOV R2,#18
-N509:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N509
+T509:   CALL N65
+        DJNZ R2, T509
 
         MOV R2,#1
-N510:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N510
+T510:   CALL N0
+        DJNZ R2, T510
 
         MOV R2,#28
-N511:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N511
+T511:   CALL N67
+        DJNZ R2, T511
 
         MOV R2,#10
-N512:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N512
+T512:   CALL N64
+        DJNZ R2, T512
 
         MOV R2,#14
-N513:   MOV R1,#7
-        MOV R0,#2
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#2
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N513
+T513:   CALL N61
+        DJNZ R2, T513
 
         MOV R2,#3
-N514:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N514
+T514:   CALL N0
+        DJNZ R2, T514
 
         MOV R2,#15
-N515:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N515
+T515:   CALL N64
+        DJNZ R2, T515
 
         MOV R2,#6
-N516:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N516
+T516:   CALL N0
+        DJNZ R2, T516
 
         MOV R2,#11
-N517:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N517
+T517:   CALL N53
+        DJNZ R2, T517
 
         MOV R2,#15
-N518:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N518
+T518:   CALL N62
+        DJNZ R2, T518
 
         MOV R2,#17
-N519:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N519
+T519:   CALL N64
+        DJNZ R2, T519
 
         MOV R2,#2
-N520:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N520
+T520:   CALL N0
+        DJNZ R2, T520
 
         MOV R2,#11
-N521:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N521
+T521:   CALL N65
+        DJNZ R2, T521
 
         MOV R2,#15
-N522:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N522
+T522:   CALL N0
+        DJNZ R2, T522
 
         MOV R2,#20
-N523:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N523
+T523:   CALL N67
+        DJNZ R2, T523
 
         MOV R2,#23
-N524:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N524
+T524:   CALL N69
+        DJNZ R2, T524
 
         MOV R2,#24
-N525:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N525
+T525:   CALL N71
+        DJNZ R2, T525
 
         MOV R2,#31
-N526:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N526
+T526:   CALL N73
+        DJNZ R2, T526
 
         MOV R2,#5
-N527:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N527
+T527:   CALL N0
+        DJNZ R2, T527
 
         MOV R2,#137
-N528:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N528
+T528:   CALL N74
+        DJNZ R2, T528
 
         MOV R2,#1
-N529:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N529
+T529:   CALL N64
+        DJNZ R2, T529
 
         MOV R2,#5
-N530:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N530
+T530:   CALL N62
+        DJNZ R2, T530
 
         MOV R2,#7
-N531:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N531
+T531:   CALL N0
+        DJNZ R2, T531
 
         MOV R2,#16
-N532:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N532
+T532:   CALL N60
+        DJNZ R2, T532
 
         MOV R2,#12
-N533:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N533
+T533:   CALL N59
+        DJNZ R2, T533
 
         MOV R2,#20
-N534:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N534
+T534:   CALL N57
+        DJNZ R2, T534
 
         MOV R2,#6
-N535:   MOV R1,#9
-        MOV R0,#96
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#96
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N535
+T535:   CALL N56
+        DJNZ R2, T535
 
         MOV R2,#22
-N536:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N536
+T536:   CALL N71
+        DJNZ R2, T536
 
         MOV R2,#28
-N537:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N537
+T537:   CALL N72
+        DJNZ R2, T537
 
         MOV R2,#17
-N538:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N538
+T538:   CALL N74
+        DJNZ R2, T538
 
         MOV R2,#26
-N539:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N539
+T539:   CALL N0
+        DJNZ R2, T539
 
         MOV R2,#34
-N540:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N540
+T540:   CALL N76
+        DJNZ R2, T540
 
         MOV R2,#41
-N541:   MOV R1,#2
-        MOV R0,#149
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#149
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N541
+T541:   CALL N78
+        DJNZ R2, T541
 
         MOV R2,#43
-N542:   MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N542
+T542:   CALL N80
+        DJNZ R2, T542
 
         MOV R2,#51
-N543:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N543
+T543:   CALL N81
+        DJNZ R2, T543
 
         MOV R2,#198
-N544:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N544
+T544:   CALL N83
+        DJNZ R2, T544
 
         MOV R2,#7
-N545:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N545
+T545:   CALL N57
+        DJNZ R2, T545
 
         MOV R2,#7
-N546:   MOV R1,#9
-        MOV R0,#96
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#96
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N546
+T546:   CALL N56
+        DJNZ R2, T546
 
         MOV R2,#11
-N547:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N547
+T547:   CALL N53
+        DJNZ R2, T547
 
         MOV R2,#7
-N548:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N548
+T548:   CALL N52
+        DJNZ R2, T548
 
         MOV R2,#8
-N549:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N549
+T549:   CALL N50
+        DJNZ R2, T549
 
         MOV R2,#2
-N550:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N550
+T550:   CALL N0
+        DJNZ R2, T550
 
         MOV R2,#11
-N551:   MOV R1,#14
-        MOV R0,#236
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#236
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N551
+T551:   CALL N48
+        DJNZ R2, T551
 
         MOV R2,#45
-N552:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N552
+T552:   CALL N81
+        DJNZ R2, T552
 
         MOV R2,#2
-N553:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N553
+T553:   CALL N0
+        DJNZ R2, T553
 
         MOV R2,#122
-N554:   MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N554
+T554:   CALL N88
+        DJNZ R2, T554
 
         MOV R2,#58
-N555:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N555
+T555:   CALL N86
+        DJNZ R2, T555
 
         MOV R2,#43
-N556:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N556
+T556:   CALL N84
+        DJNZ R2, T556
 
         MOV R2,#33
-N557:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N557
+T557:   CALL N83
+        DJNZ R2, T557
 
         MOV R2,#50
-N558:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N558
+T558:   CALL N81
+        DJNZ R2, T558
 
         MOV R2,#58
-N559:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N559
+T559:   CALL N79
+        DJNZ R2, T559
 
         MOV R2,#117
-N560:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N560
+T560:   CALL N77
+        DJNZ R2, T560
 
         MOV R2,#19
-N561:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N561
+T561:   CALL N67
+        DJNZ R2, T561
 
         MOV R2,#8
-N562:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N562
+T562:   CALL N65
+        DJNZ R2, T562
 
         MOV R2,#8
-N563:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N563
+T563:   CALL N0
+        DJNZ R2, T563
 
         MOV R2,#19
-N564:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N564
+T564:   CALL N64
+        DJNZ R2, T564
 
         MOV R2,#15
-N565:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N565
+T565:   CALL N62
+        DJNZ R2, T565
 
         MOV R2,#14
-N566:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N566
+T566:   CALL N60
+        DJNZ R2, T566
 
         MOV R2,#13
-N567:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N567
+T567:   CALL N59
+        DJNZ R2, T567
 
         MOV R2,#40
-N568:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N568
+T568:   CALL N79
+        DJNZ R2, T568
 
         MOV R2,#113
-N569:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N569
+T569:   CALL N86
+        DJNZ R2, T569
 
         MOV R2,#52
-N570:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N570
+T570:   CALL N84
+        DJNZ R2, T570
 
         MOV R2,#43
-N571:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N571
+T571:   CALL N83
+        DJNZ R2, T571
 
         MOV R2,#27
-N572:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N572
+T572:   CALL N81
+        DJNZ R2, T572
 
         MOV R2,#49
-N573:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N573
+T573:   CALL N79
+        DJNZ R2, T573
 
         MOV R2,#46
-N574:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N574
+T574:   CALL N77
+        DJNZ R2, T574
 
         MOV R2,#103
-N575:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N575
+T575:   CALL N76
+        DJNZ R2, T575
 
         MOV R2,#8
-N576:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N576
+T576:   CALL N67
+        DJNZ R2, T576
 
         MOV R2,#18
-N577:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N577
+T577:   CALL N65
+        DJNZ R2, T577
 
         MOV R2,#10
-N578:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N578
+T578:   CALL N64
+        DJNZ R2, T578
 
         MOV R2,#4
-N579:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N579
+T579:   CALL N0
+        DJNZ R2, T579
 
         MOV R2,#18
-N580:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N580
+T580:   CALL N62
+        DJNZ R2, T580
 
         MOV R2,#13
-N581:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N581
+T581:   CALL N60
+        DJNZ R2, T581
 
         MOV R2,#14
-N582:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N582
+T582:   CALL N59
+        DJNZ R2, T582
 
         MOV R2,#1
-N583:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N583
+T583:   CALL N0
+        DJNZ R2, T583
 
         MOV R2,#14
-N584:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N584
+T584:   CALL N57
+        DJNZ R2, T584
 
         MOV R2,#36
-N585:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N585
+T585:   CALL N77
+        DJNZ R2, T585
 
         MOV R2,#97
-N586:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N586
+T586:   CALL N84
+        DJNZ R2, T586
 
         MOV R2,#50
-N587:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N587
+T587:   CALL N83
+        DJNZ R2, T587
 
         MOV R2,#36
-N588:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N588
+T588:   CALL N81
+        DJNZ R2, T588
 
         MOV R2,#30
-N589:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N589
+T589:   CALL N79
+        DJNZ R2, T589
 
         MOV R2,#2
-N590:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N590
+T590:   CALL N0
+        DJNZ R2, T590
 
         MOV R2,#36
-N591:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N591
+T591:   CALL N77
+        DJNZ R2, T591
 
         MOV R2,#42
-N592:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N592
+T592:   CALL N76
+        DJNZ R2, T592
 
         MOV R2,#96
-N593:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N593
+T593:   CALL N74
+        DJNZ R2, T593
 
         MOV R2,#6
-N594:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N594
+T594:   CALL N65
+        DJNZ R2, T594
 
         MOV R2,#19
-N595:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N595
+T595:   CALL N64
+        DJNZ R2, T595
 
         MOV R2,#5
-N596:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N596
+T596:   CALL N62
+        DJNZ R2, T596
 
         MOV R2,#12
-N597:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N597
+T597:   CALL N0
+        DJNZ R2, T597
 
         MOV R2,#14
-N598:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N598
+T598:   CALL N60
+        DJNZ R2, T598
 
         MOV R2,#12
-N599:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N599
+T599:   CALL N59
+        DJNZ R2, T599
 
         MOV R2,#12
-N600:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N600
+T600:   CALL N57
+        DJNZ R2, T600
 
         MOV R2,#14
-N601:   MOV R1,#9
-        MOV R0,#96
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#96
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N601
+T601:   CALL N56
+        DJNZ R2, T601
 
         MOV R2,#27
-N602:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N602
+T602:   CALL N76
+        DJNZ R2, T602
 
         MOV R2,#82
-N603:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N603
+T603:   CALL N83
+        DJNZ R2, T603
 
         MOV R2,#42
-N604:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N604
+T604:   CALL N81
+        DJNZ R2, T604
 
         MOV R2,#53
-N605:   MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N605
+T605:   CALL N80
+        DJNZ R2, T605
 
         MOV R2,#22
-N606:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N606
+T606:   CALL N77
+        DJNZ R2, T606
 
         MOV R2,#33
-N607:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N607
+T607:   CALL N76
+        DJNZ R2, T607
 
         MOV R2,#4
-N608:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N608
+T608:   CALL N0
+        DJNZ R2, T608
 
         MOV R2,#36
-N609:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N609
+T609:   CALL N74
+        DJNZ R2, T609
 
         MOV R2,#97
-N610:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N610
+T610:   CALL N72
+        DJNZ R2, T610
 
         MOV R2,#15
-N611:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N611
+T611:   CALL N59
+        DJNZ R2, T611
 
         MOV R2,#5
-N612:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N612
+T612:   CALL N57
+        DJNZ R2, T612
 
         MOV R2,#16
-N613:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N613
+T613:   CALL N0
+        DJNZ R2, T613
 
         MOV R2,#12
-N614:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N614
+T614:   CALL N55
+        DJNZ R2, T614
 
         MOV R2,#8
-N615:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N615
+T615:   CALL N53
+        DJNZ R2, T615
 
         MOV R2,#11
-N616:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N616
+T616:   CALL N52
+        DJNZ R2, T616
 
         MOV R2,#1
-N617:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N617
+T617:   CALL N0
+        DJNZ R2, T617
 
         MOV R2,#8
-N618:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N618
+T618:   CALL N50
+        DJNZ R2, T618
 
         MOV R2,#21
-N619:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N619
+T619:   CALL N70
+        DJNZ R2, T619
 
         MOV R2,#48
-N620:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N620
+T620:   CALL N74
+        DJNZ R2, T620
 
         MOV R2,#28
-N621:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N621
+T621:   CALL N72
+        DJNZ R2, T621
 
         MOV R2,#28
-N622:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N622
+T622:   CALL N70
+        DJNZ R2, T622
 
         MOV R2,#16
-N623:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N623
+T623:   CALL N69
+        DJNZ R2, T623
 
         MOV R2,#2
-N624:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N624
+T624:   CALL N0
+        DJNZ R2, T624
 
         MOV R2,#24
-N625:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N625
+T625:   CALL N67
+        DJNZ R2, T625
 
         MOV R2,#21
-N626:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N626
+T626:   CALL N65
+        DJNZ R2, T626
 
         MOV R2,#18
-N627:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N627
+T627:   CALL N64
+        DJNZ R2, T627
 
         MOV R2,#21
-N628:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N628
+T628:   CALL N65
+        DJNZ R2, T628
 
         MOV R2,#24
-N629:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N629
+T629:   CALL N67
+        DJNZ R2, T629
 
         MOV R2,#29
-N630:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N630
+T630:   CALL N69
+        DJNZ R2, T630
 
         MOV R2,#20
-N631:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N631
+T631:   CALL N70
+        DJNZ R2, T631
 
         MOV R2,#13
-N632:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N632
+T632:   CALL N0
+        DJNZ R2, T632
 
         MOV R2,#38
-N633:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N633
+T633:   CALL N72
+        DJNZ R2, T633
 
         MOV R2,#44
-N634:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N634
+T634:   CALL N74
+        DJNZ R2, T634
 
         MOV R2,#55
-N635:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N635
+T635:   CALL N76
+        DJNZ R2, T635
 
         MOV R2,#24
-N636:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N636
+T636:   CALL N0
+        DJNZ R2, T636
 
         MOV R2,#255
-N637:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N637
+T637:   CALL N77
+        DJNZ R2, T637
 
         MOV R2,#92
-N638:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N638
+T638:   CALL N77
+        DJNZ R2, T638
 
         MOV R2,#2
-N639:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N639
+T639:   CALL N72
+        DJNZ R2, T639
 
         MOV R2,#214
-N640:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N640
+T640:   CALL N81
+        DJNZ R2, T640
 
         MOV R2,#224
-N641:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N641
+T641:   CALL N84
+        DJNZ R2, T641
 
         MOV R2,#228
-N642:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N642
+T642:   CALL N76
+        DJNZ R2, T642
 
         MOV R2,#2
-N643:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N643
+T643:   CALL N0
+        DJNZ R2, T643
 
         MOV R2,#32
-N644:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N644
+T644:   CALL N77
+        DJNZ R2, T644
 
         MOV R2,#44
-N645:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N645
+T645:   CALL N79
+        DJNZ R2, T645
 
         MOV R2,#135
-N646:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N646
+T646:   CALL N77
+        DJNZ R2, T646
 
         MOV R2,#32
-N647:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N647
+T647:   CALL N72
+        DJNZ R2, T647
 
         MOV R2,#40
-N648:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N648
+T648:   CALL N69
+        DJNZ R2, T648
 
         MOV R2,#4
-N649:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N649
+T649:   CALL N0
+        DJNZ R2, T649
 
         MOV R2,#61
-N650:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N650
+T650:   CALL N72
+        DJNZ R2, T650
 
         MOV R2,#4
-N651:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N651
+T651:   CALL N0
+        DJNZ R2, T651
 
         MOV R2,#255
-N652:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N652
+T652:   CALL N86
+        DJNZ R2, T652
 
         MOV R2,#255
-N653:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N653
+T653:   CALL N86
+        DJNZ R2, T653
 
         MOV R2,#67
-N654:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N654
+T654:   CALL N86
+        DJNZ R2, T654
 
         MOV R2,#201
-N655:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N655
+T655:   CALL N84
+        DJNZ R2, T655
 
         MOV R2,#182
-N656:   MOV R1,#1
-        MOV R0,#86
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#86
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N656
+T656:   CALL N89
+        DJNZ R2, T656
 
         MOV R2,#48
-N657:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N657
+T657:   CALL N72
+        DJNZ R2, T657
 
         MOV R2,#76
-N658:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N658
+T658:   CALL N84
+        DJNZ R2, T658
 
         MOV R2,#8
-N659:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N659
+T659:   CALL N64
+        DJNZ R2, T659
 
         MOV R2,#56
-N660:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N660
+T660:   CALL N72
+        DJNZ R2, T660
 
         MOV R2,#13
-N661:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N661
+T661:   CALL N0
+        DJNZ R2, T661
 
         MOV R2,#4
-N662:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N662
+T662:   CALL N67
+        DJNZ R2, T662
 
         MOV R2,#27
-N663:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N663
+T663:   CALL N82
+        DJNZ R2, T663
 
         MOV R2,#1
-N664:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N664
+T664:   CALL N0
+        DJNZ R2, T664
 
         MOV R2,#28
-N665:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N665
+T665:   CALL N84
+        DJNZ R2, T665
 
         MOV R2,#8
-N666:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N666
+T666:   CALL N0
+        DJNZ R2, T666
 
         MOV R2,#11
-N667:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N667
+T667:   CALL N82
+        DJNZ R2, T667
 
         MOV R2,#35
-N668:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N668
+T668:   CALL N84
+        DJNZ R2, T668
 
         MOV R2,#2
-N669:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N669
+T669:   CALL N0
+        DJNZ R2, T669
 
         MOV R2,#32
-N670:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N670
+T670:   CALL N82
+        DJNZ R2, T670
 
         MOV R2,#28
-N671:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N671
+T671:   CALL N81
+        DJNZ R2, T671
 
         MOV R2,#51
-N672:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N672
+T672:   CALL N82
+        DJNZ R2, T672
 
         MOV R2,#150
-N673:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N673
+T673:   CALL N81
+        DJNZ R2, T673
 
         MOV R2,#28
-N674:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N674
+T674:   CALL N72
+        DJNZ R2, T674
 
         MOV R2,#31
-N675:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N675
+T675:   CALL N69
+        DJNZ R2, T675
 
         MOV R2,#21
-N676:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N676
+T676:   CALL N0
+        DJNZ R2, T676
 
         MOV R2,#63
-N677:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N677
+T677:   CALL N72
+        DJNZ R2, T677
 
         MOV R2,#6
-N678:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N678
+T678:   CALL N0
+        DJNZ R2, T678
 
         MOV R2,#61
-N679:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N679
+T679:   CALL N74
+        DJNZ R2, T679
 
         MOV R2,#6
-N680:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N680
+T680:   CALL N70
+        DJNZ R2, T680
 
         MOV R2,#34
-N681:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N681
+T681:   CALL N76
+        DJNZ R2, T681
 
         MOV R2,#16
-N682:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N682
+T682:   CALL N77
+        DJNZ R2, T682
 
         MOV R2,#25
-N683:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N683
+T683:   CALL N0
+        DJNZ R2, T683
 
         MOV R2,#39
-N684:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N684
+T684:   CALL N79
+        DJNZ R2, T684
 
         MOV R2,#35
-N685:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N685
+T685:   CALL N81
+        DJNZ R2, T685
 
         MOV R2,#58
-N686:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N686
+T686:   CALL N82
+        DJNZ R2, T686
 
         MOV R2,#50
-N687:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N687
+T687:   CALL N84
+        DJNZ R2, T687
 
         MOV R2,#73
-N688:   MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N688
+T688:   CALL N86
+        DJNZ R2, T688
 
         MOV R2,#37
-N689:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N689
+T689:   CALL N84
+        DJNZ R2, T689
 
         MOV R2,#43
-N690:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N690
+T690:   CALL N82
+        DJNZ R2, T690
 
         MOV R2,#41
-N691:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N691
+T691:   CALL N81
+        DJNZ R2, T691
 
         MOV R2,#42
-N692:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N692
+T692:   CALL N79
+        DJNZ R2, T692
 
         MOV R2,#2
-N693:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N693
+T693:   CALL N0
+        DJNZ R2, T693
 
         MOV R2,#41
-N694:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N694
+T694:   CALL N77
+        DJNZ R2, T694
 
         MOV R2,#27
-N695:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N695
+T695:   CALL N76
+        DJNZ R2, T695
 
         MOV R2,#8
-N696:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N696
+T696:   CALL N0
+        DJNZ R2, T696
 
         MOV R2,#34
-N697:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N697
+T697:   CALL N74
+        DJNZ R2, T697
 
         MOV R2,#4
-N698:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N698
+T698:   CALL N0
+        DJNZ R2, T698
 
         MOV R2,#4
-N699:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N699
+T699:   CALL N65
+        DJNZ R2, T699
 
         MOV R2,#52
-N700:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N700
+T700:   CALL N72
+        DJNZ R2, T700
 
         MOV R2,#17
-N701:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N701
+T701:   CALL N0
+        DJNZ R2, T701
 
         MOV R2,#29
-N702:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N702
+T702:   CALL N74
+        DJNZ R2, T702
 
         MOV R2,#27
-N703:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N703
+T703:   CALL N76
+        DJNZ R2, T703
 
         MOV R2,#27
-N704:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N704
+T704:   CALL N77
+        DJNZ R2, T704
 
         MOV R2,#15
-N705:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N705
+T705:   CALL N0
+        DJNZ R2, T705
 
         MOV R2,#41
-N706:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N706
+T706:   CALL N79
+        DJNZ R2, T706
 
         MOV R2,#36
-N707:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N707
+T707:   CALL N81
+        DJNZ R2, T707
 
         MOV R2,#52
-N708:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N708
+T708:   CALL N82
+        DJNZ R2, T708
 
         MOV R2,#59
-N709:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N709
+T709:   CALL N84
+        DJNZ R2, T709
 
         MOV R2,#41
-N710:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N710
+T710:   CALL N82
+        DJNZ R2, T710
 
         MOV R2,#39
-N711:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N711
+T711:   CALL N81
+        DJNZ R2, T711
 
         MOV R2,#5
-N712:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N712
+T712:   CALL N0
+        DJNZ R2, T712
 
         MOV R2,#39
-N713:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N713
+T713:   CALL N79
+        DJNZ R2, T713
 
         MOV R2,#15
-N714:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N714
+T714:   CALL N0
+        DJNZ R2, T714
 
         MOV R2,#43
-N715:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N715
+T715:   CALL N77
+        DJNZ R2, T715
 
         MOV R2,#24
-N716:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N716
+T716:   CALL N76
+        DJNZ R2, T716
 
         MOV R2,#6
-N717:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N717
+T717:   CALL N0
+        DJNZ R2, T717
 
         MOV R2,#31
-N718:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N718
+T718:   CALL N74
+        DJNZ R2, T718
 
         MOV R2,#31
-N719:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N719
+T719:   CALL N72
+        DJNZ R2, T719
 
         MOV R2,#2
-N720:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N720
+T720:   CALL N0
+        DJNZ R2, T720
 
         MOV R2,#50
-N721:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N721
+T721:   CALL N70
+        DJNZ R2, T721
 
         MOV R2,#5
-N722:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N722
+T722:   CALL N65
+        DJNZ R2, T722
 
         MOV R2,#26
-N723:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N723
+T723:   CALL N72
+        DJNZ R2, T723
 
         MOV R2,#28
-N724:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N724
+T724:   CALL N74
+        DJNZ R2, T724
 
         MOV R2,#28
-N725:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N725
+T725:   CALL N76
+        DJNZ R2, T725
 
         MOV R2,#8
-N726:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N726
+T726:   CALL N0
+        DJNZ R2, T726
 
         MOV R2,#37
-N727:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N727
+T727:   CALL N77
+        DJNZ R2, T727
 
         MOV R2,#32
-N728:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N728
+T728:   CALL N79
+        DJNZ R2, T728
 
         MOV R2,#47
-N729:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N729
+T729:   CALL N81
+        DJNZ R2, T729
 
         MOV R2,#62
-N730:   MOV R1,#2
-        MOV R0,#10
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#10
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N730
+T730:   CALL N82
+        DJNZ R2, T730
 
         MOV R2,#48
-N731:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N731
+T731:   CALL N81
+        DJNZ R2, T731
 
         MOV R2,#26
-N732:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N732
+T732:   CALL N79
+        DJNZ R2, T732
 
         MOV R2,#2
-N733:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N733
+T733:   CALL N0
+        DJNZ R2, T733
 
         MOV R2,#31
-N734:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N734
+T734:   CALL N77
+        DJNZ R2, T734
 
         MOV R2,#1
-N735:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N735
+T735:   CALL N64
+        DJNZ R2, T735
 
         MOV R2,#39
-N736:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N736
+T736:   CALL N76
+        DJNZ R2, T736
 
         MOV R2,#20
-N737:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N737
+T737:   CALL N74
+        DJNZ R2, T737
 
         MOV R2,#6
-N738:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N738
+T738:   CALL N0
+        DJNZ R2, T738
 
         MOV R2,#29
-N739:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N739
+T739:   CALL N72
+        DJNZ R2, T739
 
         MOV R2,#18
-N740:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N740
+T740:   CALL N70
+        DJNZ R2, T740
 
         MOV R2,#16
-N741:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N741
+T741:   CALL N0
+        DJNZ R2, T741
 
         MOV R2,#52
-N742:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N742
+T742:   CALL N69
+        DJNZ R2, T742
 
         MOV R2,#2
-N743:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N743
+T743:   CALL N65
+        DJNZ R2, T743
 
         MOV R2,#19
-N744:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N744
+T744:   CALL N70
+        DJNZ R2, T744
 
         MOV R2,#16
-N745:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N745
+T745:   CALL N0
+        DJNZ R2, T745
 
         MOV R2,#20
-N746:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N746
+T746:   CALL N72
+        DJNZ R2, T746
 
         MOV R2,#28
-N747:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N747
+T747:   CALL N74
+        DJNZ R2, T747
 
         MOV R2,#19
-N748:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N748
+T748:   CALL N76
+        DJNZ R2, T748
 
         MOV R2,#20
-N749:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N749
+T749:   CALL N0
+        DJNZ R2, T749
 
         MOV R2,#36
-N750:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N750
+T750:   CALL N77
+        DJNZ R2, T750
 
         MOV R2,#35
-N751:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N751
+T751:   CALL N79
+        DJNZ R2, T751
 
         MOV R2,#55
-N752:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N752
+T752:   CALL N81
+        DJNZ R2, T752
 
         MOV R2,#33
-N753:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N753
+T753:   CALL N79
+        DJNZ R2, T753
 
         MOV R2,#2
-N754:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N754
+T754:   CALL N0
+        DJNZ R2, T754
 
         MOV R2,#25
-N755:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N755
+T755:   CALL N77
+        DJNZ R2, T755
 
         MOV R2,#14
-N756:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N756
+T756:   CALL N0
+        DJNZ R2, T756
 
         MOV R2,#36
-N757:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N757
+T757:   CALL N76
+        DJNZ R2, T757
 
         MOV R2,#21
-N758:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N758
+T758:   CALL N74
+        DJNZ R2, T758
 
         MOV R2,#8
-N759:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N759
+T759:   CALL N0
+        DJNZ R2, T759
 
         MOV R2,#19
-N760:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N760
+T760:   CALL N72
+        DJNZ R2, T760
 
         MOV R2,#4
-N761:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N761
+T761:   CALL N0
+        DJNZ R2, T761
 
         MOV R2,#18
-N762:   MOV R1,#4
-        MOV R0,#36
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#36
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N762
+T762:   CALL N70
+        DJNZ R2, T762
 
         MOV R2,#21
-N763:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N763
+T763:   CALL N0
+        DJNZ R2, T763
 
         MOV R2,#35
-N764:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N764
+T764:   CALL N69
+        DJNZ R2, T764
 
         MOV R2,#255
-N765:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N765
+T765:   CALL N81
+        DJNZ R2, T765
 
         MOV R2,#155
-N766:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N766
+T766:   CALL N81
+        DJNZ R2, T766
 
         MOV R2,#4
-N767:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N767
+T767:   CALL N65
+        DJNZ R2, T767
 
         MOV R2,#17
-N768:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N768
+T768:   CALL N64
+        DJNZ R2, T768
 
         MOV R2,#7
-N769:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N769
+T769:   CALL N62
+        DJNZ R2, T769
 
         MOV R2,#17
-N770:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N770
+T770:   CALL N0
+        DJNZ R2, T770
 
         MOV R2,#12
-N771:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N771
+T771:   CALL N60
+        DJNZ R2, T771
 
         MOV R2,#28
-N772:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N772
+T772:   CALL N81
+        DJNZ R2, T772
 
         MOV R2,#2
-N773:   MOV R1,#8
-        MOV R0,#89
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#89
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N773
+T773:   CALL N58
+        DJNZ R2, T773
 
         MOV R2,#19
-N774:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N774
+T774:   CALL N0
+        DJNZ R2, T774
 
         MOV R2,#11
-N775:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N775
+T775:   CALL N57
+        DJNZ R2, T775
 
         MOV R2,#7
-N776:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N776
+T776:   CALL N55
+        DJNZ R2, T776
 
         MOV R2,#11
-N777:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N777
+T777:   CALL N53
+        DJNZ R2, T777
 
         MOV R2,#5
-N778:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N778
+T778:   CALL N0
+        DJNZ R2, T778
 
         MOV R2,#255
-N779:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N779
+T779:   CALL N79
+        DJNZ R2, T779
 
         MOV R2,#48
-N780:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N780
+T780:   CALL N79
+        DJNZ R2, T780
 
         MOV R2,#13
-N781:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N781
+T781:   CALL N62
+        DJNZ R2, T781
 
         MOV R2,#19
-N782:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N782
+T782:   CALL N64
+        DJNZ R2, T782
 
         MOV R2,#16
-N783:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N783
+T783:   CALL N62
+        DJNZ R2, T783
 
         MOV R2,#14
-N784:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N784
+T784:   CALL N60
+        DJNZ R2, T784
 
         MOV R2,#5
-N785:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N785
+T785:   CALL N59
+        DJNZ R2, T785
 
         MOV R2,#8
-N786:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N786
+T786:   CALL N0
+        DJNZ R2, T786
 
         MOV R2,#27
-N787:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N787
+T787:   CALL N79
+        DJNZ R2, T787
 
         MOV R2,#4
-N788:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N788
+T788:   CALL N57
+        DJNZ R2, T788
 
         MOV R2,#10
-N789:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N789
+T789:   CALL N55
+        DJNZ R2, T789
 
         MOV R2,#8
-N790:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N790
+T790:   CALL N53
+        DJNZ R2, T790
 
         MOV R2,#9
-N791:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N791
+T791:   CALL N52
+        DJNZ R2, T791
 
         MOV R2,#1
-N792:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N792
+T792:   CALL N50
+        DJNZ R2, T792
 
         MOV R2,#255
-N793:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N793
+T793:   CALL N77
+        DJNZ R2, T793
 
         MOV R2,#16
-N794:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N794
+T794:   CALL N77
+        DJNZ R2, T794
 
         MOV R2,#7
-N795:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N795
+T795:   CALL N60
+        DJNZ R2, T795
 
         MOV R2,#17
-N796:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N796
+T796:   CALL N62
+        DJNZ R2, T796
 
         MOV R2,#13
-N797:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N797
+T797:   CALL N60
+        DJNZ R2, T797
 
         MOV R2,#13
-N798:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N798
+T798:   CALL N59
+        DJNZ R2, T798
 
         MOV R2,#6
-N799:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N799
+T799:   CALL N57
+        DJNZ R2, T799
 
         MOV R2,#1
-N800:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N800
+T800:   CALL N0
+        DJNZ R2, T800
 
         MOV R2,#25
-N801:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N801
+T801:   CALL N77
+        DJNZ R2, T801
 
         MOV R2,#5
-N802:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N802
+T802:   CALL N55
+        DJNZ R2, T802
 
         MOV R2,#9
-N803:   MOV R1,#11
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N803
+T803:   CALL N53
+        DJNZ R2, T803
 
         MOV R2,#8
-N804:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N804
+T804:   CALL N52
+        DJNZ R2, T804
 
         MOV R2,#7
-N805:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N805
+T805:   CALL N50
+        DJNZ R2, T805
 
         MOV R2,#255
-N806:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N806
+T806:   CALL N76
+        DJNZ R2, T806
 
         MOV R2,#13
-N807:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N807
+T807:   CALL N76
+        DJNZ R2, T807
 
         MOV R2,#4
-N808:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N808
+T808:   CALL N59
+        DJNZ R2, T808
 
         MOV R2,#16
-N809:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N809
+T809:   CALL N60
+        DJNZ R2, T809
 
         MOV R2,#15
-N810:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N810
+T810:   CALL N59
+        DJNZ R2, T810
 
         MOV R2,#4
-N811:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N811
+T811:   CALL N57
+        DJNZ R2, T811
 
         MOV R2,#8
-N812:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N812
+T812:   CALL N0
+        DJNZ R2, T812
 
         MOV R2,#10
-N813:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N813
+T813:   CALL N55
+        DJNZ R2, T813
 
         MOV R2,#1
-N814:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N814
+T814:   CALL N72
+        DJNZ R2, T814
 
         MOV R2,#26
-N815:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N815
+T815:   CALL N76
+        DJNZ R2, T815
 
         MOV R2,#7
-N816:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N816
+T816:   CALL N0
+        DJNZ R2, T816
 
         MOV R2,#11
-N817:   MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N817
+T817:   CALL N52
+        DJNZ R2, T817
 
         MOV R2,#9
-N818:   MOV R1,#13
-        MOV R0,#74
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#13
-        MOV R0,#74
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N818
+T818:   CALL N50
+        DJNZ R2, T818
 
         MOV R2,#3
-N819:   MOV R1,#14
-        MOV R0,#236
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#236
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N819
+T819:   CALL N48
+        DJNZ R2, T819
 
         MOV R2,#2
-N820:   MOV R1,#8
-        MOV R0,#216
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#8
-        MOV R0,#216
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N820
+T820:   CALL N57
+        DJNZ R2, T820
 
         MOV R2,#25
-N821:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N821
+T821:   CALL N74
+        DJNZ R2, T821
 
         MOV R2,#21
-N822:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N822
+T822:   CALL N0
+        DJNZ R2, T822
 
         MOV R2,#16
-N823:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N823
+T823:   CALL N62
+        DJNZ R2, T823
 
         MOV R2,#12
-N824:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N824
+T824:   CALL N64
+        DJNZ R2, T824
 
         MOV R2,#13
-N825:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N825
+T825:   CALL N65
+        DJNZ R2, T825
 
         MOV R2,#13
-N826:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N826
+T826:   CALL N0
+        DJNZ R2, T826
 
         MOV R2,#18
-N827:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N827
+T827:   CALL N67
+        DJNZ R2, T827
 
         MOV R2,#21
-N828:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N828
+T828:   CALL N69
+        DJNZ R2, T828
 
         MOV R2,#25
-N829:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N829
+T829:   CALL N71
+        DJNZ R2, T829
 
         MOV R2,#30
-N830:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N830
+T830:   CALL N73
+        DJNZ R2, T830
 
         MOV R2,#31
-N831:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N831
+T831:   CALL N74
+        DJNZ R2, T831
 
         MOV R2,#19
-N832:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N832
+T832:   CALL N69
+        DJNZ R2, T832
 
         MOV R2,#22
-N833:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N833
+T833:   CALL N71
+        DJNZ R2, T833
 
         MOV R2,#23
-N834:   MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N834
+T834:   CALL N73
+        DJNZ R2, T834
 
         MOV R2,#9
-N835:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N835
+T835:   CALL N0
+        DJNZ R2, T835
 
         MOV R2,#33
-N836:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N836
+T836:   CALL N74
+        DJNZ R2, T836
 
         MOV R2,#28
-N837:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N837
+T837:   CALL N76
+        DJNZ R2, T837
 
         MOV R2,#31
-N838:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N838
+T838:   CALL N77
+        DJNZ R2, T838
 
         MOV R2,#6
-N839:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N839
+T839:   CALL N0
+        DJNZ R2, T839
 
         MOV R2,#47
-N840:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N840
+T840:   CALL N79
+        DJNZ R2, T840
 
         MOV R2,#40
-N841:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N841
+T841:   CALL N81
+        DJNZ R2, T841
 
         MOV R2,#57
-N842:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N842
+T842:   CALL N83
+        DJNZ R2, T842
 
         MOV R2,#76
-N843:   MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N843
+T843:   CALL N84
+        DJNZ R2, T843
 
         MOV R2,#52
-N844:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N844
+T844:   CALL N83
+        DJNZ R2, T844
 
         MOV R2,#25
-N845:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N845
+T845:   CALL N81
+        DJNZ R2, T845
 
         MOV R2,#36
-N846:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N846
+T846:   CALL N79
+        DJNZ R2, T846
 
         MOV R2,#8
-N847:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N847
+T847:   CALL N0
+        DJNZ R2, T847
 
         MOV R2,#40
-N848:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N848
+T848:   CALL N77
+        DJNZ R2, T848
 
         MOV R2,#36
-N849:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N849
+T849:   CALL N76
+        DJNZ R2, T849
 
         MOV R2,#42
-N850:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N850
+T850:   CALL N77
+        DJNZ R2, T850
 
         MOV R2,#38
-N851:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N851
+T851:   CALL N79
+        DJNZ R2, T851
 
         MOV R2,#79
-N852:   MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N852
+T852:   CALL N81
+        DJNZ R2, T852
 
         MOV R2,#34
-N853:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N853
+T853:   CALL N79
+        DJNZ R2, T853
 
         MOV R2,#31
-N854:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N854
+T854:   CALL N77
+        DJNZ R2, T854
 
         MOV R2,#20
-N855:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N855
+T855:   CALL N76
+        DJNZ R2, T855
 
         MOV R2,#20
-N856:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N856
+T856:   CALL N74
+        DJNZ R2, T856
 
         MOV R2,#10
-N857:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N857
+T857:   CALL N0
+        DJNZ R2, T857
 
         MOV R2,#28
-N858:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N858
+T858:   CALL N72
+        DJNZ R2, T858
 
         MOV R2,#17
-N859:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N859
+T859:   CALL N0
+        DJNZ R2, T859
 
         MOV R2,#50
-N860:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N860
+T860:   CALL N71
+        DJNZ R2, T860
 
         MOV R2,#2
-N861:   MOV R1,#15
-        MOV R0,#208
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#15
-        MOV R0,#208
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N861
+T861:   CALL N47
+        DJNZ R2, T861
 
         MOV R2,#57
-N862:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N862
+T862:   CALL N79
+        DJNZ R2, T862
 
         MOV R2,#5
-N863:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N863
+T863:   CALL N55
+        DJNZ R2, T863
 
         MOV R2,#7
-N864:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N864
+T864:   CALL N0
+        DJNZ R2, T864
 
         MOV R2,#68
-N865:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N865
+T865:   CALL N76
+        DJNZ R2, T865
 
         MOV R2,#36
-N866:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N866
+T866:   CALL N72
+        DJNZ R2, T866
 
         MOV R2,#4
-N867:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N867
+T867:   CALL N55
+        DJNZ R2, T867
 
         MOV R2,#9
-N868:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N868
+T868:   CALL N0
+        DJNZ R2, T868
 
         MOV R2,#60
-N869:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N869
+T869:   CALL N74
+        DJNZ R2, T869
 
         MOV R2,#54
-N870:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N870
+T870:   CALL N79
+        DJNZ R2, T870
 
         MOV R2,#8
-N871:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N871
+T871:   CALL N55
+        DJNZ R2, T871
 
         MOV R2,#54
-N872:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N872
+T872:   CALL N76
+        DJNZ R2, T872
 
         MOV R2,#3
-N873:   MOV R1,#14
-        MOV R0,#236
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#14
-        MOV R0,#236
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N873
+T873:   CALL N48
+        DJNZ R2, T873
 
         MOV R2,#28
-N874:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N874
+T874:   CALL N72
+        DJNZ R2, T874
 
         MOV R2,#10
-N875:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N875
+T875:   CALL N55
+        DJNZ R2, T875
 
         MOV R2,#1
-N876:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N876
+T876:   CALL N0
+        DJNZ R2, T876
 
         MOV R2,#22
-N877:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N877
+T877:   CALL N74
+        DJNZ R2, T877
 
         MOV R2,#1
-N878:   MOV R1,#19
-        MOV R0,#241
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#19
-        MOV R0,#241
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N878
+T878:   CALL N43
+        DJNZ R2, T878
 
         MOV R2,#178
-N879:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N879
+T879:   CALL N0
+        DJNZ R2, T879
 
         MOV R2,#29
-N880:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N880
+T880:   CALL N79
+        DJNZ R2, T880
 
         MOV R2,#7
-N881:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N881
+T881:   CALL N55
+        DJNZ R2, T881
 
         MOV R2,#171
-N882:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N882
+T882:   CALL N0
+        DJNZ R2, T882
 
         MOV R2,#14
-N883:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N883
+T883:   CALL N67
+        DJNZ R2, T883
 
         MOV R2,#1
-N884:   MOV R1,#19
-        MOV R0,#241
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#19
-        MOV R0,#241
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N884
+T884:   CALL N43
+        DJNZ R2, T884
 
         MOV R2,#255
-N885:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N885
+T885:   CALL N0
+        DJNZ R2, T885
 
         MOV R2,#191
-N886:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N886
+T886:   CALL N0
+        DJNZ R2, T886
 
         MOV R2,#34
-N887:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N887
+T887:   CALL N66
+        DJNZ R2, T887
 
         MOV R2,#28
-N888:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N888
+T888:   CALL N67
+        DJNZ R2, T888
 
         MOV R2,#13
-N889:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N889
+T889:   CALL N66
+        DJNZ R2, T889
 
         MOV R2,#7
-N890:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N890
+T890:   CALL N0
+        DJNZ R2, T890
 
         MOV R2,#24
-N891:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N891
+T891:   CALL N67
+        DJNZ R2, T891
 
         MOV R2,#11
-N892:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N892
+T892:   CALL N66
+        DJNZ R2, T892
 
         MOV R2,#2
-N893:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N893
+T893:   CALL N0
+        DJNZ R2, T893
 
         MOV R2,#25
-N894:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N894
+T894:   CALL N67
+        DJNZ R2, T894
 
         MOV R2,#15
-N895:   MOV R1,#5
-        MOV R0,#60
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#60
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N895
+T895:   CALL N66
+        DJNZ R2, T895
 
         MOV R2,#26
-N896:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N896
+T896:   CALL N67
+        DJNZ R2, T896
 
         MOV R2,#16
-N897:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N897
+T897:   CALL N65
+        DJNZ R2, T897
 
         MOV R2,#24
-N898:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N898
+T898:   CALL N67
+        DJNZ R2, T898
 
         MOV R2,#4
-N899:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N899
+T899:   CALL N0
+        DJNZ R2, T899
 
         MOV R2,#14
-N900:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N900
+T900:   CALL N65
+        DJNZ R2, T900
 
         MOV R2,#25
-N901:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N901
+T901:   CALL N67
+        DJNZ R2, T901
 
         MOV R2,#5
-N902:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N902
+T902:   CALL N0
+        DJNZ R2, T902
 
         MOV R2,#14
-N903:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N903
+T903:   CALL N65
+        DJNZ R2, T903
 
         MOV R2,#28
-N904:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N904
+T904:   CALL N67
+        DJNZ R2, T904
 
         MOV R2,#6
-N905:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N905
+T905:   CALL N0
+        DJNZ R2, T905
 
         MOV R2,#15
-N906:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N906
+T906:   CALL N65
+        DJNZ R2, T906
 
         MOV R2,#35
-N907:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N907
+T907:   CALL N67
+        DJNZ R2, T907
 
         MOV R2,#2
-N908:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N908
+T908:   CALL N0
+        DJNZ R2, T908
 
         MOV R2,#132
-N909:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N909
+T909:   CALL N79
+        DJNZ R2, T909
 
         MOV R2,#79
-N910:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N910
+T910:   CALL N76
+        DJNZ R2, T910
 
         MOV R2,#140
-N911:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N911
+T911:   CALL N72
+        DJNZ R2, T911
 
         MOV R2,#1
-N912:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N912
+T912:   CALL N64
+        DJNZ R2, T912
 
         MOV R2,#20
-N913:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N913
+T913:   CALL N67
+        DJNZ R2, T913
 
         MOV R2,#24
-N914:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N914
+T914:   CALL N74
+        DJNZ R2, T914
 
         MOV R2,#45
-N915:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N915
+T915:   CALL N76
+        DJNZ R2, T915
 
         MOV R2,#61
-N916:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N916
+T916:   CALL N74
+        DJNZ R2, T916
 
         MOV R2,#26
-N917:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N917
+T917:   CALL N72
+        DJNZ R2, T917
 
         MOV R2,#19
-N918:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N918
+T918:   CALL N67
+        DJNZ R2, T918
 
         MOV R2,#15
-N919:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N919
+T919:   CALL N0
+        DJNZ R2, T919
 
         MOV R2,#5
-N920:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N920
+T920:   CALL N65
+        DJNZ R2, T920
 
         MOV R2,#16
-N921:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N921
+T921:   CALL N72
+        DJNZ R2, T921
 
         MOV R2,#12
-N922:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N922
+T922:   CALL N74
+        DJNZ R2, T922
 
         MOV R2,#21
-N923:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N923
+T923:   CALL N0
+        DJNZ R2, T923
 
         MOV R2,#6
-N924:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N924
+T924:   CALL N72
+        DJNZ R2, T924
 
         MOV R2,#21
-N925:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N925
+T925:   CALL N74
+        DJNZ R2, T925
 
         MOV R2,#4
-N926:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N926
+T926:   CALL N0
+        DJNZ R2, T926
 
         MOV R2,#21
-N927:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N927
+T927:   CALL N72
+        DJNZ R2, T927
 
         MOV R2,#16
-N928:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N928
+T928:   CALL N71
+        DJNZ R2, T928
 
         MOV R2,#21
-N929:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N929
+T929:   CALL N0
+        DJNZ R2, T929
 
         MOV R2,#147
-N930:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N930
+T930:   CALL N71
+        DJNZ R2, T930
 
         MOV R2,#18
-N931:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N931
+T931:   CALL N67
+        DJNZ R2, T931
 
         MOV R2,#2
-N932:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N932
+T932:   CALL N0
+        DJNZ R2, T932
 
         MOV R2,#16
-N933:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N933
+T933:   CALL N64
+        DJNZ R2, T933
 
         MOV R2,#25
-N934:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N934
+T934:   CALL N67
+        DJNZ R2, T934
 
         MOV R2,#3
-N935:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N935
+T935:   CALL N0
+        DJNZ R2, T935
 
         MOV R2,#14
-N936:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N936
+T936:   CALL N65
+        DJNZ R2, T936
 
         MOV R2,#23
-N937:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N937
+T937:   CALL N67
+        DJNZ R2, T937
 
         MOV R2,#14
-N938:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N938
+T938:   CALL N62
+        DJNZ R2, T938
 
         MOV R2,#24
-N939:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N939
+T939:   CALL N67
+        DJNZ R2, T939
 
         MOV R2,#117
-N940:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N940
+T940:   CALL N79
+        DJNZ R2, T940
 
         MOV R2,#88
-N941:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N941
+T941:   CALL N76
+        DJNZ R2, T941
 
         MOV R2,#131
-N942:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N942
+T942:   CALL N72
+        DJNZ R2, T942
 
         MOV R2,#21
-N943:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N943
+T943:   CALL N67
+        DJNZ R2, T943
 
         MOV R2,#28
-N944:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N944
+T944:   CALL N74
+        DJNZ R2, T944
 
         MOV R2,#47
-N945:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N945
+T945:   CALL N76
+        DJNZ R2, T945
 
         MOV R2,#55
-N946:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N946
+T946:   CALL N74
+        DJNZ R2, T946
 
         MOV R2,#25
-N947:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N947
+T947:   CALL N72
+        DJNZ R2, T947
 
         MOV R2,#21
-N948:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N948
+T948:   CALL N67
+        DJNZ R2, T948
 
         MOV R2,#12
-N949:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N949
+T949:   CALL N0
+        DJNZ R2, T949
 
         MOV R2,#1
-N950:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N950
+T950:   CALL N65
+        DJNZ R2, T950
 
         MOV R2,#15
-N951:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N951
+T951:   CALL N72
+        DJNZ R2, T951
 
         MOV R2,#14
-N952:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N952
+T952:   CALL N74
+        DJNZ R2, T952
 
         MOV R2,#10
-N953:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N953
+T953:   CALL N67
+        DJNZ R2, T953
 
         MOV R2,#5
-N954:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N954
+T954:   CALL N72
+        DJNZ R2, T954
 
         MOV R2,#22
-N955:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N955
+T955:   CALL N74
+        DJNZ R2, T955
 
         MOV R2,#3
-N956:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N956
+T956:   CALL N64
+        DJNZ R2, T956
 
         MOV R2,#7
-N957:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N957
+T957:   CALL N67
+        DJNZ R2, T957
 
         MOV R2,#16
-N958:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N958
+T958:   CALL N71
+        DJNZ R2, T958
 
         MOV R2,#24
-N959:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N959
+T959:   CALL N0
+        DJNZ R2, T959
 
         MOV R2,#137
-N960:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N960
+T960:   CALL N71
+        DJNZ R2, T960
 
         MOV R2,#3
-N961:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N961
+T961:   CALL N65
+        DJNZ R2, T961
 
         MOV R2,#26
-N962:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N962
+T962:   CALL N67
+        DJNZ R2, T962
 
         MOV R2,#16
-N963:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N963
+T963:   CALL N64
+        DJNZ R2, T963
 
         MOV R2,#1
-N964:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N964
+T964:   CALL N0
+        DJNZ R2, T964
 
         MOV R2,#25
-N965:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N965
+T965:   CALL N67
+        DJNZ R2, T965
 
         MOV R2,#2
-N966:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N966
+T966:   CALL N0
+        DJNZ R2, T966
 
         MOV R2,#13
-N967:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N967
+T967:   CALL N65
+        DJNZ R2, T967
 
         MOV R2,#1
-N968:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N968
+T968:   CALL N0
+        DJNZ R2, T968
 
         MOV R2,#23
-N969:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N969
+T969:   CALL N67
+        DJNZ R2, T969
 
         MOV R2,#13
-N970:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N970
+T970:   CALL N62
+        DJNZ R2, T970
 
         MOV R2,#5
-N971:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N971
+T971:   CALL N0
+        DJNZ R2, T971
 
         MOV R2,#16
-N972:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N972
+T972:   CALL N67
+        DJNZ R2, T972
 
         MOV R2,#27
-N973:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N973
+T973:   CALL N0
+        DJNZ R2, T973
 
         MOV R2,#168
-N974:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N974
+T974:   CALL N79
+        DJNZ R2, T974
 
         MOV R2,#7
-N975:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N975
+T975:   CALL N60
+        DJNZ R2, T975
 
         MOV R2,#15
-N976:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N976
+T976:   CALL N64
+        DJNZ R2, T976
 
         MOV R2,#57
-N977:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N977
+T977:   CALL N79
+        DJNZ R2, T977
 
         MOV R2,#43
-N978:   MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N978
+T978:   CALL N76
+        DJNZ R2, T978
 
         MOV R2,#41
-N979:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N979
+T979:   CALL N72
+        DJNZ R2, T979
 
         MOV R2,#72
-N980:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N980
+T980:   CALL N69
+        DJNZ R2, T980
 
         MOV R2,#6
-N981:   MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N981
+T981:   CALL N60
+        DJNZ R2, T981
 
         MOV R2,#19
-N982:   MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N982
+T982:   CALL N65
+        DJNZ R2, T982
 
         MOV R2,#23
-N983:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N983
+T983:   CALL N69
+        DJNZ R2, T983
 
         MOV R2,#35
-N984:   MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N984
+T984:   CALL N72
+        DJNZ R2, T984
 
         MOV R2,#19
-N985:   MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N985
+T985:   CALL N69
+        DJNZ R2, T985
 
         MOV R2,#151
-N986:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N986
+T986:   CALL N77
+        DJNZ R2, T986
 
         MOV R2,#3
-N987:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N987
+T987:   CALL N59
+        DJNZ R2, T987
 
         MOV R2,#16
-N988:   MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N988
+T988:   CALL N62
+        DJNZ R2, T988
 
         MOV R2,#42
-N989:   MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N989
+T989:   CALL N77
+        DJNZ R2, T989
 
         MOV R2,#31
-N990:   MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N990
+T990:   CALL N74
+        DJNZ R2, T990
 
         MOV R2,#32
-N991:   MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N991
+T991:   CALL N71
+        DJNZ R2, T991
 
         MOV R2,#36
-N992:   MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N992
+T992:   CALL N67
+        DJNZ R2, T992
 
         MOV R2,#12
-N993:   MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N993
+T993:   CALL N55
+        DJNZ R2, T993
 
         MOV R2,#13
-N994:   MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N994
+T994:   CALL N59
+        DJNZ R2, T994
 
         MOV R2,#20
-N995:   MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N995
+T995:   CALL N64
+        DJNZ R2, T995
 
         MOV R2,#46
-N996:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N996
+T996:   CALL N79
+        DJNZ R2, T996
 
         MOV R2,#73
-N997:   MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N997
+T997:   CALL N83
+        DJNZ R2, T997
 
         MOV R2,#33
-N998:   MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N998
+T998:   CALL N79
+        DJNZ R2, T998
 
         MOV R2,#255
-N999:   MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N999
+T999:   CALL N88
+        DJNZ R2, T999
 
         MOV R2,#39
-N1000:  MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1000
+T1000:  CALL N88
+        DJNZ R2, T1000
 
         MOV R2,#2
-N1001:  MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1001
+T1001:  CALL N69
+        DJNZ R2, T1001
 
         MOV R2,#31
-N1002:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1002
+T1002:  CALL N72
+        DJNZ R2, T1002
 
         MOV R2,#74
-N1003:  MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1003
+T1003:  CALL N88
+        DJNZ R2, T1003
 
         MOV R2,#59
-N1004:  MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1004
+T1004:  CALL N84
+        DJNZ R2, T1004
 
         MOV R2,#53
-N1005:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1005
+T1005:  CALL N81
+        DJNZ R2, T1005
 
         MOV R2,#106
-N1006:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1006
+T1006:  CALL N77
+        DJNZ R2, T1006
 
         MOV R2,#1
-N1007:  MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1007
+T1007:  CALL N65
+        DJNZ R2, T1007
 
         MOV R2,#18
-N1008:  MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1008
+T1008:  CALL N69
+        DJNZ R2, T1008
 
         MOV R2,#29
-N1009:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1009
+T1009:  CALL N74
+        DJNZ R2, T1009
 
         MOV R2,#40
-N1010:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1010
+T1010:  CALL N77
+        DJNZ R2, T1010
 
         MOV R2,#52
-N1011:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1011
+T1011:  CALL N81
+        DJNZ R2, T1011
 
         MOV R2,#40
-N1012:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1012
+T1012:  CALL N77
+        DJNZ R2, T1012
 
         MOV R2,#237
-N1013:  MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1013
+T1013:  CALL N86
+        DJNZ R2, T1013
 
         MOV R2,#9
-N1014:  MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1014
+T1014:  CALL N67
+        DJNZ R2, T1014
 
         MOV R2,#23
-N1015:  MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1015
+T1015:  CALL N71
+        DJNZ R2, T1015
 
         MOV R2,#72
-N1016:  MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1016
+T1016:  CALL N86
+        DJNZ R2, T1016
 
         MOV R2,#49
-N1017:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1017
+T1017:  CALL N83
+        DJNZ R2, T1017
 
         MOV R2,#45
-N1018:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1018
+T1018:  CALL N77
+        DJNZ R2, T1018
 
         MOV R2,#114
-N1019:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1019
+T1019:  CALL N76
+        DJNZ R2, T1019
 
         MOV R2,#2
-N1020:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1020
+T1020:  CALL N64
+        DJNZ R2, T1020
 
         MOV R2,#17
-N1021:  MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1021
+T1021:  CALL N67
+        DJNZ R2, T1021
 
         MOV R2,#29
-N1022:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1022
+T1022:  CALL N72
+        DJNZ R2, T1022
 
         MOV R2,#62
-N1023:  MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1023
+T1023:  CALL N84
+        DJNZ R2, T1023
 
         MOV R2,#32
-N1024:  MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1024
+T1024:  CALL N79
+        DJNZ R2, T1024
 
         MOV R2,#7
-N1025:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1025
+T1025:  CALL N0
+        DJNZ R2, T1025
 
         MOV R2,#24
-N1026:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1026
+T1026:  CALL N76
+        DJNZ R2, T1026
 
         MOV R2,#22
-N1027:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1027
+T1027:  CALL N0
+        DJNZ R2, T1027
 
         MOV R2,#244
-N1028:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1028
+T1028:  CALL N74
+        DJNZ R2, T1028
 
         MOV R2,#51
-N1029:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1029
+T1029:  CALL N0
+        DJNZ R2, T1029
 
         MOV R2,#14
-N1030:  MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1030
+T1030:  CALL N73
+        DJNZ R2, T1030
 
         MOV R2,#23
-N1031:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1031
+T1031:  CALL N74
+        DJNZ R2, T1031
 
         MOV R2,#75
-N1032:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1032
+T1032:  CALL N0
+        DJNZ R2, T1032
 
         MOV R2,#15
-N1033:  MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1033
+T1033:  CALL N69
+        DJNZ R2, T1033
 
         MOV R2,#64
-N1034:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1034
+T1034:  CALL N0
+        DJNZ R2, T1034
 
         MOV R2,#9
-N1035:  MOV R1,#3
-        MOV R0,#120
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#120
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1035
+T1035:  CALL N73
+        DJNZ R2, T1035
 
         MOV R2,#25
-N1036:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1036
+T1036:  CALL N74
+        DJNZ R2, T1036
 
         MOV R2,#68
-N1037:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1037
+T1037:  CALL N0
+        DJNZ R2, T1037
 
         MOV R2,#14
-N1038:  MOV R1,#4
-        MOV R0,#100
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#100
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1038
+T1038:  CALL N69
+        DJNZ R2, T1038
 
         MOV R2,#82
-N1039:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1039
+T1039:  CALL N0
+        DJNZ R2, T1039
 
         MOV R2,#209
-N1040:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1040
+T1040:  CALL N81
+        DJNZ R2, T1040
 
         MOV R2,#3
-N1041:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1041
+T1041:  CALL N0
+        DJNZ R2, T1041
 
         MOV R2,#15
-N1042:  MOV R1,#6
-        MOV R0,#61
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#61
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1042
+T1042:  CALL N63
+        DJNZ R2, T1042
 
         MOV R2,#52
-N1043:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1043
+T1043:  CALL N0
+        DJNZ R2, T1043
 
         MOV R2,#16
-N1044:  MOV R1,#6
-        MOV R0,#61
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#61
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1044
+T1044:  CALL N63
+        DJNZ R2, T1044
 
         MOV R2,#57
-N1045:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1045
+T1045:  CALL N0
+        DJNZ R2, T1045
 
         MOV R2,#19
-N1046:  MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1046
+T1046:  CALL N80
+        DJNZ R2, T1046
 
         MOV R2,#34
-N1047:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1047
+T1047:  CALL N81
+        DJNZ R2, T1047
 
         MOV R2,#59
-N1048:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1048
+T1048:  CALL N0
+        DJNZ R2, T1048
 
         MOV R2,#9
-N1049:  MOV R1,#6
-        MOV R0,#61
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#61
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1049
+T1049:  CALL N63
+        DJNZ R2, T1049
 
         MOV R2,#83
-N1050:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1050
+T1050:  CALL N0
+        DJNZ R2, T1050
 
         MOV R2,#8
-N1051:  MOV R1,#2
-        MOV R0,#75
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#75
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1051
+T1051:  CALL N80
+        DJNZ R2, T1051
 
         MOV R2,#33
-N1052:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1052
+T1052:  CALL N81
+        DJNZ R2, T1052
 
         MOV R2,#54
-N1053:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1053
+T1053:  CALL N0
+        DJNZ R2, T1053
 
         MOV R2,#17
-N1054:  MOV R1,#6
-        MOV R0,#61
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#61
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1054
+T1054:  CALL N63
+        DJNZ R2, T1054
 
         MOV R2,#50
-N1055:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1055
+T1055:  CALL N0
+        DJNZ R2, T1055
 
         MOV R2,#2
-N1056:  MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1056
+T1056:  CALL N55
+        DJNZ R2, T1056
 
         MOV R2,#86
-N1057:  MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1057
+T1057:  CALL N79
+        DJNZ R2, T1057
 
         MOV R2,#2
-N1058:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1058
+T1058:  CALL N64
+        DJNZ R2, T1058
 
         MOV R2,#1
-N1059:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1059
+T1059:  CALL N0
+        DJNZ R2, T1059
 
         MOV R2,#3
-N1060:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1060
+T1060:  CALL N60
+        DJNZ R2, T1060
 
         MOV R2,#36
-N1061:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1061
+T1061:  CALL N81
+        DJNZ R2, T1061
 
         MOV R2,#41
-N1062:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1062
+T1062:  CALL N83
+        DJNZ R2, T1062
 
         MOV R2,#2
-N1063:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1063
+T1063:  CALL N64
+        DJNZ R2, T1063
 
         MOV R2,#55
-N1064:  MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1064
+T1064:  CALL N84
+        DJNZ R2, T1064
 
         MOV R2,#58
-N1065:  MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1065
+T1065:  CALL N86
+        DJNZ R2, T1065
 
         MOV R2,#97
-N1066:  MOV R1,#1
-        MOV R0,#108
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#108
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1066
+T1066:  CALL N88
+        DJNZ R2, T1066
 
         MOV R2,#37
-N1067:  MOV R1,#1
-        MOV R0,#154
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#154
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1067
+T1067:  CALL N86
+        DJNZ R2, T1067
 
         MOV R2,#46
-N1068:  MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1068
+T1068:  CALL N84
+        DJNZ R2, T1068
 
         MOV R2,#1
-N1069:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1069
+T1069:  CALL N64
+        DJNZ R2, T1069
 
         MOV R2,#69
-N1070:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1070
+T1070:  CALL N83
+        DJNZ R2, T1070
 
         MOV R2,#25
-N1071:  MOV R1,#2
-        MOV R0,#42
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#42
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1071
+T1071:  CALL N81
+        DJNZ R2, T1071
 
         MOV R2,#66
-N1072:  MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1072
+T1072:  CALL N79
+        DJNZ R2, T1072
 
         MOV R2,#29
-N1073:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1073
+T1073:  CALL N77
+        DJNZ R2, T1073
 
         MOV R2,#24
-N1074:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1074
+T1074:  CALL N76
+        DJNZ R2, T1074
 
         MOV R2,#20
-N1075:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1075
+T1075:  CALL N74
+        DJNZ R2, T1075
 
         MOV R2,#32
-N1076:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1076
+T1076:  CALL N72
+        DJNZ R2, T1076
 
         MOV R2,#66
-N1077:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1077
+T1077:  CALL N74
+        DJNZ R2, T1077
 
         MOV R2,#27
-N1078:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1078
+T1078:  CALL N76
+        DJNZ R2, T1078
 
         MOV R2,#8
-N1079:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1079
+T1079:  CALL N0
+        DJNZ R2, T1079
 
         MOV R2,#18
-N1080:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1080
+T1080:  CALL N74
+        DJNZ R2, T1080
 
         MOV R2,#17
-N1081:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1081
+T1081:  CALL N76
+        DJNZ R2, T1081
 
         MOV R2,#4
-N1082:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1082
+T1082:  CALL N0
+        DJNZ R2, T1082
 
         MOV R2,#2
-N1083:  MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1083
+T1083:  CALL N65
+        DJNZ R2, T1083
 
         MOV R2,#13
-N1084:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1084
+T1084:  CALL N74
+        DJNZ R2, T1084
 
         MOV R2,#21
-N1085:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1085
+T1085:  CALL N76
+        DJNZ R2, T1085
 
         MOV R2,#2
-N1086:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1086
+T1086:  CALL N0
+        DJNZ R2, T1086
 
         MOV R2,#1
-N1087:  MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1087
+T1087:  CALL N55
+        DJNZ R2, T1087
 
         MOV R2,#15
-N1088:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1088
+T1088:  CALL N74
+        DJNZ R2, T1088
 
         MOV R2,#22
-N1089:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1089
+T1089:  CALL N76
+        DJNZ R2, T1089
 
         MOV R2,#1
-N1090:  MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1090
+T1090:  CALL N65
+        DJNZ R2, T1090
 
         MOV R2,#13
-N1091:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1091
+T1091:  CALL N74
+        DJNZ R2, T1091
 
         MOV R2,#25
-N1092:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1092
+T1092:  CALL N76
+        DJNZ R2, T1092
 
         MOV R2,#1
-N1093:  MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1093
+T1093:  CALL N59
+        DJNZ R2, T1093
 
         MOV R2,#15
-N1094:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1094
+T1094:  CALL N74
+        DJNZ R2, T1094
 
         MOV R2,#28
-N1095:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1095
+T1095:  CALL N76
+        DJNZ R2, T1095
 
         MOV R2,#18
-N1096:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1096
+T1096:  CALL N74
+        DJNZ R2, T1096
 
         MOV R2,#26
-N1097:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1097
+T1097:  CALL N76
+        DJNZ R2, T1097
 
         MOV R2,#18
-N1098:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1098
+T1098:  CALL N74
+        DJNZ R2, T1098
 
         MOV R2,#24
-N1099:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1099
+T1099:  CALL N76
+        DJNZ R2, T1099
 
         MOV R2,#23
-N1100:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1100
+T1100:  CALL N74
+        DJNZ R2, T1100
 
         MOV R2,#35
-N1101:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1101
+T1101:  CALL N76
+        DJNZ R2, T1101
 
         MOV R2,#15
-N1102:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1102
+T1102:  CALL N74
+        DJNZ R2, T1102
 
         MOV R2,#15
-N1103:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1103
+T1103:  CALL N76
+        DJNZ R2, T1103
 
         MOV R2,#1
-N1104:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1104
+T1104:  CALL N0
+        DJNZ R2, T1104
 
         MOV R2,#2
-N1105:  MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1105
+T1105:  CALL N59
+        DJNZ R2, T1105
 
         MOV R2,#20
-N1106:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1106
+T1106:  CALL N74
+        DJNZ R2, T1106
 
         MOV R2,#14
-N1107:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1107
+T1107:  CALL N72
+        DJNZ R2, T1107
 
         MOV R2,#35
-N1108:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1108
+T1108:  CALL N74
+        DJNZ R2, T1108
 
         MOV R2,#2
-N1109:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1109
+T1109:  CALL N0
+        DJNZ R2, T1109
 
         MOV R2,#27
-N1110:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1110
+T1110:  CALL N72
+        DJNZ R2, T1110
 
         MOV R2,#200
-N1111:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1111
+T1111:  CALL N0
+        DJNZ R2, T1111
 
         MOV R2,#28
-N1112:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1112
+T1112:  CALL N72
+        DJNZ R2, T1112
 
         MOV R2,#4
-N1113:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1113
+T1113:  CALL N0
+        DJNZ R2, T1113
 
         MOV R2,#19
-N1114:  MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1114
+T1114:  CALL N67
+        DJNZ R2, T1114
 
         MOV R2,#25
-N1115:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1115
+T1115:  CALL N72
+        DJNZ R2, T1115
 
         MOV R2,#35
-N1116:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1116
+T1116:  CALL N76
+        DJNZ R2, T1116
 
         MOV R2,#66
-N1117:  MOV R1,#2
-        MOV R0,#111
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#111
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1117
+T1117:  CALL N79
+        DJNZ R2, T1117
 
         MOV R2,#15
-N1118:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1118
+T1118:  CALL N76
+        DJNZ R2, T1118
 
         MOV R2,#22
-N1119:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1119
+T1119:  CALL N72
+        DJNZ R2, T1119
 
         MOV R2,#35
-N1120:  MOV R1,#2
-        MOV R0,#232
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#232
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1120
+T1120:  CALL N76
+        DJNZ R2, T1120
 
         MOV R2,#6
-N1121:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1121
+T1121:  CALL N0
+        DJNZ R2, T1121
 
         MOV R2,#56
-N1122:  MOV R1,#2
-        MOV R0,#189
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#2
-        MOV R0,#189
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1122
+T1122:  CALL N77
+        DJNZ R2, T1122
 
         MOV R2,#18
-N1123:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1123
+T1123:  CALL N74
+        DJNZ R2, T1123
 
         MOV R2,#8
-N1124:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1124
+T1124:  CALL N0
+        DJNZ R2, T1124
 
         MOV R2,#21
-N1125:  MOV R1,#3
-        MOV R0,#231
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#231
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1125
+T1125:  CALL N71
+        DJNZ R2, T1125
 
         MOV R2,#31
-N1126:  MOV R1,#3
-        MOV R0,#70
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#70
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1126
+T1126:  CALL N74
+        DJNZ R2, T1126
 
         MOV R2,#16
-N1127:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1127
+T1127:  CALL N0
+        DJNZ R2, T1127
 
         MOV R2,#17
-N1128:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1128
+T1128:  CALL N72
+        DJNZ R2, T1128
 
         MOV R2,#2
-N1129:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1129
+T1129:  CALL N64
+        DJNZ R2, T1129
 
         MOV R2,#211
-N1130:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1130
+T1130:  CALL N0
+        DJNZ R2, T1130
 
         MOV R2,#11
-N1131:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1131
+T1131:  CALL N60
+        DJNZ R2, T1131
 
         MOV R2,#4
-N1132:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1132
+T1132:  CALL N0
+        DJNZ R2, T1132
 
         MOV R2,#10
-N1133:  MOV R1,#9
-        MOV R0,#240
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#9
-        MOV R0,#240
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1133
+T1133:  CALL N55
+        DJNZ R2, T1133
 
         MOV R2,#12
-N1134:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1134
+T1134:  CALL N60
+        DJNZ R2, T1134
 
         MOV R2,#18
-N1135:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1135
+T1135:  CALL N64
+        DJNZ R2, T1135
 
         MOV R2,#33
-N1136:  MOV R1,#4
-        MOV R0,#239
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#4
-        MOV R0,#239
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1136
+T1136:  CALL N67
+        DJNZ R2, T1136
 
         MOV R2,#7
-N1137:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1137
+T1137:  CALL N64
+        DJNZ R2, T1137
 
         MOV R2,#10
-N1138:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1138
+T1138:  CALL N60
+        DJNZ R2, T1138
 
         MOV R2,#17
-N1139:  MOV R1,#5
-        MOV R0,#225
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#225
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1139
+T1139:  CALL N64
+        DJNZ R2, T1139
 
         MOV R2,#28
-N1140:  MOV R1,#5
-        MOV R0,#140
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#5
-        MOV R0,#140
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1140
+T1140:  CALL N65
+        DJNZ R2, T1140
 
         MOV R2,#7
-N1141:  MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1141
+T1141:  CALL N62
+        DJNZ R2, T1141
 
         MOV R2,#10
-N1142:  MOV R1,#7
-        MOV R0,#223
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#223
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1142
+T1142:  CALL N59
+        DJNZ R2, T1142
 
         MOV R2,#27
-N1143:  MOV R1,#6
-        MOV R0,#156
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#6
-        MOV R0,#156
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1143
+T1143:  CALL N62
+        DJNZ R2, T1143
 
         MOV R2,#3
-N1144:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1144
+T1144:  CALL N60
+        DJNZ R2, T1144
 
         MOV R2,#1
-N1145:  MOV R1,#11
-        MOV R0,#212
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#11
-        MOV R0,#212
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1145
+T1145:  CALL N52
+        DJNZ R2, T1145
 
         MOV R2,#204
-N1146:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1146
+T1146:  CALL N0
+        DJNZ R2, T1146
 
         MOV R2,#28
-N1147:  MOV R1,#1
-        MOV R0,#206
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#206
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1147
+T1147:  CALL N84
+        DJNZ R2, T1147
 
         MOV R2,#2
-N1148:  MOV R1,#7
-        MOV R0,#110
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#7
-        MOV R0,#110
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1148
+T1148:  CALL N60
+        DJNZ R2, T1148
 
         MOV R2,#255
-N1149:  MOV R1,#1
-        MOV R0,#235
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#1
-        MOV R0,#235
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1149
+T1149:  CALL N0
+        DJNZ R2, T1149
 
         MOV R2,#18
-N1150:  MOV R1,#3
-        MOV R0,#174
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#3
-        MOV R0,#174
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1150
+T1150:  CALL N72
+        DJNZ R2, T1150
 
         MOV R2,#1
-N1151:  MOV R1,#29
-        MOV R0,#233
-        SETB P0.7
-        CALL WAIT
-        MOV R1,#29
-        MOV R0,#233
-        CALL WAIT
-        CLR P0.7
-        DJNZ R2, N1151
+T1151:  CALL N36
+        DJNZ R2, T1151
+
+        MOV R2,#255
+T1152:  CALL N0
+        DJNZ R2, T1152
+
+        JMP HL
+
+N0:     MOV R1,#1
+	MOV R0,#235
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#235
+	CALL WAIT
+	RET
+
+N12:    MOV R1,#119
+	MOV R0,#217
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#119
+	MOV R0,#217
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N13:    MOV R1,#113
+	MOV R0,#30
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#113
+	MOV R0,#30
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N14:    MOV R1,#106
+	MOV R0,#195
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#106
+	MOV R0,#195
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N15:    MOV R1,#100
+	MOV R0,#196
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#100
+	MOV R0,#196
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N16:    MOV R1,#95
+	MOV R0,#28
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#95
+	MOV R0,#28
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N17:    MOV R1,#89
+	MOV R0,#196
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#89
+	MOV R0,#196
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N18:    MOV R1,#84
+	MOV R0,#185
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#84
+	MOV R0,#185
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N19:    MOV R1,#79
+	MOV R0,#247
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#79
+	MOV R0,#247
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N20:    MOV R1,#75
+	MOV R0,#121
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#75
+	MOV R0,#121
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N21:    MOV R1,#71
+	MOV R0,#60
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#71
+	MOV R0,#60
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N22:    MOV R1,#67
+	MOV R0,#60
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#67
+	MOV R0,#60
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N23:    MOV R1,#63
+	MOV R0,#117
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#63
+	MOV R0,#117
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N24:    MOV R1,#59
+	MOV R0,#228
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#59
+	MOV R0,#228
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N25:    MOV R1,#56
+	MOV R0,#134
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#56
+	MOV R0,#134
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N26:    MOV R1,#53
+	MOV R0,#89
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#53
+	MOV R0,#89
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N27:    MOV R1,#50
+	MOV R0,#90
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#50
+	MOV R0,#90
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N28:    MOV R1,#47
+	MOV R0,#133
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#47
+	MOV R0,#133
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N29:    MOV R1,#44
+	MOV R0,#217
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#44
+	MOV R0,#217
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N30:    MOV R1,#42
+	MOV R0,#84
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#42
+	MOV R0,#84
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N31:    MOV R1,#39
+	MOV R0,#243
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#39
+	MOV R0,#243
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N32:    MOV R1,#37
+	MOV R0,#180
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#37
+	MOV R0,#180
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N33:    MOV R1,#35
+	MOV R0,#149
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#35
+	MOV R0,#149
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N34:    MOV R1,#33
+	MOV R0,#149
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#33
+	MOV R0,#149
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N35:    MOV R1,#31
+	MOV R0,#178
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#31
+	MOV R0,#178
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N36:    MOV R1,#29
+	MOV R0,#233
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#29
+	MOV R0,#233
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N37:    MOV R1,#28
+	MOV R0,#59
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#28
+	MOV R0,#59
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N38:    MOV R1,#26
+	MOV R0,#164
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#26
+	MOV R0,#164
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N39:    MOV R1,#25
+	MOV R0,#37
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#25
+	MOV R0,#37
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N40:    MOV R1,#23
+	MOV R0,#186
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#23
+	MOV R0,#186
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N41:    MOV R1,#22
+	MOV R0,#100
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#22
+	MOV R0,#100
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N42:    MOV R1,#21
+	MOV R0,#34
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#21
+	MOV R0,#34
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N43:    MOV R1,#19
+	MOV R0,#241
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#19
+	MOV R0,#241
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N44:    MOV R1,#18
+	MOV R0,#209
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#18
+	MOV R0,#209
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N45:    MOV R1,#17
+	MOV R0,#194
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#17
+	MOV R0,#194
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N46:    MOV R1,#16
+	MOV R0,#194
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#16
+	MOV R0,#194
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N47:    MOV R1,#15
+	MOV R0,#208
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#15
+	MOV R0,#208
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N48:    MOV R1,#14
+	MOV R0,#236
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#14
+	MOV R0,#236
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N49:    MOV R1,#14
+	MOV R0,#21
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#14
+	MOV R0,#21
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N50:    MOV R1,#13
+	MOV R0,#74
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#13
+	MOV R0,#74
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N51:    MOV R1,#12
+	MOV R0,#138
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#12
+	MOV R0,#138
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N52:    MOV R1,#11
+	MOV R0,#212
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#11
+	MOV R0,#212
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N53:    MOV R1,#11
+	MOV R0,#42
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#11
+	MOV R0,#42
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N54:    MOV R1,#10
+	MOV R0,#136
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#10
+	MOV R0,#136
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N55:    MOV R1,#9
+	MOV R0,#240
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#9
+	MOV R0,#240
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N56:    MOV R1,#9
+	MOV R0,#96
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#9
+	MOV R0,#96
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N57:    MOV R1,#8
+	MOV R0,#216
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#8
+	MOV R0,#216
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N58:    MOV R1,#8
+	MOV R0,#89
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#8
+	MOV R0,#89
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N59:    MOV R1,#7
+	MOV R0,#223
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#7
+	MOV R0,#223
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N60:    MOV R1,#7
+	MOV R0,#110
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#7
+	MOV R0,#110
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N61:    MOV R1,#7
+	MOV R0,#2
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#7
+	MOV R0,#2
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N62:    MOV R1,#6
+	MOV R0,#156
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#6
+	MOV R0,#156
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N63:    MOV R1,#6
+	MOV R0,#61
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#6
+	MOV R0,#61
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N64:    MOV R1,#5
+	MOV R0,#225
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#5
+	MOV R0,#225
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N65:    MOV R1,#5
+	MOV R0,#140
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#5
+	MOV R0,#140
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N66:    MOV R1,#5
+	MOV R0,#60
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#5
+	MOV R0,#60
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N67:    MOV R1,#4
+	MOV R0,#239
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#4
+	MOV R0,#239
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N68:    MOV R1,#4
+	MOV R0,#167
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#4
+	MOV R0,#167
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N69:    MOV R1,#4
+	MOV R0,#100
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#4
+	MOV R0,#100
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N70:    MOV R1,#4
+	MOV R0,#36
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#4
+	MOV R0,#36
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N71:    MOV R1,#3
+	MOV R0,#231
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#3
+	MOV R0,#231
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N72:    MOV R1,#3
+	MOV R0,#174
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#3
+	MOV R0,#174
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N73:    MOV R1,#3
+	MOV R0,#120
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#3
+	MOV R0,#120
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N74:    MOV R1,#3
+	MOV R0,#70
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#3
+	MOV R0,#70
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N75:    MOV R1,#3
+	MOV R0,#22
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#3
+	MOV R0,#22
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N76:    MOV R1,#2
+	MOV R0,#232
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#232
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N77:    MOV R1,#2
+	MOV R0,#189
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#189
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N78:    MOV R1,#2
+	MOV R0,#149
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#149
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N79:    MOV R1,#2
+	MOV R0,#111
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#111
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N80:    MOV R1,#2
+	MOV R0,#75
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#75
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N81:    MOV R1,#2
+	MOV R0,#42
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#42
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N82:    MOV R1,#2
+	MOV R0,#10
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#2
+	MOV R0,#10
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N83:    MOV R1,#1
+	MOV R0,#235
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#235
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N84:    MOV R1,#1
+	MOV R0,#206
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#206
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N85:    MOV R1,#1
+	MOV R0,#179
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#179
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N86:    MOV R1,#1
+	MOV R0,#154
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#154
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N87:    MOV R1,#1
+	MOV R0,#130
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#130
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N88:    MOV R1,#1
+	MOV R0,#108
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#108
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N89:    MOV R1,#1
+	MOV R0,#86
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#86
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N90:    MOV R1,#1
+	MOV R0,#66
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#66
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N91:    MOV R1,#1
+	MOV R0,#47
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#47
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N92:    MOV R1,#1
+	MOV R0,#29
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#29
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N93:    MOV R1,#1
+	MOV R0,#13
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#1
+	MOV R0,#13
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N94:    MOV R1,#0
+	MOV R0,#252
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#252
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N95:    MOV R1,#0
+	MOV R0,#245
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#245
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N96:    MOV R1,#0
+	MOV R0,#230
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#230
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N97:    MOV R1,#0
+	MOV R0,#217
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#217
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N98:    MOV R1,#0
+	MOV R0,#204
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#204
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N99:    MOV R1,#0
+	MOV R0,#192
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#192
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N100:   MOV R1,#0
+	MOV R0,#181
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#181
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N101:   MOV R1,#0
+	MOV R0,#170
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#170
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N102:   MOV R1,#0
+	MOV R0,#160
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#160
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N103:   MOV R1,#0
+	MOV R0,#151
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#151
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N104:   MOV R1,#0
+	MOV R0,#142
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#142
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N105:   MOV R1,#0
+	MOV R0,#134
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#134
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N106:   MOV R1,#0
+	MOV R0,#126
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#126
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N107:   MOV R1,#0
+	MOV R0,#118
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#118
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N108:   MOV R1,#0
+	MOV R0,#111
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#111
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N109:   MOV R1,#0
+	MOV R0,#104
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#104
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N110:   MOV R1,#0
+	MOV R0,#98
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#98
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N111:   MOV R1,#0
+	MOV R0,#92
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#92
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N112:   MOV R1,#0
+	MOV R0,#86
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#86
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N113:   MOV R1,#0
+	MOV R0,#81
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#81
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N114:   MOV R1,#0
+	MOV R0,#76
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#76
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N115:   MOV R1,#0
+	MOV R0,#71
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#71
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N116:   MOV R1,#0
+	MOV R0,#67
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#67
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N117:   MOV R1,#0
+	MOV R0,#63
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#63
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N118:   MOV R1,#0
+	MOV R0,#59
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#59
+	CALL WAIT
+	CLR P0.7
+	RET
+
+N119:   MOV R1,#0
+	MOV R0,#55
+	SETB P0.7
+	CALL WAIT
+	MOV R1,#0
+	MOV R0,#55
+	CALL WAIT
+	CLR P0.7
+	RET
 
 WAIT:   DJNZ R0,WAIT
         CJNE R1,#0,WAIT1

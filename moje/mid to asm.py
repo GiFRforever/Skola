@@ -200,6 +200,7 @@ with open(casy_path, "r") as f:
 # """
 #     )
 
+print(f"Number of notes: {len(notes)}")
 if len(notes) >= 900:
     notes = notes[:900]
 
@@ -217,13 +218,13 @@ noty.append((0, 255))  # silence at the end
 out_path = "moje\\out.asm"
 # out_path = "moje/out.asm"
 with open(out_path, "w") as f:
-    f.write("HL:")
+    # f.write("HL:")
     for i, note in enumerate(noty):
         f.write(
-            f"""
-        MOV R2,#{note[1]}
+            f"""        MOV R2,#{note[1]}
 {f"T{i:>02}:":<8}CALL N{note[0]}
-        DJNZ R2, T{i:>02}"""
+        DJNZ R2, T{i:>02}
+"""
         )
 
     #     casy.pop(0)
@@ -245,7 +246,8 @@ with open(out_path, "w") as f:
 {f"N{n}:":<8}SETB P0.7
         CALL WN{n}
         CLR P0.7
-        CALL WN{n}"""
+        CALL WN{n}
+        RET"""
         )
 
     for n, c in casy.items():
@@ -271,10 +273,8 @@ with open(out_path, "w") as f:
         if us >= 1:
             f.write(
                 f"""
-{f"WN{n}:":<8}MOV R0,#{us}
-{"\tNOP\n"*remi}
-{f"WNW{n}:":<8}{"NOP\n\t"*multiplier}DJNZ R0,WNW{n}
-"""
+{f"WN{n}:":<8}MOV R0,#{us}{"\n" + "\n".join(["\tNOP"]*remi) if remi else ""}
+{f"WNW{n}:":<8}{"NOP\n\t"*multiplier}DJNZ R0,WNW{n}"""
             )
         elif us == 0:
             f.write(

@@ -1,4 +1,3 @@
-HL:
         MOV R2,#131
 T00:    CALL N64
         DJNZ R2, T00
@@ -965,1006 +964,900 @@ T320:   CALL N69
         MOV R2,#255
 T321:   CALL N0
         DJNZ R2, T321
+
 N12:    SETB P0.7
         CALL WN12
         CLR P0.7
         CALL WN12
+        RET
 N13:    SETB P0.7
         CALL WN13
         CLR P0.7
         CALL WN13
+        RET
 N14:    SETB P0.7
         CALL WN14
         CLR P0.7
         CALL WN14
+        RET
 N15:    SETB P0.7
         CALL WN15
         CLR P0.7
         CALL WN15
+        RET
 N16:    SETB P0.7
         CALL WN16
         CLR P0.7
         CALL WN16
+        RET
 N17:    SETB P0.7
         CALL WN17
         CLR P0.7
         CALL WN17
+        RET
 N18:    SETB P0.7
         CALL WN18
         CLR P0.7
         CALL WN18
+        RET
 N19:    SETB P0.7
         CALL WN19
         CLR P0.7
         CALL WN19
+        RET
 N20:    SETB P0.7
         CALL WN20
         CLR P0.7
         CALL WN20
+        RET
 N21:    SETB P0.7
         CALL WN21
         CLR P0.7
         CALL WN21
+        RET
 N22:    SETB P0.7
         CALL WN22
         CLR P0.7
         CALL WN22
+        RET
 N23:    SETB P0.7
         CALL WN23
         CLR P0.7
         CALL WN23
+        RET
 N24:    SETB P0.7
         CALL WN24
         CLR P0.7
         CALL WN24
+        RET
 N25:    SETB P0.7
         CALL WN25
         CLR P0.7
         CALL WN25
+        RET
 N26:    SETB P0.7
         CALL WN26
         CLR P0.7
         CALL WN26
+        RET
 N27:    SETB P0.7
         CALL WN27
         CLR P0.7
         CALL WN27
+        RET
 N28:    SETB P0.7
         CALL WN28
         CLR P0.7
         CALL WN28
+        RET
 N29:    SETB P0.7
         CALL WN29
         CLR P0.7
         CALL WN29
+        RET
 N30:    SETB P0.7
         CALL WN30
         CLR P0.7
         CALL WN30
+        RET
 N31:    SETB P0.7
         CALL WN31
         CLR P0.7
         CALL WN31
+        RET
 N32:    SETB P0.7
         CALL WN32
         CLR P0.7
         CALL WN32
+        RET
 N33:    SETB P0.7
         CALL WN33
         CLR P0.7
         CALL WN33
+        RET
 N34:    SETB P0.7
         CALL WN34
         CLR P0.7
         CALL WN34
+        RET
 N35:    SETB P0.7
         CALL WN35
         CLR P0.7
         CALL WN35
+        RET
 N36:    SETB P0.7
         CALL WN36
         CLR P0.7
         CALL WN36
+        RET
 N37:    SETB P0.7
         CALL WN37
         CLR P0.7
         CALL WN37
+        RET
 N38:    SETB P0.7
         CALL WN38
         CLR P0.7
         CALL WN38
+        RET
 N39:    SETB P0.7
         CALL WN39
         CLR P0.7
         CALL WN39
+        RET
 N40:    SETB P0.7
         CALL WN40
         CLR P0.7
         CALL WN40
+        RET
 N41:    SETB P0.7
         CALL WN41
         CLR P0.7
         CALL WN41
+        RET
 N42:    SETB P0.7
         CALL WN42
         CLR P0.7
         CALL WN42
+        RET
 N43:    SETB P0.7
         CALL WN43
         CLR P0.7
         CALL WN43
+        RET
 N44:    SETB P0.7
         CALL WN44
         CLR P0.7
         CALL WN44
+        RET
 N45:    SETB P0.7
         CALL WN45
         CLR P0.7
         CALL WN45
+        RET
 N46:    SETB P0.7
         CALL WN46
         CLR P0.7
         CALL WN46
+        RET
 N47:    SETB P0.7
         CALL WN47
         CLR P0.7
         CALL WN47
+        RET
 N48:    SETB P0.7
         CALL WN48
         CLR P0.7
         CALL WN48
+        RET
 N49:    SETB P0.7
         CALL WN49
         CLR P0.7
         CALL WN49
+        RET
 N50:    SETB P0.7
         CALL WN50
         CLR P0.7
         CALL WN50
+        RET
 N51:    SETB P0.7
         CALL WN51
         CLR P0.7
         CALL WN51
+        RET
 N52:    SETB P0.7
         CALL WN52
         CLR P0.7
         CALL WN52
+        RET
 N53:    SETB P0.7
         CALL WN53
         CLR P0.7
         CALL WN53
+        RET
 N54:    SETB P0.7
         CALL WN54
         CLR P0.7
         CALL WN54
+        RET
 N55:    SETB P0.7
         CALL WN55
         CLR P0.7
         CALL WN55
+        RET
 N56:    SETB P0.7
         CALL WN56
         CLR P0.7
         CALL WN56
+        RET
 N57:    SETB P0.7
         CALL WN57
         CLR P0.7
         CALL WN57
+        RET
 N58:    SETB P0.7
         CALL WN58
         CLR P0.7
         CALL WN58
+        RET
 N59:    SETB P0.7
         CALL WN59
         CLR P0.7
         CALL WN59
+        RET
 N60:    SETB P0.7
         CALL WN60
         CLR P0.7
         CALL WN60
+        RET
 N61:    SETB P0.7
         CALL WN61
         CLR P0.7
         CALL WN61
+        RET
 N62:    SETB P0.7
         CALL WN62
         CLR P0.7
         CALL WN62
+        RET
 N63:    SETB P0.7
         CALL WN63
         CLR P0.7
         CALL WN63
+        RET
 N64:    SETB P0.7
         CALL WN64
         CLR P0.7
         CALL WN64
+        RET
 N65:    SETB P0.7
         CALL WN65
         CLR P0.7
         CALL WN65
+        RET
 N66:    SETB P0.7
         CALL WN66
         CLR P0.7
         CALL WN66
+        RET
 N67:    SETB P0.7
         CALL WN67
         CLR P0.7
         CALL WN67
+        RET
 N68:    SETB P0.7
         CALL WN68
         CLR P0.7
         CALL WN68
+        RET
 N69:    SETB P0.7
         CALL WN69
         CLR P0.7
         CALL WN69
+        RET
 N70:    SETB P0.7
         CALL WN70
         CLR P0.7
         CALL WN70
+        RET
 N71:    SETB P0.7
         CALL WN71
         CLR P0.7
         CALL WN71
+        RET
 N72:    SETB P0.7
         CALL WN72
         CLR P0.7
         CALL WN72
+        RET
 N73:    SETB P0.7
         CALL WN73
         CLR P0.7
         CALL WN73
+        RET
 N74:    SETB P0.7
         CALL WN74
         CLR P0.7
         CALL WN74
+        RET
 N75:    SETB P0.7
         CALL WN75
         CLR P0.7
         CALL WN75
+        RET
 N76:    SETB P0.7
         CALL WN76
         CLR P0.7
         CALL WN76
+        RET
 N77:    SETB P0.7
         CALL WN77
         CLR P0.7
         CALL WN77
+        RET
 N78:    SETB P0.7
         CALL WN78
         CLR P0.7
         CALL WN78
+        RET
 N79:    SETB P0.7
         CALL WN79
         CLR P0.7
         CALL WN79
+        RET
 N80:    SETB P0.7
         CALL WN80
         CLR P0.7
         CALL WN80
+        RET
 N81:    SETB P0.7
         CALL WN81
         CLR P0.7
         CALL WN81
+        RET
 N82:    SETB P0.7
         CALL WN82
         CLR P0.7
         CALL WN82
+        RET
 N0:     SETB P0.7
         CALL WN0
         CLR P0.7
         CALL WN0
+        RET
 N83:    SETB P0.7
         CALL WN83
         CLR P0.7
         CALL WN83
+        RET
 N84:    SETB P0.7
         CALL WN84
         CLR P0.7
         CALL WN84
+        RET
 N85:    SETB P0.7
         CALL WN85
         CLR P0.7
         CALL WN85
+        RET
 N86:    SETB P0.7
         CALL WN86
         CLR P0.7
         CALL WN86
+        RET
 N87:    SETB P0.7
         CALL WN87
         CLR P0.7
         CALL WN87
+        RET
 N88:    SETB P0.7
         CALL WN88
         CLR P0.7
         CALL WN88
+        RET
 N89:    SETB P0.7
         CALL WN89
         CLR P0.7
         CALL WN89
+        RET
 N90:    SETB P0.7
         CALL WN90
         CLR P0.7
         CALL WN90
+        RET
 N91:    SETB P0.7
         CALL WN91
         CLR P0.7
         CALL WN91
+        RET
 N92:    SETB P0.7
         CALL WN92
         CLR P0.7
         CALL WN92
+        RET
 N93:    SETB P0.7
         CALL WN93
         CLR P0.7
         CALL WN93
+        RET
 N94:    SETB P0.7
         CALL WN94
         CLR P0.7
         CALL WN94
+        RET
 N95:    SETB P0.7
         CALL WN95
         CLR P0.7
         CALL WN95
+        RET
 N96:    SETB P0.7
         CALL WN96
         CLR P0.7
         CALL WN96
+        RET
 N97:    SETB P0.7
         CALL WN97
         CLR P0.7
         CALL WN97
+        RET
 N98:    SETB P0.7
         CALL WN98
         CLR P0.7
         CALL WN98
+        RET
 N99:    SETB P0.7
         CALL WN99
         CLR P0.7
         CALL WN99
+        RET
 N100:   SETB P0.7
         CALL WN100
         CLR P0.7
         CALL WN100
+        RET
 N101:   SETB P0.7
         CALL WN101
         CLR P0.7
         CALL WN101
+        RET
 N102:   SETB P0.7
         CALL WN102
         CLR P0.7
         CALL WN102
+        RET
 N103:   SETB P0.7
         CALL WN103
         CLR P0.7
         CALL WN103
+        RET
 N104:   SETB P0.7
         CALL WN104
         CLR P0.7
         CALL WN104
+        RET
 N105:   SETB P0.7
         CALL WN105
         CLR P0.7
         CALL WN105
+        RET
 N106:   SETB P0.7
         CALL WN106
         CLR P0.7
         CALL WN106
+        RET
 N107:   SETB P0.7
         CALL WN107
         CLR P0.7
         CALL WN107
+        RET
 N108:   SETB P0.7
         CALL WN108
         CLR P0.7
         CALL WN108
+        RET
 N109:   SETB P0.7
         CALL WN109
         CLR P0.7
         CALL WN109
+        RET
 N110:   SETB P0.7
         CALL WN110
         CLR P0.7
         CALL WN110
+        RET
 N111:   SETB P0.7
         CALL WN111
         CLR P0.7
         CALL WN111
+        RET
 N112:   SETB P0.7
         CALL WN112
         CLR P0.7
         CALL WN112
+        RET
 N113:   SETB P0.7
         CALL WN113
         CLR P0.7
         CALL WN113
+        RET
 N114:   SETB P0.7
         CALL WN114
         CLR P0.7
         CALL WN114
+        RET
 N115:   SETB P0.7
         CALL WN115
         CLR P0.7
         CALL WN115
+        RET
 N116:   SETB P0.7
         CALL WN116
         CLR P0.7
         CALL WN116
+        RET
 N117:   SETB P0.7
         CALL WN117
         CLR P0.7
         CALL WN117
+        RET
 N118:   SETB P0.7
         CALL WN118
         CLR P0.7
         CALL WN118
+        RET
 N119:   SETB P0.7
         CALL WN119
         CLR P0.7
         CALL WN119
+        RET
 WN12:   MOV R0,#245
-
 WNW12:  NOP
 	NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW12
-
 WN13:   MOV R0,#231
 	NOP
 	NOP
-
 WNW13:  NOP
 	NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW13
-
 WN14:   MOV R0,#254
 	NOP
 	NOP
 	NOP
 	NOP
-
 WNW14:  NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW14
-
 WN15:   MOV R0,#240
 	NOP
 	NOP
-
 WNW15:  NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW15
-
 WN16:   MOV R0,#226
 	NOP
 	NOP
 	NOP
 	NOP
 	NOP
-
 WNW16:  NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW16
-
 WN17:   MOV R0,#214
 	NOP
-
 WNW17:  NOP
 	NOP
 	NOP
 	NOP
 	DJNZ R0,WNW17
-
 WN18:   MOV R0,#242
 	NOP
 	NOP
 	NOP
-
 WNW18:  NOP
 	NOP
 	NOP
 	DJNZ R0,WNW18
-
 WN19:   MOV R0,#228
 	NOP
 	NOP
 	NOP
 	NOP
-
 WNW19:  NOP
 	NOP
 	NOP
 	DJNZ R0,WNW19
-
 WN20:   MOV R0,#216
-
 WNW20:  NOP
 	NOP
 	NOP
 	DJNZ R0,WNW20
-
 WN21:   MOV R0,#254
 	NOP
 	NOP
 	NOP
-
 WNW21:  NOP
 	NOP
 	DJNZ R0,WNW21
-
 WN22:   MOV R0,#240
 	NOP
 	NOP
-
 WNW22:  NOP
 	NOP
 	DJNZ R0,WNW22
-
 WN23:   MOV R0,#227
-
 WNW23:  NOP
 	NOP
 	DJNZ R0,WNW23
-
 WN24:   MOV R0,#214
 	NOP
-
 WNW24:  NOP
 	NOP
 	DJNZ R0,WNW24
-
 WN25:   MOV R0,#202
 	NOP
-
 WNW25:  NOP
 	NOP
 	DJNZ R0,WNW25
-
 WN26:   MOV R0,#254
 	NOP
-
 WNW26:  NOP
 	DJNZ R0,WNW26
-
 WN27:   MOV R0,#240
 	NOP
-
 WNW27:  NOP
 	DJNZ R0,WNW27
-
 WN28:   MOV R0,#226
 	NOP
 	NOP
-
 WNW28:  NOP
 	DJNZ R0,WNW28
-
 WN29:   MOV R0,#214
-
 WNW29:  NOP
 	DJNZ R0,WNW29
-
 WN30:   MOV R0,#202
-
 WNW30:  NOP
 	DJNZ R0,WNW30
-
 WN31:   MOV R0,#190
 	NOP
 	NOP
-
 WNW31:  NOP
 	DJNZ R0,WNW31
-
 WN32:   MOV R0,#180
-
 WNW32:  NOP
 	DJNZ R0,WNW32
-
 WN33:   MOV R0,#254
 	NOP
-
 WNW33:  DJNZ R0,WNW33
-
 WN34:   MOV R0,#240
 	NOP
-
 WNW34:  DJNZ R0,WNW34
-
 WN35:   MOV R0,#227
-
 WNW35:  DJNZ R0,WNW35
-
 WN36:   MOV R0,#214
-
 WNW36:  DJNZ R0,WNW36
-
 WN37:   MOV R0,#202
-
 WNW37:  DJNZ R0,WNW37
-
 WN38:   MOV R0,#190
 	NOP
-
 WNW38:  DJNZ R0,WNW38
-
 WN39:   MOV R0,#180
-
 WNW39:  DJNZ R0,WNW39
-
 WN40:   MOV R0,#170
-
 WNW40:  DJNZ R0,WNW40
-
 WN41:   MOV R0,#160
-
 WNW41:  DJNZ R0,WNW41
-
 WN42:   MOV R0,#151
-
 WNW42:  DJNZ R0,WNW42
-
 WN43:   MOV R0,#142
 	NOP
-
 WNW43:  DJNZ R0,WNW43
-
 WN44:   MOV R0,#134
 	NOP
-
 WNW44:  DJNZ R0,WNW44
-
 WN45:   MOV R0,#127
-
 WNW45:  DJNZ R0,WNW45
-
 WN46:   MOV R0,#120
-
 WNW46:  DJNZ R0,WNW46
-
 WN47:   MOV R0,#113
-
 WNW47:  DJNZ R0,WNW47
-
 WN48:   MOV R0,#107
-
 WNW48:  DJNZ R0,WNW48
-
 WN49:   MOV R0,#100
 	NOP
-
 WNW49:  DJNZ R0,WNW49
-
 WN50:   MOV R0,#95
-
 WNW50:  DJNZ R0,WNW50
-
 WN51:   MOV R0,#89
 	NOP
-
 WNW51:  DJNZ R0,WNW51
-
 WN52:   MOV R0,#84
 	NOP
-
 WNW52:  DJNZ R0,WNW52
-
 WN53:   MOV R0,#80
-
 WNW53:  DJNZ R0,WNW53
-
 WN54:   MOV R0,#75
 	NOP
-
 WNW54:  DJNZ R0,WNW54
-
 WN55:   MOV R0,#71
-
 WNW55:  DJNZ R0,WNW55
-
 WN56:   MOV R0,#67
-
 WNW56:  DJNZ R0,WNW56
-
 WN57:   MOV R0,#63
 	NOP
-
 WNW57:  DJNZ R0,WNW57
-
 WN58:   MOV R0,#59
 	NOP
-
 WNW58:  DJNZ R0,WNW58
-
 WN59:   MOV R0,#56
 	NOP
-
 WNW59:  DJNZ R0,WNW59
-
 WN60:   MOV R0,#53
-
 WNW60:  DJNZ R0,WNW60
-
 WN61:   MOV R0,#50
-
 WNW61:  DJNZ R0,WNW61
-
 WN62:   MOV R0,#47
 	NOP
-
 WNW62:  DJNZ R0,WNW62
-
 WN63:   MOV R0,#44
 	NOP
-
 WNW63:  DJNZ R0,WNW63
-
 WN64:   MOV R0,#42
-
 WNW64:  DJNZ R0,WNW64
-
 WN65:   MOV R0,#39
 	NOP
-
 WNW65:  DJNZ R0,WNW65
-
 WN66:   MOV R0,#37
 	NOP
-
 WNW66:  DJNZ R0,WNW66
-
 WN67:   MOV R0,#35
 	NOP
-
 WNW67:  DJNZ R0,WNW67
-
 WN68:   MOV R0,#33
 	NOP
-
 WNW68:  DJNZ R0,WNW68
-
 WN69:   MOV R0,#31
 	NOP
-
 WNW69:  DJNZ R0,WNW69
-
 WN70:   MOV R0,#29
 	NOP
-
 WNW70:  DJNZ R0,WNW70
-
 WN71:   MOV R0,#28
-
 WNW71:  DJNZ R0,WNW71
-
 WN72:   MOV R0,#26
 	NOP
-
 WNW72:  DJNZ R0,WNW72
-
 WN73:   MOV R0,#25
-
 WNW73:  DJNZ R0,WNW73
-
 WN74:   MOV R0,#23
 	NOP
-
 WNW74:  DJNZ R0,WNW74
-
 WN75:   MOV R0,#22
-
 WNW75:  DJNZ R0,WNW75
-
 WN76:   MOV R0,#21
-
 WNW76:  DJNZ R0,WNW76
-
 WN77:   MOV R0,#19
 	NOP
-
 WNW77:  DJNZ R0,WNW77
-
 WN78:   MOV R0,#18
 	NOP
-
 WNW78:  DJNZ R0,WNW78
-
 WN79:   MOV R0,#17
 	NOP
-
 WNW79:  DJNZ R0,WNW79
-
 WN80:   MOV R0,#16
 	NOP
-
 WNW80:  DJNZ R0,WNW80
-
 WN81:   MOV R0,#15
 	NOP
-
 WNW81:  DJNZ R0,WNW81
-
 WN82:   MOV R0,#14
 	NOP
-
 WNW82:  DJNZ R0,WNW82
-
 WN0:    
 WN83:   MOV R0,#13
 	NOP
-
 WNW83:  DJNZ R0,WNW83
-
 WN84:   MOV R0,#13
-
 WNW84:  DJNZ R0,WNW84
-
 WN85:   MOV R0,#12
-
 WNW85:  DJNZ R0,WNW85
-
 WN86:   MOV R0,#11
 	NOP
-
 WNW86:  DJNZ R0,WNW86
-
 WN87:   MOV R0,#11
-
 WNW87:  DJNZ R0,WNW87
-
 WN88:   MOV R0,#10
-
 WNW88:  DJNZ R0,WNW88
-
 WN89:   MOV R0,#9
 	NOP
-
 WNW89:  DJNZ R0,WNW89
-
 WN90:   MOV R0,#9
-
 WNW90:  DJNZ R0,WNW90
-
 WN91:   MOV R0,#8
 	NOP
-
 WNW91:  DJNZ R0,WNW91
-
 WN92:   MOV R0,#8
-
 WNW92:  DJNZ R0,WNW92
-
 WN93:   MOV R0,#7
 	NOP
-
 WNW93:  DJNZ R0,WNW93
-
 WN94:   MOV R0,#7
-
 WNW94:  DJNZ R0,WNW94
-
 WN95:   MOV R0,#6
 	NOP
-
 WNW95:  DJNZ R0,WNW95
-
 WN96:   MOV R0,#6
-
 WNW96:  DJNZ R0,WNW96
-
 WN97:   MOV R0,#6
-
 WNW97:  DJNZ R0,WNW97
-
 WN98:   MOV R0,#5
 	NOP
-
 WNW98:  DJNZ R0,WNW98
-
 WN99:   MOV R0,#5
-
 WNW99:  DJNZ R0,WNW99
-
 WN100:  MOV R0,#5
-
 WNW100: DJNZ R0,WNW100
-
 WN101:  MOV R0,#4
 	NOP
-
 WNW101: DJNZ R0,WNW101
-
 WN102:  MOV R0,#4
-
 WNW102: DJNZ R0,WNW102
-
 WN103:  MOV R0,#4
-
 WNW103: DJNZ R0,WNW103
-
 WN104:  MOV R0,#3
 	NOP
-
 WNW104: DJNZ R0,WNW104
-
 WN105:  MOV R0,#3
 	NOP
-
 WNW105: DJNZ R0,WNW105
-
 WN106:  MOV R0,#3
 	NOP
-
 WNW106: DJNZ R0,WNW106
-
 WN107:  MOV R0,#3
-
 WNW107: DJNZ R0,WNW107
-
 WN108:  MOV R0,#3
-
 WNW108: DJNZ R0,WNW108
-
 WN109:  MOV R0,#2
 	NOP
-
 WNW109: DJNZ R0,WNW109
-
 WN110:  MOV R0,#2
 	NOP
-
 WNW110: DJNZ R0,WNW110
-
 WN111:  MOV R0,#2
 	NOP
-
 WNW111: DJNZ R0,WNW111
-
 WN112:  MOV R0,#2
-
 WNW112: DJNZ R0,WNW112
-
 WN113:  MOV R0,#2
-
 WNW113: DJNZ R0,WNW113
-
 WN114:  MOV R0,#2
-
 WNW114: DJNZ R0,WNW114
-
 WN115:  MOV R0,#1
 	NOP
-
 WNW115: DJNZ R0,WNW115
-
 WN116:  MOV R0,#1
 	NOP
-
 WNW116: DJNZ R0,WNW116
-
 WN117:  MOV R0,#1
 	NOP
-
 WNW117: DJNZ R0,WNW117
-
 WN118:  MOV R0,#1
 	NOP
-
 WNW118: DJNZ R0,WNW118
-
 WN119:  MOV R0,#30
-
 WNW119: DJNZ R0,WNW119
-
         RET
 END

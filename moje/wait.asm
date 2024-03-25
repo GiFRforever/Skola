@@ -47,3 +47,18 @@ W40R0:	DJNZ R0,W40	; R0 * 2 cs
 			; celkem (120 - n) + R0 * 2
 			; pod 40
 			; celkem 80 + R0 * 2 + (41 - n) * (1 + R0 * 2 + R1 * 3)
+
+
+
+W12:	MOV R0,#3	; 1 cs
+W12R0:	NOP		; 1 cs 
+	DJNZ R0,W12R0	; R0 * (2 + n of NOP) cs
+
+
+
+W31:	MOV R1,#7	; 1 cs
+W31R1:	MOV R0,#7	; 1 cs
+W31R0:	DJNZ R0,W31R0	; R0 * 2 cs
+	DJNZ R1,W31R1	; R1 * 2 cs
+
+	RET		

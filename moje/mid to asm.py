@@ -2,9 +2,12 @@ import mido
 
 # from time import sleep
 
+modifier: float = 1.0
+
 # import matplotlib.pyplot as plt
 uspt: float = 1041.7
 tempo: float = 500000
+
 
 def read_midi(file_path) -> list[tuple[int, int, int]]:
     # C5 is the 72nd note in the MIDI standard
@@ -55,7 +58,7 @@ def read_midi(file_path) -> list[tuple[int, int, int]]:
 
 # Provide the path to your MIDI file
 # midi_file_path = r"moje\545.mid"
-midi_file_path = "moje/GameofThrones(1).mid"# "moje/Dyens Roland — Tango En Skai [MIDIfind.com].mid"#"moje/imperial(1).mid"# "moje/Pirates of the Caribbean.mid"# "moje/never gonna give you up.mid" #"moje/545.mid"
+midi_file_path = "moje\\GameofThrones(1).mid"  # "moje/Dyens Roland — Tango En Skai [MIDIfind.com].mid"#"moje/imperial(1).mid"# "moje/Pirates of the Caribbean.mid"# "moje/never gonna give you up.mid" #"moje/545.mid"
 notes: list[tuple[int, int, int]] = read_midi(midi_file_path)
 # plt.ion()
 # plt.show()
@@ -132,14 +135,25 @@ notes = new_notes
 #     ((note[1] - note[0]), halftimes[note[2]]) for note in notes
 # ]
 
-# casy_path = "moje\\casy.txt"
-casy_path = "moje/casy.txt"
-casy: dict[int, tuple[int, int, int]] = {}
+# casy_path = r"moje\casy.txt"
+# # casy_path = "moje/casy.txt"
+# casy: dict[int, tuple[int, int, int]] = {}
+# with open(casy_path, "r") as f:
+#     for line in f.readlines():
+#         try:
+#             note, r1, r0, t = line.split()
+#             casy[int(note)] = (int(r1), int(r0), int(t))
+#         except Exception as e:
+#             print(e)
+
+casy_path = r"moje\casy.txt"
+# casy_path = "moje/casy.txt"
+casy: dict[int, tuple[int, int]] = {}
 with open(casy_path, "r") as f:
     for line in f.readlines():
         try:
-            note, r1, r0, t = line.split()
-            casy[int(note)] = (int(r1), int(r0), int(t))
+            note, dif, t = line.split()
+            casy[int(note)] = (int(dif), int(t))
         except Exception as e:
             print(e)
 
@@ -191,8 +205,8 @@ if len(notes) >= 900:
 
 noty: list[tuple[int, int]] = []
 for note in notes:
-    cas: tuple[int, int, int] = casy[note[2]]
-    count: int = int((note[1] - note[0]) * uspt / cas[2]) // 2
+    cas: tuple[int, int] = casy[note[2]]
+    count: int = int(((note[1] - note[0]) * uspt / cas[-1]) * modifier)
     if count > 0:
         while count > 255:
             noty.append((note[2], 255))
@@ -200,7 +214,8 @@ for note in notes:
         noty.append((note[2], count))
 noty.append((0, 255))  # silence at the end
 
-out_path = "moje/out.asm"
+out_path = "moje\\out.asm"
+# out_path = "moje/out.asm"
 with open(out_path, "w") as f:
     f.write("HL:")
     for i, note in enumerate(noty):
@@ -211,49 +226,85 @@ with open(out_path, "w") as f:
         DJNZ R2, T{i:>02}"""
         )
 
-#     f.write(
-#         """
-#         JMP HL
-# """
-#     )
+    #     casy.pop(0)
+    #     f.write(
+    #         f"""
+    # N0:     MOV R1,#1
+    # 	MOV R0,#235
+    # 	CALL WAIT
+    # 	MOV R1,#1
+    # 	MOV R0,#235
+    # 	CALL WAIT
+    # 	RET
+    # """
+    #     )
 
-    casy.pop(0)
-    f.write(
-        f"""
-N0:     MOV R1,#1
-	MOV R0,#235
-	CALL WAIT
-	MOV R1,#1
-	MOV R0,#235
-	CALL WAIT
-	RET
-"""
-    )
-
-    for n, c in casy.items():
+    for n in casy.keys():
         f.write(
             f"""
-{f"N{n}:":<8}MOV R1,#{c[0]}
-	MOV R0,#{c[1]}
-	SETB P0.7
-	CALL WAIT
-	MOV R1,#{c[0]}
-	MOV R0,#{c[1]}
-	CLR P0.7
-	CALL WAIT
-	RET
-"""
+{f"N{n}:":<8}SETB P0.7
+        CALL WN{n}
+        CLR P0.7
+        CALL WN{n}"""
         )
 
-    f.write(
-        """
-WAIT:   DJNZ R0,WAIT
-        CJNE R1,#0,WAIT1
-        RET
-WAIT1:  MOV R0,#255
-WAIT2:  DJNZ R0,WAIT2
-        DJNZ R1,WAIT1
+    for n, c in casy.items():
+        #         f.write(
+        #             f"""
+        # {f"N{n}:":<8}MOV R1,#{c[0]}
+        # 	MOV R0,#{c[1]}
+        # 	SETB P0.7
+        # 	CALL WAIT
+        # 	MOV R1,#{c[0]}
+        # 	MOV R0,#{c[1]}
+        # 	CLR P0.7
+        # 	CALL WAIT
+        # 	RET
+        # """
+        #         )
+        us, remi = divmod(c[0] - 1, 2)
+        multiplier = 0
+        while us > 255:
+            multiplier += 1
+            us, remi = divmod(c[0] - 1, multiplier + 2)
+
+        if us >= 1:
+            f.write(
+                f"""
+{f"WN{n}:":<8}MOV R0,#{us}
+{"\tNOP\n"*remi}
+{f"WNW{n}:":<8}{"NOP\n\t"*multiplier}DJNZ R0,WNW{n}
+"""
+            )
+        elif us == 0:
+            f.write(
+                f"""
+{f"WN{n}:":<8}
+{"\tNOP\n"*(remi+1)}"""
+            )
+        else:
+            f.write(
+                f"""
+{f"WN{n}:":<8}"""
+            )
+
+    else:
+        f.write(
+            """
         RET
 END
 """
-    )
+        )
+
+#     f.write(
+#         """
+# WAIT:   DJNZ R0,WAIT
+#         CJNE R1,#0,WAIT1
+#         RET
+# WAIT1:  MOV R0,#255
+# WAIT2:  DJNZ R0,WAIT2
+#         DJNZ R1,WAIT1
+#         RET
+# END
+# """
+#     )

@@ -4,7 +4,7 @@ import mido
 
 # import matplotlib.pyplot as plt
 uspt: float = 1041.7
-
+tempo: float = 500000
 
 def read_midi(file_path) -> list[tuple[int, int, int]]:
     # C5 is the 72nd note in the MIDI standard
@@ -12,6 +12,7 @@ def read_midi(file_path) -> list[tuple[int, int, int]]:
     notes: list[tuple[int, int, int]] = []
     # Open the MIDI file
     global uspt
+    global tempo
 
     with mido.MidiFile(file_path) as midi_file:
         # Iterate over each track in the MIDI file
@@ -53,7 +54,8 @@ def read_midi(file_path) -> list[tuple[int, int, int]]:
 
 
 # Provide the path to your MIDI file
-midi_file_path = r"moje\545.mid"
+# midi_file_path = r"moje\545.mid"
+midi_file_path = "moje/GameofThrones(1).mid"# "moje/Dyens Roland — Tango En Skai [MIDIfind.com].mid"#"moje/imperial(1).mid"# "moje/Pirates of the Caribbean.mid"# "moje/never gonna give you up.mid" #"moje/545.mid"
 notes: list[tuple[int, int, int]] = read_midi(midi_file_path)
 # plt.ion()
 # plt.show()
@@ -130,8 +132,10 @@ notes = new_notes
 #     ((note[1] - note[0]), halftimes[note[2]]) for note in notes
 # ]
 
+# casy_path = "moje\\casy.txt"
+casy_path = "moje/casy.txt"
 casy: dict[int, tuple[int, int, int]] = {}
-with open("moje\\casy.txt", "r") as f:
+with open(casy_path, "r") as f:
     for line in f.readlines():
         try:
             note, r1, r0, t = line.split()
@@ -182,10 +186,13 @@ with open("moje\\casy.txt", "r") as f:
 # """
 #     )
 
+if len(notes) >= 900:
+    notes = notes[:900]
+
 noty: list[tuple[int, int]] = []
 for note in notes:
     cas: tuple[int, int, int] = casy[note[2]]
-    count: int = int((note[1] - note[0]) * uspt / cas[2])
+    count: int = int((note[1] - note[0]) * uspt / cas[2]) // 2
     if count > 0:
         while count > 255:
             noty.append((note[2], 255))
@@ -193,22 +200,22 @@ for note in notes:
         noty.append((note[2], count))
 noty.append((0, 255))  # silence at the end
 
-with open("moje\\out.asm", "w") as f:
+out_path = "moje/out.asm"
+with open(out_path, "w") as f:
     f.write("HL:")
     for i, note in enumerate(noty):
         f.write(
             f"""
         MOV R2,#{note[1]}
-{f"T{i}:":<8}CALL N{note[0]}
-        DJNZ R2, T{i}
-"""
+{f"T{i:>02}:":<8}CALL N{note[0]}
+        DJNZ R2, T{i:>02}"""
         )
 
-    f.write(
-        """
-        JMP HL
-"""
-    )
+#     f.write(
+#         """
+#         JMP HL
+# """
+#     )
 
     casy.pop(0)
     f.write(
@@ -232,8 +239,8 @@ N0:     MOV R1,#1
 	CALL WAIT
 	MOV R1,#{c[0]}
 	MOV R0,#{c[1]}
-	CALL WAIT
 	CLR P0.7
+	CALL WAIT
 	RET
 """
         )

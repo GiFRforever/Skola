@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import ttk
+from tkinter import messagebox as msb
 import os
 
 # app to synchronize files between two directories
@@ -13,13 +14,18 @@ import os
 
 
 class App(tk.Frame):
-    def __init__(self, master) -> None:
+    def __init__(self, master: tk.Tk) -> None:
         super().__init__(master)
-        self.master = master
+        self.master: tk.Tk = master
         self.pack(padx=10, pady=10, fill="both", expand=True)
         self.main()
 
     def main(self) -> None:
+        self.mainmenu = tk.Menu(self.master)
+        self.mainmenu.add_cascade(label="Nápověda", command=self.showhelp)
+        self.mainmenu.add_cascade(label="Konec", command=self.master.quit)
+        self.master.config(menu=self.mainmenu)
+
         self.foldergrid = tk.Frame(self)
         # self.foldergrid.grid(column=0, row=0, sticky="nsw")
         self.foldergrid.pack(anchor="nw", fill="both", expand=True)
@@ -54,15 +60,24 @@ class App(tk.Frame):
         self.mode = tk.StringVar()
         self.mode.set("mirror")
         self.mirrorbutton = tk.Radiobutton(
-            self.syncgrid, text="Mirror", variable=self.mode, value="mirror"
+            self.syncgrid,
+            text="Mirror",
+            variable=self.mode,
+            value="mirror",
         )
         self.mirrorbutton.grid(column=1, row=0, padx=5, pady=5)
         self.updatebutton = tk.Radiobutton(
-            self.syncgrid, text="Update", variable=self.mode, value="update"
+            self.syncgrid,
+            text="Update",
+            variable=self.mode,
+            value="update",
         )
         self.updatebutton.grid(column=2, row=0, padx=5, pady=5)
         self.bothwaybutton = tk.Radiobutton(
-            self.syncgrid, text="Both-way", variable=self.mode, value="both-way"
+            self.syncgrid,
+            text="Both-way",
+            variable=self.mode,
+            value="both-way",
         )
         self.bothwaybutton.grid(column=3, row=0, padx=5, pady=5)
 
@@ -103,14 +118,30 @@ class App(tk.Frame):
         else:
             print("Source or target does not exist")
 
+    def showhelp(self) -> None:
+        msb.showinfo(
+            "Nápověda",
+            """
+Tato aplikace synchronizuje složky třemi způsoby.
+- Mirror: Cílová složka bude stejná jako zdrojová složka.
+- Update: Cílová složka bude aktualizována zdrojovou složkou.
+- Both-way: Cílová složka bude stejná jako zdrojová složka a naopak
+Konflikty budou řešeny podle data poslední změny.
+            """,
+        )
+
     def mirrormode(self) -> None:
         print("Mirror mode")
+        os.system(f'robocopy "{self.source.get()}" "{self.target.get()}" /PURGE /E')
 
     def updatemode(self) -> None:
         print("Update mode")
+        os.system(f'robocopy "{self.source.get()}" "{self.target.get()}" /E /XO')
 
     def bothwaymode(self) -> None:
         print("Both-way mode")
+        os.system(f'robocopy "{self.source.get()}" "{self.target.get()}" /E /XO')
+        os.system(f'robocopy "{self.target.get()}" "{self.source.get()}" /E /XO')
 
 
 class DirTree(object):
@@ -142,11 +173,13 @@ class DirTree(object):
         node = self.tree.focus()
         abspath = self.nodes.pop(node, None)
         if abspath:
-            self.tree.delete(self.tree.get_children(node))
+            self.tree.delete(*self.tree.get_children(node))
             for p in os.listdir(abspath):
                 self.insert_node(node, p, os.path.join(abspath, p))
 
 
 root = tk.Tk()
 app = App(root)
+root.title("Zrcadlo")
+root.resizable(False, False)
 root.mainloop()

@@ -1,5 +1,6 @@
 from flask import (
     Flask,
+    Response,
     url_for,
     request,
     render_template,
@@ -18,13 +19,14 @@ app.secret_key = "hvndasjklfhndasjlf_FAKT_HODNE_TAJNE_hdasjklfhdasjklfhdaf"
 # hesla vvvv
 # admin: admin
 # uzivatel: heslo
+print(app.root_path)
 
 
-@app.route("/favicon.ico")
-def favicon():
+@app.route("/favicon.ico", methods=["GET"])
+def favicon() -> Response:
     return send_from_directory(
         os.path.join(app.root_path, "static"),
-        "favicon.ico",
+        "favicon.png",
         mimetype="image/vnd.microsoft.icon",
     )
 

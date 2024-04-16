@@ -42,7 +42,7 @@ class Form(tk.Frame):
         self.odeslat_button.pack()
 
     def odeslat(self):
-        
+        pass
 
 
 class Graph(tk.Frame):

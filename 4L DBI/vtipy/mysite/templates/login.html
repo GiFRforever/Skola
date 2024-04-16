@@ -2,41 +2,23 @@
 
 {% block obsah %}
 
-<h1>Přihlášení</h1>
+<h2>Přihlášení</h2>
 
 {% if uspech %}
 
     <div style="color: green">{{uspech}}</div>
 
-{% elif jmenoform %}
-    <div style="color: green">{{zprava}}</div>
-
-
-    <form action="{{ url_for("login") }}" method="POST">
-
-        Login: <input type="text" name="jmeno" value={{jmenoform}}><br>
-        Heslo: <input type="password" name="heslo"><br>
-        <input type="submit" value="Přihlásit se">
-    </form>
-<br>
-    <form action="{{ url_for("registrace") }}" method="GET">
-        <input type="submit" value="Registrovat se">
-    </form>
-
 {% else %}
+
     <div style="color: red">{{zprava}}</div>
 
-
     <form action="{{ url_for("login") }}" method="POST">
-
         Login: <input type="text" name="jmeno"><br>
         Heslo: <input type="password" name="heslo"><br>
         <input type="submit" value="Přihlásit se">
     </form>
-<br>
-    <form action="{{ url_for("registrace") }}" method="GET">
-        <input type="submit" value="Registrovat se">
-    </form>
 
 {% endif %}
+
+
 {% endblock %}

@@ -1,48 +1,100 @@
-<!DOCTYPE HTML>
+<DOCTYPE HTML>
 <html>
   <head>
-  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
-  <title>Tvoje Máma</title>
+  <meta charset="windows-1250">
+  <title>Vtipy</title>
+  <style>
+      .title  { background-color: #7389a5; font-size: xx-large; font-weight: bold; text-align: center; }
+      .menu   { color: black; text-decoration: none; background-color: #BBBBBB; text-align: right; color: black; text-decoration: none;}
+      .kateg  { background-color: #7389a5; justify-content: center; display: flex; }
+      .zapati { background-color: #7389a5; text-align: right; }
+      .kategbut {background: none!important; border: none; padding: 0!important;}
+      .vtipy  { display: flex; justify-content: center; flex-direction: column; }
+      .vtip1  { background-color: #BBBBBB; text-align: left; padding: 4px; margin: 4px; }
+  </style>
   </head>
   <body>
-
-    <!-- zahlavi stranky -->
-    <table border="0" width="100%">
-    <tr>
-    <td align="left"> <img src="{{ url_for("static", filename="jes.jpg") }}" height="120">
-    <td align="left" > <h1> Ftip </h1>
-    </table>
-
-    <hr>
-    <table border="0" width="100%">
-    <tr align="center">
-        <td><a href="{{ url_for("index")  }}">Úvod       </a>
-        <td><a href="{{ url_for("vtipy")  }}">Muhahahaha       </a>
-{% if session["uziv"]=="admin" %}
-    <td><a href="{{ url_for("sprava")  }}">Správa uživatelů </a>
-{% endif %}
-
-      <td><a href="{{ url_for("login")  }}">
-{% if session["uziv"] %}
-    Odhlásit se
-{% else %}
-    Přihlásit se
-{% endif %}
+    <div class="title">V T I P Y</div>
+    <div class="menu">
+        <a href="{{ url_for("index") }}">Domů</a> |
+        <a href="{{ url_for("login") }}">
+            {% if session["uziv"] %}
+            Odhlásit se
         </a>
-    </tr>
-    </table>
-    <hr>
+            {% else %}
+        Přihlásit se   |
+        </a>
+        <a href="{{ url_for("registrace") }}">Registrace</a>
+            {% endif %}
+        
+    </div>
+    {% if count %}
+    {% block kateg %}
+    <div class="kateg">
+        <div style=height: 100%;><br>Počet vtipů:</div>
+    &nbsp;|&nbsp;
+    {% for nazev in nazvy %}
+     <div>  
+        <form action="{{ url_for("index") }}" method="POST"> 
+            <input type="hidden" name="akce" value="kateg">
+            <input type="hidden" name="kateg" value={{nazev[0]}}>
+            <input class="kategbut" type="submit" value={{nazev[1]}}><br> {{nazev[2]}}
+        </form>
+    </div>
+        &nbsp;|&nbsp;
+        {% endfor %}
+        <br><a href="{{ url_for('pridat_vtip') }}" style="color: black; text-decoration: none; height: min-content;">Přidat vtip</a>
 
-    <!-- obsah stranky -->
-    {% block obsah %}
-    Vítáme Vás!!!
-    {% if session["uziv"] %}
-    Přihlášený uživatel: {{ session["uziv"] }}
-    {% endif %}
+    </div>
     {% endblock %}
-    <!-- zapati stranky -->
-    <hr>
-    <div align="right">&copy; Copyright 2024</div>
+    <div class="kateg">
+        Celkem: {{ count[0] }}
+        {% if count_uziv %}
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        Od vás: {{ count_uziv[0] }}
+        {% endif %}
+    </div>
+    {% endif%}
+
+    <div style="color:red">{{ chyba }}</div>
+    {% block obsah %}
+    <div class="vtipy">
+        {% for vtip in vtipy %}
+        <form action="{{ url_for("index") }}" method="POST">
+            <div class="vtip1">
+                <table border=0 width="100%">
+                    <tr>
+                        <td>
+                            <b>{{vtip[0]}}</b>
+                        </td>
+                        <td align="right"> 
+                            <input type="hidden" name="id" value="{{ vtip[2]}}">
+                            {% if session["uziv"] == "admin" %}
+                            <input type="submit" name="akce" value="smazat">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{vtip[1]}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        {% if session["id_uziv"] == vtip[3] %}
+        <form action="{{ url_for("edit_vtip") }}" method="POST">
+            <input type="hidden" name="id" value="{{ vtip[2]}}">
+            {{ vtip[3] }}
+            <input type="submit" name="akce" value="editovat">
+        </form>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock %}
+
+    <div class="zapati">&copy; Copyright 2024</div>
 
   </body>
 </html>
+

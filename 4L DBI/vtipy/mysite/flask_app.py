@@ -1,6 +1,15 @@
-from flask import Flask, url_for, request, render_template, session, redirect
+from flask import (
+    Flask,
+    url_for,
+    request,
+    render_template,
+    session,
+    redirect,
+    send_from_directory,
+)
 import sqlite3
 import hashlib
+import os
 
 app = Flask(__name__)
 
@@ -9,6 +18,15 @@ app.secret_key = "hvndasjklfhndasjlf_FAKT_HODNE_TAJNE_hdasjklfhdasjklfhdaf"
 # hesla vvvv
 # admin: admin
 # uzivatel: heslo
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return send_from_directory(
+        os.path.join(app.root_path, "static"),
+        "favicon.ico",
+        mimetype="image/vnd.microsoft.icon",
+    )
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -180,14 +198,18 @@ def login():
         db = mydb()
         cur = db.cursor()
         cur.execute(
-            "SELECT id,login,heslo FROM uziv WHERE login=? and heslo=?;", (jm, hs)
+            "SELECT id,login,heslo,povolen FROM uziv WHERE login=? and heslo=?;",
+            (jm, hs),
         )
         pocet = cur.fetchone()
         if pocet:
-            session["uziv"] = jm
-            session["id_uziv"] = pocet[0]
-            return redirect("/")
-            # return render_template("login.html", uspech="Úspěšně přihlášen jako "+jm)
+            if pocet[3] != "A":
+                zprava = "Uživatel je nebyl povolen administrátorem."
+            else:
+                session["uziv"] = jm
+                session["id_uziv"] = pocet[0]
+                return redirect("/")
+                # return render_template("login.html", uspech="Úspěšně přihlášen jako "+jm)
 
         zprava = "Chybné přihlášení"
     return render_template("login.html", zprava=zprava)
@@ -250,29 +272,33 @@ def registrace():
                             zprava=f"Uzivatel {jm} úspěšně registrován",
                             jmenoform=jm,
                         )
-
-                """
-                with open("uziv.txt", "r") as soubor:
-                    radky = soubor.readlines()
-
-                for radek in radky:
-                    x=radek.split(";")
-                    if len(x)>1:
-                        if x[0]==jm:
-                            chyba=f"Uživatelské jméno {jm} je již zabráno"
-                            break
-
-
-                if chyba=="":
-                    with open("uziv.txt", "a+") as soubor:
-                        soubor.write(jm+";"+md5(jm+";;;tajnyobsah;;;"+hs)+";\n" )
-                    return render_template("login.html", zprava=f"Uzivatel {jm} úspěšně registrován", jmenoform=jm)
-                """
-
         except:
             chyba = "Chyba parametrů"
 
     return render_template("registrace.html", chyba=chyba, jmenoform=jmenoform)
+
+
+@app.route("/sprava_uzivatelu/", methods=["GET", "POST"])
+def sprava():
+    if not session.get("uziv") == "admin":
+        return redirect("/login/")
+
+    with mydb() as db:
+        cur = db.cursor()
+        if request.method == "POST":
+            akce = request.form["akce"]
+            idcko = request.form["ID"]
+            if akce == "Delete":
+                cur.execute("DELETE FROM uziv WHERE id=?;", (idcko,))
+            elif akce == "Zakázat":
+                cur.execute("UPDATE uziv SET povolen='N' WHERE id=?;", (idcko,))
+            elif akce == "Povolit":
+                cur.execute("UPDATE uziv SET povolen='A' WHERE id=?;", (idcko,))
+
+            db.commit()
+        cur.execute("SELECT id, login, povolen FROM uziv ORDER BY id ASC;")
+        udaje = cur.fetchall()
+    return render_template("sprava_uziv.html", udaje=udaje)
 
 
 """

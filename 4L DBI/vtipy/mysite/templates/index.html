@@ -10,6 +10,8 @@
                 font-size: xx-large;
                 font-weight: bold;
                 text-align: center;
+                color: black;
+                text-decoration: none;
             }
 
             .menu {
@@ -17,8 +19,6 @@
                 text-decoration: none;
                 background-color: #BBBBBB;
                 text-align: right;
-                color: black;
-                text-decoration: none;
             }
 
             .kateg {
@@ -54,9 +54,12 @@
     </head>
 
     <body>
-        <div class="title">V T I P Y</div>
+        <a href="{{ url_for('index') }}"><div class="title">V T I P Y</div></a>
         <div class="menu">
-            {{ session["uziv"] }}
+            {{ session["uziv"] }} |
+            {% if session["uziv"] == "admin" %}
+            <a href="{{ url_for('sprava')}}">Správa uživatelů</a> |
+            {% endif %}
             <a href="{{ url_for("index") }}">Domů</a> |
             <a href="{{ url_for("login") }}">
                 {% if session["uziv"] %}
@@ -66,7 +69,7 @@
             Přihlásit se |
             </a>
             <a href="{{ url_for("registrace") }}">Registrace</a>
-            {% endif %}
+            {% endif %} | &nbsp;
 
         </div>
         {% if count %}

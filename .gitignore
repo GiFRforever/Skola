@@ -14,3 +14,5 @@ moje/p/primesl.txt
 geckodriver.log
 *.bak
 venv
+.venv
+__pycache__

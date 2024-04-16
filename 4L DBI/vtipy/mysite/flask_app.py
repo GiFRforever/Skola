@@ -197,6 +197,8 @@ def edit_vtip():
                         )
                 db.commit()
                 return redirect(url_for("index"))
+            else:
+                chyba = "Není vyplněný nadpis nebo obsah"
 
         cur.execute("SELECT nadpis, obsah FROM vtip WHERE id=?", (id_vtip,))
         d = cur.fetchone()
@@ -232,10 +234,10 @@ def login():
         cur.execute(
             "SELECT id,login,heslo FROM uziv WHERE login=? and heslo=?;", (jm, hs)
         )
-        pocet = cur.fetchall()
+        pocet = cur.fetchone()
         if pocet:
             session["uziv"] = jm
-            session["id_uziv"] = pocet[0][0]
+            session["id_uziv"] = pocet[0]
             return redirect("/")
             # return render_template("login.html", uspech="Úspěšně přihlášen jako "+jm)
 

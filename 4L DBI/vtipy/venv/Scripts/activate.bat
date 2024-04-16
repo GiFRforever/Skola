@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=H:\mujgit\Skola\4L DBI\vtipy\venv
+set VIRTUAL_ENV=C:\Users\Bu\Documents\Skola\4L DBI\vtipy\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

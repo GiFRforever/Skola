@@ -11,7 +11,7 @@ app.secret_key = "hvndasjklfhndasjlf_FAKT_HODNE_TAJNE_hdasjklfhdasjklfhdaf"
 # uzivatel: heslo
 
 
-@app.route("/vtipy/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     chyba = ""
     with mydb() as db:
@@ -29,7 +29,7 @@ def index():
             if "kateg" in request.form:
                 id_kateg = request.form["kateg"]
             else:
-                id_kateg = 1
+                id_kateg = 0
             cur.execute(
                 "SELECT nadpis, obsah, vtip.id, vtip.id_uziv FROM vtip,zarazeni WHERE zarazeni.id_vtip = vtip.id AND zarazeni.id_kateg = ?",
                 (id_kateg,),
@@ -60,62 +60,12 @@ def index():
     )
 
 
-@app.route("/", methods=["GET", "POST"])
-def topvtip():
-    chyba = ""
-    with mydb() as db:
-        cur = db.cursor()
-        if request.method == "POST":
-            if request.form.get("akce") == "smazat" and session.get("uziv") == "admin":
-                id = request.form["id"]
-                cur.execute("DELETE FROM vtip WHERE id=(?)", (id,))
-
-        cur.execute(
-            "SELECT id, nazev, COUNT(id_kateg) FROM kateg LEFT JOIN zarazeni ON zarazeni.id_kateg=kateg.id GROUP BY id "
-        )
-        nazvy = cur.fetchall()
-        try:
-            if "kateg" in request.form:
-                id_kateg = request.form["kateg"]
-            else:
-                id_kateg = 1
-            cur.execute(
-                "SELECT nadpis, obsah, id FROM vtip,zarazeni WHERE zarazeni.id_vtip = vtip.id AND zarazeni.id_kateg = ?",
-                (id_kateg,),
-            )
-        except Exception as e:
-            cur.execute("SELECT nadpis, obsah, id, id_uziv FROM vtip")
-            chyba = e
-        vtipy = cur.fetchall()
-
-        if session.get("uziv"):
-            cur.execute(
-                "SELECT COUNT(id) FROM vtip WHERE id_uziv = ?",
-                (session.get("id_uziv"),),
-            )
-            count_uziv = cur.fetchone()
-        else:
-            count_uziv = None
-
-        cur.execute("SELECT COUNT(id) FROM vtip")
-        count = cur.fetchone()
-
-    return render_template(
-        "topvtip.html",
-        nazvy=nazvy,
-        vtipy=vtipy,
-        chyba=chyba,
-        count=count,
-        count_uziv=count_uziv,
-    )
-
-
 def md5(vstup):
     return hashlib.md5(vstup.encode("utf-8")).hexdigest()
 
 
 def mydb():
-    # return MySQLdb.connect("ces40.mysql.pythonanywhere-services.com", "ces40", "asdfghjkl2", "ces40$default")
+    # return MySQLdb.connect("uziv123.mysql.pythonanywhere-services.com", "uziv123", "asdfghjkl2", "uziv123$default")
     db = sqlite3.connect("dbvtipy.sqlite3")
     db.execute("PRAGMA foreign_keys=ON")
     return db

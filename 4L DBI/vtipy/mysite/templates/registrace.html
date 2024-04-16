@@ -6,28 +6,28 @@
 
 <div style="color:red">{{ chyba }}</div>
 
-    <form action="{{ url_for("registrace") }}" method="POST">
+<form action="{{ url_for("registrace") }}" method="POST">
     <table>
 
         <tr height>
             <td> Login: </td>
-            <td> <input type="text" name="jmeno", maxlength=20 value="{{jmenoform}}"></td>
+            <td> <input type="text" name="jmeno" , maxlength=20 value="{{jmenoform}}"></td>
         </tr>
 
         <tr>
             <td> Heslo:</td>
-            <td> <input type="password" name="heslo", maxlength=20> </td>
+            <td> <input type="password" name="heslo" , maxlength=20> </td>
         </tr>
 
         <tr>
             <td> Heslo znova: </td>
-            <td> <input type="password" name="heslo2", maxlength=20> </td>
+            <td> <input type="password" name="heslo2" , maxlength=20> </td>
         </tr>
 
     </table>
     <br>
-        <input type="submit" value="Zaregistrovat se">
-    </form>
+    <input type="submit" value="Zaregistrovat se">
+</form>
 
 
 {% endblock %}

@@ -1,100 +1,141 @@
 <DOCTYPE HTML>
-<html>
-  <head>
-  <meta charset="windows-1250">
-  <title>Vtipy</title>
-  <style>
-      .title  { background-color: #7389a5; font-size: xx-large; font-weight: bold; text-align: center; }
-      .menu   { color: black; text-decoration: none; background-color: #BBBBBB; text-align: right; color: black; text-decoration: none;}
-      .kateg  { background-color: #7389a5; justify-content: center; display: flex; }
-      .zapati { background-color: #7389a5; text-align: right; }
-      .kategbut {background: none!important; border: none; padding: 0!important;}
-      .vtipy  { display: flex; justify-content: center; flex-direction: column; }
-      .vtip1  { background-color: #BBBBBB; text-align: left; padding: 4px; margin: 4px; }
-  </style>
-  </head>
-  <body>
-    <div class="title">V T I P Y</div>
-    <div class="menu">
-        <a href="{{ url_for("index") }}">Domů</a> |
-        <a href="{{ url_for("login") }}">
-            {% if session["uziv"] %}
-            Odhlásit se
-        </a>
+    <html>
+
+    <head>
+        <meta charset="windows-1250">
+        <title>Vtipy</title>
+        <style>
+            .title {
+                background-color: #7389a5;
+                font-size: xx-large;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .menu {
+                color: black;
+                text-decoration: none;
+                background-color: #BBBBBB;
+                text-align: right;
+                color: black;
+                text-decoration: none;
+            }
+
+            .kateg {
+                background-color: #7389a5;
+                justify-content: center;
+                display: flex;
+            }
+
+            .zapati {
+                background-color: #7389a5;
+                text-align: right;
+            }
+
+            .kategbut {
+                background: none !important;
+                border: none;
+                padding: 0 !important;
+            }
+
+            .vtipy {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .vtip1 {
+                background-color: #BBBBBB;
+                text-align: left;
+                padding: 4px;
+                margin: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">V T I P Y</div>
+        <div class="menu">
+            <a href="{{ url_for("index") }}">Domů</a> |
+            <a href="{{ url_for("login") }}">
+                {% if session["uziv"] %}
+                Odhlásit se
+            </a>
             {% else %}
-        Přihlásit se   |
-        </a>
-        <a href="{{ url_for("registrace") }}">Registrace</a>
+            Přihlásit se |
+            </a>
+            <a href="{{ url_for("registrace") }}">Registrace</a>
             {% endif %}
-        
-    </div>
-    {% if count %}
-    {% block kateg %}
-    <div class="kateg">
-        <div style=height: 100%;><br>Počet vtipů:</div>
-    &nbsp;|&nbsp;
-    {% for nazev in nazvy %}
-     <div>  
-        <form action="{{ url_for("index") }}" method="POST"> 
-            <input type="hidden" name="akce" value="kateg">
-            <input type="hidden" name="kateg" value={{nazev[0]}}>
-            <input class="kategbut" type="submit" value={{nazev[1]}}><br> {{nazev[2]}}
-        </form>
-    </div>
-        &nbsp;|&nbsp;
-        {% endfor %}
-        <br><a href="{{ url_for('pridat_vtip') }}" style="color: black; text-decoration: none; height: min-content;">Přidat vtip</a>
 
-    </div>
-    {% endblock %}
-    <div class="kateg">
-        Celkem: {{ count[0] }}
-        {% if count_uziv %}
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        Od vás: {{ count_uziv[0] }}
-        {% endif %}
-    </div>
-    {% endif%}
-
-    <div style="color:red">{{ chyba }}</div>
-    {% block obsah %}
-    <div class="vtipy">
-        {% for vtip in vtipy %}
-        <form action="{{ url_for("index") }}" method="POST">
-            <div class="vtip1">
-                <table border=0 width="100%">
-                    <tr>
-                        <td>
-                            <b>{{vtip[0]}}</b>
-                        </td>
-                        <td align="right"> 
-                            <input type="hidden" name="id" value="{{ vtip[2]}}">
-                            {% if session["uziv"] == "admin" %}
-                            <input type="submit" name="akce" value="smazat">
-                            {% endif %}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {{vtip[1]}}
-                        </td>
-                    </tr>
-                </table>
+        </div>
+        {% if count %}
+        {% block kateg %}
+        <div class="kateg">
+            <div style=height: 100%;><br>Počet vtipů:</div>
+            &nbsp;|&nbsp;
+            {% for nazev in nazvy %}
+            <div>
+                <form action="{{ url_for("index") }}" method="POST">
+                    <input type="hidden" name="akce" value="kateg">
+                    <input type="hidden" name="kateg" value={{nazev[0]}}>
+                    <input class="kategbut" type="submit" value={{nazev[1]}}><br> {{nazev[2]}}
+                </form>
             </div>
-        </form>
-        {% if session["id_uziv"] == vtip[3] %}
-        <form action="{{ url_for("edit_vtip") }}" method="POST">
-            <input type="hidden" name="id" value="{{ vtip[2]}}">
-            {{ vtip[3] }}
-            <input type="submit" name="akce" value="editovat">
-        </form>
-        {% endif %}
-        {% endfor %}
-    </div>
-    {% endblock %}
+            &nbsp;|&nbsp;
+            {% endfor %}
+            <br><a href="{{ url_for('pridat_vtip') }}"
+                style="color: black; text-decoration: none; height: min-content;">Přidat vtip</a>
 
-    <div class="zapati">&copy; Copyright 2024</div>
+        </div>
+        {% endblock %}
+        <div class="kateg">
+            Celkem: {{ count[0] }}
+            {% if count_uziv %}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Od vás: {{ count_uziv[0] }}
+            {% endif %}
+        </div>
+        {% endif%}
 
-  </body>
-</html>
+        <div style="color:red">{{ chyba }}</div>
+        {% block obsah %}
+        <div class="vtipy">
+            {% for vtip in vtipy %}
+            <div class="vtip1">
+                <form action="{{ url_for("index") }}" method="POST">
+                    <table border=0 width="100%">
+                        <tr>
+                            <td>
+                                <b>{{vtip[0]}}</b>
+                            </td>
+                            <td align="right">
+                                <input type="hidden" name="id" value="{{ vtip[2]}}">
+                                {% if session["uziv"] == "admin" or session["id_uziv"] == vtip[3] %}
+                                <input type="submit" name="akce" value="smazat">
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{vtip[1]}}
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                
+                {% if session["uziv"] == "admin" or session["id_uziv"] == vtip[3] %}
+                <form action="{{ url_for("edit_vtip") }}" method="POST" style="text-align: right; height: 5; margin-top: -20;">
+                    <input type="hidden" name="id" value="{{ vtip[2]}}">
+                    <input type="submit" name="akce" value="editovat">
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
 
+        <div class="zapati">&copy; Copyright 2024</div>
+
+    </body>
+
+    </html>

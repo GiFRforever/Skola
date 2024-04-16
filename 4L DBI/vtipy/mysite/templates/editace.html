@@ -3,35 +3,36 @@
 {% block obsah %}
 {% if session["uziv"] %}
 <h2>Vtipy</h2>
-<div style="color:red">{{ chyba }}</div>
 
-    <form action="{{ url_for("edit_vtip") }}" method="POST">
+<div style="color:red">{{ chyba }}</div>
+<form action="{{ url_for("edit_vtip") }}" method="POST">
     <table>
 
         <tr>
             <td>
                 Název:
             </td>
-            <td> <input type="text" name="nadpis" value={{data["nadpis"]}}>
+            <td> <input type="text" name="nadpis" value="{{data["nadpis"]}}">
             </td>
         </tr>
         <tr>
             <td>
                 Vtip:
             </td>
-            <td> <input type="text" name="obsah" value={{data["obsah"]}}>
+            <td> <input type="text" name="obsah" value="{{data["obsah"]}}">
             </td>
         </tr>
     </table>
     {% for nazev in nazvy %}
-    <input type="checkbox" id={{nazev[0]}} name="kateg{{nazev[0]}}">
+    <input type="checkbox" id="{{nazev[0]}}" name="kateg{{nazev[0]}}" {{ "checked" if nazev[0] in zarazeni }}>
     <label for={{nazev[0]}}>{{nazev[1]}} | </label>
     {% endfor %}
-            <input type="submit" value="Přidat"> </td>
-    </form>
+    <input type="hidden" name="id" value="{{data["id"]}}">
+    <input type="submit" name="akce" value="Upravit"> </td>
+</form>
 
-    {% else %}
-    <div style="color:red">Pro zobrazení vtipů se musíte přihlásit!</div>
+{% else %}
+<div style="color:red">Pro zobrazení vtipů se musíte přihlásit!</div>
 
-    {% endif %}
+{% endif %}
 {% endblock %}

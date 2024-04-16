@@ -5,7 +5,7 @@
 <h2>Vtipy</h2>
 <div style="color:red">{{ chyba }}</div>
 
-    <form action="{{ url_for("pridat_vtip") }}" method="POST">
+<form action="{{ url_for("pridat_vtip") }}" method="POST">
     <table>
 
         <tr>
@@ -27,11 +27,11 @@
     <input type="checkbox" id={{nazev[0]}} name="kateg{{nazev[0]}}">
     <label for={{nazev[0]}}>{{nazev[1]}} | </label>
     {% endfor %}
-            <input type="submit" value="Přidat"> </td>
-    </form>
+    <input type="submit" value="Přidat"> </td>
+</form>
 
-    {% else %}
-    <div style="color:red">Pro zobrazení vtipů se musíte přihlásit!</div>
+{% else %}
+<div style="color:red">Pro zobrazení vtipů se musíte přihlásit!</div>
 
-    {% endif %}
+{% endif %}
 {% endblock %}

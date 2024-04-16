@@ -81,7 +81,7 @@ def pridat_vtip():
         nazvy = cur.fetchall()
         nazvy.pop(0)
     if request.method == "POST":
-        # try:
+
         data = request.form
         nadpis = data["nadpis"]
         obsah = data["obsah"]
@@ -108,8 +108,6 @@ def pridat_vtip():
                     )
             db.commit()
         return redirect(url_for("index"))
-        # except Exception as e:
-        #     chyba=f"Velký špatný! {e}; {data}"
     return render_template("pridat_vtip.html", chyba=chyba, data=data, nazvy=nazvy)
 
 
@@ -174,7 +172,7 @@ def edit_vtip():
 @app.route("/login/", methods=["GET", "POST"])
 def login():
     zprava = ""
-    session.pop("uziv", None)  # odhlaseni":
+    session.pop("uziv", None)  # odhlaseni
     if request.method == "POST":
         jm = request.form["jmeno"]
         hs = md5(jm + ";;;tajnyobsah;;;" + request.form["heslo"])

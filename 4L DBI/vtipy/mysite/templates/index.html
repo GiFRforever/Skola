@@ -56,6 +56,7 @@
     <body>
         <div class="title">V T I P Y</div>
         <div class="menu">
+            {{ session["uziv"] }}
             <a href="{{ url_for("index") }}">Domů</a> |
             <a href="{{ url_for("login") }}">
                 {% if session["uziv"] %}

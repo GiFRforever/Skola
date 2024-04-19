@@ -2,12 +2,12 @@ import os
 import tkinter as tk
 from tkinter import messagebox as mb
 from tkinter import ttk
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk # pillow
 
-import mysql.connector
+import mysql.connector # mysql-connector-python
 
 # os.chdir(r"/home/clu40164@spseol.cz/wnet_H/mujgit/Skola/moje/kupaj2")
-os.chdir(r"\\pdc\home-students\clu40164\mujgit\Skola\moje\kupaj2")
+# os.chdir(r"\\pdc\home-students\clu40164\mujgit\Skola\moje\kupaj2")
 
 
 def mydb():
@@ -53,6 +53,7 @@ with mydb() as db:
     c = db.cursor()
     c.execute("SELECT id, nazev FROM kraje")
     kraje: dict[int, str] = {id: nazev for id, nazev in c.fetchall()}  # type: ignore věřte mi, že to funguje
+    db.close()
 
 # print(kraje)
 # exit()
@@ -121,6 +122,7 @@ class Form(tk.Frame):
                     f"INSERT INTO dotaznik (velikost, vek, pohlavi, kraj) VALUES ('{self.velikost.get()}', {self.vek_spinbox.get()}, {self.pohlavi.get()}, {list(kraje.keys())[list(kraje.values()).index(self.kraj.get())]})"
                 )
                 db.commit()
+                db.close()
 
             mb.showinfo("Úspěch", "Data byla úspěšně odeslána")
         except ValueError as e:
@@ -132,21 +134,7 @@ class Graph(tk.Frame):
     def __init__(self, frame: tk.Frame):
         super().__init__(frame)
         self.pack()
-        self.graph()
-
-    def graph(self) -> None:
-        with mydb() as db:
-            c = db.cursor()
-            c.execute(
-                "SELECT kraj, pohlavi, velikost, COUNT(*) FROM dotaznik GROUP BY kraj, pohlavi, velikost"
-            )
-            dotaznik: list[tuple[int,int,str,int]] = c.fetchall() # type: ignore věřte mi, že to funguje
-            print(dotaznik)
-
-        # tabulkavý výpis
-        # název kraje
-        # M velikosti
-        # F velikosti
+        
         self.t = tk.Frame(self, height=400)
         self.scrollbar = tk.Scrollbar(self.t)
         self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -166,7 +154,31 @@ class Graph(tk.Frame):
         self.j_photo = ImageTk.PhotoImage(self.j_image.resize((50, 50)))
         self.photos = {1: self.m_photo, 2: self.w_photo, 3: self.j_photo}
         
+        self.load()
+        #self.graph()
+    
+            
+
+    
+    def load(self):
+        with mydb() as db:
+            c = db.cursor()
+            c.execute(
+                "SELECT kraj, pohlavi, velikost, COUNT(*) FROM dotaznik GROUP BY kraj, pohlavi, velikost"
+            )
+            self.dotaznik: list[tuple[int,int,str,int]] = c.fetchall() # type: ignore věřte mi, že to funguje
+            # print(dotaznik)
+            db.close()
+        for widget in self.tabulka.winfo_children():
+            widget.destroy()
+
+        self.graph()
+        
+    def graph(self) -> None:
+        
+        
         r = 0
+        tk.Button(self.tabulka, text="Reload", command=self.load).grid(row=r, column=1)
         for i, nazev in kraje.items():
             tk.Label(self.tabulka, text=nazev).grid(row=r, column=0)
             r += 1
@@ -177,7 +189,7 @@ class Graph(tk.Frame):
                 
                 for s, si in sizes.items():
                     tk.Label(self.tabulka, text=s).grid(row=r, column=1)
-                    tk.Label(self.tabulka, text=self.coffeefilter(i, pi, s, dotaznik)).grid(row=r, column=2)
+                    tk.Label(self.tabulka, text=self.coffeefilter(i, pi, s, self.dotaznik)).grid(row=r, column=2)
                     r += 1
     
     def coffeefilter(self, i, pi, s, data: list[tuple[int,int,str,int]]) -> int:
@@ -186,14 +198,14 @@ class Graph(tk.Frame):
                 return d[3]
         return 0
 
-class Data(tk.Frame):
-    def __init__(self, frame: tk.Frame):
-        super().__init__(frame)
-        self.pack()
-        self.data()
+#class Data(tk.Frame):
+#    def __init__(self, frame: tk.Frame):
+#        super().__init__(frame)
+#        self.pack()
+#        self.data()
 
-    def data(self):
-        pass
+#    def data(self):
+#        pass
 
 
 root = tk.Tk()
@@ -212,9 +224,9 @@ graph = Graph(graphframe)
 graph.pack()
 main_panel.add(graphframe, text="Graf")
 
-dataframe = tk.Frame(main_panel)
-data = Data(dataframe)
-data.pack()
-main_panel.add(dataframe, text="Data")
+#dataframe = tk.Frame(main_panel)
+#data = Data(dataframe)
+#data.pack()
+#main_panel.add(dataframe, text="Data")
 
 root.mainloop()

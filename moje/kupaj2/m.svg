@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="218"
+   height="572"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="Toilets_unisex.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="8.9510489"
+     inkscape:cx="242.42969"
+     inkscape:cy="169.92422"
+     inkscape:window-width="1440"
+     inkscape:window-height="878"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <circle
+     cx="109.71796"
+     cy="48.373268"
+     r="46.545212"
+     id="circle2" />
+  <path
+     d="m 60.30839,107.80787 c -35.78976,0 -58.71876,30.98756 -58.71876,61.58276 v 143.21573 c -0.3294,27.98432 39.966,27.98432 40.10064,0 V 180.84788 h 10.02512 v 363.76815 c -0.62156,37.98085 53.04736,36.89241 52.99008,0 V 332.65656 h 8.593 v 211.95947 c 0.70176,36.89241 54.65136,37.98085 54.4222,0 V 180.84788 h 10.02516 v 131.75848 c -0.4726,28.19916 39.61368,28.19916 40.10056,0 V 169.39063 c -0.5728,-30.5952 -24.36108,-61.03424 -60.15084,-61.58276 z"
+     id="path2" />
+</svg>

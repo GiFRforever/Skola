@@ -1,25 +1,22 @@
-import tkinter as tk
-from tkinter import ttk
-from tkinter import messagebox as mb
-import mysql.connector
 import os
+import tkinter as tk
+from tkinter import messagebox as mb
+from tkinter import ttk
+from PIL import Image, ImageTk
 
-from mysql.connector.abstracts import MySQLConnectionAbstract, MySQLCursorAbstract
-from mysql.connector.pooling import PooledMySQLConnection
+import mysql.connector
 
-# os.chdir(r"H:\mujgit\Skola\moje\kupaj2")
-os.chdir(r"/home/clu40164@spseol.cz/wnet_H/mujgit/Skola/moje/kupaj2")
+# os.chdir(r"/home/clu40164@spseol.cz/wnet_H/mujgit/Skola/moje/kupaj2")
+os.chdir(r"\\pdc\home-students\clu40164\mujgit\Skola\moje\kupaj2")
 
 
-def mydb() -> PooledMySQLConnection | MySQLConnectionAbstract:
+def mydb():
     url = "sql11.freesqldatabase.com"
     user = "sql11700285"
     password = "BPstwddWlF"
     port = 3306
 
-    mydb: PooledMySQLConnection | MySQLConnectionAbstract = mysql.connector.connect(
-        host=url, user=user, password=password, port=port
-    )
+    mydb = mysql.connector.connect(host=url, user=user, password=password, port=port)
     mydb.cursor().execute(f"USE {user}")
 
     return mydb
@@ -60,6 +57,16 @@ with mydb() as db:
 # print(kraje)
 # exit()
 
+sizes: dict[str, int] = {
+    "XS": 3,
+    "S": 4,
+    "M": 5,
+    "L": 6,
+    "XL": 7,
+}
+
+pohlaví: dict[int, str] = {1: "M", 2: "F", 3: "J"}
+
 
 class Form(tk.Frame):
     def __init__(self, frame: tk.Frame):
@@ -72,9 +79,7 @@ class Form(tk.Frame):
         self.velikost_label.pack()
         self.velikost = tk.StringVar()
         self.velikost.set("M")
-        self.velikost_combobox = tk.OptionMenu(
-            self, self.velikost, "XS", "S", "M", "L", "XL"
-        )
+        self.velikost_combobox = tk.OptionMenu(self, self.velikost, *sizes.keys())
         self.velikost_combobox.pack()
         self.vek_label = tk.Label(self, text="Věk")
         self.vek_label.pack()
@@ -129,14 +134,57 @@ class Graph(tk.Frame):
         self.pack()
         self.graph()
 
-    def graph(self):
+    def graph(self) -> None:
         with mydb() as db:
-            c: MySQLCursorAbstract = db.cursor()
+            c = db.cursor()
             c.execute(
                 "SELECT kraj, pohlavi, velikost, COUNT(*) FROM dotaznik GROUP BY kraj, pohlavi, velikost"
             )
-            dotaznik = c.fetchall()
+            dotaznik: list[tuple[int,int,str,int]] = c.fetchall() # type: ignore věřte mi, že to funguje
+            print(dotaznik)
 
+        # tabulkavý výpis
+        # název kraje
+        # M velikosti
+        # F velikosti
+        self.t = tk.Frame(self, height=400)
+        self.scrollbar = tk.Scrollbar(self.t)
+        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.t_canvas = tk.Canvas(self.t, yscrollcommand=self.scrollbar.set)
+        self.t_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        self.scrollbar.config(command=self.t_canvas.yview)
+        self.t_canvas.bind("<Configure>", lambda e: self.t_canvas.configure(scrollregion=self.t_canvas.bbox("all")))
+        self.t_inner = tk.Frame(self.t_canvas)
+        self.t_canvas.create_window((0, 0), window=self.t_inner, anchor="nw")
+        self.t.pack()
+        self.tabulka = self.t_inner
+        self.m_image = Image.open("m.png")
+        self.w_image = Image.open("w.png")
+        self.j_image = Image.open("j.png")
+        self.m_photo = ImageTk.PhotoImage(self.m_image.resize((50, 50)))
+        self.w_photo = ImageTk.PhotoImage(self.w_image.resize((50, 50)))
+        self.j_photo = ImageTk.PhotoImage(self.j_image.resize((50, 50)))
+        self.photos = {1: self.m_photo, 2: self.w_photo, 3: self.j_photo}
+        
+        r = 0
+        for i, nazev in kraje.items():
+            tk.Label(self.tabulka, text=nazev).grid(row=r, column=0)
+            r += 1
+            for pi, p in pohlaví.items():
+                tk.Label(self.tabulka, text=p).grid(row=r, column=0)
+                # put svg image m.svg in grid at row r, column 3
+                tk.Label(self.tabulka, image=self.photos.get(pi)).grid(row=r, column=3, rowspan=len(sizes))
+                
+                for s, si in sizes.items():
+                    tk.Label(self.tabulka, text=s).grid(row=r, column=1)
+                    tk.Label(self.tabulka, text=self.coffeefilter(i, pi, s, dotaznik)).grid(row=r, column=2)
+                    r += 1
+    
+    def coffeefilter(self, i, pi, s, data: list[tuple[int,int,str,int]]) -> int:
+        for d in data:
+            if d[0] == i and d[1] == pi and d[2] == s:
+                return d[3]
+        return 0
 
 class Data(tk.Frame):
     def __init__(self, frame: tk.Frame):
